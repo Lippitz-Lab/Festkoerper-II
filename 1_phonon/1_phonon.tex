@@ -1,0 +1,279 @@
+%\renewcommand{\lastmod}{\today}
+\renewcommand{\chapterauthors}{Markus Lippitz}
+\renewcommand{\lastmod}{4. April 2023}
+
+\chapter{Wärmeleitung und anharmonische Effekte}
+
+
+
+
+\section{Ziele}
+ 
+
+
+\begin{itemize}
+\item Sie können die unten gezeigte Wärmeleitfähigkeit im Zusammenspiel von Wärmekapazität und Umklapprozessen erklären.
+\item Sie können die Konzepte Wechselwirkungsquerschnitt und mittlere freie Weglänge benutzen, um Streuprozesse zu beschreiben.
+
+\end{itemize}
+
+
+\begin{figure}
+    \inputtikz{\currfiledir fig_si}
+    \caption{Wärmeleitfähigkeit $K$  von Silizium (\cite{Glassbrenner1964}).}
+    \label{fig:1_WL_Si}
+\end{figure}
+ 
+
+\section{Überblick}
+
+Bis zu diesem Punkt wurden das Bindungspotential der Atome im Festkörper als harmonisch, also rein parabelförmig angenommen. In diesem Kapitel gehen wir darüber hinaus und betrachten, wie in der Molekülphysik, anharmonische höhere Terme in Bindungspotential. Dies führt zur thermischen Ausdehnung und zur  Phonon--Phonon--Wechselwirkung. Mit ihr werden wir die oben gezeigte Temperaturabhängigkeit der Wärmeleitfähigkeit erklären.
+
+Dieses Kapitel stellt die Verbindung zum vorangegangenen Semester her. Sie haben Gelegenheit, die zentralen Konzepte der ersten Kapitel der Festkörperphysik aus dem letzten Semester zu wiederholen. Wir brauchen den reziproken Raum, die Dispersionsrelation und die sich daraus ergebende Zustandsdichte, wenn wir im nächsten Kapitel zu Elektronen wechseln.
+
+
+\section{Wiederholung}
+
+Vergewissern Sie sich, dass Sie die folgenden Fragen beantworten können, und lesen Sie ggf. noch einmal in Ihren Aufzeichnung des letzten Semesters oder in meinem Skript\footcite{lippitz_epc1} nach.
+
+
+\subsection*{Kristallstruktur}
+ 
+\begin{itemize}\setlength{\itemsep}{0pt}
+    \item Was ist ein Bravais-Gitter, eine Basis, eine Kristallstruktur?
+    \item Wie sehen häufig vorkommende Bravais-Gitter aus? Welche Symmetrien haben sie?
+    \item Welche Arten von Bindungen gibt es in Festkörpern? Wo sind dabei die Elektronen, auch relativ zu 'ihrem' Atomkern?
+\end{itemize}
+
+
+\subsection*{Reziproker Raum}
+
+\begin{itemize}\setlength{\itemsep}{0pt}
+    \item Was ist der reziproke Raum, die Brillouin-Zone, die Miller'schen Indizes?
+    \item Wie sehen die reziproken Gitter von häufig vorkommende Bravais-Gittern aus?
+    \item Wie bestimmt man Gitterparameter experimentell ?
+    \item Was besagt die Laue-Theorie der Beugung? Und die Bragg-Theorie?
+    \item Was ist ein Strukturfaktor und ein Atomformfaktor?
+\end{itemize}
+
+\subsection*{Phononen}
+
+\begin{itemize}\setlength{\itemsep}{0pt}
+    \item Was ist ein Phonon, eine Dispersionsrelation, eine Zustandsdichte?
+    \item Wie sieht die Dispersionsrelation einer ein- oder zwei-atomaren linearen Kette aus? Wie die zugehörige Zustandsdichte?
+    \item Warum nennt man die Zweige optisch bzw. akustisch? Wie geht das im Dreidimensionalen?
+    \item Wie kann man durch inelastische Neutronenstreuung diese Dispersionsrelation messen?
+\end{itemize}
+
+\subsection*{Wärmekapazität der Phononen}
+
+\begin{itemize}\setlength{\itemsep}{0pt}
+    \item Wie erklärt man mikroskopisch die Wärmekapazität (von Isolatoren), insbesondere deren Temperaturabhängigkeit?
+    \item Was ist der Unterschied zwischen den Modellen von Debye und Einstein? Wann stimmt welches besser mit den Messungen überein? 
+\end{itemize}
+
+
+
+\section{Was wir bislang noch nicht erklären können}
+
+
+
+\section{Thermische Ausdehnung}
+
+Bislang haben wir das Bindungspotential $U(x)$ der Atome als harmonisch angenommen. Die Abhängigkeit von der Auslenkung $x$ um die Ruheposition war also $U(x) \propto x^2$. Nun wollen wir betrachten, welchen Effekt höhere Terme im Potential haben. Bei den Molekül-Schwingungen hatten wir bereits das Morse-Potential besprochen, mit dem ebenfalls die Abweichungen von der harmonischen Form modelliert wurde. Damals hat dies zu Verschiebung der ansonsten äquidistanten Schwingungsniveaus und zu einer Änderung das Auswahlregel für Schwingungsübergänge geführt.
+
+Sei also\sidenote{Siehe auch \cite{Kittel_FK} eq. 5.38 und \cite{Kopitzki_FK} eq. 2.57} 
+\begin{eqnarray}
+    U(x) = c x^2 - g x^3 - f x^4 \quad ,
+\end{eqnarray}
+mit $c$, $g$ und $f$ als positive Konstanten. Die Nullpunktsenergie ist hier der Einfachheit halber weggelassen. Der ungerade $x^3$-Term flacht die positive $x$ Seite ab und macht die negative Seite steiler. Der $x^4$-Term wirkt symmetrisch, macht aber das Potential bei hohen Energien bzw. großen $x$  breiter und so die Bindung weicher.
+
+Nun interessiert die mittlere Auslenkung $\braket{x}$ bei einer durch die Boltzmann-Verteilung gegebenen Besetzung der Schwingungszustände. Ein Zustand mit dem Bindungsabstand $x$ tritt auf mit der Wahrscheinlichkeit\sidenote{Siehe z.B. Gl. 22.8 in \cite{Fliessbach_statistik}.}
+\begin{equation}
+    \frac{e^{- \beta U(x)}}{\int  e^{- \beta U(x')} dx'} \quad ,
+\end{equation}
+wobei wie immer $\beta = 1 / k_B T$.
+Damit ist 
+\begin{equation}
+  \braket{x} =   \frac{\int x e^{- \beta U(x)} dx}{\int e^{- \beta U(x')} dx'} \quad .
+\end{equation}
+Der Nenner hängt ja nicht von $x$, sondern nur von $x'$ ab und kann so vor das $dx$-Integral gezogen werden. Nun machen wir die Annahme, das $U(x) \ll k_B T$, also $\beta U(x) \ll 1$ und schreiben im Zähler
+\begin{equation}
+    e^{- \beta U(x)} = e^{- \beta c x^2} e^{+ \beta (g x^3 + f x^4)} \approx e^{- \beta c x^2}  \left( 1+ \beta g x^3 + \beta f x^4 \right)
+    \quad .
+\end{equation}
+Im Nenner ignorieren wir gleich alle Terme jenseits von $c x^2$. Damit erhält man 
+\begin{equation}
+    \braket{x} = \frac{3 g}{4 c^2} k_B T \quad .
+\end{equation}
+Wie erwartet spielt der $f x^4$-Term keine Rolle für die Änderung des Bindungsabstands.
+Sobald aber ein kubischer Term im Potential vorhanden ist ($g \neq 0$), dann ändert sich die mittlere Auslenkung hin zu größeren Werten, proportional zur Temperatur $T$. Die Gitterkonstante ändert sich also linear in der Temperatur, bzw. der Wärme-Ausdehnungskoeffizient $\alpha$ ist 
+\begin{equation}
+    \alpha = \frac{d}{dT} \frac{ \braket{x}}{r_0} = \frac{3 g k_B}{4 c^2 R_0}  \quad ,
+\end{equation}
+mit dem mittleren Bindungsabstand $R_0$ bei $T=0$.
+
+% XXX TODO: Lösungen Anharm. Potential Kernwellenfunktionen und Verschiebung des Mittelwerts
+
+
+% \begin{marginfigure}
+%     \inputtikz{\currfiledir anharm_osc_wf}
+%     \caption{Wellenfunktionen des anharmonischen Oszillators.}
+% \end{marginfigure}
+
+
+
+\section*{Phonon--Phonon-Wechselwirkung}
+
+Die Anharmonizität des Potentials führt dazu, dass die Phononen miteinander wechselwirken. Die Einführung der Normalmoden in der Molekül- oder Festkörperphysik war möglich, weil dort das Potential als harmonisch angenommen wurde. Der $x^3$-Term führt dazu, dass die einzelnen Moden nicht mehr unabhängig voneinander sind, miteinander koppeln.\sidenote{Eine Rechnung findet sich in \cite{Gross_FK}.} Ein Molekül im Vakuum kann so Energie von einer hoch angeregten Schwingungsmode auf alle anderen Moden verteilen. Im Bild der quantisierten Schwingungen, wenn man also Phononen als Teilchen betrachtet, dann bedeutet dies, dass Phononen miteinander unter Beachtung der Energie- und Impulserhaltung wechselwirken, wie Billardkugeln.
+
+Das kann man experimentell nachweisen. Zwei sich kreuzende Ultraschallwellen erzeugen eine dritte Welle in der durch die Impulserhaltung erwarteten Richtung (Abb.~\ref{fig:1_US_interaction}).
+
+\begin{figure} 
+    \input{\currfiledir fig_interaction.tikz.tex}
+    \caption{Phonon--Phonon--Wechselwirkung in polykristallinen Magnesium (\cite{RollinsJr1964}). Zwei Ultraschallwellen kreuzen sich unter dem Winkel $\phi$. Man detektiert im Winkel der Impulserhaltung die resultierende Amplitude. Falls eine der Wellen transversal, die andere longitudinal ist, dann beobachtet man eine Auslösung unter einem charakteristischen Winkel. }
+    \label{fig:1_US_interaction}
+\end{figure}
+
+\section*{Wärmeleitfähigkeit}
+
+ Bislang hatte der Festkörper überall die gleiche Temperatur. Nun betrachten wir beispielsweise einen Stab, der an beiden Enden durch ein Wärmebad auf eine zeitliche konstante aber verschiedene Temperatur gehalten wird. Makroskopisch ist der Fluss der thermischen Energie, also die Wärmestromdichte $\mathbf{j}_q$ abhängig von der Wärmeleitfähigkeit $K$ und dem Gradienten der Temperatur $T$, also
+\begin{equation}
+    \mathbf{j}_q = - K \, \nabla T \quad .
+\end{equation}
+Wir modellieren den Wärmestrom analog zur kinetischen Gastheorie  als Diffusion von Phononen. Wie auch schon bei der Wärmekapazität der Phononen steigt mit steigender Temperatur die Anzahl der Phononen bei den durch die Zustandsdichte erlaubten Frequenzen. Am warmen Ende des Stabes gibt es also mehr Phononen, die dann zum kalten Ende gelangen und so Energie transportieren. Dieser Transportprozess steckt in der Wärmeleitfähigkeit $K$. Die kinetischen Gastheorie  ergibt
+\begin{equation}
+    K  = \frac{1}{3} \, C \, v \, \ell \quad , \label{eq:2_def_waermeleitf}
+\end{equation}
+mit der Wärmekapazität pro Volumen $C$, der Teilchengeschwindigkeit $v$ und der mittleren freien Weglänge $\ell$. Hier ist nun $C$ die Wärmekapazität der Phononen, $v$ deren Schallgeschwindigkeit und $\ell$ eine noch zu beschaffende mittlere freie Weglänge. Eigentlich sind alle drei Größen von der Frequenz und ggf. auch der Richtung abhängig. Dies ignorieren wir hier und verstehen sie als effektive Größen. Das ist die \emph{Dominante-Phononen-Näherung}, ähnlich wie beim EInstein-Modell die optischen Phononen als deltaförmige Zustandsdichte angenommen wurden.
+
+
+
+\section*{Mittlere freie Weglänge}
+
+\begin{marginfigure}
+    \inputtikz{\currfiledir crosssection}
+    \caption{Scheiben der Fläche $\sigma$ mit einer Anzahl-Dichte $n$ ergeben geometrisch die mittlere freie Weglänge $\ell$.}
+     \label{fig:1_crosssection}
+\end{marginfigure}
+
+Die mittlere freie Weglänge kann rein geometrisch verstanden werden als Weglänge, bis zu der ein Strahl wieder auf eine Zielscheibe trifft. Die Fläche der Zielscheibe entspricht dabei dem Wechselwirkungsquerschnitt $\sigma$. Dazu benötigt man nur die Anzahl der Scheiben pro Volumen, also die Dichte $n$. Damit ist die mittlere freie Weglänge $\ell$
+\begin{equation}
+    \ell = \frac{1}{n \, \sigma} \quad .  \label{eq:1_def_weglaenge} 
+\end{equation}
+In der Sprache der Streutheorie, wie beispielsweise bei der Röntgenstreuung, ist der Wechselwirkungsquerschnitt $\sigma$ proportional zum Betragsquadrat $|\mathcal{A}|^2$ der Streuamplitude.
+
+Dem Scheibchen-Bild nahe kommt die Streuung an Punktdefekten im Kristall. Wenn die Ausdehnung $a$ des Defekt viel kleiner als die Wellenlänge $\lambda$ des Phonons ist, dann ist die Physik völlig analog zur Rayleigh-Streuung, beispielsweise von Licht an Luft-Molekülen. Der Streuquerschnitt ist in diesem Fall
+\begin{equation}
+    \sigma \propto \frac{a^6}{\lambda^4} \quad \text{oder} \quad \propto a^6 \, \omega^4 \quad .
+\end{equation}
+Dieser Effekt ist nicht temperaturunabhängig, kann also nicht helfen, die Temperaturabhängigkeit der Wärmeleitung zu erklären. Er liefert vielmehr eine von der Qualität der Probe anhängen konstanten Beitrag.
+
+
+
+\section{Phonon--Phonon--Streuung}
+
+
+% Bei der Phonon--Phonon--Wechselwirkung sind \emph{drei} Phononen involviert. In den Ultraschall-Beispiel oben laufen 2 Phononen ein und ein drittes wird erzeugt und läuft aus, mit $\omega_\text{out}  = \omega_\text{in} + \omega_{US}$. Genauso ist auch möglich, dass ein Phonon einläuft, und zwei neue unter Energie- und Impulserhaltung auslaufen ($\omega_\text{in}  = \omega_\text{out} + \omega_{US}$). Beide Richtungen zusammen begrenzen die mittlere freie Weglänge eines Phonons. Es ist aber ein Wechselspiel zwischen Erzeugung und Vernichtung von Phononen. Wir nehmen nun an, dass sich die Energie nicht sehr ändert, also $\omega_\text{in}  = \omega_\text{out} = \omega$.
+
+% Im Sinne von Gl. \ref{eq:1_def_weglaenge} ist die Dichte $n$ der Streuzentren also die Besetzung $\braket{n(\omega, T)}$ der Phononen-Zustände. Durch das Wechselspiel von Erzeugung und Vernichtung geht dabei nur der Unterschied, also die Ableitung der Besetzung ein, dekoriert mit der Zustandsdichte. Alles zusammen ist das\footnote{Hunklinger, eq. 7.15}
+% \begin{equation}
+%     \frac{1}{\ell} = n \sigma = \int \sigma(\omega) D(\omega) \frac{\partial \braket{n(\omega, T)} }{\partial \omega} d \omega  
+% \end{equation}
+% Das hat formal große Ähnlichkeit mit der Berechnung der Inneren Energie und der Wärmekapazität der Phononen. Wie dort verwenden wir die Abkürzungen $x = \hbar \omega / k_B T$ und 
+% $x_D = \hbar \omega_D / k_B T = \Theta / T$ mit der Debye-Temperatur $\Theta$. Für den Wechselwirkungsquerschnitt $\sigma$ gilt hier, dass er proportional zum Produkt aller drei involvierten Frequenz ist, also $\sigma \propto \omega_{US} \, \omega^2$. Und die Zustandsdichte ist im Deybe-Modell proprtional zu $\omega^2$. Insgesamt ergibt das
+% \begin{eqnarray}
+%     \frac{1}{\ell} \propto & \omega_{US} \int \omega^4 \frac{\partial \braket{n(\omega, T)} }{\partial \omega} d \omega  \\
+%     \propto & \omega_{US} \, T^4  \int_0^{x_D} \frac{x^4 e^4}{(e^x-1)^2} d \omega 
+% \end{eqnarray}
+% Für hohe Tempetratiren, also $x \rightarrow 0$, ist das Intgeral proportioanl zu $(\Theta / T)^3$, für tiefe Tempearturen ist es uanbhängig von $T$. Ingesamt haben wir damit
+% \begin{eqnarray}
+%     \frac{1}{\ell}    \propto & \omega_{US} \, T^4   \quad \text{für} \quad $T \ll \Theta \\
+%                        \propto & \omega_{US} \, T   \quad \text{für} \quad $T \gg \Theta 
+% \end{eqnarray}
+
+% weil für tiefe Temperaturen das Integral konstant ist.
+
+
+Auch die Phonon--Phonon--Wechselwirkung kann die freie Weglänge begrenzen, indem zwei einfallende Phononen in ein neues umgewandelt werden. Aus der Sicht eines der einfallenden Phononen ist die Streuwahrscheinlichkeit proportional zur Dichte $n(T)$ der anderen Phononen, also erwarten wir
+\begin{equation}
+    \ell \propto \frac{1}{n(T)} \quad .
+\end{equation}
+
+
+
+Bei der Streuung von Phononen in einem Kristall muss man allerdings den reziproken Gittervektor $\mathbf{G}$ berücksichtigen. In einem Kristall ist die Impulserhaltung
+\begin{equation}
+    \mathbf{k}_1 +  \mathbf{k}_2 =  \mathbf{k}_3 +  \mathbf{G}_{hkl}  \quad .
+\end{equation}
+Der reziproken Gittervektor $\mathbf{G}_{hkl}$ meint eine (unendliche) Menge von Vektoren, die sich aus den Linearkombinationen der primitiven Einheitsvektoren mit den Koeffizienten $h,k,l$ zusammensetzt. Damit unterscheiden wir den \emph{Normalprozess} ($\mathbf{G} = 0$) vom \emph{Umklapprozess} ($\mathbf{G} \neq 0$). Im Normalprozess gilt die Impulserhaltung in der strengen Form wie im Vakuum. Bei einem Gas von Phononen bleibt der Gesamtimpuls dann aber erhalten. Die Drift-Geschwindigkeit der Phononen kann sich nicht ändern und dieser Fall trägt nicht zu einem Wärmewiderstand bei.
+
+\begin{marginfigure}
+    \inputtikz{\currfiledir umklapp}
+   \caption{Skizze zum Umklapprozess. Wenn die Summe von zwei reziproken Vektoren außerhalb der Brillouin-Zone liegt, dann führt die Addition von $\mathbf{G}$ zur Änderung der Richtung. }
+   \label{fig:1_umklapp}
+\end{marginfigure}
+
+Beim Umklapprozess kann sich aber die Richtung ändern. Die Summe $ \mathbf{k}_1 +  \mathbf{k}_2 $ kann gerade über die erste Brillouin-Zone hinaus reichen, wird durch $\mathbf{G}$ zurück verschoben und kann dann entgegen der ursprünglichen Vektoren zeigen (siehe Abbildung~\ref{fig:1_umklapp}). Damit ändert sich der Gesamtimpuls des Phononen-Gases, was einem Wärmewiderstand entspricht.
+
+
+
+\section{Temperaturabhängigkeit des Umklapprozesses}
+
+Damit der Umklapprozess stattfindet, muss
+\begin{equation}
+    | \mathbf{k}_1 +  \mathbf{k}_2| \ge \frac{1}{2} | \mathbf{G} | \quad ,
+\end{equation}
+wobei $\mathbf{G}$ hier den kleinsten reziproken Gittervektor meint. Wir benötigen die Energie der Phononen mit solchen Impulsen $\mathbf{k}_i$. Dazu nehmen wir das Debye-Modell an, also einen linearen Zusammenhang zwischen dem Betrag des Impulses und der Frequenz des Phonons und eine Debye-Temperatur $\Theta$.  Am Rand der Brillouin-Zone haben die Phononen in diesem Modell die Energie $k_B \Theta$, so dass eine chartereistische Energie für den Einsatz des Umklapprozesses $k_B \Theta / 2$ ist. Die Besetzungsdichte bei dieser Energie ist in der Boltzmann-Verteilung
+\begin{equation}
+    \braket{n} \propto \frac{1}{e^{\Theta / 2T} -1}
+\end{equation}
+und die mittlere freie Weglänge ist somit
+\begin{equation}
+    \ell \propto e^{\Theta / 2T} -1 = 
+    \left\{
+    \begin{matrix*}
+        \Theta / T             & \text{für} \quad T \gg \Theta  \\     
+        e^{\Theta / 2T} \quad & \text{für} \quad T \ll \Theta 
+    \end{matrix*}
+    \right. \quad .
+\end{equation}
+
+Bei sehr tiefen Temperaturen ist also die mittlere freie Weglänge durch die Streuung an Punktdefekten begrenzt und fällt dann exponentiell mit der Temperatur ab, weil immer mehr Phononen als Streupartner hinzu kommen. Mit steigender Temperatur geht der exponentielle Abfall oberhalb der Debye-Temperatur $\Theta$ in einen $1/T$-Verlauf über.
+
+
+Für die Wärmeleitfähigkeit benötigen wir noch die Temperaturabhängigkeit der Wärmekapazität $C$. Diese ist nach dem Debye-Modell proportional zu $T^3$ bei $T \ll \Theta$. Weit oberhalb $\Theta$ gilt das Dulong-Petit-Gesetz und die Wärmekapazität ist konstant. Insgesamt erhalten wir damit 
+\begin{equation}
+    K = \frac{1}{3} c v \ell  \propto 
+    \left\{
+    \begin{matrix*}[l]
+        \Theta / T                    & \text{für} \quad T \gg \Theta    & \text{Phonon--Phonon}      \\
+      T^n \,  e^{\Theta / 2T}        & \text{für} \quad T \ll \Theta    & \text{Phonon--Phonon}      \\
+      T^3                            & \text{für} \quad T \lll \Theta   & \text{Phonon--Defekt}     
+    \end{matrix*}
+    \right. \quad .
+\end{equation}
+Der Exponent $n$ bei $ T \ll \Theta  $ soll die genaue Temperaturabhängigkeit offen lassen. Dazu müsste man das Integral im Debye-Modell der Wärmekapazität im Bereich $T \approx \Theta$ lösen. 
+
+Für Silizium finden wir in den gemessenen Daten (Abb.  \ref{fig:1_WL_Si}) sowohl die $T^3$-Abhängigkeit bei tiefen Temperaturen, als auch die $T^{-1}$ oberhalb der Debye-Temperatur. Der Übergangsbereich ist aufwändiger zu modellieren.
+
+
+
+
+% \begin{questions} 
+% \item Wie groß ist ein Molekül?
+% \item Welche physikalische Eigenschaft eine Moleküls wird bei Röntgenstreuung, STM und AFM abgebildet?
+% \end{questions}
+ 
+
+
+% Das Pluto-Skript hydrogen\_wave\_functions\pluto{hydrogen_wave_functions} ermöglicht es Ihnen, mit verschiedenen Varianten der grafischen Darstellung zu experimentieren.
+
+
+\section{Zusammenfassung}
+
+\textit{Schreiben Sie hier ihre persönliche Zusammenfassung des Kapitels auf. Konzentrieren Sie sich auf die wichtigsten Aspekte und die am Anfang genannten Ziele des Kapitels.}
+
+\vspace*{10cm}
+
+\printbibliography[segment=\therefsegment,heading=subbibliography]

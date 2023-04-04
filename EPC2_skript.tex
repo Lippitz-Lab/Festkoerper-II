@@ -1,0 +1,302 @@
+
+\documentclass[notoc,nofonts,a4paper,twoside,nobib]{tufte-book}
+%\documentclass[nofonts,a4paper,twoside]{book}
+
+\usepackage[ngerman]{babel}
+\usepackage{currfile,hyperxmp}
+
+\usepackage{filemod}
+   \usepackage{dsfont}
+\usepackage[
+    type={CC},
+    modifier={by-sa},
+    version={4.0},
+    imagewidth = 17mm,
+ ]{doclicense}
+  
+
+\usepackage[refsegment=chapter,style=authoryear-comp,natbib=true,url=true,
+isbn=false]{biblatex}
+
+\addbibresource{literature.bib}
+
+%rm -rf `biber --cache`
+
+
+%\AtBeginBibliography{\urlstyle{rm}}
+
+\RequirePackage{fontawesome}
+
+\DeclareFieldFormat{doi}{%
+  \ifhyperref
+    {\href{http://doi.org/#1}{\small \faExternalLink}}
+    {\nolinkurl{#1}}}
+
+\DeclareFieldFormat{url}{%
+  \ifhyperref
+    {\href{#1}{\small \faExternalLink}}
+    {\nolinkurl{#1}}}
+    
+\renewbibmacro*{doi+eprint+url}{%   
+  \iftoggle{bbx:url}     
+    {\iffieldundef{doi}{\usebibmacro{url+urldate}}{}}     
+    {}%   
+  \newunit\newblock   
+  \iftoggle{bbx:eprint}     
+    {\usebibmacro{eprint}}     
+    {}%   
+  \newunit\newblock   
+  \iftoggle{bbx:doi}     
+    {\printfield{doi}}     
+    {}}  
+
+\usepackage{amssymb,amsmath}
+\usepackage{mathtools}
+ 
+\usepackage{modiagram}
+\usepackage{chemformula}
+\usepackage{chemfig}
+\renewcommand*\printatom[1]{\ensuremath{\mathsf{#1}}}
+
+
+\input{tikz_header}
+\usetikzlibrary{external}
+\tikzexternalize[prefix=tikz_external/]
+
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+
+
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{hyperref}
+
+\usepackage{units}
+
+\usepackage{chemformula}
+
+\usepackage{braket}
+\setcounter{secnumdepth}{0}
+
+% citations
+%\usepackage{natbib}
+%\bibliographystyle{plainnat}
+%\setcitestyle{round} 
+
+% pandoc syntax highlighting
+%\usepackage{color}
+%\usepackage{fancyvrb}
+
+
+
+% longtable
+\usepackage{longtable,booktabs}
+\usepackage{multicol}
+\usepackage[normalem]{ulem}
+
+% morefloats
+\usepackage{morefloats}
+
+\usepackage{calc}
+\usepackage{tcolorbox}
+
+
+\input{tint_book_header}
+
+
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}%
+
+
+\ifthenelse{\boolean{@tufte@twoside}}
+  {\fancyhead[LE]{\thepage\quad{\newlinetospace{Festkörperphysik II}}}%
+    \fancyhead[RO]{{\newlinetospace{\leftmark}}\quad\thepage}}%
+  {\fancyhead[RE,RO]{{\newlinetospace{c}}\quad\thepage}}
+  
+ 
+%\makeatletter
+\fancypagestyle{mystyle}{%
+\fancyhf{}%
+\fancyfoot[L]{%
+\begin{minipage}{17mm}
+\doclicenseImage
+\end{minipage}
+\begin{minipage}{90mm}
+ \footnotesize
+ \doclicenseLongText
+\end{minipage}%
+}% 
+%\fancyfoot[L]{\doclicenseThis}% 
+}
+%\makeatother
+
+\usepackage{etoolbox}
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{mystyle}}{}{}
+
+
+
+\hypersetup{
+ linktocpage,
+  colorlinks,
+  citecolor=Maroon,
+  filecolor=Maroon,
+  linkcolor=RoyalBlue,
+  urlcolor=RoyalBlue
+}
+
+
+\usepackage[theme=default-plain,charsperline=62]{jlcode}
+
+
+%default, default-plain, grayscale, grayscale-plain and darkbeamer.
+
+
+
+
+
+\newcommand{\kapitelname}{Kapitel\ }
+\newcommand{\chapterauthors}{Markus Lippitz}
+\newcommand{\lastmod}{\Filemodtoday{\currfilepath}}
+
+
+\newcommand{\addtochapter}{%
+\vspace*{-12mm}{
+\setlength{\parindent}{0pt}
+\chapterauthors  \newline \lastmod
+}
+\vspace*{12mm}
+}
+
+\makeatletter
+\let\stdchapter\chapter
+\renewcommand*\chapter{%
+  \@ifstar{\starchapter}{\@dblarg\nostarchapter}}
+\newcommand*\starchapter[1]{\stdchapter*{#1}}
+\def\nostarchapter[#1]#2{\stdchapter[{#1}]{#2} \addtochapter}
+\makeatother
+
+\makeatletter
+  \def\my@tag@font{\scriptsize}
+  \def\maketag@@@#1{\hbox{\m@th\normalfont\color{gray}\my@tag@font#1}}
+  \let\amsmath@eqref\eqref
+  \renewcommand\eqref[1]{{\let\my@tag@font\relax\amsmath@eqref{#1}}}
+\makeatother
+
+\newcounter{questions}[chapter]
+
+\newenvironment{questions}{
+\subsection{\normalsize Zur Selbstkontrolle}
+\begin{enumerate} \small
+\setcounter{enumi}{\value{questions}}
+}{
+\setcounter{questions}{\value{enumi}}
+\end{enumerate} 
+}
+
+\newtcolorbox{zusammen}{%
+  breakable,
+  enhanced jigsaw,
+ % borderline west={1pt}{0pt}{black},
+  sharp corners,
+  %boxrule=0pt,
+  %frame hidden,
+  left=1ex,right=1ex,
+  fonttitle={\bfseries},
+  coltitle={black},
+  title={Zusammenfassung:\ },
+  attach title to upper}
+  
+  
+\newcommand{\pluto}[1]{%
+%
+\edef\cfd{\currfiledir}%
+\StrGobbleRight{\cfd}{1}[\mystring]%
+%
+\sidenote{%
+\begin{tikzpicture}
+[baseline={([yshift=-2pt]current bounding box.center)}]
+\definecolor{redline}{RGB}{201,61,57}
+\definecolor{redfill}{RGB}{214,102,97}
+\definecolor{blueline}{RGB}{148,91,176}
+\definecolor{bluefill}{RGB}{170,125,192}
+\definecolor{greenline}{RGB}{59,151,46}
+\definecolor{greenfill}{RGB}{107,171,91}
+\path[draw=redline,fill=redfill,line width=0.8pt] (0,-5.4pt) circle (4.4pt);
+\path[draw=blueline,fill=bluefill,line width=0.8pt] (0,0) circle (4.4pt);
+\path[draw=greenline,fill=greenfill,line width=0.8pt] (0,5.4pt) circle (4.4pt);
+\end{tikzpicture} \ \ 
+\href{https://raw.githubusercontent.com/MarkusLippitz/Molekuele-und-Festkoerper/published/\mystring/pluto/#1.jl}{download}
+\ \ 
+\href{https://jupyter.ep3.uni-bayreuth.de/epc1/\mystring/pluto/#1.html}{view}
+\ \ 
+\href{https://binder.plutojl.org/v0.16.4/open?url=https\%253A\%252F\%252Fraw.githubusercontent.com\%252FMarkusLippitz\%252FMolekuele-und-Festkoerper\%252Fpublished\%252F\mystring\%252Fpluto\%252F#1.jl}{run on binder}
+}}  
+
+
+
+\usepackage[titletoc]{appendix}
+\renewcommand{\appendixname}{Anhang}
+\renewcommand{\appendixtocname}{Anhang}
+\renewcommand{\appendixpagename}{Anhang}
+
+%\includeonly{3_elec_transport/3_electron_transport}
+
+
+\begin{document}
+
+  \tikzexternaldisable
+
+
+\title{Experimentalphysik C2 \\ Festkörperphysik II}
+
+\author{Markus Lippitz}
+\date{\today}
+
+
+\maketitle
+
+ 
+%
+\tableofcontents
+
+%\include{preface}
+
+
+
+\include{1_phonon/1_phonon}
+%\include{2_fermi_gas/2_fermi_gas}
+%\include{3_band_structure/3_band_structure}
+%\include{4_magnetic_field/4_magnetic_field}
+
+
+ 
+
+     
+%%-----------------------
+
+
+\renewcommand{\kapitelname}{Anhang\ }
+
+\addcontentsline{toc}{part}{Anhang} 
+
+\appendix
+\appendixpage
+
+\include{anhang/julia}
+
+
+%-------
+%
+%%\nocite{*}
+
+\printbibliography
+
+
+
+\end{document}

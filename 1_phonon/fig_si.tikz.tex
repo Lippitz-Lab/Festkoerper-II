@@ -1,0 +1,43 @@
+% \documentclass{standalone}
+% \usepackage{currfile,hyperxmp}
+
+% \input{../tikz_header.tex}
+
+% \begin{document}
+
+
+
+\begin{tikzpicture}
+\useasboundingbox (-1.5,-1.0) rectangle (9.1,4.2);
+%\draw (-1.5,-1.0) rectangle (10.1,4.7);
+
+    \begin{axis}[ xlabel={Temperatur $T$  (K)}, ylabel={Wärmeleitfähigkeit $K$ (W/m K)},  width=105mm, height=55mm, xmode=log, ymode=log,
+         xmin = 3,xmax=2000,
+         % xmax= 2e5, unbounded coords=jump, ymin=0, ymax = 4
+    ]
+    \addplot[only marks,color=black,mark=o] table [ col sep=comma] {\currfiledir data/SI_thermal_cond.dat};
+
+    \addplot[no marks, color=blue, domain = 3:13] {0.024 * x^3};
+	
+    \addplot[no marks, color=blue, domain = 100:2000] {300 / x};
+
+   % \addplot[no marks, color=red, domain = 70:500] {x^1 * exp(670/x) * 1e-8} ;
+
+   \node[anchor=north east]  at (axis cs:9,5){$T^3$};
+
+   \node[anchor=north east]  at (axis cs:400,0.7){$1/T$};
+	
+     \draw [->] (axis cs:670, 0.15) -- (axis cs: 670, 0.1);
+     \node  at (axis cs:670,0.2){$\Theta_D$};
+ 
+	
+	%      \node[anchor= west]  at (axis cs:0.4,3){ $\epsilon'$};
+    %  \node[anchor= west]  at (axis cs:3,1){ $\epsilon''$};
+   
+    %  \node[anchor= west]  at (axis cs:150,3){ $\epsilon'$};
+    %  \node[anchor= west]  at (axis cs:200,0.6){ $\epsilon''$};
+
+    \end{axis}
+\end{tikzpicture}
+
+%\end{document}

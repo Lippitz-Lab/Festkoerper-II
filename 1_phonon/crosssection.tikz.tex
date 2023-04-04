@@ -1,0 +1,85 @@
+%\documentclass[margin=0mm]{standalone}
+%\usepackage{tikz}
+%\usepackage{pgfplots}
+% \pgfplotsset{compat=newest}
+%
+%
+%\usepackage{currfile,hyperxmp}
+%\usetikzlibrary{math,calc,matrix,fit,positioning,intersections}
+%
+%\usepackage{tikz-3dplot}
+% 
+%\usepackage{xfp}
+%
+%
+%\begin{document}
+%
+
+
+
+
+\begin{tikzpicture}
+%\useasboundingbox (0,0) rectangle (5,5);
+%\draw (11,10) rectangle ++(5,5);
+
+
+ \begin{axis}[height=24cm,
+   axis lines=none,
+    xmin=-3.5,
+    xmax=3.5,
+    ymin=-3.5,
+    ymax=3.5,
+    zmin=-3.5,
+    zmax=5.5,
+ %   xtick=\empty,
+  %  ytick=\empty,
+   % ztick=\empty,
+    axis equal , rotate around z=70 ,rotate around x=0 ,
+    font=\footnotesize]
+
+\tikzmath{\u=1; \v=2; \w=2;}   
+
+\draw[gray,thick] (\u,\v,0) -- (\u,0,0);
+\draw[gray,thick] (\u,\v,0) -- (0,\v,0);
+\draw[gray,thick] (\u,\v,0) -- (\u,\v,\w);
+
+
+\draw[black,thick] (0,0,\w) -- (\u,0,\w);
+\draw[black,thick] (0,0,\w) -- (0,\v,\w);
+\draw[black,thick] (\u,\v,\w) -- (\u,0,\w);
+\draw[black,thick] (\u,\v,\w) -- (0,\v,\w);
+
+\draw[black,thick] (0,0,0) -- (0,0,\w);
+\draw[black,thick] (\u,0,0) -- (\u,0,\w);
+\draw[black,thick] (0,\v,0) -- (0,\v,\w);
+\draw[black,thick] (0,0,0) -- (\u,0,0);
+\draw[black,thick] (0,0,0) -- (0,\v,0);
+
+  
+	  \draw [->, very thick] (-1.7, .8, 1.1) --(2.2, .8, 1.1) ;
+ 
+  \draw [|-|,  thick] (0,-0.2,0) -- node [below] {$dx$}(\u,-0.2,0) ;
+
+	  \tikzmath{\r=0.2;}   
+
+ \addplot3[fill=gray,  domain=0:360,  samples y=0]   
+		 (  0.1, {0.7+ \r * cos(x) }, {0.3 + \r * sin(x)});
+
+ \addplot3[fill=gray,  domain=0:360,  samples y=0]   
+		 (  0.8, {0.2+ \r * cos(x) }, {1.2 + \r * sin(x)});
+ 
+ \addplot3[fill=gray,  domain=0:360,  samples y=0]   
+		 (  0.5, {1.5+ \r * cos(x) }, {1.1 + \r * sin(x)});
+
+ \addplot3[fill=gray,  domain=0:360,  samples y=0]   
+		 (  0.3, {1.8+ \r * cos(x) }, {0.6 + \r * sin(x)});
+  
+%  	\shade [ball color=green](0.1, 0.7, 0.3) circle (0.5mm);
+
+
+  \end{axis}
+
+  
+  \end{tikzpicture}
+
+

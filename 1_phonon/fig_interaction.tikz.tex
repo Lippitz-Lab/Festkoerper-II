@@ -1,0 +1,52 @@
+% \documentclass{standalone}
+% \usepackage{currfile,hyperxmp}
+
+% \input{../tikz_header.tex}
+
+% \begin{document}
+
+
+
+\begin{tikzpicture}
+%\useasboundingbox (-1.5,-1.0) rectangle (9.1,4.2);
+%\draw (-1.5,-1.0) rectangle (10.1,4.7);
+
+\begin{scope}[yshift=20mm]
+
+    \coordinate (Ous) at (0,0);
+    \coordinate (Aus) at (20:15mm);
+    \coordinate (Bus) at (-20:-15mm);
+
+    \draw (Ous) circle (15mm);
+
+    \draw[line width=1mm, gray!70!white] (Ous) -- (-90:15mm);
+
+    \draw[line width=2mm, gray] (Aus) -- (20:-10mm);
+    \draw[line width=2mm, gray] (Bus) -- (-20:10mm);
+
+
+    \draw[fill,black]  (Aus) circle (1.5mm) node[right, xshift=1mm] {US in};
+    \draw[fill,black!80!white]  (Bus) circle (1.5mm) node[left, xshift=-1mm] {US in};
+    \draw[black, fill  = white]  (-90:15mm) circle (1.5mm) node[below, yshift=-1mm] {US out};
+
+    %\path[draw=none] (Aus) -- (Ous) -- (Bus)  pic["$\phi$",draw=black,<->,angle eccentricity=1.4,angle radius=5mm] {angle=Aus--Ous--Bus};
+    \path[draw=none] (Aus) -- (Ous) -- (Bus)  pic[draw=black,<->,angle eccentricity=1.4,angle radius=5mm] {angle=Aus--Ous--Bus};
+    \node at (0, 7mm) {$\phi$};
+
+\end{scope}
+
+\begin{scope}[xshift=4.5cm]
+    \begin{axis}[ xlabel={Winkel $\phi$  (Grad)}, ylabel={Amplitude (willk.E.)},  width=55mm, height=55mm, 
+        %xmode=log, ymode=log,
+         ymin = 0,
+         %xmax=2000,
+         % xmax= 2e5, unbounded coords=jump, ymin=0, ymax = 4
+    ]
+    \addplot[no marks,color=black, thick] table [ col sep=comma] {\currfiledir data/interaction_model.dat};
+
+    \addplot[only marks, mark=o] table [ col sep=comma] {\currfiledir data/interaction_data.dat};
+    \end{axis}
+\end{scope}
+\end{tikzpicture}
+
+%\end{document}

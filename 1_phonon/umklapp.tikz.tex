@@ -1,0 +1,34 @@
+% \documentclass{standalone}
+% \usepackage{currfile,hyperxmp}
+
+% \input{../tikz_header.tex}
+
+% \begin{document}
+
+
+
+
+\begin{tikzpicture}
+%\useasboundingbox (0,0) rectangle (5,5);
+%\draw (0,0) rectangle (5,5);
+
+\tikzmath{\x1 = 0.8; \y1 = 1; \x2 = 1.7; \y2 = -1.3; \BZ = 2; }
+
+\draw[fill] (0,0) circle (0.05);
+\draw (-\BZ, -\BZ) rectangle (\BZ, \BZ);
+%\draw (\BZ, -\BZ) rectangle (3*\BZ, \BZ);
+%\draw[fill] (2*\BZ,0) circle (0.05);
+
+
+\draw[->, thick] (0,0) -- node[left] {$k_1$} (\x1, \y1);
+\draw[->, thick] (0,0) --  node[below] {$k_2$} (\x2, \y2);
+
+\draw[->] (0,0) -- (\x1 + \x2, \x1 + \y2);
+\draw[dashed]  (\x1 + \x2, \x1 + \y2) --  node[xshift=-5mm,below] {$G $  } (\x1 + \x2 - 2* \BZ, \x1 + \y2 );
+
+\draw[->, thick]  (0,0) --   node[left, above] {$k_{out}$}(\x1 + \x2 - 2* \BZ, \x1 + \y2 );
+
+\end{tikzpicture}
+
+
+%\end{document}
