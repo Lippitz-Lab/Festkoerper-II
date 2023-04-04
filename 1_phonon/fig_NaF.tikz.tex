@@ -1,9 +1,9 @@
-\documentclass{standalone}
-\usepackage{currfile,hyperxmp}
+% \documentclass{standalone}
+% \usepackage{currfile,hyperxmp}
 
-\input{../tikz_header.tex}
+% \input{../tikz_header.tex}
 
-\begin{document}
+% \begin{document}
 
 
 
@@ -21,19 +21,16 @@
 	
     \addplot[no marks, color=blue, domain =30:100] {100 / x};
 
-   % \addplot[no marks, color=red, domain = 70:500] {x^1 * exp(670/x) * 1e-8} ;
+    \node[anchor=north east]  at (axis cs:5, 7){$T^3$};
 
+    \node[anchor=north east]  at (axis cs:45,2){$1/T$};
+     
+   %   \draw [->] (axis cs:491, 0.15) -- (axis cs: 670, 0.1);
+   %   \node  at (axis cs:491,0.2){$\Theta_D$};
+  
 
-    %  \node[anchor=north east]  at (axis cs:30,4){x20};
-	% \draw [dashed] (axis cs:30,0) -- (axis cs: 30,4);
-	
-	%      \node[anchor= west]  at (axis cs:0.4,3){ $\epsilon'$};
-    %  \node[anchor= west]  at (axis cs:3,1){ $\epsilon''$};
-   
-    %  \node[anchor= west]  at (axis cs:150,3){ $\epsilon'$};
-    %  \node[anchor= west]  at (axis cs:200,0.6){ $\epsilon''$};
 
     \end{axis}
 \end{tikzpicture}
 
-\end{document}
+%\end{document}
