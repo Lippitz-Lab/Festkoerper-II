@@ -12,7 +12,7 @@
 
 
 \begin{itemize}
-\item Sie können die unten gezeigte Wärmeleitfähigkeit im Zusammenspiel von Wärmekapazität und Umklapprozessen erklären.
+\item Sie können die unten gezeigte Wärmeleitfähigkeit im Zusammenspiel von Wärmekapazität und Umklappprozessen erklären.
 \item Sie können die Konzepte Wechselwirkungsquerschnitt und mittlere freie Weglänge benutzen, um Streuprozesse zu beschreiben.
 
 \end{itemize}
@@ -34,7 +34,7 @@ Dieses Kapitel stellt die Verbindung zum vorangegangenen Semester her. Sie haben
 
 \section{Wiederholung}
 
-Vergewissern Sie sich, dass Sie die folgenden Fragen beantworten können, und lesen Sie ggf. noch einmal in Ihren Aufzeichnung des letzten Semesters oder in meinem Skript\footcite{lippitz_epc1} nach.
+Vergewissern Sie sich, dass Sie die folgenden Fragen beantworten können, und lesen Sie ggf. noch einmal in Ihren Aufzeichnungen des letzten Semesters oder in meinem Skript\footcite{lippitz_epc1} nach.
 
 
 \subsection*{Kristallstruktur}
@@ -49,8 +49,8 @@ Vergewissern Sie sich, dass Sie die folgenden Fragen beantworten können, und le
 \subsection*{Reziproker Raum}
 
 \begin{itemize}\setlength{\itemsep}{0pt}
-    \item Was ist der reziproke Raum, die Brillouin-Zone, die Miller'schen Indizes?
-    \item Wie sehen die reziproken Gitter von häufig vorkommende Bravais-Gittern aus?
+    \item Was ist der reziproke Raum, die Brillouin-Zone, ein Miller'scher Index?
+    \item Wie sehen die reziproken Gitter von häufig vorkommenden Bravais-Gittern aus?
     \item Wie bestimmt man Gitterparameter experimentell ?
     \item Was besagt die Laue-Theorie der Beugung? Und die Bragg-Theorie?
     \item Was ist ein Strukturfaktor und ein Atomformfaktor?
@@ -74,7 +74,7 @@ Vergewissern Sie sich, dass Sie die folgenden Fragen beantworten können, und le
 
 
 
-\section{Was wir bislang noch nicht erklären können}
+%\section{Was wir bislang noch nicht erklären können}
 
 
 
@@ -93,7 +93,7 @@ Nun interessiert die mittlere Auslenkung $\braket{x}$ bei einer durch die Boltzm
     \frac{e^{- \beta U(x)}}{\int  e^{- \beta U(x')} dx'} \quad ,
 \end{equation}
 wobei wie immer $\beta = 1 / k_B T$.
-Damit ist 
+Damit ist die mittlere Auslenkung
 \begin{equation}
   \braket{x} =   \frac{\int x e^{- \beta U(x)} dx}{\int e^{- \beta U(x')} dx'} \quad .
 \end{equation}
@@ -109,9 +109,17 @@ Im Nenner ignorieren wir gleich alle Terme jenseits von $c x^2$. Damit erhält m
 Wie erwartet spielt der $f x^4$-Term keine Rolle für die Änderung des Bindungsabstands.
 Sobald aber ein kubischer Term im Potential vorhanden ist ($g \neq 0$), dann ändert sich die mittlere Auslenkung hin zu größeren Werten, proportional zur Temperatur $T$. Die Gitterkonstante ändert sich also linear in der Temperatur, bzw. der Wärme-Ausdehnungskoeffizient $\alpha$ ist 
 \begin{equation}
-    \alpha = \frac{d}{dT} \frac{ \braket{x}}{r_0} = \frac{3 g k_B}{4 c^2 R_0}  \quad ,
+    \alpha = \frac{d}{dT} \frac{ \braket{x}}{R_0} = \frac{3 g k_B}{4 c^2 R_0}  \quad ,
 \end{equation}
 mit dem mittleren Bindungsabstand $R_0$ bei $T=0$.
+
+\begin{questions} 
+\item Wie groß ist ein typischer Wärme-Ausdehnungskoeffizient $\alpha$? Wie könnte man damit die Koeffizienten $c$ und $g$ des Potentials vergleichen?
+\item Warum nimmt man hier die Boltzmann-Verteilung, und nicht Bose-Einstein?
+\end{questions}
+ 
+
+
 
 % XXX TODO: Lösungen Anharm. Potential Kernwellenfunktionen und Verschiebung des Mittelwerts
 
@@ -131,9 +139,14 @@ Das kann man experimentell nachweisen. Zwei sich kreuzende Ultraschallwellen erz
 
 \begin{figure} 
     \input{\currfiledir fig_interaction.tikz.tex}
-    \caption{Phonon--Phonon--Wechselwirkung in polykristallinen Magnesium (\cite{RollinsJr1964}). Zwei Ultraschallwellen kreuzen sich unter dem Winkel $\phi$. Man detektiert im Winkel der Impulserhaltung die resultierende Amplitude. Falls eine der Wellen transversal, die andere longitudinal ist, dann beobachtet man eine Auslösung unter einem charakteristischen Winkel. }
+    \caption{Phonon--Phonon--Wechselwirkung in polykristallinem Magnesium (\cite{RollinsJr1964}). Zwei Ultraschallwellen kreuzen sich unter dem Winkel $\phi$. Man detektiert im Winkel der Impulserhaltung die resultierende Amplitude. Falls eine der Wellen transversal, die andere longitudinal ist, dann beobachtet man eine Auslöschung unter einem charakteristischen Winkel. }
     \label{fig:1_US_interaction}
 \end{figure}
+
+\begin{questions} 
+    \item Falls Sie die 'Moderne Optik' besucht haben: Könnte man diesen Effekt auch im Wellen-Bild beschreiben?
+\end{questions}
+     
 
 \section*{Wärmeleitfähigkeit}
 
@@ -141,11 +154,11 @@ Das kann man experimentell nachweisen. Zwei sich kreuzende Ultraschallwellen erz
 \begin{equation}
     \mathbf{j}_q = - K \, \nabla T \quad .
 \end{equation}
-Wir modellieren den Wärmestrom analog zur kinetischen Gastheorie  als Diffusion von Phononen. Wie auch schon bei der Wärmekapazität der Phononen steigt mit steigender Temperatur die Anzahl der Phononen bei den durch die Zustandsdichte erlaubten Frequenzen. Am warmen Ende des Stabes gibt es also mehr Phononen, die dann zum kalten Ende gelangen und so Energie transportieren. Dieser Transportprozess steckt in der Wärmeleitfähigkeit $K$. Die kinetischen Gastheorie  ergibt
+Wir modellieren den Wärmestrom analog zur kinetischen Gastheorie  als Diffusion von Phononen. Wie auch schon bei der Wärmekapazität der Phononen steigt mit steigender Temperatur die Anzahl der Phononen bei den durch die Zustandsdichte erlaubten Frequenzen. Am warmen Ende des Stabes gibt es also mehr Phononen, die dann zum kalten Ende gelangen und so Energie transportieren. Dieser Transportprozess steckt in der Wärmeleitfähigkeit $K$. Die kinetische Gastheorie  ergibt
 \begin{equation}
     K  = \frac{1}{3} \, C \, v \, \ell \quad , \label{eq:2_def_waermeleitf}
 \end{equation}
-mit der Wärmekapazität pro Volumen $C$, der Teilchengeschwindigkeit $v$ und der mittleren freien Weglänge $\ell$. Hier ist nun $C$ die Wärmekapazität der Phononen, $v$ deren Schallgeschwindigkeit und $\ell$ eine noch zu beschaffende mittlere freie Weglänge. Eigentlich sind alle drei Größen von der Frequenz und ggf. auch der Richtung abhängig. Dies ignorieren wir hier und verstehen sie als effektive Größen. Das ist die \emph{Dominante-Phononen-Näherung}, ähnlich wie beim EInstein-Modell die optischen Phononen als deltaförmige Zustandsdichte angenommen wurden.
+mit der Wärmekapazität pro Volumen $C$, der Teilchengeschwindigkeit $v$ und der mittleren freien Weglänge $\ell$. Hier ist nun $C$ die Wärmekapazität der Phononen, $v$ deren Schallgeschwindigkeit und $\ell$ eine noch zu beschaffende mittlere freie Weglänge. Eigentlich sind alle drei Größen von der Frequenz und ggf. auch der Richtung abhängig. Dies ignorieren wir hier und verstehen sie als effektive Größen. Das ist die \emph{Dominante-Phononen-Näherung}, ähnlich wie beim Einstein-Modell die optischen Phononen als deltaförmige Zustandsdichte angenommen wurden.
 
 
 
@@ -163,7 +176,7 @@ Die mittlere freie Weglänge kann rein geometrisch verstanden werden als Weglän
 \end{equation}
 In der Sprache der Streutheorie, wie beispielsweise bei der Röntgenstreuung, ist der Wechselwirkungsquerschnitt $\sigma$ proportional zum Betragsquadrat $|\mathcal{A}|^2$ der Streuamplitude.
 
-Dem Scheibchen-Bild nahe kommt die Streuung an Punktdefekten im Kristall. Wenn die Ausdehnung $a$ des Defekt viel kleiner als die Wellenlänge $\lambda$ des Phonons ist, dann ist die Physik völlig analog zur Rayleigh-Streuung, beispielsweise von Licht an Luft-Molekülen. Der Streuquerschnitt ist in diesem Fall
+Dem Scheibchen-Bild nahe kommt die Streuung an Punktdefekten im Kristall. Wenn die Ausdehnung $a$ des Defekts viel kleiner als die Wellenlänge $\lambda$ des Phonons ist, dann ist die Physik völlig analog zur Rayleigh-Streuung, beispielsweise von Licht an Luft-Molekülen. Der Streuquerschnitt ist in diesem Fall
 \begin{equation}
     \sigma \propto \frac{a^6}{\lambda^4} \quad \text{oder} \quad \propto a^6 \, \omega^4 \quad .
 \end{equation}
@@ -206,25 +219,29 @@ Bei der Streuung von Phononen in einem Kristall muss man allerdings den reziprok
 \begin{equation}
     \mathbf{k}_1 +  \mathbf{k}_2 =  \mathbf{k}_3 +  \mathbf{G}_{hkl}  \quad .
 \end{equation}
-Der reziproken Gittervektor $\mathbf{G}_{hkl}$ meint eine (unendliche) Menge von Vektoren, die sich aus den Linearkombinationen der primitiven Einheitsvektoren mit den Koeffizienten $h,k,l$ zusammensetzt. Damit unterscheiden wir den \emph{Normalprozess} ($\mathbf{G} = 0$) vom \emph{Umklapprozess} ($\mathbf{G} \neq 0$). Im Normalprozess gilt die Impulserhaltung in der strengen Form wie im Vakuum. Bei einem Gas von Phononen bleibt der Gesamtimpuls dann aber erhalten. Die Drift-Geschwindigkeit der Phononen kann sich nicht ändern und dieser Fall trägt nicht zu einem Wärmewiderstand bei.
+Der reziproken Gittervektor $\mathbf{G}_{hkl}$ meint eine (unendliche) Menge von Vektoren, die sich aus den Linearkombinationen der primitiven Einheitsvektoren mit den Koeffizienten $h,k,l$ zusammensetzt. Damit unterscheiden wir den \emph{Normalprozess} ($\mathbf{G} = 0$) vom \emph{Umklappprozess} ($\mathbf{G} \neq 0$). Im Normalprozess gilt die Impulserhaltung in der strengen Form wie im Vakuum. Bei einem Gas von Phononen bleibt der Gesamtimpuls dann aber erhalten. Die Drift-Geschwindigkeit der Phononen kann sich nicht ändern und dieser Fall trägt nicht zu einem Wärmewiderstand bei.
 
 \begin{marginfigure}
     \inputtikz{\currfiledir umklapp}
-   \caption{Skizze zum Umklapprozess. Wenn die Summe von zwei reziproken Vektoren außerhalb der Brillouin-Zone liegt, dann führt die Addition von $\mathbf{G}$ zur Änderung der Richtung. }
+   \caption{Skizze zum Umklappprozess. Wenn die Summe von zwei reziproken Vektoren außerhalb der Brillouin-Zone liegt, dann führt die Addition von $\mathbf{G}$ zur Änderung der Richtung. }
    \label{fig:1_umklapp}
 \end{marginfigure}
 
-Beim Umklapprozess kann sich aber die Richtung ändern. Die Summe $ \mathbf{k}_1 +  \mathbf{k}_2 $ kann gerade über die erste Brillouin-Zone hinaus reichen, wird durch $\mathbf{G}$ zurück verschoben und kann dann entgegen der ursprünglichen Vektoren zeigen (siehe Abbildung~\ref{fig:1_umklapp}). Damit ändert sich der Gesamtimpuls des Phononen-Gases, was einem Wärmewiderstand entspricht.
+Beim Umklappprozess kann sich aber die Richtung ändern. Die Summe $ \mathbf{k}_1 +  \mathbf{k}_2 $ kann gerade über die erste Brillouin-Zone hinaus reichen, wird durch $\mathbf{G}$ zurück verschoben und kann dann entgegen der ursprünglichen Vektoren zeigen (siehe Abbildung~\ref{fig:1_umklapp}). Damit ändert sich der Gesamtimpuls des Phononen-Gases, was einem Wärmewiderstand entspricht.
 
+\begin{questions} 
+    \item Zeigt Abbildung \ref{fig:1_umklapp} den Realraum oder den reziproken Raum?  Wie sieht das im anderen Raum aus?
+    \item Wie kommt es, dass hier die Impulserhaltung verletzt ist?
+\end{questions}
+     
 
+\section{Temperaturabhängigkeit des Umklappprozesses}
 
-\section{Temperaturabhängigkeit des Umklapprozesses}
-
-Damit der Umklapprozess stattfindet, muss
+Damit der Umklappprozess stattfindet, muss
 \begin{equation}
     | \mathbf{k}_1 +  \mathbf{k}_2| \ge \frac{1}{2} | \mathbf{G} | \quad ,
 \end{equation}
-wobei $\mathbf{G}$ hier den kleinsten reziproken Gittervektor meint. Wir benötigen die Energie der Phononen mit solchen Impulsen $\mathbf{k}_i$. Dazu nehmen wir das Debye-Modell an, also einen linearen Zusammenhang zwischen dem Betrag des Impulses und der Frequenz des Phonons und eine Debye-Temperatur $\Theta$.  Am Rand der Brillouin-Zone haben die Phononen in diesem Modell die Energie $k_B \Theta$, so dass eine chartereistische Energie für den Einsatz des Umklapprozesses $k_B \Theta / 2$ ist. Die Besetzungsdichte bei dieser Energie ist in der Boltzmann-Verteilung
+wobei $\mathbf{G}$ hier den kleinsten reziproken Gittervektor meint. Wir benötigen die Energie der Phononen mit solchen Impulsen $\mathbf{k}_i$. Dazu nehmen wir das Debye-Modell an, also einen linearen Zusammenhang zwischen dem Betrag des Impulses und der Frequenz des Phonons und eine Debye-Temperatur $\Theta$.  Am Rand der Brillouin-Zone haben die Phononen in diesem Modell die Energie $k_B \Theta$, so dass eine charakteristische Energie für den Einsatz des Umklappprozesses $k_B \Theta / 2$ ist. Die Besetzungsdichte bei dieser Energie ist in der Boltzmann-Verteilung
 \begin{equation}
     \braket{n} \propto \frac{1}{e^{\Theta / 2T} -1}
 \end{equation}
@@ -263,18 +280,17 @@ Für Silizium finden wir in den gemessenen Daten (Abb.~\ref{fig:1_WL_Si}) sowohl
     \label{fig:1_WL_NaF}
 \end{figure}
 
-\newpage
 
-% \begin{questions} 
-% \item Wie groß ist ein Molekül?
-% \item Welche physikalische Eigenschaft eine Moleküls wird bei Röntgenstreuung, STM und AFM abgebildet?
-% \end{questions}
+
+\begin{questions} 
+\item Beschreiben Sie in Ihren Worten, wie es zur Temperaturabhängigkeit der Wärmeleitfähigkeit kommt, insbesondere bei hohen und niedrigen Temperaturen.
+\end{questions}
  
 
 
 % Das Pluto-Skript hydrogen\_wave\_functions\pluto{hydrogen_wave_functions} ermöglicht es Ihnen, mit verschiedenen Varianten der grafischen Darstellung zu experimentieren.
 
-
+\newpage
 \section{Zusammenfassung}
 
 \textit{Schreiben Sie hier ihre persönliche Zusammenfassung des Kapitels auf. Konzentrieren Sie sich auf die wichtigsten Aspekte und die am Anfang genannten Ziele des Kapitels.}
