@@ -213,31 +213,29 @@ isbn=false]{biblatex}
   attach title to upper}
   
   
-\newcommand{\pluto}[1]{%
-%
-\edef\cfd{\currfiledir}%
-\StrGobbleRight{\cfd}{1}[\mystring]%
-%
-\sidenote{%
-\begin{tikzpicture}
-[baseline={([yshift=-2pt]current bounding box.center)}]
-\definecolor{redline}{RGB}{201,61,57}
-\definecolor{redfill}{RGB}{214,102,97}
-\definecolor{blueline}{RGB}{148,91,176}
-\definecolor{bluefill}{RGB}{170,125,192}
-\definecolor{greenline}{RGB}{59,151,46}
-\definecolor{greenfill}{RGB}{107,171,91}
-\path[draw=redline,fill=redfill,line width=0.8pt] (0,-5.4pt) circle (4.4pt);
-\path[draw=blueline,fill=bluefill,line width=0.8pt] (0,0) circle (4.4pt);
-\path[draw=greenline,fill=greenfill,line width=0.8pt] (0,5.4pt) circle (4.4pt);
-\end{tikzpicture} \ \ 
-\href{https://raw.githubusercontent.com/MarkusLippitz/Molekuele-und-Festkoerper/published/\mystring/pluto/#1.jl}{download}
-\ \ 
-\href{https://jupyter.ep3.uni-bayreuth.de/epc1/\mystring/pluto/#1.html}{view}
-\ \ 
-\href{https://binder.plutojl.org/v0.16.4/open?url=https\%253A\%252F\%252Fraw.githubusercontent.com\%252FMarkusLippitz\%252FMolekuele-und-Festkoerper\%252Fpublished\%252F\mystring\%252Fpluto\%252F#1.jl}{run on binder}
-}}  
-
+  \newcommand{\pluto}[1]{%
+  %
+  \edef\cfd{\currfiledir}%
+  \StrGobbleRight{\cfd}{1}[\mystring]%
+  %
+  \sidenote{%
+  \begin{tikzpicture}
+  [baseline={([yshift=-2pt]current bounding box.center)}]
+  \definecolor{redline}{RGB}{201,61,57}
+  \definecolor{redfill}{RGB}{214,102,97}
+  \definecolor{blueline}{RGB}{148,91,176}
+  \definecolor{bluefill}{RGB}{170,125,192}
+  \definecolor{greenline}{RGB}{59,151,46}
+  \definecolor{greenfill}{RGB}{107,171,91}
+  \path[draw=redline,fill=redfill,line width=0.8pt] (0,-5.4pt) circle (4.4pt);
+  \path[draw=blueline,fill=bluefill,line width=0.8pt] (0,0) circle (4.4pt);
+  \path[draw=greenline,fill=greenfill,line width=0.8pt] (0,5.4pt) circle (4.4pt);
+  \end{tikzpicture} \ \ 
+  \href{https://raw.githubusercontent.com/MarkusLippitz/Festkoerper-II/main/\mystring/pluto/#1.jl}{download}
+  \ \ 
+  \href{https://binder.plutojl.org/v0.19.12/open?url=https\%253A\%252F\%252Fraw.githubusercontent.com\%252FMarkusLippitz\%252FFestkoerper-II\%252Fmain\%252F\mystring\%252Fpluto\%252F#1.jl}{run on binder}
+  }}  
+  
 
 
 \usepackage[titletoc]{appendix}
