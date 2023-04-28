@@ -83,8 +83,9 @@ Um sie als Funktion der Energie zu erhalten benötigen wir wie bei den Phononen 
 \end{equation}
 und erhalten\sidenote{Für 3 Dimensionen. Niedrigdimensionale Strukturen kommen später.} 
 \begin{equation}
-    D'(E) dE = \frac{V}{\hbar (2 \pi)^3} \, dE \, \int_{E = \text{const.}} \frac{d S_E}{v_g}  \quad .
+    D'(E) dE = \frac{V}{\hbar (2 \pi)^3} \, dE \, \int_{E = \text{const.}} \frac{d S_E}{v_g}  
 \end{equation}
+wobei das Integral über eine Kugeloberfläche konstanter Energie im reziproken Raum läuft und $4 \pi k^2 / v_g$ ergibt.
 Jetzt müssen wir noch berücksichtigen, dass wir jeden Zustand nach dem Pauli-Prinzip mit zwei Elektronen unterschiedlichen Spins besetzen können:
 \begin{equation}
     D(E) dE = 2 D'(E) dE =  \frac{(2m)^{3/2}}{2 \pi^2 \hbar^3} \, V \,  \sqrt{E} \, dE \quad .
@@ -226,7 +227,7 @@ Dieses Modell beschreibt die Wärmekapazität von Alkali-Metallen und anderen 'e
 
 \section{Drude-Modell}
 
-Lassen Sie uns zunächst das Drude-Modell besprechen. Dies liefert das Ohm'sche Gesetz, also ein richtiges Ergebnis, aber aus heutiger Sicht aus den falschen Gründen. Es wurde 1900 von Paul Drude eingeführt. Die Annahmen sind ein freies Elektronengas, das eine mittlere thermische Geschwindigkeit $v_{th}$ besitzt. Die Elektronen stoßen mit den Atomrümpfen. Das externe elektrische Feld $\mathcal{E}$ überlagert der thermischen Bewegung eine Driftbewegung mit der Geschwindigkeit $v_d$. Die Bewegungsgleichung ist 
+Lassen Sie uns zunächst das Drude-Modell besprechen. Dies liefert das Ohm'sche Gesetz, also ein richtiges Ergebnis, aber aus heutiger Sicht aus den falschen Gründen. Es wurde 1900 von Paul Drude eingeführt. Die Annahmen sind ein freies Elektronengas, das eine mittlere thermische Geschwindigkeit $v_{th}$ besitzt. Die Elektronen stoßen mit den Atomrümpfen. Das externe elektrische Feld $\mathcal{E}$ überlagert der thermischen Bewegung eine Driftbewegung mit der Geschwindigkeit $\mathbf{v}_d$. Die Bewegungsgleichung ist 
 \begin{equation}
    m \frac{d \mathbf{v}}{dt} = -e \, \mathcal{E} - m \frac{\mathbf{v}_d}{\tau} \quad .
 \end{equation}
