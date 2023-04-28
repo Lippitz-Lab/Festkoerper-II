@@ -1,6 +1,6 @@
 %\renewcommand{\lastmod}{\today}
 \renewcommand{\chapterauthors}{Markus Lippitz}
-\renewcommand{\lastmod}{25. April  2023}
+\renewcommand{\lastmod}{28. April  2023}
  
 \chapter{Elektronen in Festkörpern}
 
@@ -19,7 +19,7 @@
 
 \begin{figure}
     \inputtikz{\currfiledir Alu_empty_lattice}
-    \caption{Die Bandstruktur von Aluminium in der Näherung quasi-freier Elektronen. Nur die Fourier-Koeffizienten $V_g$ wurden als von Null verschieden angenommen.  Das kommt der vollständigen Rechnung (\cite{Segall1961}) schon ziemlich nahe. Wenn das Potential vollständig ignoriert und nur die Periodizität des Kristalls berücksichtigt wird, dann erhält man den gestrichelten Verlauf. Pluto-Skript für diese Abbildung, basierend auf \cite{Polakovic_cmpm3}. \label{fig:3_al_empty_lattice}}
+    \caption{Die Bandstruktur von Aluminium in der Näherung quasi-freier Elektronen. Nur die Fourier-Koeffizienten $V_g$ wurden als von Null verschieden angenommen.  Das kommt der vollständigen Rechnung (\cite{Segall1961}) schon ziemlich nahe. Wenn das Potential vollständig ignoriert und nur die Periodizität des Kristalls berücksichtigt wird, dann erhält man den gestrichelten Verlauf. Rechnung basierend auf \cite{Polakovic_cmpm3}. \label{fig:3_al_empty_lattice}}
 \end{figure} 
   
 
@@ -89,12 +89,12 @@ Diese Gleichung muss für jedes $\mathbf{r}$ gelten, also muss der Inhalt der Kl
 Dieser Satz von Gleichung ist die \emph{Schrödinger-Gleichung im reziproken Raum}, für Elektronen in einem gitterperiodischen Potential. Dies ist ein unendlich großes Gleichungssystem, weil die Summe über $\mathbf{G}$ zunächst nicht beschränkt ist. In der Praxis zeigt sich aber, dass bei Coulomb-artigen Potentialen die Fourier-Koeffizienten  $ V_{\mathbf{G}} $ des Potentials schnell mit $|\mathbf{G}|$ abfallen, so dass letztendlich doch nicht so viele Gleichungen gekoppelt sind. 
 Auch koppelt das Gleichungssystem nicht alle Koeffizienten $C_i$ miteinander, sondern nur die, die  um einen reziproken Gittervektor $\mathbf{G}$ auseinander liegen, also $C_\mathbf{k}$ mit $C_\mathbf{k \pm G'}$, $C_\mathbf{k \pm G''}$, etc. 
 
-Oben in Gl.~\ref{eq:2_psi_allg} hatten wir die Wellenfunktion $\psi$ als Linearkombination von ebene Wellen geschrieben. Die Summe lief dabei über den vollständigen  reziproken Raum.
-Nun hat sich herausgestellt, dass nur manche Koeffizienten vorkommen, nämlich gerade die, die um $\mathbf{G}$ auseinander liegen.  Wir schreiben statt dessen mit weniger Summanden die Wellenfunktion $\psi$ 
+Oben in Gl.~\ref{eq:2_psi_allg} hatten wir die Wellenfunktion $\psi$ als Linearkombination von ebenen Wellen geschrieben. Die Summe lief dabei über den vollständigen  reziproken Raum.
+Nun hat sich herausgestellt, dass nur manche Koeffizienten vorkommen, nämlich gerade die, die um $\mathbf{G}$ auseinander liegen.  Wir schreiben stattdessen mit weniger Summanden die Wellenfunktion $\psi$ 
 \begin{equation}
     \psi_\mathbf{k}(\mathbf{r}) =  \sum_{\mathbf{G}} C_{\mathbf{k}-\mathbf{G}} \, e^{i (\mathbf{k}- \mathbf{G}) \cdot \mathbf{r} } 
 \end{equation}
-wobei der Wellevektor $\mathbf{k}$ jetzt als Quantenzahl gesehen wird. Wir können ihn immer so wählen, dass er in der ersten Brillouinzone liegt.\sidenote{Den Rest kann man immer in die Summe über $\mathbf{G}$ verschieben.} Ebenso bekommt die Energie $E$ aus Gl.~\ref{eq:2_SG_rezi} ein   $\mathbf{k}$ als Index
+wobei der Wellenvektor $\mathbf{k}$ jetzt als Quantenzahl gesehen wird. Wir können ihn immer so wählen, dass er in der ersten Brillouinzone liegt.\sidenote{Den Rest kann man immer in die Summe über $\mathbf{G}$ verschieben.} Ebenso bekommt die Energie $E$ aus Gl.~\ref{eq:2_SG_rezi} ein   $\mathbf{k}$ als Index
 \begin{equation}
     E_\mathbf{k} = E(\mathbf{k}) \quad .
 \end{equation}
@@ -106,7 +106,7 @@ mit $\mathbf{k}$ innerhalb der ersten Brillouinzone.
 Der Index  $n$ nennt sich Band-Index und ist so sortiert, dass die Energien $E_n$ aufsteigend sind.
 
 \begin{questions}
-    \item Wie kommt es, dass aus einer Schrödingergleichung im Realraum jetzt ein ganzes Gleichungssystem (\ref{eq:2_SG_rezi} in reziproken Raum wird?
+    \item Wie kommt es, dass aus einer Schrödingergleichung im Realraum jetzt ein ganzes Gleichungssystem (\ref{eq:2_SG_rezi}) in reziproken Raum wird?
     \item Skizzieren Sie eine Elektronen-Wellenfunktion mit $k$ innerhalb und außerhalb der ersten Brillouinzone.
 \end{questions}
 
@@ -115,7 +115,7 @@ Der Index  $n$ nennt sich Band-Index und ist so sortiert, dass die Energien $E_n
 
 \begin{marginfigure}
     \inputtikz{\currfiledir fig_bloch_example}
-    \caption{Die Wellefunktion $\psi$ ist das Produkt einer ebenen Welle $e^{i k x}$ mit einer gitterperiodischen Funktion $u_k(x)$. Dargestellt ist jeweils der Realteil. Graue Kreise symbolisieren die Atomkerne. }
+    \caption{Die Wellenfunktion $\psi$ ist das Produkt einer ebenen Welle $e^{i k x}$ mit einer gitterperiodischen Funktion $u_k(x)$. Dargestellt ist jeweils der Realteil. Graue Kreise symbolisieren die Atomkerne. }
 \end{marginfigure}
 
 
@@ -157,16 +157,21 @@ Jetzt nehmen wir die Periodizität hinzu:
 \begin{equation}
     E_n(\mathbf{k}) = E(\mathbf{k} + \mathbf{G}_n) \frac{\hbar^2}{2m} \left| \mathbf{k} + \mathbf{G}_n \right|^2 \quad \text{und} \quad \psi_n = e^{i (\mathbf{k} + \mathbf{G}_n) \cdot \mathbf{r}} \quad .
 \end{equation}
-Im Eindimensionen sind das Parabeln, die von jedem Punkt  $\mathbf{G}_n $ im reziproken Raum starten. Diese Darstellung nennt man \emph{periodisches Zonenschema}. Aufgrund der Periodizität ist aber alle Information schon in der ersten Brillouinzone enthalten. Man kann die Darstellung also auf diese beschränken. Dies nennt man  \emph{reduziertes Zonenschema}. Man kann sich das so vorstellen, dass die Parabel ausgehend von  $\mathbf{k} = 0$  an den Grenzen der Brillouinzone zurückgefaltet wird. Wenn sie dann später nochmals auf eine Grenze trifft, wird sie wieder gefaltet.
+Im Eindimensionalen sind das Parabeln, die von jedem Punkt  $\mathbf{G}_n $ im reziproken Raum starten. Diese Darstellung nennt man \emph{periodisches Zonenschema}. Aufgrund der Periodizität ist aber alle Information schon in der ersten Brillouinzone enthalten. Man kann die Darstellung also auf diese beschränken. Dies nennt man  \emph{reduziertes Zonenschema}. Man kann sich das so vorstellen, dass die Parabel ausgehend von  $\mathbf{k} = 0$  an den Grenzen der Brillouinzone zurückgefaltet wird. Wenn sie dann später nochmals auf eine Grenze trifft, wird sie wieder gefaltet.
 
 
-Im Dreidimensionalen zeichnet man die Energie entlang eines Pfades durch den reziprokem Raum, beispielsweise entlang der $x$-Komponente des Wellenvektors. Dann 
+Im Dreidimensionalen zeichnet man die Energie entlang eines Pfades durch den reziproken Raum, beispielsweise entlang der $x$-Komponente des Wellenvektors. Dann 
 kommt zu den Rück-Faltungen noch hinzu, dass es einen Offset aufgrund der $y$ und $z$-Komponenten in $\mathbf{G}_n $ gibt. Dies allein erklärt schon einen großen Teil der Dispersionsrelation, nämlich die gestrichelten Linien in Abb.~\ref{fig:3_al_empty_lattice}.
 
 \begin{figure}
     \inputtikz{\currfiledir fig_zone_scheme}
    \caption{Zonenschemata. Die vertikalen Linien geben die Grenzen der Brillouinzonen wieder (bei ganzzahligen Vielfachen von $\pi/a$, aber nicht $k=0$). \label{fig:3_zone_scheme}}
 \end{figure}
+
+\begin{questions}
+    \item Skizzieren Sie für ein dreidimensionales kubisch-primitives Gitter die Dispersionsrelation entlang $k_x$ in der Näherung $V \approx 0$.
+\end{questions}
+
 
 
 \section{Näherung der beinahe freien Elektronen}
@@ -192,7 +197,7 @@ Damit wird die Schrödingergleichung \ref{eq:2_SG_rezi} zu
  = 0  \quad . 
  \label{eq:2_SG_empty_lattice} 
 \end{equation}
-Die dreidimensionale Lösung dieses Gleichungssystems ist in Abb.~\ref{fig:3_al_empty_lattice} dargestellt und kommt der vollständigen Rechnung schon sehr nahe. Das Pluto-Skript \pluto{al_dispersion} für diese Abbildung ist inspiriert von \cite{Polakovic_cmpm3}.
+Die dreidimensionale Lösung dieses Gleichungssystems ist in Abb.~\ref{fig:3_al_empty_lattice} dargestellt und kommt der vollständigen Rechnung schon sehr nahe. Das Pluto-Skript\pluto{al_dispersion} für diese Abbildung ist inspiriert von \cite{Polakovic_cmpm3}.
 
 Interessant wird es an der Grenze der Brillouinzone, also bei $k = \pm g/2$. Dort schneiden sich zwei Parabeln. Die Zustände sind ohne Potential also energetisch entartet. Lassen Sie uns diese Stelle im Fall von  $V_{\pm g} \neq 0$ genauer betrachten. Bei beispielsweise $k = + g/2$  sind die ersten beiden Diagonalelemente von Gl. \ref{eq:2_SG_empty_lattice} nahe Null, das dritte betragsmäßig deutlich größer. Damit die dritte Zeile sich trotzdem zu Null summiert, muss also hier $C_{k+g} \approx 0$ sein. Andersherum: An der rechten Grenze der Brillouinzone schneiden sich die Parabeln, die von $G =0$ und von $G=+g$ ausgehen. Nur diese beiden Koeffizienten $C_{k-G}$ bzw. diese ebenen Wellen tragen bei. Das Gleichungssystem wird noch einfacher 
 \begin{equation}
@@ -218,6 +223,10 @@ Wir nehmen weiterhin an, dass das Potential inversionssymmetrisch ist, also $V_g
 
 An der Grenze der Brillouinzone bildet sich eine \emph{Bandlücke}: während vorher alle Energiewerte (bei entsprechendem $k$) möglich waren, so gibt es nun keine Zustände mehr mit Energien  im Bereich $E_k^0   \pm  V_g$. Die Größe der Bandlücke ist also $2 V_g$ und ihr Auftreten direkt verbunden mit den Fourier-Koeffizienten $V_{\pm g}$ des Potentials.
 Die Dispersionsrelation $E(k)$ nähert sich mit horizontaler Asymptote der Grenze der Brillouinzone, also ist die Gruppengeschwindigkeit Null, was einer stehenden Welle entspricht. In erster Näherung ist der Bandverlauf in der Nähe der Bandlücke parabelförmig. 
+
+\begin{questions}
+    \item Lesen Sie den Blog-Artikel \cite{Polakovic_cmpm3}. Das sollten Sie jetzt alles gut verstehen.
+\end{questions}
 
 
 \section*{Anschauliche Interpretation I}
@@ -303,7 +312,7 @@ Als Beispiel betrachten wir ein kubisch-primitives Gitter, erlauben nur Wechselw
 \begin{equation}
     E = \tilde{E} - \alpha - 2 \beta \left[ \cos( k_x a ) +  \cos( k_y a ) +  \cos( k_z a ) \right] \quad .
 \end{equation}
-Insgesamt wird damit ein Band der Breite $\tilde{E} - \alpha \pm  6 \beta $ abgedeckt. Das Band hat einen Kosinus-förmigen Verlauf. Am $\Gamma$-Punkt und an der Grenze der Brillouinzone stimmt es somit mit dem parabelförmigen Verlauf des Näherung quasi-feier Elektronen überein. 
+Insgesamt wird damit ein Band der Breite $\tilde{E} - \alpha \pm  6 \beta $ abgedeckt. Das Band hat einen Kosinus-förmigen Verlauf. Am $\Gamma$-Punkt und an der Grenze der Brillouinzone stimmt es somit mit dem parabelförmigen Verlauf der Näherung quasi-feier Elektronen überein. 
 
 
 % \section{Beispiel: Diamant und Kaliumchlorid (\ch{KCl}) }
@@ -336,12 +345,12 @@ Wir hatten oben die Wellenfunktion des Elektrons als (ebene) Bloch-Welle geschri
 die zwar eine gitterperiodische Modulation $u_\mathbf{k}(\mathbf{r})$ besitzt, aber ansonsten räumlich unendlich ausgedehnt ist. Das ist für Transportprozesse ungeeignet. Das Teilchen-Bild ist besser an die Fragestellung angepasst. Wir bauen also aus verschiedenen Bloch-Wellen ein Wellenpaket, das sich dann wie ein Teilchen benimmt:
 \begin{eqnarray}
    \psi_{n, \mathbf{k}}(\mathbf{r},t) =  & \sum_{\mathbf{k}'}  a(\mathbf{k}') \, \phi_\mathbf{k'}(\mathbf{r}) \, e^{-i E_n(\mathbf{k}') t / \hbar} \\
-   & \sum_{\mathbf{k}'}  a(\mathbf{k}') \,  u_\mathbf{k}(\mathbf{r}) \, e^{i (\mathbf{k} \cdot \mathbf{r}  - E_n(\mathbf{k}') t / \hbar )} \quad ,
+   = & \sum_{\mathbf{k}'}  a(\mathbf{k}') \,  u_\mathbf{k}(\mathbf{r}) \, e^{i (\mathbf{k}' \cdot \mathbf{r}  - E_n(\mathbf{k}') t / \hbar )} \quad ,
 \end{eqnarray}
 wobei die Summe in $\mathbf{k}'$ über das Intervall $\mathbf{k} \pm \delta \mathbf{k} / 2$ läuft. $E_n(\mathbf{k}')$ ist die Dispersionsrelation des $n$-ten Bandes.
 Die Idee ist, dem Wellenpaket des Elektrons eine Gruppengeschwindigkeit $\mathbf{v}_n$ zuzuordnen, über
 \begin{equation}
-   \mathbf{v}_n = \frac{1}{\hbar} \frac{\partial E_n(\mathbf{k})}{\partial \mathbf{k}} \label{eq:3_v_gruppe}
+   \mathbf{v}_n = \frac{1}{\hbar} \frac{\partial E_n(\mathbf{k})}{\partial \mathbf{k}} \quad . \label{eq:3_v_gruppe}
 \end{equation}
 Dazu muss aber $\mathbf{k}$ gut genug definiert sein, also $\delta \mathbf{k}$ klein genug, insbesondere gegenüber der Größe der Brillouinzone. Das geht dann, wenn der Gitterabstand im Realraum viel kleiner ist als die Ausdehnung des Wellenpakets, die wiederum viel kleiner sein muss als die Wellenlänge des externen elektrischen Feldes. Dies nennt man ein semi-klassisches Modell. Da sich der Bandindex $n$ in unserem Modell nicht ändern kann lassen wir ihn zukünftig weg.
 
@@ -372,11 +381,11 @@ wobei wir im zweiten Schritt Zähler und Nenner mit $\partial \mathbf{k}$ erweit
 \end{equation}
 Den Tensor $m^\star$ nennt man \emph{effektive Masse}. Er beschreibt die dynamischen Eigenschaften des Elektrons im Kristall und ist gegeben durch die Krümmung (also zweite Ableitung) der Dispersionsrelation. Der Tensor ist symmetrisch und lässt sich auf drei Hauptachsen transformieren. Wenn die alle gleich groß sind, dann vereinfacht sich alles zu
 \begin{equation}
-   m^\star(k) = \frac{\hbar^2}{d^2 E(k)/dk^2}
+   m^\star(k) = \frac{\hbar^2}{\partial ^2 E(k)/ \partial k^2} \quad .
 \end{equation}
 Das ist beispielsweise in der Nähe der Ober- und Unterkanten eines Bandes der Fall, wo wir die Dispersionsrelation nähern können als
 \begin{equation}
-   E_\mathbf{k} = E_0 \pm \frac{\hbar^2}{2 m^\star} \left(k_x^2 + k_y^2 + k_z^2 \right) \label{eq:3_parabel_band}
+   E_\mathbf{k} = E_0 \pm \frac{\hbar^2}{2 m^\star} \left(k_x^2 + k_y^2 + k_z^2 \right) \quad . \label{eq:3_parabel_band}
 \end{equation}
 Die effektive Masse ist also der Parameter, der die (inverse) Breite eines parabelförmigen Bandes beschreibt. Stark gekrümmte Bänder haben eine geringe effektive Masse, und andersherum.
 
