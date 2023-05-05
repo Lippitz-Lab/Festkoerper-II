@@ -1,6 +1,6 @@
 %\renewcommand{\lastmod}{\today}
 \renewcommand{\chapterauthors}{Markus Lippitz}
-\renewcommand{\lastmod}{28. April 2023}
+\renewcommand{\lastmod}{5. Mai 2023}
 
 \chapter{Fermi-Gas}
 
@@ -227,14 +227,14 @@ Dieses Modell beschreibt die Wärmekapazität von Alkali-Metallen und anderen 'e
 
 \section{Drude-Modell}
 
-Lassen Sie uns zunächst das Drude-Modell besprechen. Dies liefert das Ohm'sche Gesetz, also ein richtiges Ergebnis, aber aus heutiger Sicht aus den falschen Gründen. Es wurde 1900 von Paul Drude eingeführt. Die Annahmen sind ein freies Elektronengas, das eine mittlere thermische Geschwindigkeit $v_{th}$ besitzt. Die Elektronen stoßen mit den Atomrümpfen. Das externe elektrische Feld $\mathcal{E}$ überlagert der thermischen Bewegung eine Driftbewegung mit der Geschwindigkeit $\mathbf{v}_d$. Die Bewegungsgleichung ist 
+Lassen Sie uns zunächst das Drude-Modell besprechen. Dies liefert das Ohm'sche Gesetz, also ein richtiges Ergebnis, aber aus heutiger Sicht aus den falschen Gründen. Es wurde 1900 von Paul Drude eingeführt. Die Annahmen sind ein freies Elektronengas, das nur mit den  Atomrümpfen, aber nicht miteinander stößt. Ohne externes Feld bewegen die Elektronen sich thermisch, aber ohne Vorzugsrichtung. Der Mittelwert über alle (vektoriellen) Geschwindigkeiten des Elektronengases ist also $\braket{\mathbf{v}} = 0$. Das externe elektrische Feld $\mathcal{E}$ überlagert der thermischen Bewegung eine Driftbewegung mit der Geschwindigkeit $\mathbf{v}_d = \braket{\mathbf{v}}$. Nach einem Abschalten des Feldes würde die Driftbewegung durch die Stöße langsam zum Erliegen kommen. Die Bewegungsgleichung ist also\footcite{Singleton_band_theory,Simon_solid_state_basics}
 \begin{equation}
-   m \frac{d \mathbf{v}}{dt} = -e \, \mathcal{E} - m \frac{\mathbf{v}_d}{\tau} \quad .
+   m \frac{d \braket{\mathbf{v}} }{dt} = -e \, \mathcal{E} - m \frac{\braket{\mathbf{v}} }{\tau} \quad .
 \end{equation}
-Der letzte Term ist eine Art Reibungskraft, die durch die Stöße der Elektronen entsteht. $\tau$ ist dabei die mittlere Zeit zwischen zwei Stößen. Im stationären Fall 
-($d \mathbf{v} / dt = 0$) erhält man   
+$\tau$ ist dabei die mittlere Zeit zwischen zwei Stößen. Im stationären Fall 
+($d \braket{\mathbf{v}} / dt = 0$) erhält man   
 \begin{equation}
-   \mathbf{v}_d = - \frac{e \tau}{m} \mathcal{E} = - \mu \mathcal{E} 
+   \mathbf{v}_d =\braket{\mathbf{v}} =  - \frac{e \tau}{m} \mathcal{E} = - \mu \mathcal{E} 
    \quad \text{mit} \quad
     \mu = \frac{| \mathbf{v}_d |}{|\mathcal{E}|} = \frac{e \tau}{m}
 \end{equation}
@@ -250,8 +250,7 @@ Dieses Modell ignoriert völlig das Pauli-Prinzip und dass es eine Fermi-Dirac-V
 
 \section{Drude-Sommerfeld-Modell}
 
-Arnold Sommerfeld entwickelte eine verbesserte Theorie. Die Elektronen sind quasi frei, es gilt die Schrödinger-Gleichung und das Pauli-Prinzip. Wir machen aber die Annahme, dass die Fermi-Fläche eine Kugel ist, die Bandstruktur also isotrop und insbesondere das Band nur halb gefüllt, so dass die Fermi-Fläche weit von der Grenze der Brillouinzone entfernt ist.
-
+Arnold Sommerfeld entwickelte eine verbesserte Theorie. Die Elektronen sind quasi frei, es gilt die Schrödinger-Gleichung und das Pauli-Prinzip. Die Fermi-Fläche sei eine Kugel\sidenote{Was in diesem Kapitel trivial ist, später aber bedeutet, dass nur der Betrag des Wellenvektors $k$ in die Energie eingeht und die Fermi-Fläche den Rand der Brillouinzone nicht berührt.}.
 Ohne externes Feld fliest im thermischen Gleichgewicht kein Strom, weil die Fermi-Kugel um $\mathbf{k} = 0$ zentriert ist. Weil wir Isotropie angenommen haben gibt es auch in nur teilweise gefüllten Bändern für jedes Elektron mit $\mathbf{k}$ eines mit  $-\mathbf{k}$.
 
 Eine externes Feld $\bm{\mathcal{E}}$ bewegt  jedes Elektron und damit die gesamte Fermikugel kontinuierlich immer weiter von der Gleichgewichtsposition weg:
