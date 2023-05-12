@@ -1,0 +1,100 @@
+% \documentclass{standalone}
+% \usepackage{currfile,hyperxmp}
+
+% \input{../tikz_header.tex}
+
+% \begin{document}
+
+
+
+\begin{tikzpicture}
+%\useasboundingbox (-1.5,-1.0) rectangle (9.1,4.2);
+%\draw (-2.75,-3.25) rectangle +(5,5);
+
+\begin{scope}
+
+\tikzmath{ \a = 0.3; \r = 0.8 * \a;}
+
+\begin{scope}[xshift=-1.5cm, yshift=0.25cm]
+  \draw[thin] (-2*\a, -2*\a) rectangle (2*\a, 2*\a);
+  \draw[thin, fill=gray] (0,0) circle (2*\r);
+  \node[above right,inner sep=0,outer sep=0] at (-2*\a, 2*\a) {\footnotesize 1.BZ};
+\end{scope}
+
+\node[below,rotate= 90] at (0, 0) {\footnotesize 1.BZ};
+
+\foreach \i in {1,2,3}
+ {
+  \foreach \j in {0,1}
+  {
+    \begin{scope}[xshift=2*\i*\a*1cm, yshift=2*\j*\a*1cm]
+       \draw[thin] (-\a, -\a) rectangle (\a, \a);
+        \draw[thin, fill=gray] (0,0) circle (\r);    
+    \end{scope}
+  }
+ }
+
+\end{scope}
+
+
+\begin{scope}[yshift=-2.5cm]
+
+  \tikzmath{ \a = 0.3;  \r = 1.2 * \a; \b = \a * sqrt(2);}
+  
+  \begin{scope}[xshift=-1.5cm, yshift=+0.5cm]
+      \draw[thin, fill=gray] (0,0) circle (2*\r);
+       \draw[thin] (-2*\a, -2*\a) rectangle (2*\a, 2*\a);
+        \draw[thin,rotate around={45:(0,0)}]   (-2*\b, -2*\b) rectangle (2*\b, 2*\b);
+        \node[above right,inner sep=0,outer sep=0] at (-2*\a, 2*\a) {\footnotesize 1.BZ};
+
+        \node[yshift=2.5mm, xshift=2.5mm, inner sep=0,outer sep=0,rotate= -45] at (0, {sqrt(2)*2*\a}) {\footnotesize 2.BZ};
+      \end{scope}
+
+  \begin{scope} [yshift=0.9cm]
+    \node[below, rotate= 90] at (0, 0) {\footnotesize 1.BZ};
+
+      \foreach \i in {1,2,3}
+    {
+      \foreach \j in {0,1}
+      {
+        \begin{scope}[xshift=2*\i*\a*1cm, yshift=2*\j*\a*1cm]
+          \draw[thin] (-\a, -\a) rectangle (\a, \a);
+          \begin{scope}
+                    \clip (-\a, -\a) rectangle (\a, \a);
+                    \draw[thin, fill=gray]  (0,0) circle (\r);   
+                \end{scope}
+        \end{scope}
+      }
+    }
+  \end{scope}
+    
+
+  \begin{scope} [yshift=-0.5cm]
+    \node[below, rotate= 90] at (0, 0) {\footnotesize 2.BZ};
+
+    \foreach \i in {1,2,3}
+  {
+    \foreach \j in {0,1}
+    {
+      \begin{scope}[xshift=2*\i*\a*1cm, yshift=2*\j*\a*1cm]
+          \draw[thin] (-\a, -\a) rectangle (\a, \a);
+          \begin{scope}
+            \clip(-\a, -\a) rectangle (\a, \a);
+            \foreach \u in {+1,-1}
+            {
+              \draw[thin, fill=gray] (2*\u*\a, 0) circle (\r);
+              \draw[thin, fill=gray] (0,2*\u*\a) circle (\r);
+            }
+          \end{scope}
+      \end{scope}
+    }
+  }
+\end{scope}
+
+
+
+  \end{scope}
+
+\end{tikzpicture}
+
+%\end{document}
