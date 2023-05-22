@@ -1,6 +1,6 @@
 %\renewcommand{\lastmod}{\today}
 \renewcommand{\chapterauthors}{Markus Lippitz}
-\renewcommand{\lastmod}{12. Mai 2023} 
+\renewcommand{\lastmod}{22. Mai 2023} 
 
 \chapter{Kristall-Elektronen im Magnetfeld}
 
@@ -127,7 +127,7 @@ Beim freien Elektron ändert sich die Länge des Wellenvektors $k$ nicht. Die um
 Nur im Fall freier Elektronen ist die Masse $\tilde{m}$ die Ruhemasse des Elektrons. Ansonsten behält man aber diesen Zusammenhang bei und steckt das Ergebnis von Gl.~\ref{eq:4_t_zykl} in die 
  \emph{Zyklotron-Masse}, die sich von der effektivem Masse $m^\star$ unterscheidet.
 
-Bislang haben wir zwar Kreisfrequenzen, aber noch keine Absorption. Alle Elektronen bewegen sich auf geschlossenen Bahnen, nehmen dabei aber keine Energie auf, weil ja gerade $E (\mathbf{k}) = \text{const.}$ gilt. Nun strahlen wir Mikrowellen der Frequenz $\omega_{RF} = \omega_c$ ein. Nur Elektronen in der Nähe der Fermi-Energie also der Fermi-Fläche können Energie aufnehmen. Die Zyklotron-Resonanz misst also die Länge der Bahnen auf der Fermi-Fläche; je nach Orientierung des Magenfeldes laufen die Bahnen in unterschiedlichen Flächen. Scharfe Resonanzen bekommt man nur, wenn die mittlere Stoßzeit klein gegenüber der Umlaufzeit ist, also mehrere Umläufe ungestört absolviert werden können. Man benutzt also hohe Magnetfelder und damit hohe Umlauf-Frequenzen sowie tiefe Temperaturen und reine Substanzen.
+Bislang haben wir zwar Kreisfrequenzen, aber noch keine Absorption. Alle Elektronen bewegen sich auf geschlossenen Bahnen, nehmen dabei aber keine Energie auf, weil ja gerade $E (\mathbf{k}) = \text{const.}$ gilt. Nun strahlen wir Mikrowellen der Frequenz $\omega_{RF} = \omega_c$ ein. Nur Elektronen in der Nähe der Fermi-Energie also der Fermi-Fläche können Energie aufnehmen. Die Zyklotron-Resonanz misst also die Länge der Bahnen auf der Fermi-Fläche; je nach Orientierung des Magenfeldes laufen die Bahnen in unterschiedlichen Flächen. Scharfe Resonanzen bekommt man nur, wenn die mittlere Stoßzeit groß gegenüber der Umlaufzeit ist, also mehrere Umläufe ungestört absolviert werden können. Man benutzt also hohe Magnetfelder und damit hohe Umlauf-Frequenzen sowie tiefe Temperaturen und reine Substanzen.
 
 Weiterhin tragen nur \emph{extremale Bahnen} bei. Das sind Bahnen, bei denen es viele Bahnen ähnlicher Frequenz gibt,
 oder andersherum sich die Frequenz nur geringfügig ändert, wenn die die Komponenten des Wellenvektors parallel zum Magnetfeld sich ändert, die Bahn also stabil gegen Störungen ist. 
@@ -161,7 +161,7 @@ Germanium (\ch{Ge}) ist ein indirekter Halbleiter mit kubisch-flächenzentrierte
 Die Form dieser Iso-Energie-Fläche haben \cite{Dresselhaus1955} durch Zyklotron-Resonanz bestimmt. Es ist im Experiment viel einfacher, den Mikrowellengenerator bei konstanter Frequenz zu betreiben und die Amplitude und Richtung des Magnetfelds zu variieren. Es ist also immer 
 $\omega_c = 2 \pi \cdot 24$~GHz. Abbildung \ref{fig:4_Germanium_res}(links) zeigt das Resonanz-Spektrum für eine bestimmtem Orientierung des Magnetfelds relativ zur Probe. Man findet fünf Resonanzen, von denen sich die mittleren drei den Elektronen im Leitungsband zuordnen lassen. In der gewählten Anordnung von Probe und Magnetfeld sind zwei der vier Ellipsoide äquivalent, so dass effektiv drei verschiedene Ellipsoide sichtbar sind, die jeder eine Resonanz im Spektrum ergeben.
 
-Dann wird die Richtung des Magnetfelds in der [110]-Ebene variiert.\sidenote{Siehe Festkörperphysik I zur Definiton von Ebenen und Richtungen. Insbesondere benennt man Richtungen in fcc-Kristallen  mit sc-Koordinaten.}  Angegeben ist jeweils der Winkel $\theta$ zur [001]-Achse. Mit dem Winkel ändert sich die Schnittebene, auf der die Zyklotron-Bahnen laufen und somit deren Fläche. Man kann die Ellipsoide durch zwei effektive Massen $m_l$, $m_t$ in longitudinaler und transversaler Richtung beschreiben. Bei einem Winkel $\alpha$ zwischen Magnetfeld und langer Achse des Ellipsoiden ergibt sich eine effektive Masse $m_{ell}$
+Dann wird die Richtung des Magnetfelds in der (110)-Ebene variiert.\sidenote{Siehe Festkörperphysik I zur Definiton von Ebenen und Richtungen. Insbesondere benennt man Richtungen in fcc-Kristallen  mit sc-Koordinaten.}  Angegeben ist jeweils der Winkel $\theta$ zur [001]-Achse. Mit dem Winkel ändert sich die Schnittebene, auf der die Zyklotron-Bahnen laufen und somit deren Fläche. Man kann die Ellipsoide durch zwei effektive Massen $m_l$, $m_t$ in longitudinaler und transversaler Richtung beschreiben. Bei einem Winkel $\alpha$ zwischen Magnetfeld und langer Achse des Ellipsoiden ergibt sich eine effektive Masse $m_{ell}$
 \begin{equation}
    \left( \frac{1}{m_{ell}} \right)^2 = \frac{\cos^2 \alpha}{m_t^2} + \frac{\sin^2 \alpha}{m_t \, m_l} \quad .
 \end{equation}
@@ -385,7 +385,7 @@ Wir verlassen für einen Augenblick die quantenmechanische Beschreibung und betr
    \caption{Geometrie zum Hall-Effekt.}
 \end{marginfigure}
 
-Wir betrachten die Bewegung eines quasi-freien Elektrons unter elektrischen und magnetischen Feldern und berücksichtigen Stöße wie im Drude-Modell. Relevant ist die mittlere Geschwindigkeit $\mathbf{v}_d = \braket{\mathbf{v}}$, bei der also die thermische Bewegung herausgemittelt ist. Für diese gilt
+Wir betrachten die Bewegung eines quasi-freien Elektrons ($q=-e$) unter elektrischen und magnetischen Feldern und berücksichtigen Stöße wie im Drude-Modell. Relevant ist die mittlere Geschwindigkeit $\mathbf{v}_d = \braket{\mathbf{v}}$, bei der also die thermische Bewegung herausgemittelt ist. Für diese gilt
 \begin{equation}
    m^\star \frac{d \braket{\mathbf{v} }} {dt} = 
    -e \left[ \bm{\mathcal{E}} + \braket{\mathbf{v}} \times \bm{B} \right] 
