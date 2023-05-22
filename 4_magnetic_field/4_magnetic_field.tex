@@ -108,6 +108,12 @@ Die Änderung des Wellenvektors steht also senkrecht auf dem Magnetfeld und dem 
 \begin{equation}
    |d\mathbf{k}|  =  \frac{e}{\hbar^2} \, B \, |d E /dk_\perp | \, dt  \quad .
 \end{equation}
+%
+\begin{marginfigure}
+   \inputtikz{\currfiledir dsde_sketch}
+   \caption{Die Fläche $dS$ ist ein Kreisintegral über $|d\mathbf{k}|$ mit der 'Dicke' $d\mathbf{k}_\perp$.}
+\end{marginfigure}
+
 Die Umlaufzeit $T$ ist
 \begin{equation}
    T = \oint dt =  {\hbar^2}{e B } \oint \frac{ |d\mathbf{k}|  }{|d E /dk_\perp |}
@@ -338,7 +344,7 @@ auf.
 
 Interessanter ist aber die Größe $S_F$ des höchsten besetzten Landau-Niveaus im reziproken Raum. Dies ist der Schnitt der Fermi-Fläche in  einer Ebene senkrecht zum Magnetfeld und erlaubt und so, die Fermi-Fläche auszumessen. Sei bei einem Feld $B_n$ gerade $n$ Landau-Niveaus voll besetzt. Die Größe $S_F$ des obersten Niveaus im reziproken Raums ist durch Gl. \ref{eq:4_Sn} gegeben:
 \begin{equation}
-   S_F =  \frac{2 \pi e B_n}{\hbar} \left( n + \frac{1}{2}\right)  = \frac{2 \pi e B_{n+1}}{\hbar} \left( n + 1+ \frac{1}{2}\right)  
+   S_F =  \frac{2 \pi e B_n}{\hbar} \left( n + \frac{1}{2}\right)  \overset{!}{=} \frac{2 \pi e B_{n+1}}{\hbar} \left( n + 1+ \frac{1}{2}\right)  
 \end{equation}
 so dass
 \begin{equation}
