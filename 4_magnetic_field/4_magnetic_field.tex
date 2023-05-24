@@ -403,11 +403,11 @@ Das Magnetfeld zeigt in $z$-Richtung und wir sind nur am stationären Fall inter
    v_{d,y} =& - \frac{e \tau}{m^\star} ( \mathcal{E}_y - v_{d,x} B ) \\
    v_{d,z} =& - \frac{e \tau}{m^\star} \mathcal{E}_z  \quad .
 \end{eqnarray}
-Mit der Definition der Stromdichte $\mathbf{j} = - e n \mathbf{v}_d = \mathbf{\sigma} \bm{\mathcal{E}}$ 
+Mit der Definition der Stromdichte $\mathbf{j} = - e n \mathbf{v}_d = \bm{\sigma} \bm{\mathcal{E}}$ 
  und der Zyklotron-Frequenz $\omega_c = e B /m^\star$ 
- bekommen wir den Leitfähigkeitstensor $\mathbf{\sigma}$
+ bekommen wir den Leitfähigkeitstensor $\bm{\sigma}$
 \begin{equation}
-   \mathbf{\sigma} = \frac{\sigma_0}{ 1+ \omega_c^2 \tau^2}
+   \bm{\sigma} = \frac{\sigma_0}{ 1+ \omega_c^2 \tau^2}
    \begin{pmatrix}
       1  & - \omega_c \tau & 0 \\
       \omega_c \tau & 1 & 0  \\
@@ -454,8 +454,23 @@ Beim klassischen Hall-Effekt hatten wir gefordert, dass die  Probe flach  ist, a
 
 Wenn wir ein starkes Magnetfeld anlegen und die Proben rein genug sind, so dass $\omega_c \tau \gg 1$, und die Temperatur $T$ kalt genug, dann erhalten wir wie oben besprochen als Zustandsdichte eine äquidistante Reihe von Delta-Funktionen $\delta(E-E_n)$.  Bei manchen Magnetfeldern $B$ sind dann alle Landau-Niveaus vollständig gefüllt und das nächste $\hbar \omega_c$ in der Energie 
   entfernt. Damit sind keine Streuprozesse möglich und $\tau$ wird unendlich. Damit werden im Leitfähigkeitstensor  
-  Gl. \ref{eq:4_sigma_tensor} die Einträge $\sigma_{xx} = \sigma_{yy} = 0$. 
-  Die Kreuz-Terme $\sigma_{xy}$ und $\sigma_{yx}$ bleiben von Null  verschieden, weil auch $\sigma_0 \propto \tau$. 
+  Gl. \ref{eq:4_sigma_tensor} die Einträge $\sigma_{xx} = \sigma_{yy} = 0$. Der Einfachheit halber in zwei Dimensionen also
+  \begin{equation}
+   \bm{\sigma}_{\tau \rightarrow \infty} =
+   \begin{pmatrix}
+      0  & -\sigma_\infty  \\
+     \sigma_\infty  & 0   \\
+   \end{pmatrix} \quad .
+\end{equation} 
+  Die Kreuz-Terme $\sigma_{xy}$ und $\sigma_{yx}$ bleiben von Null  verschieden, weil auch $\sigma_0 \propto \tau$. Der Widerstandstensor ist das Inverse\sidenote{Man invertiert den Tensor (die Matrix), nicht jedes Element!} des Leitfähigkeitstensors
+  \begin{equation}
+   \bm{\rho}_{\tau \rightarrow \infty} = 
+   \bm{\sigma}_{\tau \rightarrow \infty}^{-1} =
+   \begin{pmatrix}
+      0  & 1/\sigma_\infty  \\
+     -1/\sigma_\infty  & 0   \\
+   \end{pmatrix} \quad .
+\end{equation}
 Das Längsfeld $\mathcal{E}_x$ verschwindet, weil zwar $j_x \neq 0$ aber  $\sigma_{xx} = 0$ und wie immer  $j_y = 0$. Damit wird auch der Längs-Widerstand $\rho_{xx} = 0$.
 Das Hall-Feld $\mathcal{E}_y$ bewirkt den Stromfluss in $x$-Richtung.
 
