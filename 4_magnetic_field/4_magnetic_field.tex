@@ -43,7 +43,7 @@ Eigentlich bräuchte man für diese Phänomene die zeitabhängige Schrödingergl
 \section{Fermi-Flächen}
 
 
-Bevor wir zur Bewegung der Elektronen unter Einfluss eines magnetischen Felds übergehen, müssen wir  die Form der Fermi-Flächen diskutieren, die dabei eine Rolle spielen werden. Wir hatten im vorletzten Kapitel gesehen, dass bei einem freien Elektronengas und $T=0$ alle Zustände unterhalb einer charakteristischen Energie $E_F$ und damit auch unterhalb eines charakteristischen Wellenvektors $k_F = (3 \pi^2 n)^{3/2}$ vollständig besetzt sind. Im reziproken Raum entspricht dies einer Kugel mit dem Radius $k_F$, der Fermi-Kugel.
+Bevor wir zur Bewegung der Elektronen unter Einfluss eines magnetischen Felds übergehen, müssen wir  die Form der Fermi-Flächen diskutieren, die dabei eine Rolle spielen werden. Wir hatten im vorletzten Kapitel gesehen, dass bei einem freien Elektronengas und $T=0$ alle Zustände unterhalb einer charakteristischen Energie $E_F$ und damit auch unterhalb eines charakteristischen Wellenvektors $k_F = (3 \pi^2 n)^{1/3}$ vollständig besetzt sind. Im reziproken Raum entspricht dies einer Kugel mit dem Radius $k_F$, der Fermi-Kugel.
 
 Die Bandstruktur führt dazu, dass die Form von einer Kugel abweichen wird. Wir bezeichnen dann als \emph{Fermi-Fläche} die Fläche im reziproken Raum, die genau alle besetzten Zustände bei $T=0$ einschließt. Die möglichen Werte des Wellenvektors $\mathbf{k}$ sind diskret. Die Gesamtzahl der  $\mathbf{k}$-Werte in der ersten Brillouinzone entspricht der Anzahl primitiver Einheitszellen im Kristall. Weil ein Elektron zwei verschiedene Spin-Eigenwerte annehmen kann, gibt es in der ersten Brillouinzone also doppelt so viele Zustände für Elektronen wie Atome im Kristall, falls nur ein Atom in der Einheitszelle ist.
 
@@ -188,7 +188,7 @@ Wir haben bei der Zyklotron-Resonanz die Elektronenbahnen klassisch behandelt. I
 
 Wir müssen also das Magnetfeld $\mathbf{B}$ mit in die Schrödingergleichung aufnehmen\sidenote{siehe Kap. 9.3.2 in \cite{Hunklinger2014} und  Kap. 9.6.1 in \cite{yu_cardona}}. Die geschieht über das zugehörige Vektorpotential $\mathbf{A}$ 
 \begin{equation}
-   \frac{1}{2m} \left( \frac{\hbar}{t} \nabla - q \mathbf{A}  \right)^2 \, \psi = E \psi \quad .
+   \frac{1}{2m} \left( \frac{\hbar}{i} \nabla - q \mathbf{A}  \right)^2 \, \psi = E \psi \quad .
 \end{equation}
 Wir wählen die Eichung
 \begin{equation}
@@ -224,7 +224,7 @@ Das ist ein eindimensionaler harmonischer Oszillator in einem parabolischen Pote
 liegt. Die Eigenfrequenz ist $\omega = \omega_c = e B / m$, mit $m$ wieder der Zyklotron-Masse. 
 Die Gesamtenergie hat die Eigenwerte
 \begin{equation}
-   E = \left( n + \frac{1}{2} \right) \omega_c + \frac{\hbar^2}{2m} k_z^2 \quad .
+   E = \left( n + \frac{1}{2} \right) \hbar \omega_c + \frac{\hbar^2}{2m} k_z^2 \quad .
 \end{equation}
 Insgesamt gibt es eine freie Bewegung in $z$-Richtung, also die des Magnetfelds, in eine quantisierte geschlossene Kreisbahn in der $xy$-Ebene. Abbildung \ref{fig:4_dispersion_3d_b} zeigt die Dispersionsrelation entlang $k_z$. In Metallen liegen die Zustände allerdings sehr viel dichter: Bei einem Magnetfeld von 1~T beträgt $\hbar \omega_c$ etwa 0.1~meV, verglichen mit $E_F \approx 10$~eV.
 
