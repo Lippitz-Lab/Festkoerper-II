@@ -1,0 +1,105 @@
+% \documentclass{standalone}
+% \usepackage{currfile,hyperxmp}
+
+% \input{../tikz_header.tex}
+
+% \begin{document}
+
+
+
+\begin{tikzpicture}
+    [
+declare function={ 
+                    eg  = 1;
+                    kbt =1 ;
+                    mhole = 1.5;
+                    mu = 3/4 * kbt * ln(mhole);
+                    dE = 5;
+                    dose(\x)                 = sqrt(\x - eg/2); 
+                   dosh(\x)                 = mhole^1.5 * sqrt(abs(\x) - eg/2); 
+                   fermi(\x)  = 1 / (exp((\x - mu)/kbt) +1);
+                 },
+]
+%\useasboundingbox (-1.3,-1.2) rectangle (10.2,4.7);
+%\draw (-1,-1) rectangle +(12,5);
+
+\begin{groupplot}[group style={group size={1 by 2}, vertical sep={4mm} }]
+
+    \nextgroupplot[ %xlabel={Energie }, %ylabel={Absorption $\sqrt{\alpha}$  (cm$^{-0.5}$)}, 
+         width=105mm, height=35mm, 
+         xmin = -dE,
+        xmax = dE,
+        %ymode=log, 
+        %ymode=log,
+         %ymin = 0,
+         %ymax = 9,
+        % ymax = 15,
+         %xmax=5.5, ymin = 0, ymax=7.5,
+         axis x line=center,
+         axis y line=left,
+         % xmax= 2e5, unbounded coords=jump, ymin=0, ymax = 4
+        % label style={font=\tiny},
+        % tick label style={font=\tiny}
+        ytick= {0} , 
+        xtick = \empty
+    ]
+
+
+ 
+\addplot[domain=eg/2:dE, samples=100, name path=dose]{ dose(x) };
+\addplot[domain=-dE:-eg/2, samples=100, name path=dosh]{ dosh(x)};
+     
+
+\addplot[domain=-dE:-eg/2, samples=100, name path=fermih]{ dosh(x) * (1-fermi(x))};
+\addplot[domain=eg/2:dE, samples=100, name path=fermie, fill=gray!50]{ dose(x) * fermi(x)};
+
+\addplot[gray!50] fill between[of=dosh and fermih];
+
+\draw[->] (mu,0.5)  -- (mu,0);
+\node[above] at (mu, 0.5) {$E_F$};
+\coordinate (EF) at (mu,0);
+
+\node at (-2,3) {$D_v$};
+\node at (2,1.8) {$D_c$};
+
+\node at (-3,0.6) {$D_v (1-f_{FD})$};
+\node at (3,0.6) {$D_c f_{FD}$};
+
+
+\nextgroupplot[ %xlabel={Energie }, %
+ylabel={$f_{FD}(E)$}, 
+width=105mm, height=25mm, 
+xmin = -dE,
+xmax = dE,
+ymin =0,
+ymax = 1.2,
+%ymode=log,
+%ymin = 0,
+%ymax = 9,
+% ymax = 15,
+%xmax=5.5, ymin = 0, ymax=7.5,
+axis x line=center,
+axis y line=left,
+% xmax= 2e5, unbounded coords=jump, ymin=0, ymax = 4
+% label style={font=\tiny},
+% tick label style={font=\tiny}
+ytick= {0, 1} , 
+xtick = \empty
+]
+
+\addplot[domain=-dE:dE, samples=100]{ fermi(x)};
+
+\coordinate (EF2) at (mu,0);
+
+\coordinate (xl) at (dE,0);
+
+
+
+    \end{groupplot}
+ \draw[dashed] (EF) -- (EF2);
+ \node[below left] at (xl) {Energie};
+
+\end{tikzpicture}
+
+
+%\end{document}

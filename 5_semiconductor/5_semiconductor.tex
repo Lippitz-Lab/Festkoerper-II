@@ -1,0 +1,424 @@
+%\renewcommand{\lastmod}{\today}
+\renewcommand{\chapterauthors}{Markus Lippitz}
+\renewcommand{\lastmod}{2. Juni 2023}
+
+\chapter{Halbleiter}
+
+
+
+
+\section{Ziele}
+ 
+
+
+\begin{itemize}
+\item Sie können die Ladungsträgerdichten in dotierten und undotierten Halbleitern im Zusammenspiel von Zustandsdichte und Fermi-Dirac-Verteilung erklären und so beispielsweise die unten gezeigten Messungen an Germanium interpretieren.
+\item Sie können die Strom-Spannungs-Kennlinie eines p-n-Kontakts und die zugrundeliegende Bandstruktur erklären.
+\end{itemize}
+
+
+
+\begin{figure}
+    \inputtikz{\currfiledir germanium_electron_density}
+     \caption{
+        Dichte der Elektronen im Leitungsband von Germanium, gemessen mit dem Hall-Effekt, als Funktion der Konzentration der Arsen-Donatoren. Daten aus \cite{Conwell1952}.
+    \label{fig:5_Ge_n_density} 
+     }
+\end{figure}
+ 
+
+
+% \begin{questions} 
+% \item Wie groß ist ein Molekül?
+% \item Welche physikalische Eigenschaft eine Moleküls wird bei Röntgenstreuung, STM und AFM abgebildet?
+% \end{questions}
+ 
+
+
+% Das Pluto-Skript hydrogen\_wave\_functions\pluto{hydrogen_wave_functions} ermöglicht es Ihnen, mit verschiedenen Varianten der grafischen Darstellung zu experimentieren.
+
+
+\section{Überblick}
+
+Wir hatten schon im Kapitel zur Bandstruktur bemerkt, dass der Übergang zwischen Isolator und Halbleiter fließend ist. Beide haben eigentlich in voll besetztes Valenzband und ein unbesetztes Leitungsband mit einer Bandlücke $E_g$. Thermische Anregung führt zu einer Besetzung im Leitungsband proportional zu $\exp(E_g / 2 k_b T)$, wie wir weiter unten sehen werden. Damit sind bei Raumtemperatur je nach Bandlücke beispielsweise $10^{-5}$ (bei $E_g$ = 0.5 eV) oder  $10^{-26}$ (bei $E_g$ = 3 eV) der Ladungsträger angeregt. Dies führt zu einer von Null verschiedenen Leitfähigkeit. Man definiert ein Material als Halbleiter, wenn seine spezifische Leitfähigkeit bei Raumtemperatur zwischen $10^{-2}$ und $10^9$ $\Omega$m liegt. Man klassifiziert Halbleiter nach verschiedenen Eigenschaften:
+
+\paragraph*{intrinsisch oder dotiert} Wenn man ein Material gezielt mit einer Verunreinigung versieht, also dotiert, dann kann dies zu mehr freien Ladungsträgern führen, weil diese dann vom Fremdatom stammen. Bei intrinsischen Halbleitern stammen die Elektronen im Leitungsband immer aus dem Valenzband.
+
+\paragraph*{direkt oder indirekt} Bei einem direkten Halbleiter liegt das Maximum des Valenzbandes am gleichen Ort im reziproken Raum wie das Minimum das Leitungsbandes. Dadurch sind Übergänge ohne Änderung des Wellenvektors bei einer niedrigen Energie möglich.
+
+\paragraph*{kristallin oder amorph} Die perfekte periodische Kristallstruktur ist nicht unbedingt Voraussetzung ($\alpha$-Silizium ist für Solarzellen relevant), aber wir betrachten hier nur kristalline Materialien.
+
+\paragraph*{organisch oder anorganisch} Wir betrachten hier anorganische Halbleiter, die aus ein oder zwei Elementen bestehen. Organische Halbleiter auf Basis von Kohlenstoff-Verbindungen organischer Moleküle sind ein Thema  für sich.
+
+
+
+\section{Intrinsische kristalline Halbleiter}
+
+Die Bandstruktur und ie Lage der Fermi-Energie hängt sowohl in der 'empty lattice approximation' als auch im 'tight binding' Modell von der Elektronenkonfiguration der beteiligten Atome ab. Es ist daher nicht verwunderlich, dass Halbleiter von im Periodensystem benachbarten Atomen gebildet werden. Dies sind zum einen die Elemente der Gruppe IV, also Kohlenstoff (\ch{C}), Silizium (\ch{Si}) und Germanium (\ch{Ge}). Die Bandlücken betragen 5.47~eV, 1.12~eV und 0.66~eV und sind jeweils indirekt. Diamant ist damit ein Isolator.
+
+Verbindungshalbleiter bestehen aus zwei Elementen, deren Elektronenzahl sich gerade auf die Gruppe IV mittelt. III-V-Halbleiter sind beispielsweise \ch{GaP} (2.26 eV, indirekt), \ch{GaAs} (1.43 eV, direkt), \ch{InSb} (0.18 eV, direkt). II-VI-Halbleiter sind beispielsweise \ch{ZnS} (sc: 3.54 eV) und \ch{CdSe} (1.74 eV).
+
+
+
+\section{Optische Übergänge}
+
+Als Beispiel für den Unterschied zwischen direkten und indirekten Halbleiter möchte ich hier dem späteren Kapitel zu den optischen Eigenschaften vorweggreifen und optische Übergänge besprechen. Ein Photon wird absorbiert und befördert ein Elektron vom Valenzband ins Leitungsband. Dies nennt man Interband-Übergang. Gleichzeitig kann auch noch ein Phonon absorbiert oder emittiert werden. Die Energie- und Impulserhaltung lautet also
+\begin{eqnarray}
+    E_g = & \hbar \omega_\gamma(\mathbf{k}_\gamma ) \pm \hbar \Omega (\mathbf{q}) \\
+    \hbar \Delta \mathbf{k} = &\hbar  \mathbf{k}_\gamma \pm \hbar \mathbf{q} \quad .
+\end{eqnarray}
+Größen des Photons sind mit einem $\gamma$ indiziert. Das eventuell beteiligte Phonon hat die Frequenz $\Omega$ und den Impuls $\mathbf{q}$. Das Elektron ändert eine Energie um $E_g$ und seinen Impuls um $\Delta \mathbf{k}$.
+
+
+
+
+Betrachten wir zunächst \emph{direkte Übergänge}, also \emph{Prozesse ohne Beteiligung eines Phonons}. Der Impuls eines Photons ist viel kleiner als relevante Impulse von Elektronen in der Brillouinzone:
+\begin{equation}
+    k_\gamma = \frac{2 \pi }{\lambda} \approx \frac{2 \pi }{500\text{ nm}}
+    \ll k_{BZ} = \frac{\pi}{a} \approx \frac{\pi}{0.5 \text{ nm}} \quad .
+\end{equation}
+Photonen ermöglichen also nur senkrechte Übergänge in der Elektronen-Dispersionsrelation bei quasi konstantem Elektronen-Impuls $\mathbf{k}$ ($\hbar \Delta \mathbf{k} \approx 0$). Diese direkten Prozesse dominieren in direkten Halbleitern. Bei gegebenem $\mathbf{k}$ ist die Energiedifferenz zwischen Valenz- und Leitungsband in der Nähe der Extrema
+\begin{equation}
+    \Delta E = \hbar \omega_\gamma = E_c(\mathbf{k})-  E_v(\mathbf{k}) = 
+    \left( \frac{1}{m_e^\star} + \frac{1}{m_h^\star} \right) \frac{\hbar^2 k^2}{2} =  \frac{\hbar^2 k^2}{2 m^\star_\text{komb}}
+\end{equation}
+mit der kombinierten effektiven Masse $m^\star_\text{komb}$ einer kombinierten Bandstruktur $ \Delta E(\mathbf{k})$. Für diese können wir auch eine kombinierte Zustandsdichte angeben
+\begin{equation}
+    D_\text{komb}( \Delta E) = \frac{V}{2 \pi^2} \left( \frac{2 m^\star_\text{komb}}{\hbar^2} \right)^{3/2} \sqrt{\Delta E - E_g} \quad .
+\end{equation}
+Diese Zustandsdichte bestimmt über  Fermis  Goldener Regel
+\begin{equation}
+            \Gamma_{if} = \frac{2 \pi}{\hbar} \, \braket{f | \hat{H}' | i} \, D( \Delta E)
+\end{equation}
+ die Übergangsrate $\Gamma_{if}$ und damit den Absorptionskoeffizienten $\alpha \propto \Gamma_{if}$ . Dieser beschreibt die verbleibende Intensität $I$, nachdem ein Lichtstrahl gegebener Frequenz eine Probe der Dicke $L$ durchquert hat
+\begin{equation}
+    I(\omega_\gamma) = I_0 e^{- \alpha(\omega_\gamma) L} \quad .
+\end{equation}
+Insgesamt bekommen wir also mit
+\begin{equation}
+    \alpha(\omega_\gamma) \propto ( m^\star_\text{komb})^{3/2}  \sqrt{\hbar \omega_\gamma - E_g}
+\end{equation}
+einen wurzelförmigen Verlauf des Absorptionsspektrums, der bei der Energie der Bandlücke einsetzt. Dabei haben wir die Annahme gemacht, dass  das Übergangs-Dipolmoment $\braket{f | \hat{H}' | i} $  im relevanten Frequenzbereich konstant ist.
+
+\begin{marginfigure}[-70mm]
+    \inputtikz{\currfiledir InSb_absorption}
+    \caption{Absorption von Indiumantimonid (\ch{InSb}), einem direkten Halbleiter, in der Nähe der Bandkante (\cite{Johnson1967}).}
+\end{marginfigure}
+
+\begin{marginfigure}
+    \inputtikz{\currfiledir Si_absorption}
+    \caption{Absorption von Silizium (\ch{Si}), einem indirekten Halbleiter, in der Nähe der Bandkante (\cite{Macfarlane1955}).}
+\end{marginfigure}
+
+
+Bei \emph{indirekten Übergängen} unter Beteiligung eines Phonons wird die Rechnung aufwändiger. Man muss über alle Ausgangs- und Endzustände der Elektronen integrieren, die über irgendein Phonon verbunden sind.  Außerdem kann die Reihenfolge der Wechselwirkung mit Photon und Phonon getauscht werden und beide Möglichkeiten interferieren in der Quantenmechanik.\sidenote{siehe zB \cite{yu_cardona}} Das Ergebnis der Rechnung ist 
+\begin{equation}
+    \alpha(\omega_\gamma) \propto \left( \hbar \omega_\gamma -( E_g  \pm \hbar \Omega) \right)^2 \quad \text{für} \quad 
+    \hbar \omega_\gamma >  E_g  \pm \hbar \Omega \quad ,
+\end{equation}
+je nachdem, ob ein Phonon absorbiert oder emittiert wird.
+Die Absorption setzt also mit einem quadratischen Verlauf bei der indirekten Bandlücke ein. Der Anstieg ist mit steigender Frequenz also viel flacher als bei einer direkten Bandlücke. Auch bei indirekten Halbleitern gibt es ab einer gewissen Energie direkte Übergänge. Diese benötigen keine Phononen und sind somit wahrscheinlicher. Ab der direkten Bandlücke dominiert dann also auch der wurzelförmige Verlauf.
+
+
+
+\section{Thermische Besetzung der Bänder}
+
+Am absoluten Nullpunkt der Temperatur ist das Valenzband vollständig gefüllt, das Leitungsband vollständig leer. Durch thermische Anregung gelangen aber Elektronen von Valenz- ins Leitungsband. Wir berechnen nun, wie viele das sind. Dabei behandeln wir Elektronen und Löcher immer parallel zu einander.
+
+Die Dichte $n$ der Elektronen im Leitungsband bzw. die Dichte $p$ der Löcher im Valenzband können wir einfach durch Integration über die Zustandsdichte $D$ (im jeweiligen Band) und Fermi-Dirac-Funktion $f_{FD}$ bestimmen
+\begin{eqnarray}
+    n &= & \int_{E_c}^\infty f_{FD}(E,T) \, D_c(E) \, dE \\
+    p &= & \int_{-\infty}^{E_v} (1 - f_{FD}(E,T)) \, D_v(E) \, dE  \quad .
+\end{eqnarray}
+Die Energien $E_{v,c}$ bezeichnen die jeweiligen Bandkanten ($E_g = E_c - E_v$). Bei den Löchern integrieren wir über $1-f_{FD}$, weil diese ja gerade unbesetzte Elektronenzustände sind. Die Zustandsdichte ist jeweils
+\begin{eqnarray}
+    D_c(E) &= & \frac{ (2 m^\star_n)^{3/2} } {2 \pi^2 \hbar^3} \, \sqrt{E - E_c}   \quad \text{für} \quad E > E_c \\
+    D_v(E) &= & \frac{ (2 m^\star_p)^{3/2} } {2 \pi^2 \hbar^3} \, \sqrt{E_v - E} \quad \text{für} \quad E < E_v \quad ,
+\end{eqnarray}
+wobei die Massen hier die jeweiligen effektiven Massen an der Bandkante sind.
+
+Nun müssen wir noch die Fermi-Dirac-Funktion $f_{FD}$  passend nähern und dazu zunächst die Unterscheidung zwischen Fermi-Energie und Fermi-Niveau einführen. In der Fermi-Dirac-Funktion steht ja eigentlich das chemische Potential $\mu$. Wir hatten die Fermi-Energie definiert als $E_F = \mu(T=0)$. Hier sind wir aber an höheren Temperaturen interessiert. \cite{Gross_FK} verwenden das chemische Potential $\mu(T)$ direkt, \cite{Hunklinger2014} führt den Begriff Fermi-Niveau als äquivalent zum chemischen Potential ein. Um eine Verwechslung mit der Beweglichkeit zu vermeiden wird dort $E_F(T)$ und nicht $\mu$ verwendet. Ich folge hier Hunklinger.
+
+Wir machen die Annahme, dass das Fermi-Niveau $E_F(T)$ weit\sidenote{auf einer $k_b T$-Skala} von den Bandkanten entfernt ist. Dies ist die \emph{Näherung der Nichtentartung} und gilt bei intrinsischen oder nur schwach dotierten Halbleitern. Sie gilt bei entarteten (stark dotierten) Halbleitern nicht. Dazu mehr unten. Wenn also $|E - E_F| \gg k_b T$ für die relevanten Werte von $E$ ist, dann können wir die Fermi-Dirac-Verteilungen als Boltzmann-Verteilungen nähern:
+\begin{eqnarray}
+    f_{FD} = \frac{1}{e^{ (E- E_F) / k_B T} +1 } \approx e^{ -(E- E_F) / k_B T}  \quad \text{für} \quad E > E_F \\
+  1-  f_{FD} = \frac{1}{e^{ (E_F - E) / k_B T} +1 } \approx e^{ -(E_F - E) / k_B T}  \quad \text{für} \quad E < E_F  \quad .
+\end{eqnarray}
+
+Damit können wir nun alles einsetzen und die Integrale berechnen:\sidenote{Man integriert über $x = (E-E_F)/k_bT$ und benutzt $\int \sqrt{y} e^{-y} = \sqrt{\pi}/2$.}
+\begin{eqnarray}
+    n &=& 2 \left( \frac{ k_b T \,  m^\star_n } {2 \pi \hbar^2} \right)^{3/2} \, e^{- (E_c - E_F) / k_b T} = \mathcal{N} \, e^{- (E_c - E_F) / k_b T} \\*  
+    p &=& 2 \left( \frac{ k_b T \,  m^\star_p } {2 \pi \hbar^2} \right)^{3/2} \, e^{+ (E_v - E_F) / k_b T} = \mathcal{P} \, e^{+ (E_v - E_F) / k_b T}  \quad . \label{eq:5_konz_zugaenglich}
+\end{eqnarray}
+Dabei haben wir die effektiven ('zugänglichen') Zustandsdichten $\mathcal{N}$ und   $\mathcal{P}$ eingeführt, die nur schwach temperaturabhängig sind. Wenn man sie als konstant ansieht, dann haben wir die beiden Bänder zu zwei diskreten Zuständen vereinfacht, die bei den Energien $E_c$ bzw. $E_v$ liegen. Das wird im Folgenden vieles vereinfachen.
+
+\begin{figure}
+    \inputtikz{\currfiledir thermal_occupation}
+    \caption{Thermische Besetzung der Zustände eines intrinsischen Halbleiters mit 
+    $m^\star_p = 1.5 m^\star_n$ und $E_g = k_b T$. 
+    Die besetzten Zustände sind grau unterlegt. Man erkennt $n=p$. }
+\end{figure}
+
+
+
+\section{Massenwirkungsgesetz}
+
+Interessant ist, dass sowohl $n$ als auch $p$ von der Lage des Fermi-Niveaus $E_F$ abhängt, deren Produkt aber nicht
+\begin{equation}
+    n \, p = \mathcal{N} \mathcal{P} \, e^{- E_g / k_b T} =   \mathcal{W} \, T^3 \, e^{- E_g / k_b T}  \quad . \label{eq_5_mwg}
+\end{equation}
+Das Produkt $n p$ hängt nur von Materialparametern und der Temperatur ab. Die Beziehung  $n p = $~const. wird in Analogie zu einer chemischen Reaktion Massenwirkungsgesetz genannt. Bei einer  Reaktion der Form
+\begin{equation}
+    \ch{A} +  \ch{B} \rightleftharpoons  \ch{C} +  \ch{D} 
+\end{equation}
+ergibt sich in stark verdünnter Lösung eine Gleichgewichtskonstante $K$ mit
+\begin{equation}
+    K = \frac{ [\ch{C}] \, [\ch{D}] }{ [\ch{A}] \, [\ch{B}]} \quad ,
+\end{equation}
+wobei eckige Klammern hier die Konzentration der jeweiligen Stoffe bezeichnen. Man kann die Existenz von Elektronen im Leitungsband und Löchern im Valenzband als chemische Reaktion der Art
+\begin{equation}
+    \ch{<nichts>} \rightleftharpoons  \ch{Elektronen} +  \ch{Löcher} 
+\end{equation}
+sehen. Durch thermische Anregung entstehen Elektronen (im Leitungsband) und Löcher (im Valenzband) aus dem Nichts. Die rechte Seite von Gl. \ref{eq_5_mwg} entspricht also der Gleichgewichtskonstante $K$.
+
+Man beachte, dass zwar  $n p = $~const., aber bislang noch nicht $n=p$ gefordert wurde.
+
+
+\section{Intrinsische Ladungsträgerdichte}
+
+Bei dotierten Halbleitern (s.u.) könnte ein  Elektron nicht nur aus dem Valenzband,  sondern auch von einem  Fremdatom stammen. 
+Für intrinsische, also undotierte Halbleiter gilt aber, dass für jedes Elektron im Leitungsband ein Loch im Valenzband entstehen muss, also $n=p$ sein muss. Die intrinsische  Ladungsträgerdichten $n_i = p_i$ ergibt sich dann aus  dem Massenwirkungsgesetz
+\begin{equation}
+    n_i = p_i = \sqrt{n p} = \sqrt{\mathcal{N}\mathcal{P}} \, e^{- E_g / 2 k_b T} \quad .
+\end{equation}
+Diese Gleichung hatten wir in der Einführung schon verwendet, um Ladungsträgerdichten abzuschätzen. Man beachte hier die Zwei im Exponenten. Die Bandlücke erscheint nur halb so groß, weil wir gleichzeitig ein Elektron und ein Loch aus dem Nichts erzeugen.
+
+
+
+\section{Temperaturabhängigkeit des Fermi-Niveaus}
+
+Wir können uns einen Zusammenhang für die Temperaturabhängigkeit des Fermi-Niveaus beschaffen, in dem wir $n_i = p_i$ umformen zu
+\begin{equation}
+    \frac{\mathcal{P}}{\mathcal{N}} = \left( \frac{m^\star_n}{m^\star_p} \right)^{3/2} = e^{(2 E_F - E_c - E_v)/(k_b T)}
+\end{equation}
+und dann nach $E_F$ auflösen
+\begin{equation}
+    E_F = \frac{E_c + E_v}{2} + \frac{3}{4} k_B T \ln \left( \frac{m^\star_p}{m^\star_n} \right) \quad . \label{eq:5_Efermi_intr}
+\end{equation}
+Bei $T=0$ liegt das Fermi-Niveau also in der Mitte der Bandlücke. Falls Leitungs- und Valenzband gleich stark gekrümmt sind, also Elektronen- und Loch-Masse identisch, dann bleibt es dort auch bei steigender Temperatur. Unterscheiden sich die Massen, dann bewegt sich das Fermi-Niveau leicht in Richtung der leichteren Ladungsträger. Da $k_B T \ll E_g$ ist dies aber ein kleiner Effekt.
+
+
+\section{Dotierung}
+
+Kein Halbleiter-Kristall ist wirklich rein, sondern beinhaltet immer Fremdatome. Diese anderen Atome verursachen zusätzliche Ladungsträger, Elektronen oder Löcher und beeinflussen so die Leitfähigkeit. In idealem \ch{GaAs} ist die intrinsische Ladungsträgerdichte bei Raumtemperatur beispielsweise $n_i \approx 10^7$~cm$^{-3}$. Selbst in den besten \ch{GaAs} Kristallen findet man aber $n \approx 10^16$~cm$^{-3}$. Man kann einen Kristall also gezielt dotieren (eigentlich 'verunreinigen'), um so die Ladungsträgerdichte einzustellen. Man unterscheidet zwei Arten von Dotierung: n- und p-Dotierung, denn man kann ein Atom der Valenz $V$ im Ausgangsmaterial durch ein Fremdatom der Valenz $V+1$ oder $V-1$ ersetzen. Im Fall $V+1$ spricht man von Donatoren, also Atomen, die Elektronen abgeben, oder n-Dotierung. Im Fall $V-1$ spricht man von Akzeptoren (Atome, die Elektronen aufnehmen), oder p-Dotierung.
+
+Ein Donator-Atom ist für 'sein' Elektron ähnlich einem Proton für das Elektron im Wasserstoff-Atom, und analog ein Akzeptor für das Loch. Wir können also die Beschreibung des Wasserstoff-Atoms benutzen und müssen nur die effektive Masse des Ladungsträgers und die relative Permittivität $\epsilon_r$ des Materials anpassen. Für einen Donator sind die Energie-Eigenwerte also 
+\begin{equation}
+    E_n = - \frac{1}{2} \, \frac{m_e^\star e^4}{(4 \pi \epsilon_r \epsilon_0)^2 \hbar^2}
+\frac{1}{n^2} =     
+   - \frac{m_e^\star}{m_\text{frei}} \, \frac{1}{\epsilon_r^2} \, \frac{13.6 \text{ eV}}{n^2}
+\end{equation}
+mit $n$ hier der Quantenzahl und nicht der Ladungsträgerdichte. Der Bohr-Radius ist
+\begin{equation}
+    r_\text{Bohr} = \frac{\epsilon_r}{m_e^\star / m_\text{frei}} \, 0.53 \text{ \AA} \quad .
+\end{equation}
+Für Silizium findet man mit $m_e^\star = 0.1 m_\text{frei}$ und $\epsilon_r = 11.7$ die Werte $E_1 = -10$~meV und $ r_\text{Bohr} = 62$~\AA. Der Betrag der Bindungsenergie ist also viel kleiner als die Bandlücke (1.14~eV) und kleiner als $k_b T$ (25~meV) bei Raumtemperatur. Der Bohr-Radius ist viel größer als die Gitterkonstante (5.4~\AA). Es liegen also sehr viele Silizium-Atome innerhalb der Bahn des Elektrons um das eine Donator-Fremdatom.
+
+Was bedeutet die Bindungsenergie des Donator-Elektrons für die Bandstruktur? Dem Ionisieren des Wasserstoff-Atoms entspricht ein Transfer des gebundenen Donator-Elektron ins Leitungsband. Dort ist es ja frei beweglich. Die Donator-Zustände liegen also im Abstand $E_n$ unterhalb der Unterkante des Leitungsbandes. Analog liegen die Akzeptor-Zustände etwas oberhalb der Oberkante des Valenzbandes. In unserem Wasserstoff-Modell sind die Bindungsenergie (Abstände der Zustände von der Bandkante) vom Fremdatom unabhängig, nur Eigenschaften des Ausgangsmaterials gehen ein. Dies ist in Wirklichkeit auch beinahe so, weil der Bohr-Radius so groß ist, dass Details der Elektronenkonfiguration des Fremdatoms nur sehr schwach eingehen.
+
+Bei Raumtemperatur sind die Störstellen mit großer Wahrscheinlichkeit ionisiert. Bei tiefen Temperaturen kann man durch Infrarotabsorption die Lage der Donator- und Akzeptor-Niveaus bestimmen.
+
+
+\section{Temperaturabhängigkeit der Ladungsträgerdichte}
+
+Durch die Dotierung lässt sich die Ladungsträgerdichte einstellen, die dann aber natürlich stark temperaturabhängig ist, weil die Bindungsenergie der Störstellen relativ klein ist. Dies werden wir nun etwas genauer betrachten. Wir machen weiterhin die Näherung der Nichtentartung, also dass das Fermi-Niveau\sidenote{=chemisches Potential $\mu$} weit genug von der Bandkante entfernt ist, so dass wir die Fermi-Dirac-Verteilung mit einer Boltzmann-Verteilung nähern können. Die Ladungsträgerdichten im Leitungsband ($n$) und Valenzband ($p$) sind also wie oben
+\begin{equation}
+    n  = \mathcal{N} \, e^{- (E_c - E_F) / k_b T} \quad \text{und} \quad   
+    p =  \mathcal{P} \, e^{+ (E_v - E_F) / k_b T} \quad , \label{eq:5_np_eff}
+\end{equation}
+unabhängig davon, ob die LLadungsträger aus dem gegenüberliegen Band oder aus Störstellen stammen. Die intrinsischen Dichten hatten wir erst später eingeführt.
+
+Jedes Donator- und Akzeptor-Niveau kann nur mit einem Ladungsträger besetzt werden. Ein unterschiedlicher Spin reicht nicht aus, weil die Coulomb-Abstoßung der Ladungsträger größer ist also die Bindungsenergie.\sidenote{Man darf nicht die Lage der Zustände im \ch{H}-Atom vergleichen, sondern die zwischen \ch{H} und \ch{H-} oder \ch{He} und \ch{He+}.} Sei $n_D$ also die Dichte der Donatoren, die entweder besetzt (neutral) sein können ($n_D^0$) oder ionisiert  ($n_D^+$) und damit natürlich
+\begin{equation}
+    n_D = n_D^0 + n_D^+ \quad \text{und} \quad   n_A = n_A^0 + n_A^-   \quad .
+\end{equation}
+Für deren Temperaturabhängigkeit kann man die Fermi-Dirac-Verteilung nicht mehr durch eine Boltzmann-Verteilung nähern, sondern muss schreiben
+\begin{equation}
+    \frac{n_D^0}{n_D} = \frac{1}{e^{(E_D - E_F)/ k_b T } +1}
+    \quad \text{und} \quad 
+    \frac{n_A^0}{n_A} = \frac{1}{e^{(E_F - E_A)/ k_b T } +1} \quad .
+\end{equation}
+
+Alle Ladungen im Halbleiter müssen sich jederzeit neutralisieren, also 
+\begin{equation}
+    n + n_A^- = p + n_D^+ \quad .
+\end{equation}
+
+Diese vier Gleichungen beschrieben zusammen die Temperaturabhängigkeit. Wir nehmen nun  einen n-Halbleiter an, also dass viel mehr Donatoren als Akzeptoren vorhanden sind, also $n_D \gg n_A$. In diesem Fall findet sich sicherlich für jeden Akzeptor ein Elektron aus einem Donator, so dass alle Akzeptoren negativ geladen sind ($n_A \approx n_A^-$).
+Und wir nehmen an, dass die Dotierung so stark ist, dass sie die Leitfähigkeit dominiert (\emph{Störstellenleitung}). Dies ist dann der Fall, wenn $n_D^+ \gg p$, also viel mehr Donatoren ionisiert sind als Löcher vorhanden, oder die Mehrzahl der Elektronen im Leitungsband von Donatoren stammt, also die intrinsische Dichte vernachlässigt werden kann ($n_i \ll n_D^+$). Damit wird die Dichte $n$ der Elektronen im Leitungsband
+\begin{eqnarray}
+    n  &= & p + n_D^+ -  n_A^- \approx n_D^+ -  n_A = (n_D - n_D^0) - n_A \\
+    & =& n_D \left( 1- \frac{1}{e^{(E_D - E_F)/ k_b T } +1} \right) - n_A \quad .
+\end{eqnarray}
+Das Fermi-Niveau $E_F$ können wir durch Umformen mit Gl.~\ref{eq:5_np_eff} entfernen
+\begin{equation}
+    \frac{n (n_A + n)}{n_D - n_A - n} = \mathcal{N} \, e^{- E_d / k_b T} \quad , \label{eq:5_n_of_T}
+\end{equation}
+wobei $E_d = E_c - E_D$ der energetische Abstand der Donator-Niveaus von der Unterkante der Leitungsbandes ist. Aus dieser Gleichung kann man bei gegebener Fremdatom-Konzentrationen  $n_A$, $n_D$ und Energien die Ladungsträgerdichte $n$ berechnen. Zusammen mit  
+Gl.~\ref{eq:5_np_eff} erhält man dann auch die Lage der Fermi-Niveaus $E_F$. Dies ist in Abb.~\ref{fig:5_dpoing_temp} als Funktion der reziproken Temperatur $T$ gezeigt und in der Abb.~\ref{fig:5_Ge_n_density} am Anfang des Kapitels linear. Man findet vier Temperaturbereiche, die im Folgenden mit steigender Temperatur diskutiert werden.
+
+\begin{figure} 
+    \inputtikz{\currfiledir doping_temp}
+    \caption{Temperaturabhängigkeit der Ladungsträgerdichte $n$. In dieser Darstellung ist $E_d = E_g / 10$ gewählt. \label{fig:5_dpoing_temp}}
+\end{figure}
+
+\paragraph*{Kompensationsbereich} Bei sehr tiefen Temperaturen ist $k_b T \lll E_d$ und nur sehr wenige Ladungsträger sind im Leitungsband, also $n \ll n_A \ll n_D$ und Gl. \ref{eq:5_n_of_T} wird
+\begin{equation}
+    n  \approx \frac{n_D \, \mathcal{N}}{n_A}  \, e^{- E_d / k_b T}  \quad .
+\end{equation}
+Das Fermi-Niveau wird mit Gl.~\ref{eq:5_np_eff}
+\begin{equation}
+    E_F \approx E_c - E_d + k_b T \ln \left( \frac{n_D}{n_A} \right) \quad .
+\end{equation}
+Wenn es nur kalt genug ist, liegt das Fermi-Niveau auf den Donator-Zuständen. Die Donatoren sind teilweise geladen, aber nicht so sehr, weil deren Ladungsträger im Leitungsband sind, sondern weil sie die Akzeptoren besetzt haben und diese keine Löcher mehr liefern können. Die Akzeptoren werden also kompensiert. Wenn $T$ größer wird, dann verschiebt sich $E_F$ in Richtung Bandkante und mehr Ladungsträger gelangen ins Leitungsband.
+
+\paragraph*{Störstellenreserve} Mit steigender Temperatur ist dann der Punkt erreicht, dass $n_A \ll n \ll n_D$. Damit wird   Gl. \ref{eq:5_n_of_T} 
+\begin{equation}
+    n \approx \sqrt{n_D \, \mathcal{N}} \,  \, e^{- E_d / 2 k_b T} 
+\end{equation}
+(man beachte die 2 im Exponenten) und das Fermi-Niveau wird 
+\begin{equation}
+    E_F \approx E_c - \frac{E_d}{2} - \frac{k_b T}{2} \ln \left( \frac{\mathcal{N}}{n_D} \right)  \quad .
+\end{equation}
+Das Fermi-Niveau ist als in etwa in der Mitte zwischen Leitungsband-Unterkante und Donator-Niveau. Es sind noch nicht alle Donatoren ionisiert. Die Donatoren übernehmen die Rolle des Valenzbandes bei intrinsischen Halbelitern und $E_d$ die Rolle der Bandlücke.
+
+\paragraph*{Störstellenerschöpfung} Jetzt erreichen wir Raumtemperatur und $k_b T \approx E_d$. Damit wird Gl. \ref{eq:5_n_of_T} 
+\begin{equation}
+    \frac{n^2}{n_D - n} \approx \mathcal{N}  \quad \text{bzw.} \quad n \approx n_D = \text{const.}
+\end{equation}
+weil $n \ll  \mathcal{N}$ und 
+\begin{equation}
+    E_F \approx E_c - k_b T \ln \left( \frac{\mathcal{N}}{n_D} \right) \quad .  \label{eq:5_ef_stoerstellenerschoepfung}
+\end{equation}
+Alle Störstellen sind ionisiert, aber die direkte Anregung von Elektronen aus dem Valenz- ins Leitungsband spielt noch keine Rolle,.
+
+\paragraph*{Eigenleitung} Die Temperatur ist schließlich so hoch, dass $k_bv T \gg E_d$. Ladungsträger werden vom Valenz- ins Leitungsband angeregt und die Annahme $p \ll n_D$ gilt nicht mehr. Die Dotierung spielt keine Rolle mehr und der Halbleiter benimmt sich wie ein intrinsischer Halbleiter mit den Gleichungen  \ref{eq:5_konz_zugaenglich} und  \ref{eq:5_Efermi_intr} für $n$ und $E_F$.
+
+
+\section{p-n-Übergang}
+
+Die Dotierung eines Halbleiter-Kristalls kann räumlich variieren. Dazu kann man beispielsweise durch UV-Lithographie eine Maske erzeugen, die das Eindringen von Fremdatomen an manchen Stellen verhindert. Wir betrachten hier einen Kristall, bei dem sich auf einer Längenskala von wenigen Nanometern die Dotierung von p nach n ändert.  Seien die Konzentration der Störstellen beispielsweise
+\begin{equation}
+    n_A(x) = n_A \Theta(x) \quad \text{und}  \quad  n_D(x) = n_D \Theta(-x) 
+\end{equation}
+mit der Stufenfunktion $\Theta$. Der dabei entstehende p-n-Übergang besitzt einen charakteristischen Verlauf der Bandkanten und dient technologisch beispielsweise als Diode.
+
+
+\begin{marginfigure}
+    \includegraphics*[width=49mm]{\currfiledir sketches/pn-sketch.png}
+    \caption{Räumliche Verteilung der festen und beweglichen Ladungen an einem p-n-Übergang und das sich daraus ergebende Potential.}
+\end{marginfigure}
+
+Stellen wir uns zunächst vor, dass die beiden Bereiche nicht miteinander in Verbindung stünden. Im p-dotierten Bereich gibt es bei Raumtemperatur viel mehr  Löcher im Valenzband  als Elektronen im Leitungsband, im n-dotierten Bereich ist es gerade anders herum. Wenn man die beiden Bereiche miteinander verbindet, dann diffundieren die Ladungsträger jeweils in den anderen Bereich, um die Konzentration auszugleichen. Dort rekombinieren aber Elektronen und Löcher und vernichten sich so gegenseitig. In den Ausgangsbereichen bleiben die gegenteilig geladenen immobilen Störstellen zurück. Dadurch bildet sich im p-dotierten Bereich eine negative Raumladung, im n-dotierten eine positive. Diese wirkt der Diffusion entgegen und ein Gleichgewicht stellt sich ein. Die dabei entstehende Potentialdifferenz nennt man \emph{Diffusionsspannung} $V_D$. Diese verschiebt die Gesamtenergie der Elektronen um den Beitrag  $-e \, V_D$ und verbiegt so die Bänder, im n-dotierten Bereich hin zu niedrigeren Energien. Die Raumladungszone nennt man auch Verarmungszone, weil dort fast keine mobilen Ladungsträger mehr vorhanden sind.\sidenote{Das Massenwirkungsgesetz fordert $n \cdot p =$const, aber $n+p$ kann stark variieren. } 
+
+
+\begin{marginfigure}
+    \includegraphics*[width=49mm]{\currfiledir sketches/pn-level.png}
+    \caption{Bandstruktur und Lage des Fermi-Niveaus vor und nach dem Verbinden  von zwei unterschiedlich dotierten Halbleitern.}
+\end{marginfigure}
+
+Man kommt zum gleichen Ergebnis auch mit einer anderen Argumentation. Vor dem Zusammenführen hat man im p-dotierten Bereich bei Raumtemperatur ein Fermi-Niveau etwas oberhalb des Akzeptor-Niveaus, weil wir im Bereich der Störstellenerschöpfung sind. Im n-dotierten Teil ist die Bandlücke identisch, weil es dasselbe Halbleiter-Material ist. Nur liegt dort das Fermi-Niveau  etwas unterhalb der Donator-Niveaus. Im thermischen Gleichgewicht kann es aber nur ein Fermi-Niveau (= chemisches Potential) geben.\sidenote{In der Chemie pro Stoff, hier aber alles Elektronen.} Es bildet sich also ein Makropotential $\phi(x)$, das zur potentiellen Energie $q \phi(x)$ der Ladungsträger ($q = \pm e$) beiträgt, so dass das Fermi-Niveau wieder räumlich konstant ist.\sidenote{Wenn man eine externe Spannung anlegt, so wird dieses externe Potential typischerweise als separat vom Fermi-Niveau angesehen. Dann ist das Fermi-Niveau nicht mehr räumlich konsant. Die Trennung zwischen Makropotential und externem Potential ist aber nur Konvention.} 
+
+
+Die Diffusionsspannung $V_D$ ergibt sich also aus der Differenz der Fermi-Niveaus im unverbundenen Zustand. In erster Näherung ist also $e V_D \approx E_g$. Im Bereich der Störstellenerschöpfung ist sie durch Gl.~\ref{eq:5_ef_stoerstellenerschoepfung} gegeben
+\begin{eqnarray}
+    e \, V_D &= & E_F^n - E_F^p \\
+    & =&   E_c - k_b T \ln \left( \frac{\mathcal{N}}{n_D} \right) - 
+    E_v - k_b T \ln \left( \frac{\mathcal{P}}{n_A} \right) \\
+   & =& E_g -  k_b T \ln \left( \frac{\mathcal{N \, P}}{n_D \, n_A} \right) \\
+   & = & k_b T \ln \left( \frac{n_D \, n_A}{n_i^2} \right)  \quad .
+\end{eqnarray}
+
+Die Ladungsträgerdichten sind weiterhin durch die Lage des Fermi-Niveaus (Gl.~\ref{eq:5_konz_zugaenglich}) gegeben, nur dass sich dieses nun aus einem konstanten Anteil $E_F$ und einem räumlich variablen Anteil $e \phi(x)$ zusammensetzt. Wir erhalten also 
+\begin{equation}
+    n(x)  = \mathcal{N} \, e^{- (E_c - E_F - e\phi(x)) / k_b T} \quad \text{und} \quad   
+    p(x) =  \mathcal{P} \, e^{+ (E_v - E_F  - e\phi(x)) / k_b T} \quad . \label{eq:5_n_of_x}
+\end{equation}
+Die  Raumladungsdichte $\rho(x)$ ist damit
+\begin{equation}
+    \rho(x) = e \left( n_D(x) - n_A(x) - n(x) + p(x) \right) \quad ,
+\end{equation}
+wenn man annimmt, dass alle Störstellen ionisiert sind. Zusammen mit der Poisson-Gleichung
+\begin{equation}
+    - \nabla^2 \phi(x) = \frac{1}{\epsilon_r \epsilon_0} \, \rho (x)
+\end{equation}
+haben wir ein nichtlineares gekoppeltes  System von Differentialgleichungen für $\rho(x)$ und $\phi(x)$, das sich nur numerisch lösen lässt.
+
+
+\section*{Schottky-Modell der Raumladungszone}
+
+
+Im Schottky-Modell nähert man den graduellen Verlauf der Ladungsträgerdichten durch Rechteck-Funktionen.\sidenote{Das geht, weil die beweglichen Ladungsträger in ihrer Dichte exponentiell variieren, also sehr schnell irrelevant werden, siehe z.B. \cite{AshcroftMermin2013}.} In einem Intervall der Breite $d_p$ befinden sich nicht durch freie Ladungsträger kompensierte Akzeptoren der Konzentration $n_A$ und andersherum für den n-dotierten Bereich. Wenn das Koordinatensystem so ist, dass $x=0$ an der p-n-Grenzfläche, dann ist beispielsweise $\rho(x) = - e n_A$ im Bereich $- d_p < x < 0$ und  $\rho(x) =0$ für $x < -d_p$. Durch Integration der Poisson-Gleichung bekommt man dann einen parabelförmigen Verlauf 
+\begin{equation}
+    \phi(x) = \phi_{-\infty} + \frac{e n_A}{\epsilon_r \epsilon_0} \left( d_p + x \right)^2  \quad \text{für} \quad - d_p < x < 0 \quad ,
+\end{equation}
+wobei $\phi_{-\infty}$ das konstante Makropotential tief im p-dotierten Bereich ist und $V_D =  \phi_{+\infty} - \phi_{-\infty}$. Das Potential erfüllt so schon die Stetigkeitsbedingungen im Übergang zu $\phi_{\pm\infty}$. Bei $x=0$ muss ebenfalls die erste Ableitung  stetig sein, also
+\begin{equation}
+    n_D \, d_n = n_A \, d_p
+\end{equation}
+was der Forderung nach Gesamt-Neutralität entspricht. Aus der Stetigkeit von $\phi$ selbst ergibt sich eine weitere Bedingung
+\begin{equation}
+    \frac{e}{2 \epsilon_r \epsilon_0} \left(  n_D \, d_n^2  + n_A \,d_p^2 \right) =\phi_{+\infty} - \phi_{-\infty} = V_D \quad .
+\end{equation}
+Damit erhalten wir
+\begin{equation}
+    d_n = \sqrt{ \frac{{2 \epsilon_r \epsilon_0 \, V_D}}{e}   \, \, \frac{n_A / n_D}{n_A + n_D}}
+\end{equation}
+und $d_p$ analog. typischerweise ist $e V_D \approx E_g \approx 1 $~eV, und $n_{A,D} \approx 10^{14} \dots 10^{18}$~cm$^{-3}$. Also liegen $d_{p,n}$ bei 10 bis 1000~nm.
+
+
+\begin{figure}
+    \inputtikz{\currfiledir Schottky_modell}
+    \caption{Schottky-Modell der Raumladungszone}
+\end{figure}
+
+\section*{Externe Spannung und Strom-Spannungs-Kennlinie}
+
+Nun legen wir eine externe Spannung an den p-n-Übergang an. Wir nennen die Spannung $U$ positiv, wenn sie das Potential der p-dotierten Seite anhebt. Nur innerhalb der  Verarmungszone ist die Leitfähigkeit relativ niedrig, so dass die Spannung im Wesentlichen hier abfällt. Die Bänder ändern sich also nur im Bereich der Verarmungszone, außerhalb bleibt alles unverändert. Damit bleiben auch die Gleichungen aus dem letzten Abschnitt gültig, wenn wir jeweils $V_D$ durch $V_D - U$ ersetzen.
+
+Durch Anlegen der externen Spannung ändert sich die Breite der Raumladungszone
+\begin{equation}
+    d = d_p + d_n = d(U=0) \, \sqrt{1 - \frac{U}{V_D} }\quad .
+\end{equation} 
+Positive Spannungen (in Durchlassrichtung) reduzieren die Breite der Raumladungszone (=Verarmungszone), negative Spannung (Sperrrichtung) vergrößern sie. 
+
+Um die Wirkungsweise eines p-n-Übergangs als Diode zu verstehen sind die beteiligten Ströme relevant.
+
+\paragraph*{Diffusionsstrom} Aufgrund des Konzentrationsunterschieds links und rechts der Grenzfläche diffundieren beispielsweise Elektronen aus dem n-dotierten Bereich  in den p-dotierten und rekombinieren mit den dort in großer Zahl vorhandenen Löchern. Dieser Strom wird auch \emph{Rekombinationsstrom} genannt.
+
+\paragraph*{Generationsstrom} Die Raumladungszone bildet einen Kondensator, in dem Ladungsträger beschleunigt werden. Thermisch erzeugte Elektronen im p-dotierten Bereich driften durch das Raumladungs-Fle in Richtung n-dotierten Bereich. Dieser Strom wird auch \emph{Driftstrom} oder \emph{Feldstrom} genannt.
+
+Im thermischen Gleichgewicht sind beide Ströme gleich groß und kompensieren sich gerade $j_n^\text{dif} + j_n^\text{gen} = 0$. Und natürlich kann man genau so mit Löchern argumentieren, so dass es beide Ströme auch mit dem Index $p$ gibt. Die Gesamt-Ströme sind die Summe der beiden Ladungsträger.
+
+Der Diffusionsstrom fließt entgegen der Raumladungs-Potentialschwelle. Die Wahrscheinlichkeit, dass dies gelingt, enthält einen Boltzmann-Faktor
+\begin{equation}
+    j_n^\text{dif}(U) = a(T) e^{-e (V_D - U) / k_b T} =  j_n^\text{dif}(0) e^{e U / k_b T} \quad .
+\end{equation}
+Bei angelegter Spannung besteht kein thermisches Gleichgewicht mehr, so dass $j_n^\text{dif} + j_n^\text{gen} = 0$ nicht mehr gilt, sondern
+\begin{equation}
+    j_n(U) = j_n^\text{dif}(U) + j_n^\text{gen} = j_n^\text{gen} \left(  e^{e U / k_b T} - 1 \right) \quad ,
+\end{equation}
+beziehungsweise für beide Ladungsträger zusammen 
+\begin{equation}
+    j(U) =  j_s \left(  e^{e U / k_b T} - 1 \right)
+\end{equation}
+mit dem Sättigungsstrom $j_s = j_n^\text{gen}  + j_p^\text{gen} $.
+
+
+\section{Zusammenfassung}
+
+\textit{Schreiben Sie hier ihre persönliche Zusammenfassung des Kapitels auf. Konzentrieren Sie sich auf die wichtigsten Aspekte und die am Anfang genannten Ziele des Kapitels.}
+
+\vspace*{10cm}
+
+\printbibliography[segment=\therefsegment,heading=subbibliography]
