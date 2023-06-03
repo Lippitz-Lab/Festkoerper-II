@@ -1,7 +1,7 @@
 % Recommended preamble:
 \begin{tikzpicture}
-\begin{groupplot}[group style={group size={1 by 3}, vertical sep={0mm}}]
-    \nextgroupplot[ylabel={Raumladung $\rho$}, ytick={0}, xticklabels={}, width={105mm}, height={40mm}]
+\begin{groupplot}[group style={group size={1 by 3}, vertical sep={4mm}}]
+    \nextgroupplot[xmin={-1}, xmax={1}, ylabel={Rauml. $\rho$}, ytick={0}, xticklabels={}, axis x line={none}, axis y line={left}, width={105mm}, height={30mm}, clip={false}]
     \addplot[no marks, thick]
         table[row sep={\\}]
         {
@@ -1008,7 +1008,14 @@
             1.0  0.0  \\
         }
         ;
-    \nextgroupplot[ylabel={Feld $E_x$}, xticklabels={}, ytick={0}, width={105mm}, height={40mm}]
+    \draw[dotted] (-1,0) --(1,0);
+    \node at (-0.4, -0.5) {-};
+    \node at (0.2, 1) {+};
+    \node[right] at (0.4, 2) {$n_D$};
+    \node[left] at (-0.8, -1) {$n_A$};
+    \coordinate (L) at (-0.8, 1);
+    \coordinate (R) at (+0.4, 1);
+    \nextgroupplot[ymin={-1}, ymax={0.15}, xmin={-1}, xmax={1}, ylabel={Feld $E_x$}, axis x line={none}, axis y line={left}, xticklabels={}, ytick={0}, width={105mm}, height={30mm}]
     \addplot[no marks, thick]
         table[row sep={\\}]
         {
@@ -2015,7 +2022,8 @@
             1.0  3.412680672653852e-16  \\
         }
         ;
-    \nextgroupplot[ylabel={Potential $\phi$}, xlabel={Ort $x$ }, ytick={}, xtick={0}, width={105mm}, height={40mm}, yticklabels={}]
+    \draw[dotted] (-1,0) --(1,0);
+    \nextgroupplot[ymin={-0.05}, ymax={1.05}, xmin={-1}, xmax={1}, ylabel={Potential $\phi$}, xlabel={Ort $x$}, ytick={}, xtick={-0.816,0.0,0.408}, xticklabels={$-d_p$, 0, $+d_n$}, width={105mm}, height={30mm}, yticklabels={}, axis x line={bottom}, axis y line={left}, clip={false}]
     \addplot[no marks, thick]
         table[row sep={\\}]
         {
@@ -3022,5 +3030,11 @@
             1.0  1.0  \\
         }
         ;
+    \draw[dotted] (-0.816,0) --(-0.816,3);
+    \draw[dotted] (0,0) --(0,3);
+    \draw[dotted] (0.816/2,0) --(0.816/2,3);
+    \node[above right] at (-1,0) {$\phi_{-\infty}$};
+    \node[below left] at (1,1) {$\phi_{+\infty}$};
+    \draw[<->] (0.6,0) --node[right] {$V_D$}(0.6,1);
 \end{groupplot}
 \end{tikzpicture}

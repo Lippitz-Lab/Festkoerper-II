@@ -124,6 +124,9 @@ begin
 	        Table([tc, @. tc * 0 + 1.5 ] ) )
 	push!(myaxis, p)
 	
+	
+	push!(myaxis, raw"\draw[dotted] (6, 0.05) -- node[below]{$n_A$}(15, 0.05);")
+	
 	@pgf    p = PGFPlotsX.Plot(
 	        { no_marks, dashed },
 	        Table([tg, @. 11 * 10^1 * exp(- E_c * tg / 2) ] ) )

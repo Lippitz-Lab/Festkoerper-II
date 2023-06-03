@@ -23,6 +23,9 @@ begin
 	dp = sqrt( (n_D / n_A) / (n_A + n_D))
 end;
 
+# ╔═╡ 158985db-d5d3-4f19-a944-31360b525f60
+dp
+
 # ╔═╡ e0e90646-161e-4d49-8cb3-4dced7c81fa4
 x = range(-1,1, 1000);
 
@@ -67,7 +70,7 @@ begin
 
 @pgf gp = GroupPlot(
     {
-        group_style = { group_size = "1 by 3", vertical_sep = "0mm",},
+        group_style = { group_size = "1 by 3", vertical_sep = "4mm",},
       	
     }
 )
@@ -76,15 +79,18 @@ begin
 	    {
 	      #  ymin = 0., 
 		#	ymax = 1,
-	    #    xmin =0, xmax =25,
-			ylabel = raw"Raumladung $\rho$",
+	        xmin =-1, xmax =1,
+			ylabel = raw"Rauml. $\rho$",
 			#xlabel=raw"rel. reziproke Temperatur $E_d/k_b T$ ",
 			ytick = [0], 
 	#		xtick = (0:5:25),
 			xticklabels = [],
+			axis_x_line="none",
+			axis_y_line="left",
 			#xmajorgrids,
-			width= "105mm", height= "40mm", 
-			#yticklabels = []
+			width= "105mm", height= "30mm", 
+			#yticklabels = [],
+	clip=false
 	    },	
 		);
 
@@ -94,25 +100,36 @@ begin
 	        Table([x,  rho] )
 			)
 	push!(myaxis, p)
-	#push!(myaxis, raw"\node at (22.5, 0.001) {$e^{- E_d/k_bT}$};")
 	
+	push!(myaxis, raw"\draw[dotted] (-1,0) --(1,0);")
+	push!(myaxis, raw"\node at (-0.4, -0.5) {-};")
+	push!(myaxis, raw"\node at (0.2, 1) {+};")
+	
+	push!(myaxis, raw"\node[right] at (0.4, 2) {$n_D$};")
+	push!(myaxis, raw"\node[left] at (-0.8, -1) {$n_A$};")
+
+		push!(myaxis, raw"\coordinate (L) at (-0.8, 1);")
+		push!(myaxis, raw"\coordinate (R) at (+0.4, 1);")
+
 
 	push!(gp, myaxis)
 
 	myaxis = @pgf PGFPlotsX.Axis(
 	    {
-	     #   ymin = 0.45, 
-		#	ymax = 1.0,
-	       # xmin =0, xmax =25,
+	        ymin = -1, 
+			ymax = 0.15,
+	        xmin =-1, xmax =1,
 			ylabel = raw"Feld $E_x$",
 			#xlabel=raw"rel. reziproke Temperatur $E_d/k_b T$ ",
 		#	ytick = [0.5, 0.9], 
 		#	xtick = (0:5:25),
 			#xticklabels = [string(p.first) for p ∈ Alks.ppoints],
 			#xmajorgrids,
+		axis_x_line="none",
+			axis_y_line="left",
 				xticklabels = [],
 	ytick = [0], 
-			width= "105mm", height= "40mm", 
+			width= "105mm", height= "30mm", 
 			#yticklabels = []
 	    },	
 		);
@@ -123,24 +140,27 @@ begin
 	        Table([x,  field ] ) )
 		push!(myaxis, p)
 
-	
-
-	push!(gp, myaxis)
+		push!(myaxis, raw"\draw[dotted] (-1,0) --(1,0);")
+		push!(gp, myaxis)
 
 
 		myaxis = @pgf PGFPlotsX.Axis(
 	    {
-	     #   ymin = 0.45, 
-		#	ymax = 1.0,
-	       # xmin =0, xmax =25,
+	       ymin = -0.05, 
+			ymax = 1.05,
+	       xmin =-1, xmax =1,
 			ylabel = raw"Potential $\phi$",
-			xlabel=raw"Ort $x$ ",
+			xlabel=raw"Ort $x$",
 			ytick = [], 
 		#	xtick = (0:5:25),
-			xtick = [0],
+			xtick = [-0.816, 0, 0.816/2],
+			xticklabels = {raw"$-d_p$", "0", raw"$+d_n$"},
 			#xmajorgrids,
-			width= "105mm", height= "40mm", 
-			yticklabels = []
+			width= "105mm", height= "30mm", 
+			yticklabels = [],
+			axis_x_line="bottom",
+			axis_y_line="left",
+		clip = false,
 	    },	
 		);
 
@@ -150,8 +170,16 @@ begin
 	        Table([x,  phi ] ) )
 		push!(myaxis, p)
 
+		push!(myaxis, raw"\draw[dotted] (-0.816,0) --(-0.816,3);")
+		push!(myaxis, raw"\draw[dotted] (0,0) --(0,3);")
+		push!(myaxis, raw"\draw[dotted] (0.816/2,0) --(0.816/2,3);")
 	
+		push!(myaxis, raw"\node[above right] at (-1,0) {$\phi_{-\infty}$};")
+		push!(myaxis, raw"\node[below left] at (1,1) {$\phi_{+\infty}$};")
 
+		push!(myaxis, raw"\draw[<->] (0.6,0) --node[right] {$V_D$}(0.6,1);")
+
+	
 	push!(gp, myaxis)
 	
 	pgfsave("../schottky_modell.tikz.tex",gp; include_preamble= false)
@@ -1226,6 +1254,7 @@ version = "1.4.1+0"
 # ╠═40fa2922-fba2-11ed-0ad1-99382d7b814d
 # ╠═b6efde99-e16a-4420-aa07-3740b476ecdf
 # ╠═56448425-e69d-4535-b80c-fc194bc10657
+# ╠═158985db-d5d3-4f19-a944-31360b525f60
 # ╠═e0e90646-161e-4d49-8cb3-4dced7c81fa4
 # ╠═c500b85c-757a-4be3-876b-4f7d4fcae95f
 # ╠═b29d5ca7-3b30-4fc6-acff-39ce528ab565
