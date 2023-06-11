@@ -1,0 +1,48 @@
+
+\renewcommand{\lastmod}{11. Juni 2023}
+\renewcommand{\chapterauthors}{Markus Lippitz}
+
+
+\chapter{Bandlücken}
+
+
+\section*{Was bisher geschah}
+
+
+Im Kapitel \ref{chap:bandstruktur} zur Bandstruktur hatten wir die Bandlücke anhand der energetisch am tiefsten liegende Kreuzung zweier Parabeln diskutiert. Wir haben Gl \ref{eq:3_SG_rezi} eingeschränkt auf nur drei Koeffizienten $C$, nämlich $C_k$,  $C_{k - g}$ und  $C_{k + g}$ und sind so bei Gl.  \ref{eq:3_SG_empty_lattice}  gelandet. Dann haben wir festgestellt, dass in der Nähe der Grenze der Brillouinzone eine Resonanz in der Energie auftritt und nur zwei der 3 Koeffizienten wirklich relevant sind. Das führte dann zu Gl. \ref{eq:3_SG_empty_lattice_2}, die nur noch $C_k$ und  $C_{k - g}$ enthält. Die haben wir schließlich gelöst und eine Aufspaltung der Breite $2 V_g$ gefunden.
+
+Im darauf folgenden Abschnitt 'Anschauliche Interpretation II' haben wur die Analogie zur Beugung von Wellen an Gittern und zur Laue-Bedingung  gezogen: Die Koeffizienten $C_x$ beschreiben ja gerade ebene Wellen mit dem Wellenvektor $x$. Die Laue-Beugung addiert dann einen reziproken Gittervektor des Kristalls auf diese Welle. Wenn das Potential also einen Koeffizienten $V_g$ besitzt, dann kann das Gitter einen Vektor $g$ addieren oder subtrahieren. Genau dies Koppelt die ebene Wellen bei $k$ und $k+g$. 
+
+\section*{Verallgemeinerung}
+
+Der Koeffizient $V_g$ koppelt in diesem Argument aber nicht nur ebene Wellen mit $k_1 = k$ und $k_2 =k+g$, sondern alle Paare von ebenen Wellen mit 
+\begin{equation}
+    | k_1 - k_2 | = g
+\end{equation}
+also beispielsweise $k+17g$ mit $k+16g$.
+
+In Analogie damit ist es naheliegend, dass ein Fourier-Koeffizient des Potentials $V_{n g}$ gerade solche ebenen Wellen miteinander  koppelt, die $n g$v auseinander liegen, also 
+\begin{equation}
+    | k_1 - k_2 | = n g \quad . \label{eq:anhang_bandluecke_n}
+\end{equation}
+
+\begin{figure}
+    \inputtikz{\currfiledir fig_zone_scheme_2}
+   \caption{Dispersionsrelation freier Elektronen. Manche Kreuzungen sind mit dem $n$ aus 
+   Gl.~B.2 bezeichnet. 
+   }
+\end{figure}
+
+Das sieht man auch, wenn man  Gl.~\ref{eq:3_SG_rezi} für ein paar mehr als die drei Koeffizienten in Gl.~\ref{eq:3_SG_empty_lattice}  hinschreibt\sidenote{Tun Sie das!}. Das ist eine quadratische Matrix, die auf ihrer Diagonalen Einträge der Form
+\begin{equation}
+    E_{k + ng}^2 - E
+\end{equation}
+hat, wobei $n$ hier von $-N$ bis $+N$ läuft (und $N=1$ in  Gl.~\ref{eq:3_SG_empty_lattice}).
+In der beiden Diagonalen darüber und darunter steht ein $V_g$, in den beiden Diagonalen nochmals darüber und darunter steht ein $V_{2g}$ und so weiter.\sidenote{Achtung: Gl.~\ref{eq:3_SG_empty_lattice} ist anders sortiert.} 
+
+
+
+
+
+%-------------------
+

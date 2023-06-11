@@ -3,6 +3,7 @@
 \renewcommand{\lastmod}{11. Mai  2023}
 
 \chapter{Elektronen in Festkörpern}
+\label{chap:bandstruktur}
 
 
 
@@ -84,7 +85,7 @@ Diese Gleichung muss für jedes $\mathbf{r}$ gelten, also muss der Inhalt der Kl
 \begin{equation}
         \left( \frac{\hbar^2 | \mathbf{k}|^2}{2m} - E \right) C_{\mathbf{k}}
     + \sum_{\mathbf{G}} V_{\mathbf{G}} \, C_{\mathbf{k}- \mathbf{G}} 
-    = 0  \quad . \label{eq:2_SG_rezi}
+    = 0  \quad . \label{eq:3_SG_rezi}
 \end{equation}
 Dieser Satz von Gleichung ist die \emph{Schrödinger-Gleichung im reziproken Raum}, für Elektronen in einem gitterperiodischen Potential. Dies ist ein unendlich großes Gleichungssystem, weil die Summe über $\mathbf{G}$ zunächst nicht beschränkt ist. In der Praxis zeigt sich aber, dass bei Coulomb-artigen Potentialen die Fourier-Koeffizienten  $ V_{\mathbf{G}} $ des Potentials schnell mit $|\mathbf{G}|$ abfallen, so dass letztendlich doch nicht so viele Gleichungen gekoppelt sind. 
 Auch koppelt das Gleichungssystem nicht alle Koeffizienten $C_i$ miteinander, sondern nur die, die  um einen reziproken Gittervektor $\mathbf{G}$ auseinander liegen, also $C_\mathbf{k}$ mit $C_\mathbf{k \pm G'}$, $C_\mathbf{k \pm G''}$, etc. 
@@ -94,7 +95,7 @@ Nun hat sich herausgestellt, dass nur manche Koeffizienten vorkommen, nämlich g
 \begin{equation}
     \psi_\mathbf{k}(\mathbf{r}) =  \sum_{\mathbf{G}} C_{\mathbf{k}-\mathbf{G}} \, e^{i (\mathbf{k}- \mathbf{G}) \cdot \mathbf{r} } 
 \end{equation}
-wobei der Wellenvektor $\mathbf{k}$ jetzt als Quantenzahl gesehen wird. Wir können ihn immer so wählen, dass er in der ersten Brillouinzone liegt.\sidenote{Den Rest kann man immer in die Summe über $\mathbf{G}$ verschieben.} Ebenso bekommt die Energie $E$ aus Gl.~\ref{eq:2_SG_rezi} ein   $\mathbf{k}$ als Index
+wobei der Wellenvektor $\mathbf{k}$ jetzt als Quantenzahl gesehen wird. Wir können ihn immer so wählen, dass er in der ersten Brillouinzone liegt.\sidenote{Den Rest kann man immer in die Summe über $\mathbf{G}$ verschieben.} Ebenso bekommt die Energie $E$ aus Gl.~\ref{eq:3_SG_rezi} ein   $\mathbf{k}$ als Index
 \begin{equation}
     E_\mathbf{k} = E(\mathbf{k}) \quad .
 \end{equation}
@@ -106,7 +107,7 @@ mit $\mathbf{k}$ innerhalb der ersten Brillouinzone.
 Der Index  $n$ nennt sich Band-Index und ist so sortiert, dass die Energien $E_n$ aufsteigend sind.
 
 \begin{questions}
-    \item Wie kommt es, dass aus einer Schrödingergleichung im Realraum jetzt ein ganzes Gleichungssystem (\ref{eq:2_SG_rezi}) in reziproken Raum wird?
+    \item Wie kommt es, dass aus einer Schrödingergleichung im Realraum jetzt ein ganzes Gleichungssystem (\ref{eq:3_SG_rezi}) in reziproken Raum wird?
     \item Skizzieren Sie eine Elektronen-Wellenfunktion mit $k$ innerhalb und außerhalb der ersten Brillouinzone.
 \end{questions}
 
@@ -145,7 +146,7 @@ Das bedeutet auch, dass $\hbar \mathbf{k}$ nicht als Impuls verstanden werden ka
 
 \section{Reduziertes Zonenschema}
 
-Zu Demonstrationszwecken machen wir nun eine sehr weitgehende Näherung: wir nehmen wie beim freien Elektronengas an, dass gar kein Potential vorhanden ist, aber die Periodizität des Raums weiterhin erhalten bleibt (ohne zu sagen, was da nun noch periodisch sein soll). Wir wenden also den Formalismus auf $V=0$ an. Damit verschwinden alle Fourier-Koeffizienten $V_\mathbf{G}$ und das Gleichungssystem Gl. \ref{eq:2_SG_rezi} zerfällt in einzelne Gleichungen mit der Lösung
+Zu Demonstrationszwecken machen wir nun eine sehr weitgehende Näherung: wir nehmen wie beim freien Elektronengas an, dass gar kein Potential vorhanden ist, aber die Periodizität des Raums weiterhin erhalten bleibt (ohne zu sagen, was da nun noch periodisch sein soll). Wir wenden also den Formalismus auf $V=0$ an. Damit verschwinden alle Fourier-Koeffizienten $V_\mathbf{G}$ und das Gleichungssystem Gl. \ref{eq:3_SG_rezi} zerfällt in einzelne Gleichungen mit der Lösung
 \begin{equation}
     E(\mathbf{k}) = \frac{\hbar^2}{2m} \left| \mathbf{k}  \right|^2 
     \quad \text{und} \quad 
@@ -179,12 +180,12 @@ kommt zu den Rück-Faltungen noch hinzu, dass es einen Offset aufgrund der $y$ u
 
 
 
-Nun wollen wir das Potential hinzunehmen, aber weiterhin als 'schwach' betrachten, eben 'beinahe freie' Elektronen. Im Englischen  nennt man das \emph{empty lattice approximation}. In der Schrödingergleichung \ref{eq:2_SG_rezi} kommen die Fourier-Koeffizienten $V_\mathbf{G}$ des Potentials vor. Im Eindimensionalen ist $G_n = 2 \pi n / a$, mit der Gitterkonstante $a$. Das betragsmäßig kleinste $G$ ist also $g = 2 \pi / a$. Wir nehmen also an, dass nur $V_{\pm g}$ von Null verschieden ist. $V_0$ beschreibt einen konstanten Offset, den wir bei einer Energie-Achse immer zu Null wählen können. Alle höheren $V_G$ sollen der Einfachheit halber ebenfalls Null sein.  Wenn die $V_{\pm g}$ klein sind, dann wir die Lösung ähnlich dem vorangegangenen Abschnitt sein, also zurückgefaltete Parabeln innerhalb der ersten Brillouinzone:
+Nun wollen wir das Potential hinzunehmen, aber weiterhin als 'schwach' betrachten, eben 'beinahe freie' Elektronen. Im Englischen  nennt man das \emph{empty lattice approximation}. In der Schrödingergleichung \ref{eq:3_SG_rezi} kommen die Fourier-Koeffizienten $V_\mathbf{G}$ des Potentials vor. Im Eindimensionalen ist $G_n = 2 \pi n / a$, mit der Gitterkonstante $a$. Das betragsmäßig kleinste $G$ ist also $g = 2 \pi / a$. Wir nehmen also an, dass nur $V_{\pm g}$ von Null verschieden ist. $V_0$ beschreibt einen konstanten Offset, den wir bei einer Energie-Achse immer zu Null wählen können. Alle höheren $V_G$ sollen der Einfachheit halber ebenfalls Null sein.  Wenn die $V_{\pm g}$ klein sind, dann wir die Lösung ähnlich dem vorangegangenen Abschnitt sein, also zurückgefaltete Parabeln innerhalb der ersten Brillouinzone:
 \begin{equation}
     E_k^0 =  \frac{\hbar^2 k^2}{2m} \quad \text{bzw.} \quad    E_{k \pm g}^0 =  \frac{\hbar^2 (k  \pm g)^2}{2m}  \quad .
 \end{equation}
 
-Damit wird die Schrödingergleichung \ref{eq:2_SG_rezi} zu
+Damit wird die Schrödingergleichung \ref{eq:3_SG_rezi} zu
 \begin{equation}
    \begin{pmatrix}
     E_k^0 - E &  V_{g} &  V_{-g} \\
@@ -196,11 +197,11 @@ Damit wird die Schrödingergleichung \ref{eq:2_SG_rezi} zu
     C_{k} \\  C_{k - g} \\  C_{k + g}
   \end{pmatrix}
  = 0  \quad . 
- \label{eq:2_SG_empty_lattice} 
+ \label{eq:3_SG_empty_lattice} 
 \end{equation}
 Die dreidimensionale Lösung dieses Gleichungssystems ist in Abb.~\ref{fig:3_al_empty_lattice} dargestellt und kommt der vollständigen Rechnung schon sehr nahe. Das Pluto-Skript\pluto{al_dispersion} für diese Abbildung ist inspiriert von \cite{Polakovic_cmpm3}.
 
-Interessant wird es an der Grenze der Brillouinzone, also bei $k = \pm g/2$. Dort schneiden sich zwei Parabeln. Die Zustände sind ohne Potential also energetisch entartet. Lassen Sie uns diese Stelle im Fall von  $V_{\pm g} \neq 0$ genauer betrachten. Bei beispielsweise $k = + g/2$  sind die ersten beiden Diagonalelemente von Gl. \ref{eq:2_SG_empty_lattice} nahe Null, das dritte betragsmäßig deutlich größer. Damit die dritte Zeile sich trotzdem zu Null summiert, muss also hier $C_{k+g} \approx 0$ sein. Andersherum: An der rechten Grenze der Brillouinzone schneiden sich die Parabeln, die von $G =0$ und von $G=+g$ ausgehen. Nur diese beiden Koeffizienten $C_{k-G}$ bzw. diese ebenen Wellen tragen bei. Das Gleichungssystem wird noch einfacher 
+Interessant wird es an der Grenze der Brillouinzone, also bei $k = \pm g/2$. Dort schneiden sich zwei Parabeln. Die Zustände sind ohne Potential also energetisch entartet. Lassen Sie uns diese Stelle im Fall von  $V_{\pm g} \neq 0$ genauer betrachten. Bei beispielsweise $k = + g/2$  sind die ersten beiden Diagonalelemente von Gl. \ref{eq:3_SG_empty_lattice} nahe Null, das dritte betragsmäßig deutlich größer. Damit die dritte Zeile sich trotzdem zu Null summiert, muss also hier $C_{k+g} \approx 0$ sein. Andersherum: An der rechten Grenze der Brillouinzone schneiden sich die Parabeln, die von $G =0$ und von $G=+g$ ausgehen. Nur diese beiden Koeffizienten $C_{k-G}$ bzw. diese ebenen Wellen tragen bei. Das Gleichungssystem wird noch einfacher 
 \begin{equation}
     \begin{pmatrix}
         E_k^0 - E &  V_{g}  \\
@@ -210,7 +211,7 @@ Interessant wird es an der Grenze der Brillouinzone, also bei $k = \pm g/2$. Dor
    \begin{pmatrix}
      C_{k} \\  C_{k - g} 
    \end{pmatrix}
-  = 0 \quad . \label{eq:2_SG_empty_lattice_2}
+  = 0 \quad . \label{eq:3_SG_empty_lattice_2}
  \end{equation}
 Wir nehmen weiterhin an, dass das Potential inversionssymmetrisch ist, also $V_g = V_{-g}$. Damit finden wir die Energie-Eigenwerte
 \begin{equation}
@@ -251,7 +252,7 @@ Die Atomkerne mit dem zugehörigen attraktiven Coulomb-Potential sitzen bei $x =
 
 An der Grenze der Brillouinzone können zwei ebene Wellen also so hybridisieren, dass dadurch für eine der beiden neuen Eigenfunktionen die Energie abgesenkt wird. Im Gegenzug erhöht sich die Eigenenergie der anderen. Dies ist sehr ähnlich dem bindenden und anti-bindenden Potential bei \ch{H2+} in der Molekülphysik. Fern der Grenzen der Brillouinzone sind die Energien der beiden Zustände so unterschiedlich, dass die Beschreibung durch die alten, ungekoppelten Zustände gültig bleibt: Der Term $ E_k^0 -   E_{k-g}^0$ ist viel größer als $V_g$, so dass der Effekt von $V_g$ vernachlässigt werden kann.
 
-Eigenwert-Gleichungen der Form \ref{eq:2_SG_empty_lattice_2} sind ein häufig vorkommendes Motiv in der Physik. Zwei Zustände geringfügig unterschiedlicher Energie koppeln dann zu neuen, hybridisierten Zuständen, wenn ihre Energiedifferenz kleiner als die Kopplungsenergie ist. Wenn man die Energiedifferenz variiert (hier durch Ändern von $k$) dann werden die Energien sich kreuzen (wie im letzten Abschnitt). Die Kopplungsenergie $V_g$ führt zu einer Vermeidung der Kreuzung (engl. \emph{avoided crossing}). Das ist kein quantenmechanischer Effekt. Auch bei den gekoppelten Pendeln sieht man das, wenn man die Eigenfrequenz der Pendel verstimmt, um so die Eigenenergien unterschiedlich zu machen.
+Eigenwert-Gleichungen der Form \ref{eq:3_SG_empty_lattice_2} sind ein häufig vorkommendes Motiv in der Physik. Zwei Zustände geringfügig unterschiedlicher Energie koppeln dann zu neuen, hybridisierten Zuständen, wenn ihre Energiedifferenz kleiner als die Kopplungsenergie ist. Wenn man die Energiedifferenz variiert (hier durch Ändern von $k$) dann werden die Energien sich kreuzen (wie im letzten Abschnitt). Die Kopplungsenergie $V_g$ führt zu einer Vermeidung der Kreuzung (engl. \emph{avoided crossing}). Das ist kein quantenmechanischer Effekt. Auch bei den gekoppelten Pendeln sieht man das, wenn man die Eigenfrequenz der Pendel verstimmt, um so die Eigenenergien unterschiedlich zu machen.
 
 
 \section*{Anschauliche Interpretation II}
