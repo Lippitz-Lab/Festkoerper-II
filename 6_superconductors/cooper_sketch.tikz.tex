@@ -1,0 +1,57 @@
+% \documentclass{standalone}
+% \usepackage{currfile,hyperxmp}
+
+% \input{../tikz_header.tex}
+
+% \begin{document}
+
+
+
+\begin{tikzpicture}
+%\useasboundingbox (-1.3,-1.2) rectangle (10.2,4.7);
+%\draw (-1,-1) rectangle +(12,5);
+
+\tikzmath{\r =1; \K =1.6; \dr = 0.1;}
+
+\begin{scope}
+\draw[fill=black](0,0) circle (0.04);
+\draw[name path=A] (0,0) circle (\r);
+\draw[name path=B] (0,0) circle ({\r + \dr});
+
+\tikzfillbetween[of=A and B]{blue, opacity=0.3};
+
+\draw[fill=black](\K,0) circle (0.04);
+\draw[name path=C] (\K,0) circle (\r);
+\draw[name path=D] (\K,0) circle ({\r + \dr});
+\tikzfillbetween[of=C and D]{blue, opacity=0.3};
+
+\draw[->] (0,0) -- node[below]{${K}$} (\K,0);
+
+\draw[->] (0,0) -- node[left] {$k_1$} ({\K/2}, {sqrt((\r + \dr/2)^2 - \K^2 / 4)});
+\draw[<-] (\K,0) -- node[right] {$k_2$} ({\K/2}, {sqrt((\r + \dr/2)^2 - \K^2 / 4)});
+\end{scope}
+
+
+\begin{scope}[yshift=-25mm,xshift={\K * 5mm}]
+    \draw[fill=black](0,0) circle (0.04);
+    \draw[name path=A] (0,0) circle (\r);
+    \draw[name path=B] (0,0) circle ({\r + \dr});
+    
+    \tikzfillbetween[of=A and B]{blue, opacity=0.45};
+    
+    \draw[->] (0,0) -- node[left] {$k_1$} (45:{\r + \dr/2});
+    \draw[->] (0,0) -- node[right] {$k_2$} ({45+180}:{\r + \dr/2});
+
+    \draw[->] (0,0) -- node[below] {$k'_1$} (20:{\r + \dr/2});
+    \draw[->] (0,0) -- node[above] {$k'_2$} ({20+180}:{\r + \dr/2});
+
+    \draw[->, decorate, decoration=snake, segment length=4] (45:{\r + \dr/2}) -- (20:{\r + \dr/2});
+    \draw[->, decorate, decoration=snake, segment length=4]  ({45+180}:{\r + \dr/2}) -- ({20+180}:{\r + \dr/2});
+
+    %\draw[->] (\K,0) -- node[right] {$k_2$} ({\K/2}, {sqrt((\r + \dr/2)^2 - \K^2 / 4)});
+\end{scope}
+
+    
+\end{tikzpicture}
+
+%\end{document}

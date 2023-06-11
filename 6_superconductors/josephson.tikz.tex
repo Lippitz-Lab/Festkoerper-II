@@ -1,0 +1,66 @@
+% \documentclass{standalone}
+% \usepackage{currfile,hyperxmp}
+
+% \input{../tikz_header.tex}
+
+% \begin{document}
+
+
+
+\begin{tikzpicture}
+%\useasboundingbox (-1.3,-1.2) rectangle (10.2,4.7);
+%\draw (-1,-1) rectangle +(12,5);
+
+    \begin{axis}[ xlabel={ Potential  $U$ (mV)}, ylabel={Strom $I$ (mA)}, 
+         width=50mm, height=50mm, 
+        %ymode=log, 
+     %   ymode=log,
+       %  xmin = 4,
+         xmax = 4,
+       %  ymin  = 0,
+         ymax = 3,
+         %xmax=5.5, ymin = 0, ymax=7.5,
+        % axis x line=bottom,
+         %axis y line=left,
+         % xmax= 2e5, unbounded coords=jump, ymin=0, ymax = 4
+        % label style={font=\tiny},
+        % tick label style={font=\tiny}
+       % ytick= \empty  
+    ]
+
+
+
+%-------------
+\addplot[no marks,  thick] table [ col sep=comma,
+ %x expr=10^\thisrowno{0} , % 
+%y expr=10^\thisrowno{1} , 
+ x index = 0,
+  y index = 2
+ ] {\currfiledir data/langenberg.csv};
+
+ \addplot[no marks,  thick, red] table [ col sep=comma,
+ %x expr=10^\thisrowno{0} , % 
+%y expr=10^\thisrowno{1} , 
+ x index = 0,
+  y index = 1
+ ] {\currfiledir data/langenberg.csv};
+
+ \draw[thick, dashed] (0,0) -- (1.9,0);
+ \draw[dotted] (0,0) -- (4,3.2);
+
+ %\node[right] at (0,1 ) {\tiny Cooper-Paare};
+ 
+%  \addplot[domain=113:125 , samples=100]{40.6 / sqrt(x)};
+
+% \node[right] at (115, 3.8) {$1/\sqrt{M}$};
+
+%     %  \addplot[domain=0.24:0.7 , samples=100]{2e4 * sqrt(x - 0.232)};
+%    % \draw[dotted] (4.20236,1.483) -- (4.23192,113.677);
+%    % \draw[thin] (4.23192,113.677) -- (4.4, 135);
+
+
+
+    \end{axis}
+\end{tikzpicture}
+ 
+%\end{document}
