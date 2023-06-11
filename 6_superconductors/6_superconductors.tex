@@ -104,9 +104,9 @@ Man beobachtet, dass die Abschirmung des externen Magnetfelds nur bis zu einer g
     \bm{B}_\text{ext} \quad & \text{falls} \quad {B}_\text{ext}  < B_c & \quad \text{supraleitend} \\
     0    & \text{falls} \quad {B}_\text{ext}  \ge B_c  & \quad \text{normalleitend}
 \end{matrix}
-    \right.
-\end{equation} \quad .
-Für die kritische Feldstärke $B_c$ findet man den Zusammenhang
+    \right. \quad .
+\end{equation} 
+Für die kritische Feldstärke $B_c$ findet man empirisch den Zusammenhang
 \begin{equation}
     B_c(T) = B_c(0) \, \left[ 1 - \left( \frac{T}{T_c} \right)^2 \right]
 \end{equation}
@@ -243,7 +243,7 @@ In einem Gedankenexperiment starten wir von einem freien Elektronengas bei $T=0$
 
 Ein anschauliches Bild ist folgendes: ein Elektron bewegt sich durch den Kristall aus positiven Ionen. Diese werden leicht angezogen und im Kielwasser des Elektrons entsteht eine etwas erhöhte Dichte an Atom-Rümpfen. Diese etwas höhere Ladung wirkt dann anziehend auf das zweite Elektron. Der Abstand der beiden Elektronen ist durch die Zeit bestimmt, die die Atom-Rümpfe brauchen, um sich zu bewegen, also die Phonon-Frequenz. Typische Werte sind eben in der Größe von 100 nm, wie die London-Länge, und so groß, dass die Coulomb-Abstoßung  der Elektronen nicht ins Gewicht fällt.
 
-Jenseits des anschaulichen Bildes kann man die Wechselwirkung als Austausch\sidenote{siehe Austausch-Boson-Modell in der Kernphysik} von virtuellen Phononen mit dem Wellenvektor $\bm{q}$ modellieren. Vor dem Austausch haben die beiden Elektronen die Wellenvektoren $\bm{k}_1$ und $\bm{k}_2$, nach dem Austausch $\bm{k}_1 + \bm{q}$ und $\bm{k}_2 - \bm{q}$. Der Gesamtimpuls bleibt also erhalten. Wir sind weiterhin am absoluten Temperatur-Nullpunkt und alle Zustände unterhalb $E_F$ durch die 'anderen' Elektronen besetzt. Die beiden besonderen Elektronen können  also nur Zustände im Bereich $E_F$ und $E_F + \hbar \omega_D$ annehmen. Im reziproken Raum entspricht das einer Kugelschale zwischen $k_F$ und $k_F + m \omega_D / (\hbar k_F)$. Der Überlapp zwischen den Kugelschalen der beiden Elektronen bestimmt also dir Stärke der Wechselwirkung und die  Energieabsenkung. Maximale Absenkung erhalten wir, wenn die Mittelpunkte der Kugelschalen übereinstimmen, also 
+Jenseits des anschaulichen Bildes kann man die Wechselwirkung als Austausch\sidenote{siehe Austausch-Boson-Modell in der Kernphysik} von virtuellen Phononen mit dem Wellenvektor $\bm{q}$ modellieren. Vor dem Austausch haben die beiden Elektronen die Wellenvektoren $\bm{k}_1$ und $\bm{k}_2$, nach dem Austausch $\bm{k}_1 + \bm{q}$ und $\bm{k}_2 - \bm{q}$. Der Gesamtimpuls bleibt also erhalten. Wir sind weiterhin am absoluten Temperatur-Nullpunkt und alle Zustände unterhalb $E_F$ durch die 'anderen' Elektronen besetzt. Die beiden besonderen Elektronen können  also nur Zustände im Bereich $E_F$ und $E_F + \hbar \omega_D$ annehmen. Im reziproken Raum entspricht das einer Kugelschale zwischen $k_F$ und $k_F + m \omega_D / (\hbar k_F)$. Der Überlapp zwischen den Kugelschalen der beiden Elektronen bestimmt also die Stärke der Wechselwirkung und die  Energieabsenkung. Maximale Absenkung erhalten wir, wenn die Mittelpunkte der Kugelschalen übereinstimmen, also 
 \begin{equation}
     \bm{K} = \bm{k}_1 + \bm{k}_2 = 0 \quad \text{bzw.} \quad  \bm{k}_1 = - \bm{k}_2  \quad .
 \end{equation}
@@ -296,12 +296,12 @@ Die gemeinsame Wellenfunktion für alle Cooper-Paare kann die Quantisierung des 
  \end{equation}
  Damit erhalten wir alles zusammen\sidenote{Der Gradient liefert das $i$, das sich somit aufhebt.}
  \begin{equation}
-  \lambda^2 \mu \,  \bm{j} =   \frac{ \hbar }{q_s} \, \nabla \Theta (\bm{r}) - \bm{A} \label{eq:6_superstrom}
+  \lambda^2 \mu_0 \,  \bm{j} =   \frac{ \hbar }{q_s} \, \nabla \Theta (\bm{r}) - \bm{A} \label{eq:6_suprastrom}
  \end{equation}
- mit der London-Länge $\lambda^2 = m/ (n \mu q)$ wie oben.
+ mit der London-Länge $\lambda^2 = m/ (n \mu_0 q)$ wie oben.
  Von hier kommt man also zur London-Theorie zurück. Eine makroskopische Wellenfunktion ist dazu ausreichend.
 
-Nun betrachten wir einen supraleitenden Torus, der von einem Magnetfeld durchsetzt ist.  Das Innere des Supraleiters ist frei von Feldern und Strömen, also ist Gl.~\ref{eq:6_superstrom} Null und wir schreiben
+Nun betrachten wir einen supraleitenden Torus, der von einem Magnetfeld durchsetzt ist.  Das Innere des Supraleiters ist frei von Feldern und Strömen, also ist Gl.~\ref{eq:6_suprastrom} Null und wir schreiben
 \begin{align}
      \hbar  \, \nabla \Theta (\bm{r})  &=  q_s \bm{A} \\
      \hbar \oint \nabla \Theta (\bm{r})& =  q_s \oint \bm{A}  \\
@@ -310,7 +310,7 @@ Nun betrachten wir einen supraleitenden Torus, der von einem Magnetfeld durchset
 \end{align}
 wobei wir im zweiten Schritt den Satz von Stokes ausgenutzt haben und im dritten, dass $|\Psi|$ nach einem Umlauf in Kreis eindeutig definiert sein muss, sich die Phase also nur um $2\pi$ unterscheiden darf. Damit bekommen wir die Flussquantisierung ($q_s = -2e$)
 \begin{equation}
-    \Phi = \frac{h}{2 e} \, s = s \Phi_0 \quad .
+    \Phi = \frac{h}{2 e} \, s = s \, \Phi_0 \quad .
 \end{equation}
 
 
@@ -330,9 +330,9 @@ Durch die Supraleitung darf sich die Summe der Zustände nicht ändern. Damit er
     \end{matrix}
     \right. \label{eq:6_Dos_SL}
 \end{equation}
-mit der Zweiteilchen-Energie $E_k$. Die Cooper-Paare sind in dieser Darstellung eine Delta-Funktion bei $E_k = 0$.
+mit der Zweiteilchen-Energie $E_k$. Die Cooper-Paare sind in dieser Darstellung eine Delta-Funktion bei $E_k = 0$ (rot in Abb.~\ref{eq:6_Dos_SL}).
 
-\begin{marginfigure}
+\begin{marginfigure}[-40mm]
     \inputtikz{\currfiledir dos_SL}
 
     \inputtikz{\currfiledir dos_SL_1T}
@@ -340,12 +340,12 @@ mit der Zweiteilchen-Energie $E_k$. Die Cooper-Paare sind in dieser Darstellung 
     \caption{Zustandsdichte eines Supraleiters im Zweiteilchen-Modell (oben) und im Einteilchen-Modell (unten).}
 \end{marginfigure}
 
-Wenn man darauf verzichtet, die Cooper-Paare einzuzeichnen, dann kann man auch eine Einteilchen-Zustandsdichte zeichnen, die dann eine Lücke im Bereich $E_F - \Delta$ bis $E_F + \Delta$ besitzt und außerhalb analog zu Gl\ref{eq:6_Dos_SL} verläuft.
+Wenn man darauf verzichtet, die Cooper-Paare einzuzeichnen, dann kann man auch eine Einteilchen-Zustandsdichte zeichnen, die dann eine Lücke im Bereich $E_F - \Delta$ bis $E_F + \Delta$ besitzt und außerhalb analog zu Gl.~\ref{eq:6_Dos_SL} verläuft.
 
 
 \section*{Kritische Temperatur, Strom, Magnetfeld}
 
-Sobald wir nicht mehr am absoluten Nullpunkt der Temperatur sind, existieren Cooper-Paare und Bogolonen gleichzeitig. Mit steigender Temperatur nimmt die Dichte der Cooper-Paare ab. Je weniger Cooper-Paare es aber gibt, fest schlechter ist die Kondensation, und die Energieabsenkung pro Paar wird geringer. $\Delta$ wird temperaturabhängig. Man findet durch numerisches Lösen einer nichtlinearen Differentialgleichung\footcite{Gross_FK} für $T \approx T_c$
+Sobald wir nicht mehr am absoluten Nullpunkt der Temperatur sind, existieren Cooper-Paare und Bogolonen gleichzeitig. Mit steigender Temperatur nimmt die Dichte der Cooper-Paare ab. Je weniger Cooper-Paare es aber gibt, desto schlechter ist die Kondensation, und die Energieabsenkung pro Paar wird geringer. $\Delta$ wird temperaturabhängig. Man findet durch numerisches Lösen einer nichtlinearen Differentialgleichung\footcite{Gross_FK} für $T \approx T_c$
 \begin{equation}
     \frac{\Delta(T)}{\Delta(T=0)} \approx 1.74 \sqrt{1 - \frac{T}{T_c}}
 \end{equation}
@@ -354,7 +354,7 @@ und einen Zusammenhang zwischen kritischer Temperatur und Bandlücke bei $T=0$
     2 \Delta(0) = 3.52  \, k_b  \, T_c \quad .
 \end{equation}
 
-Ebenso bricht die Supraleitung zusammen, wenn der Strom im Supraleiter zu groß wird. Sobald die kinetische Energie der Cooper-Paare die durch die Kondensation gewonnene Energie (Gl.~\ref{eq:6_E_kondensation}) übersteigt, lösen sich die Cooper-Paare selbst auf. Dann wird die kritische Geschwindigkeit $v_C$ erreicht, bei der 
+Ebenso bricht die Supraleitung zusammen, wenn der Strom im Supraleiter zu groß wird. Sobald die kinetische Energie der Cooper-Paare die durch die Kondensation gewonnene Energie (Gl.~\ref{eq:6_E_kondensation}) übersteigt, lösen sich die Cooper-Paare selbst auf. Dann wird die kritische Geschwindigkeit $v_c$ erreicht, bei der 
 \begin{equation}
     E_\text{kin} = n_s \frac{m_s v_c^2}{2} =  | E_\text{Kondensat} |  \frac{1}{4} \, D(E_F) \, \Delta^2 \quad .
 \end{equation}
@@ -366,20 +366,20 @@ wobei wir $D(E_F)$ durch $k_F$ ausgedrückt haben. Dieser kritische Strom produz
 \begin{equation}
  B_c = \mu_0 \, \lambda \, j_c  \propto \Delta \quad .
 \end{equation}
-
+Die Bandlücke $\Delta$ des Supraleiters in der BCS-RTheorie ist also ausreichend, um alle obengenannten kritischen Temperaturen, Ströme und Magnetfelder zu erklären.
 
 \section{Tunneln von Elektronen}
 
-Die Zustandsdichte in der Nähe des Fermi-Niveaus und insbesondere die Lücke darin lässt sich sehr elegant durch die Tunnelspektroskopie untersuchen. Dazu benötigt man einen Tunnel-Kontakt zwischen zwei Leitern. technisch einfach geht das, wenn man erst einen Streifen des ersten Materials aufdampft, dann einen dünnen (wenige nm) Isolator, und dann quer dazu einen Streifend es anderen Materials. So kann man beide Streifen einzeln kontaktieren, eine Potentialdifferenz $U$ über den Isolator anlegen und einen Tunnel-Strom $I$ fließen lassen. Man misst dann den Strom als Funktion der angelegten Potentialdifferenz.
+Die Zustandsdichte in der Nähe des Fermi-Niveaus und insbesondere die Lücke darin lässt sich sehr elegant durch die Tunnelspektroskopie untersuchen. Dazu benötigt man einen Tunnel-Kontakt zwischen zwei Leitern. Technisch einfach geht das, wenn man erst einen Streifen des ersten Materials aufdampft, dann einen dünnen (wenige nm) Isolator, und dann quer dazu einen Streifen  des anderen Materials. So kann man beide Streifen einzeln kontaktieren, eine Potentialdifferenz $U$ über den Isolator anlegen und einen Tunnel-Strom $I$ fließen lassen. Man misst dann den Strom als Funktion der angelegten Potentialdifferenz.
 
 Mikroskopisch gesehen verschiebt die Spannung $U$ die Fermi-Niveaus rechts und links der Tunnel-Barriere gegeneinander. Dadurch kommen besetzte Niveaus auf der einen Seite energetisch auf die gleiche Höhe wie unbesetzte Niveaus auf der anderen Seite. In diesem Fall können die Elektronen mit einer gewissen Wahrscheinlichkeit durch die Barriere tunneln und ein Strom fließt. Der Strom ist also das Integral über die gegeneinander verschobenen Zustandsdichten multipliziert mit ihrer jeweiligen Besetzung
-\begin{eqnarray}
+\begin{equation}
     I_\text{L $\rightarrow$ R} \propto \int D_\text{L}(E) f(E) \, \, D_\text{R}(E + e U) [1 - f(E + e U)] \, \, dE \quad .
-\end{eqnarray}
-Genauso kann auch ein Strom von rechts nach links fließen, so dass der Netto-Strom die Differenz der beiden ist
-\begin{eqnarray}
+\end{equation}
+Genauso kann auch ein Strom von rechts nach links fließen, so dass der Netto-Strom die Differenz der beiden ist:
+\begin{equation}
     I \propto \int D_\text{L}(E) \, D_\text{R}(E + e U)  \, [f(E) - f(E + e U)] \, dE \quad .
-\end{eqnarray}
+\end{equation}
 
 \begin{marginfigure}
     \inputtikz{\currfiledir tunnel_junction}
@@ -388,7 +388,7 @@ Genauso kann auch ein Strom von rechts nach links fließen, so dass der Netto-St
 \end{marginfigure}
   
 
-Überlichtweise ist $eU \ll E_F$, und bei Normalleitern kann die Zustandsdichte  im relevanten Energiebereich als konstant angesehen werden, also $D_{n}(E_F)  \approx  D_{n}(E_F + e U)$. Damit erhalten wir
+Üblicherweise ist $eU \ll E_F$, und bei Normalleitern kann die Zustandsdichte  im relevanten Energiebereich als konstant angesehen werden, also $D_{n}(E_F)  \approx  D_{n}(E_F + e U)$. Damit erhalten wir
 \begin{eqnarray}
     I_{nn} \propto D_{n}(E_F)  D_{n}(E_F) \, e U = G_{nn} U \quad .
 \end{eqnarray}
@@ -407,7 +407,7 @@ Wir betrachten  wieder den Leitwert, hier $G_{ns}$
       & \approx   G_{nn} \frac{D_s(eU)}{D_n(E_F)}  =  
       G_{nn} \, \Re \left\{ \frac{eU}{\sqrt{ (eU)^2 - \Delta^2(eU)}} \right\} \quad .
 \end{align}
-Der Term in eckigen Klammern ist ähnlich einer Delta-Funktion bei $eU$ mit einer Breite $4 k_b T$ und Fläche Eins. Im Zweiten Schritt haben wir $T \rightarrow 0$ angenommen. Der Leitwert beim Tunnel, also $dI/dU$, liefert also bei tiefen Temperaturen direkt die Zustandsdichte, ggf. ausgeschmiert mit $2 k_b T$.
+Der Term in eckigen Klammern ist ähnlich einer Delta-Funktion bei $eU$ mit einer Breite $4 k_b T$ und Fläche Eins und löst so das Integral auf. Im zweiten Schritt haben wir $T \rightarrow 0$ angenommen. Der Leitwert beim Tunnel, also $dI/dU$, liefert somit bei tiefen Temperaturen direkt die Zustandsdichte, ggf. ausgeschmiert mit $2 k_b T$.
 
 
 \section*{Josephson-Effekt}
@@ -415,7 +415,7 @@ Der Term in eckigen Klammern ist ähnlich einer Delta-Funktion bei $eU$ mit eine
 
 Nun liegt es nahe, auch zwei Supraleitern durch einen Tunnelkontakt zu verbinden und dann nicht Elektronen, sondern Cooper-Paare tunneln zu lassen, wenn die Barriere dünn genug ist\sidenote{Nobelpreis Brian David Josephson 1973}. Dabei müssen wir dann aber die makroskopische Wellenfunktion berücksichtigen. Wir nehmen an, dass beide Supraleiter identisch sind. Jede Seite ($i=1, 2$) wird beschrieben durch die Wellenfunktion 
 \begin{equation}
-  \Psi_i = \sqrt{n_i} e^{i \Theta_i} \quad .
+  \Psi_i = \sqrt{n_i} \, e^{i \Theta_i} \quad .
 \end{equation}
 In der Schrödinger-Gleichung gibt es einen schwachen Kopplungsterm $T$, der die Wellenfunktionen nicht wesentlich ändern soll, so dass wir Störungstheorie betreiben können:
 \begin{align}
@@ -437,7 +437,8 @@ Die Differenz der letzten beiden Gleichungen ergibt
 
 \begin{marginfigure}
     \inputtikz{\currfiledir josephson}
-    \caption{Strom durch einen \ch{Pb}/\ch{PbO_x}/\ch{Pb} Tunnelkontakt. Bei $U=0$ Super-Strom aus Cooper-Paaren (rot), bei $U>0$ Strom aus unkorrelierten Elektronen (Bogolonen) (Daten aus \cite{Langenberg1966})}
+    \caption{Strom durch einen \ch{Pb}/\ch{PbO_x}/\ch{Pb} Tunnelkontakt. Bei $U=0$ Supra-Strom aus Cooper-Paaren (rot), bei $U>0$ Strom aus unkorrelierten Elektronen (Bogolonen) (Daten aus \cite{Langenberg1966})
+    \label{fig:6_SC_tunnel}}
 \end{marginfigure}
 
 
@@ -457,7 +458,7 @@ Der Strom ist nun kein Strom von Cooper-Paaren mehr, sondern von Bogolonen, also
 \begin{equation}
     J_s(t) = J_c \, sin  ( \omega_J t +  \delta(0) ) \quad .
 \end{equation}
-Dies ist der Josephson-Wechselstrom-Effekt. Die auftretenden Frequenzen sind sehr hoch. Bei 100 \textmu V werden Frequenzen von 50 GHz erreicht. Dadurch kann man einerseits $e/h$ bestimmen, andererseits kann man Spannung sehr genau über eine Frequenzmessung bestimmen.
+Dies ist der Josephson-Wechselstrom-Effekt. Die auftretenden Frequenzen sind sehr hoch. Bei 100 \textmu V werden Frequenzen von 50 GHz erreicht. Dadurch kann man einerseits $e/h$ bestimmen, andererseits kann man Spannung sehr genau über eine Frequenzmessung bestimmen. In Abb~.\ref{fig:6_SC_tunnel} ist die Zeitauflösung des Amperemeters viel zu gering, so dass nur der Mittelwert Null gemessen wird.
 
 
 \section*{Quanteninterferenz}
@@ -482,11 +483,14 @@ mit dem magnetischen Fluss $\Phi$ durch die Schleife. Damit können wir jede der
 mit einer mittleren Phase $\delta_0$. Der Gesamtstrom durch dieses Konstrukt ist nun die Summe der Ströme über die Tunnelkontakte A und B, wie im letzten Abschnitt, also
 \begin{equation}
     I = I_A + I_B = J_c \left( \sin \delta_A +  \sin \delta_B \right) =
-     2 J_c \sin \delta_0 \,  \cos ( \frac{\phi \Phi}{\Phi_0}  )  \quad .
+     2 J_c \sin \delta_0 \,  \cos \left( \frac{\pi \Phi}{\Phi_0}  \right)  \quad .
 \end{equation}
-Die Oszillationen im Strom zählen also die Flussquanten in der Schleife. Diese Anordnung nennt man 'superconducting quantum interference device' (SQUID). Sie wird zur sehr empfindlichen Messung von Magnetfeldern benutzt, beispielsweise in der Medizin (Hirnströme!) oder der Archäologie. Abbildung \ref{fig:6_squid_data} am Anfang des Kapitels zeigt ein Beispiel.
+Die Oszillationen im Strom zählen also die Flussquanten in der Schleife.  Abbildung \ref{fig:6_squid_data} am Anfang des Kapitels zeigt ein Beispiel.
+
+Diese Anordnung nennt man 'superconducting quantum interference device' (SQUID). Sie wird zur sehr empfindlichen Messung von Magnetfeldern benutzt, beispielsweise in der Medizin (Hirnströme!) oder der Archäologie.
 
 
+\newpage
 
 \section{Zusammenfassung}
 
