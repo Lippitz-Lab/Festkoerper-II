@@ -29,19 +29,25 @@ begin
 	E_c = 660e-3
 	E_d = 23e-3
 	
-	n_A = 1e11
+	n_A = 0.1e11
 	n_D = 7e15
-	Neff = 4e19
+	Weff = 2e16
 end;
 
+# ╔═╡ 716f7a12-2fac-403b-8370-0c70c7e7b50b
+Neff(T) = Weff * T^1.5;
+
 # ╔═╡ ced6fa66-aca5-4cc1-a211-78534fb792d4
-fn(n,T,n_D) = ( n * (n_A + n) / (n_D - n_A - n) ) - Neff * exp(-E_d / T2eV(T));
+fn(n,T,n_D) = ( n * (n_A + n) / (n_D - n_A - n) ) - Neff(T) * exp(-E_d / T2eV(T));
 
 # ╔═╡ 1c004693-5117-4aa1-b1a6-0979ee8ac471
-ni(T) = Neff * exp(-E_c / (2*T2eV(T)));
+ni(T) = Neff(T)  * exp(- (E_c - E_v)/ (2*T2eV(T)));
 
 # ╔═╡ d32fa1d3-f9b0-48f8-8b4e-27fc695347c5
 n(T, n_D) = find_zero(x -> fn(x,T,n_D), (0 , n_D - n_A )) + ni(T);
+
+# ╔═╡ a39e7689-28ce-429b-9dc8-69f1c1f7312a
+p(T, n_D) = Neff(T)^2 *  exp(-(E_c - E_v) / T2eV(T))/ n(T, n_D);
 
 # ╔═╡ 5454e6d3-cf72-4fe7-be81-a62052ef8961
 begin
@@ -58,6 +64,22 @@ begin
 
 	scatter!(1 ./ d.x, d.Curve4)
 	plot!(t, @. n(t, 8e12) )
+
+	plot!(t, @. ni(t) )
+
+end
+
+# ╔═╡ 3cedcec9-5b6f-4258-a615-691b0cc64827
+begin
+	
+	plot(t, @. p(t, 7e15) ; yaxis=((1e1,1e17),:log),legend = false, 
+	)
+
+	plot!(t, @. p(t, 13e14) )
+	
+	plot!(t, @. p(t, 8e13) )
+
+	plot!(t, @. p(t, 8e12) )
 
 	plot!(t, @. ni(t) )
 
@@ -84,65 +106,95 @@ begin
 		);
 
 
-	@pgf    p = PGFPlotsX.Plot(
+	@pgf    u = PGFPlotsX.Plot(
 	        { no_marks,  },
 	        Table([t, @. n(t, 7e15)] )
 			)
-	push!(myaxis, p)
+	push!(myaxis, u)
 
-	@pgf    p = PGFPlotsX.Plot(
+	@pgf    u = PGFPlotsX.Plot(
 		        { no_marks, },
 		        Table([t, @. n(t, 13e14)] )
 				)
-		push!(myaxis, p)
+		push!(myaxis, u)
 	
-	@pgf    p = PGFPlotsX.Plot(
+	@pgf    u = PGFPlotsX.Plot(
 		        { no_marks, },
 		        Table([t, @. n(t, 8e13)] )
 				)
-		push!(myaxis, p)
+		push!(myaxis, u)
 	
-	@pgf    p = PGFPlotsX.Plot(
+	@pgf    u = PGFPlotsX.Plot(
 		        { no_marks, },
 		        Table([t, @. n(t, 8e12)] )
 				)
-		push!(myaxis, p)
+		push!(myaxis, u)
 
 
-		@pgf    p = PGFPlotsX.Plot(
+		@pgf    u = PGFPlotsX.Plot(
 		        { no_marks, dashed},
 		        Table([t, @. ni(t)] )
 				)
-		push!(myaxis, p)
+		push!(myaxis, u)
+
+	# p
+
+			@pgf    u = PGFPlotsX.Plot(
+		        { no_marks, gray},
+	        Table([t, @. p(t, 7e15)] )
+				)
+		push!(myaxis, u)
+
+				@pgf    u = PGFPlotsX.Plot(
+		        { no_marks, gray},
+	        Table([t, @. p(t, 13e14)] )
+				)
+		push!(myaxis, u)
+
+				@pgf    u = PGFPlotsX.Plot(
+		        { no_marks, gray},
+	        Table([t, @. p(t, 8e13)] )
+				)
+		push!(myaxis, u)
+
+				@pgf    u = PGFPlotsX.Plot(
+		        { no_marks, gray},
+	        Table([t, @. p(t, 8e12)] )
+				)
+		push!(myaxis, u)
+
 	
-	@pgf    p = PGFPlotsX.Plot(
+	#Data
+	
+	@pgf    u = PGFPlotsX.Plot(
 		        { only_marks, mark_size="1.5pt"},
 		        Table([1 ./ d.x, d.Curve1] )
 				)
-		push!(myaxis, p)
+		push!(myaxis, u)
 
 
-	@pgf    p = PGFPlotsX.Plot(
+	@pgf    u = PGFPlotsX.Plot(
 		        { only_marks,  mark_size="1.5pt"},
 		        Table([1 ./ d.x, d.Curve2] )
 				)
-		push!(myaxis, p)
+		push!(myaxis, u)
 
 	
-	@pgf    p = PGFPlotsX.Plot(
+	@pgf    u = PGFPlotsX.Plot(
 		        { only_marks,  mark_size="1.5pt"},
 		        Table([1 ./ d.x, d.Curve3] )
 				)
-		push!(myaxis, p)
+		push!(myaxis, u)
 
-		@pgf    p = PGFPlotsX.Plot(
+		@pgf    u = PGFPlotsX.Plot(
 		        { only_marks,  mark_size="1.5pt"},
 		        Table([1 ./ d.x, d.Curve4] )
 				)
-		push!(myaxis, p)
+		push!(myaxis, u)
 
 	
-	push!(myaxis, raw"\node at (250,1e12) {$n_i(T)$};")
+	push!(myaxis, raw"\node at (180,1e12) {$n_i(T)$};")
+	push!(myaxis, raw"\node at (315,1e12) {$p(T, n_D)$};")
 	
 	push!(myaxis, raw"\node at (15,1e16) {$n_D$};")
 	push!(myaxis, raw"\draw[dashed]  (0,7e15) -- (100,7e15);")
@@ -151,14 +203,14 @@ begin
 	push!(myaxis, raw"\draw[dashed]  (0,8e12) -- (100,8e12);")
 	
 
-	#@pgf    p = PGFPlotsX.Plot(
+	#@pgf    u = PGFPlotsX.Plot(
 	#        { no_marks, dashed },
 	#        Table([ted, @. 0.6 * 10^5 * exp(- E_d * ted) ] ),)
-	#push!(myaxis, p)
+	#push!(myaxis, u)
 
 
 			
-	pgfsave("../germanium_electron_density.tikz.tex",myaxis; include_preamble= false)
+	 pgfsave("../germanium_electron_density.tikz.tex",myaxis; include_preamble= false)
 	myaxis
 end
 
@@ -1350,14 +1402,17 @@ version = "1.4.1+0"
 # ╔═╡ Cell order:
 # ╠═40fa2922-fba2-11ed-0ad1-99382d7b814d
 # ╠═c2f72b7a-e67b-4034-b499-347f40c55c6e
+# ╠═716f7a12-2fac-403b-8370-0c70c7e7b50b
 # ╠═ced6fa66-aca5-4cc1-a211-78534fb792d4
 # ╠═d32fa1d3-f9b0-48f8-8b4e-27fc695347c5
 # ╠═1c004693-5117-4aa1-b1a6-0979ee8ac471
+# ╠═a39e7689-28ce-429b-9dc8-69f1c1f7312a
 # ╠═fdfb89fc-b8ee-4e46-9ba2-5422add77fc8
 # ╠═58a3f85a-9648-4e93-a418-367bc50c2a06
 # ╠═caa44ef0-6df9-499c-8d28-c3bc32afc4a9
 # ╠═b6efde99-e16a-4420-aa07-3740b476ecdf
 # ╠═5454e6d3-cf72-4fe7-be81-a62052ef8961
+# ╠═3cedcec9-5b6f-4258-a615-691b0cc64827
 # ╠═ee9f83da-e9ae-4d46-afe2-7893acbf61a3
 # ╠═da6859d9-744f-4e8f-915b-c4784b1e3c10
 # ╟─00000000-0000-0000-0000-000000000001
