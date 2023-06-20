@@ -1,6 +1,6 @@
 %\renewcommand{\lastmod}{\today}
 \renewcommand{\chapterauthors}{Markus Lippitz}
-\renewcommand{\lastmod}{2. Juni 2023}
+\renewcommand{\lastmod}{20. Juni 2023}
 
 \chapter{Halbleiter}
 
@@ -392,21 +392,24 @@ Durch Anlegen der externen Spannung ändert sich die Breite der Raumladungszone
 \end{equation} 
 Positive Spannungen (in Durchlassrichtung) reduzieren die Breite der Raumladungszone (=Verarmungszone), negative Spannung (Sperrrichtung) vergrößern sie. 
 
-Um die Wirkungsweise eines p-n-Übergangs als Diode zu verstehen sind die beteiligten Ströme relevant.
+Um die Wirkungsweise eines p-n-Übergangs als Diode zu verstehen sind die beteiligten Ströme\sidenote{ 
+    \cite{Gross_FK} unterscheidet zwei Paare von Strömen: diff \& drift sowie gen \& rec. Die Vorzechen sind aber anders definiert: diff + drift = 0 aber gen = rec !} relevant.
 
-\paragraph*{Diffusionsstrom} Aufgrund des Konzentrationsunterschieds links und rechts der Grenzfläche diffundieren beispielsweise Elektronen aus dem n-dotierten Bereich  in den p-dotierten und rekombinieren mit den dort in großer Zahl vorhandenen Löchern. Dieser Strom wird auch \emph{Rekombinationsstrom} genannt.
+\paragraph*{Rekombinationsstrom  $j^\text{rec}$} Aufgrund des Konzentrationsunterschieds links und rechts der Grenzfläche diffundieren beispielsweise Elektronen aus dem n-dotierten Bereich  in den p-dotierten und rekombinieren mit den dort in großer Zahl vorhandenen Löchern. Dieser Strom wird auch \emph{Diffusionsstrom} genannt.
 
-\paragraph*{Generationsstrom} Die Raumladungszone bildet einen Kondensator, in dem Ladungsträger beschleunigt werden. Thermisch erzeugte Elektronen im p-dotierten Bereich driften durch das Raumladungs-Feld in Richtung n-dotierten Bereich. Dieser Strom wird auch \emph{Driftstrom} oder \emph{Feldstrom} genannt.
+\paragraph*{Generationsstrom $j^\text{gen}$} Die Raumladungszone bildet einen Kondensator, in dem Ladungsträger beschleunigt werden. Thermisch erzeugte Elektronen im p-dotierten Bereich driften durch das Raumladungs-Feld in Richtung n-dotierten Bereich. Dieser Strom wird auch \emph{Driftstrom} oder \emph{Feldstrom} genannt.
 
-Im thermischen Gleichgewicht sind beide Ströme gleich groß und kompensieren sich gerade $j_n^\text{dif} + j_n^\text{gen} = 0$. Und natürlich kann man genau so mit Löchern argumentieren, so dass es beide Ströme auch mit dem Index $p$ gibt. Die Gesamt-Ströme sind die Summe der beiden Ladungsträger.
+Im thermischen Gleichgewicht sind beide Ströme gleich groß und kompensieren sich gerade $j_n^\text{rec} = j_n^\text{gen}$. Und natürlich kann man genau so mit Löchern argumentieren, so dass es beide Ströme auch mit dem Index $p$ gibt. Die Gesamt-Ströme sind die Summe der beiden Ladungsträger.
 
 Der Diffusionsstrom fließt entgegen der Raumladungs-Potentialschwelle. Die Wahrscheinlichkeit, dass dies gelingt, enthält einen Boltzmann-Faktor
 \begin{equation}
-    j_n^\text{dif}(U) = a(T) e^{-e (V_D - U) / k_b T} =  j_n^\text{dif}(0) e^{e U / k_b T} \quad .
+    j_n^\text{rec}(U) = a(T) \, e^{-e (V_D - U) / k_b T} =  j_n^\text{rec}(0) \, e^{e U / k_b T}
+    = j_n^\text{gen} \, e^{e U / k_b T}
+    \quad .
 \end{equation}
-Bei angelegter Spannung besteht kein thermisches Gleichgewicht mehr, so dass $j_n^\text{dif} + j_n^\text{gen} = 0$ nicht mehr gilt, sondern
+Bei angelegter Spannung besteht kein thermisches Gleichgewicht mehr, so dass $j_n^\text{rec} = j_n^\text{gen}$ nicht mehr gilt, sondern
 \begin{equation}
-    j_n(U) = j_n^\text{dif}(U) + j_n^\text{gen} = j_n^\text{gen} \left(  e^{e U / k_b T} - 1 \right) \quad ,
+    j_n(U) = j_n^\text{rec}(U) - j_n^\text{gen} = j_n^\text{gen} \left(  e^{e U / k_b T} - 1 \right) \quad ,
 \end{equation}
 beziehungsweise für beide Ladungsträger zusammen 
 \begin{equation}
