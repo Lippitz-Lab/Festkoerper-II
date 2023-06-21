@@ -1,0 +1,55 @@
+% \documentclass{standalone}
+% \usepackage{currfile,hyperxmp}
+
+% \input{../tikz_header.tex}
+
+% \begin{document}
+
+
+
+\begin{tikzpicture}
+%\useasboundingbox (-1.3,-1.2) rectangle (10.2,4.7);
+%\draw (-1,-1) rectangle +(12,5);
+
+    \begin{axis}[ xlabel={ $Z_a r_a^2$ (\AA$^2$)}, ylabel= {$\chi$ ($10^{-11}$ m$^3$/mol)}, 
+         width=50mm, height=50mm, 
+        ymode=log, 
+        xmode=log,
+        %   xmin = 0,
+    %     xmax = 4.4,
+       %  ymin  = 0,
+        % ymax = 15,
+         %xmax=5.5, ymin = 0, ymax=7.5,
+        % axis x line=bottom,
+         %axis y line=left,
+         % xmax= 2e5, unbounded coords=jump, ymin=0, ymax = 4
+        % label style={font=\tiny},
+        % tick label style={font=\tiny}
+       % ytick= \empty  
+     %  legend pos= north west,
+     %  legend style={draw=none, font=\footnotesize}
+    ]
+
+
+     \addplot[no marks,   thin, gray, domain=0.7:70]{x}; 
+     
+
+
+
+\addplot[scatter,only marks,  mark size = 1pt,
+nodes near coords=, point meta=explicit symbolic,
+nodes near coords style={anchor=center,
+    pin={[pin distance=0,inner sep=0pt]-15:\tiny\pgfplotspointmeta}
+}
+] table [ col sep=comma,
+x index = 0,
+ y index = 1,
+ meta index = 2
+] {\currfiledir data/atom_diamag_labeled.csv};
+
+
+
+    \end{axis}
+\end{tikzpicture}
+
+%\end{document}

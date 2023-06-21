@@ -1,0 +1,63 @@
+% \documentclass{standalone}
+% \usepackage{currfile,hyperxmp}
+
+% \input{../tikz_header.tex}
+
+% \begin{document}
+
+
+
+\begin{tikzpicture}[
+    declare function={coth(\x)  = 1/tanh(\x) ; 
+    af(\J) = (2*\J +1 )/(2*\J);
+    bf(\J) = 1/(2*\J);
+                 },
+]
+%\useasboundingbox (-1.3,-1.2) rectangle (10.2,4.7);
+%\draw (-1,-1) rectangle +(12,5);
+
+    \begin{axis}[ xlabel={ $y$ }, ylabel= {$M/M_S$}, 
+         width=50mm, height=50mm, 
+        %ymode=log, 
+     %   ymode=log,
+         xmin = 0,
+         xmax = 5,
+         ymin = 0,
+         ymax = 1.3,
+     %    ymin  = 0,
+      %   ymax = 2.1,
+         %xmax=5.5, ymin = 0, ymax=7.5,
+        % axis x line=bottom,
+        % axis y line=left,
+         % xmax= 2e5, unbounded coords=jump, ymin=0, ymax = 4
+        % label style={font=\tiny},
+        % tick label style={font=\tiny}
+      %  ytick= \empty ,
+      %  xtick= \empty, 
+     %  legend pos= north west,
+     %  legend style={draw=none, font=\footnotesize}
+    % clip = false,
+    ]
+
+
+
+
+    \addplot[domain=0:5 , samples=100, thick, name path=b1 ]{ af(1) * coth(af(1) * x) - bf(1) * coth(bf(1) * x) };
+   % \addplot[domain=0:2 , samples=100 , restrict y to domain=0:1.1]{ x * 2/3 };
+   % \addplot[domain=0:2 , samples=100, restrict y to domain=0:1.1 ]{ x *1.5 };
+    \addplot[domain=0:4 , samples=100, restrict y to domain=0:1.1, name path=h2 ]{   (x- 0.7) / 3 };
+   
+   % \node[ above right,  font=\tiny] at (0, 1.1) {$T > T_C$};
+   % \node[ above,   font=\tiny] at (2.4, 1.05) { $T = T_C$};
+   % \node[ above,   font=\tiny] at (4, 1.1) { $T < T_C$};
+    
+    \fill [name intersections={of=b1 and h2,by={E1}}] (E1) circle[radius=2.5pt];
+
+   \node[above left] at (5,0) {$B_{ext} > 0 $};
+
+
+
+    \end{axis}
+\end{tikzpicture}
+
+%\end{document}

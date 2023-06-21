@@ -1,0 +1,638 @@
+%\renewcommand{\lastmod}{\today}
+\renewcommand{\chapterauthors}{Markus Lippitz}
+\renewcommand{\lastmod}{21. Juni 2023}
+
+\chapter{Magnetismus}
+
+
+
+
+\section{Ziele}
+ 
+
+
+\begin{itemize}
+\item Sie können die Temperaturabhängigkeit der Magnetisierung und magnetische Ordnungsphänomene durch mikroskopische Modelle erklären.
+\item Sie können diese Modelle benutzen, um beispielsweise die unten gezeigten Beugungsmuster zu erklären.
+\end{itemize}
+
+
+
+
+\begin{figure}
+    \inputtikz{\currfiledir MnO_antiferro}
+     \caption{
+        Neutronenstreuung an \ch{MnO}, das bei tiefen Temperaturen antiferromagnetische ist, bei Raumtemperatur paramagnetisch. Die der kristallographischen Bezeichnung der Peaks zugrundeliegende Gitterkonstante ist $a_0 = 8.85$~\AA\ bei 80~K, und 4.43~\AA\ bei Raumtemperatur. Daten aus \cite{Shull1951}.
+    \label{fig:7_MnO_antiferro} 
+     }
+\end{figure}
+ 
+
+
+% \begin{questions} 
+% \item Wie groß ist ein Molekül?
+% \item Welche physikalische Eigenschaft eine Moleküls wird bei Röntgenstreuung, STM und AFM abgebildet?
+% \end{questions}
+ 
+
+
+% Das Pluto-Skript hydrogen\_wave\_functions\pluto{hydrogen_wave_functions} ermöglicht es Ihnen, mit verschiedenen Varianten der grafischen Darstellung zu experimentieren.
+
+
+\section{Überblick}
+
+In diesem Kapitel soll Magnetismus mikroskopisch beschrieben werden, also unter Bezug auf die atomare Struktur der Materie. Die Maxwell-Gleichungen beschreiben auch Magnetismus, allerdings rein makroskopisch. Wie schafft es eine Ansammlung von Atomen, mal diamagnetische, mal paramagnetisch, mal ferromagnetisch zu sein, je nach Element und Temperatur? Wir beginnen mit einem Rückblick auf die makroskopische Beschreibung und auf magnetische Momente in Atomen. Auf diese aufbauend werden wir zunächst Dia- und Paramagnetismus in Isolatoren und Metallen beschreiben. In diesen Fällen verhält sich ein Festkörper beinahe wie ein Ensemble von Atomen. Es gibt keine Wechselwirkung der magnetischen Momente untereinander, nur die Elektronen formen in Metallen Bänder. Im zweiten Teil erlauben wir dann Wechselwirkung zwischen den magnetischen Momenten, was zu räumlicher Ordnung in der Orientierung der Momente führen wird. Dies ist Ferro-, Antiferro- und Ferrimagnetismus.
+
+
+\section{Makroskopische Beschreibung}
+
+Makroskopisch, also ohne die atomare Struktur der Materie zu berücksichtigen, kann man Magnetismus über die Maxwell-Gleichungen beschreiben. Es gilt 
+\begin{equation}
+    \nabla \cdot \bm{B} = 0 \quad \text{bzw.} \quad \oint \bm{B} \, d\bm{S} = 0 
+\end{equation}
+mit der magnetischen Flussdichte\sidenote{Die Nomenklatur Flussdichte $\bm{B}$ und Magnetfeld $\bm{H}$ ist historisch bedingt. Ich habe die Tendenz, auch $\bm{B}$ Magnetfeld zu nennen, oder gleich B-Feld.} $\bm{B}$. Das Integral ist ein Oberflächenintegral über eine geschlossene Oberfläche mit dem Flächenelement $d\bm{S}$. Es gibt also keine magnetischen Monopole. Magnetischer Fluss geht von Dipolen aus. Über die Materie-Gleichungen besteht ein Zusammenhang mit dem Magnetfeld $\bm{H}$
+\begin{equation}
+    \bm{B} = \mu_0 \, \bm{H}
+\end{equation}
+im Vakuum, mit der magnetischen Permeabilität $\mu_0$. In Materie wird dies
+\begin{equation}
+    \bm{B} = \mu_0 \, \left( \bm{H} + \bm{M} \right) = \bm{B}_0 + \mu_0 \bm{M} = \bm{B}_0 \left( 1 + \chi \right)
+\end{equation}
+mit der Magnetisierung $\bm{M}$ und der (magnetischen) Suszeptibilität $\chi$. Das Ziel dieses Kapitels ist es, mikroskopische Modelle für den Verlauf von $\chi(\bm{B})$ zu finden.
+
+
+\section{Magnetisches Dipol-Moment}
+
+Magnetische Dipole sind die Quelle von magnetischem Fluss. Makroskopisch entstehen magnetische Dipole beispielsweise durch Strom in einer Leiterschleife:
+\begin{equation}
+    \bm{\mu} = \frac{I}{2} \,  \int_\text{Schleife} \bm{r} \times d\bm{r} = I \bm{S}
+\end{equation}
+mit dem Dipolmoment $\bm{\mu}$, dem Strom $I$ und der Fläche\sidenote{inkl. Richtung der Flächen-Normalen} $\bm{S}$ der Leiterschleife. Die Ladungsträger besitzen eine Masse. Daher ist der Stromfluss durch die Schleife mit einem Drehimpuls $\bm{L}$ verknüpft und wir können das Dipolmoment schreiben als 
+\begin{equation}
+    \bm{\mu} = \gamma \, \bm{L}
+\end{equation}
+mit dem gyromagnetischen Verhältnis $\gamma$, das für Elektronen natürlich negativ ist.
+
+Wir können auch die Bahn des Elektrons im Wasserstoffatom als Leiterschleife auffassen. Sei der Bahndrehimpuls $\bm{l}$ quantisiert und in einem p-Zustand
+\begin{equation}
+    | \bm{l} | = m_e \omega r^2  = \hbar
+\end{equation}
+mit der Umlauffrequenz $\omega$ und dem Bahnradius $r$. Der Strom ist in diesem Bild
+\begin{equation}
+    I = \frac{-e}{T} = -e \frac{\omega}{2\pi}
+\end{equation}
+mit der Umlaufzeit $T$. Alles zusammen ergibt das ein magnetisches Dipolmoment
+\begin{equation}
+   | \bm{\mu} | = \frac{-e}{2 m_e}  |\bm{l} | = - \frac{e \hbar}{2 m_e} = - \mu_B
+\end{equation}
+mit dem \emph{Bohrschen Magneton} $\mu_B \approx 5.8 \cdot 10^{-5}$~eV/T.
+
+Damit können wir das (makroskopische) gyromagnetischen Verhältnis $\gamma$ verknüpfen mit den (mikroskopischen) Bohrschen Magneton
+\begin{equation}
+    \gamma = g \, \frac{\mu_B}{\hbar}
+\end{equation}
+mit dem einheitenfreien Landé-g-Faktor. Für den Bahndrehimpuls eines Elektrons ist $g_l = 1$, für den Elektronen-Spin $g_s \approx 2$.
+
+Die Kombination von magnetischem Moment und Drehimpuls ist der Grund für die  Präzession. Die Energie $E$ eines magnetischen Dipols $\bm{\mu_m}$ im Magnetfeld $\bm{B}$ ist analog zur Energie eines elektrischen Dipols $\bm{\mu_e}$ im elektrischen Feld $\bm{E} $
+\begin{equation}
+    E = \bm{\mu_m} \cdot \bm{B} \quad  \text{bzw.} \quad  E = \bm{\mu_e} \cdot \bm{E}  \quad .
+\end{equation}
+Ebenso wirkt auf beide Dipole ein Drehmoment $\bm{G}$
+\begin{equation}
+    \bm{G} = \bm{\mu_m} \times \bm{B} \quad  \text{bzw.} \quad   \bm{G} = \bm{\mu_e} \times \bm{E} \quad .
+\end{equation}
+Aber im elektrischen Fall dreht dieses Drehmoment den Dipol einfach in Richtung der Feldlinien, und minimiert so die Energie. Bei einem magnetischen Dipol wirkt aber der assoziierte Drehimpuls
+\begin{equation}
+    \frac{d\bm{L}}{dt} =  \bm{G}
+\end{equation}
+so dass 
+\begin{equation}
+    \frac{d \bm{\mu_m}}{dt} = \gamma \, \bm{\mu_m} \times \bm{B} \quad .
+\end{equation}
+Die Richtung des magnetischen Dipolmoments ändert sich senkrecht zu $\bm{\mu_m}$ und  $\bm{B}$. Dies entspricht einer Kreisbewegung der Spitze von $\bm{\mu_m}$ um die Richtung, die durch $\bm{B}$ vorgegeben ist, eben der Präzession.
+
+\section*{Klassifizierung}
+
+Wir unterscheiden verschiedene mikroskopischen Ursachen für Magnetismus:
+
+\paragraph*{Diamagnetismus} Ohne äußeres Magnetfeld zeigen diamagnetische Materialien kein magnetisches Moment. Wenn man dann ein Feld anlegt, dann wirkt die induzierte Magnetisierung dem externen Feld entgegen. Die induzierten Momente sind entgegen dem externen Feld ausgerichtet. Die magnetische Suszeptibilität ist negativ
+\begin{equation}
+    \chi_\text{dia} < 0 \quad .
+\end{equation}
+Diamagnetismus tritt in allen Materialien auf, weil er durch die gebundenen (Isolatoren) und freien (Metalle) Elektronen verursacht wird. Er ist allerdings ein schwacher Effekt, so dass die folgenden dominieren können.
+
+\paragraph*{Paramagnetismus} In paramagnetischen Materialien gibt es permanent vorhandene magnetische Dipolmomente, ebenfalls wieder aufgrund der gebundenen oder freien Elektronen. Ein externes Magnetfeld richtet diese Dipolmomente in Richtung des Feldes aus, so dass die magnetische Suszeptibilität positiv ist
+\begin{equation}
+    \chi_\text{para} > 0 \quad .
+\end{equation}
+Die magnetischen Momente wechselwirken aber nicht miteinander. Nur das thermische Gleichgewicht bestimmt die Verteilung der Ausrichtung.
+
+\paragraph*{Ferro-, Antiferro- und Ferri-Magnetismus} In diesen Materialien wirkt es eine quantenmechanische Austausch-Wechselwirkung zwischen den magnetischen Momenten. Es stellt sich eine Ordnung in der Orientierung  ein, wenn die Temperatur unterhalb eines kritischen Wertes liegt. 
+
+Wir betrachten zunächst Dia- und Paramagnetismus in Isolatoren und Metallen, der also auf die gebundenen oder freien Elektronen zurückgeht.
+  Danach beschäftigen wir  uns mit den Ordnungsphänomenen aufgrund der Austausch-Wechselwirkung.
+
+
+  \begin{table}
+    \begin{tabular}{lll}
+                    & Isolator & Metall \\
+    Diamagnetismus &  Joseph Larmor & Lev Landau \\
+    Paramagnetismus & Paul Langevin & Wolfgang Pauli \\
+    \end{tabular}
+    \caption{Die  Modelle zum Dia- und Para-Magnetismus sind oft nach den Wissenshaftlern benannt. }    
+  \end{table}
+
+\section{Atome im Magnetfeld}
+
+Uns interessiert die Energie eines Atoms mit $Z$ Elektronen im Magnetfeld, verglichen mit demselben Atom ohne Feld. Das externe Magnetfeld $\bm{B}$ gibt eine Richtung vor, die wie immer $z$ ist.
+
+Die Energie des Gesamt-Elektronen-Spins $\bm{S}$  im Magnetfeld ist
+\begin{equation}
+    \hat{H}_\text{spin} = g \, \mu_B \, \bm{B} \cdot \bm{S} \quad .
+\end{equation}
+Der Gesamt-Hamilton-Operator  mit dem kanonischen Impuls und dem Vektorpotential $\bm{A}$ ist
+\begin{equation}
+    \hat{H} = \hat{H}_\text{spin} + \sum_{i=1}^Z \frac{ 
+        \left[ \bm{p}_i + e \bm{A}(\bm{r}_i) \right]^2}{2 m_e} + V_i \quad ,
+\end{equation}
+wobei $V_i$ das für das i-te Elektron relevante Potential bezeichnet. Die Coulomb-Eichung des Vektorpotentials liefert
+\begin{equation}
+    \bm{A}(\bm{t}) = \frac{\bm{B} \times \bm{r}}{2} \quad .
+\end{equation}
+Dies setzen wir ein und multiplizieren aus
+\begin{equation}
+    \hat{H} = \hat{H}_\text{spin} + \sum_{i=1}^Z
+    \frac{ \bm{p}_i^2}{2 m_e} + V_i
++   \frac{ \bm{p}_i  \cdot \bm{B} \times \bm{r}_i}{4 m_e}
++    \frac{e^2 \left[\bm{B} \times \bm{r}_i \right]^2}{8 m_e}  \quad .
+\end{equation}
+Den mittleren Term kann man durch den  Gesamt-Bahndrehimpuls $\bm{L}$ als  Summe der Einzel-Drehimpulse
+\begin{equation}
+    \bm{L} = \sum_{i=1}^Z \bm{r}_i \times \bm{p}_i
+ \end{equation}
+ ersetzen, so dass wir erhalten
+ \begin{equation}
+    \hat{H} - \hat{H}_0 = 
+    \mu_B (\bm{L} + g\bm{S}) \cdot \bm{B}
+    + \frac{e^2}{8 m_e} 
+     \sum_{i=1}^Z  \left[\bm{B} \times \bm{r}_i \right]^2 \quad . \label{eq:7_H_atom_para_dia}
+\end{equation}
+Der erste Term der Abweichung von der feldfreien Energie $\hat{H}_0$ hängt von den atomaren Spin- und Bahndrehimpulsen ab, bzw. von den damit verknüpften magnetischen Momenten. Er beschreibt also atomaren Paramagnetismus. Der zweite Term beschreibt atomaren Diamagnetismus, weil hier kein Dipolmoment eingeht.
+
+Die Suszeptibilität $\chi$ kann man über eine thermodynamische Betrachtung erhalten. Die freie Energie $F$ ist
+\begin{equation}
+    F = U - T S \quad .
+\end{equation}
+Das Differential der inneren Energie ist, wenn man den magnetischen Beitrag hier berücksichtigt,
+\begin{equation}
+    dU = T dS - p dP - V \bm{M}\cdot d \bm{B}
+\end{equation}
+so dass
+\begin{equation}
+    dF = dU - S dT - T dS = -S dT - p dV - V \bm{M}\cdot d \bm{B}
+\end{equation}
+also 
+\begin{equation}
+    M  = - \frac{\partial F}{\partial B} = - \frac{N}{V} \, \frac{\partial (\hat{H} - \hat{H}_0)}{\partial B}
+\end{equation}
+und (falls $\chi \ll 1$)
+\begin{equation}
+    \chi = \frac{M}{H} \approx \mu_0 \frac{M}{B} = - \frac{\mu_0 N}{B V} \, \frac{\partial (\hat{H} - \hat{H}_0)}{\partial B} \quad .
+\end{equation}
+Die magnetische Suszeptibilität ist also proportional zur Ableitung der Energie nach dem Magnetfeld. 
+
+\section*{Larmor-Diamagnetismus}
+
+
+\begin{marginfigure}
+    \inputtikz{\currfiledir atom_diam}
+    \caption{Atomare diamagnetische Suszeptibilität im Vergleich mit Gl. \ref{eq:7_atom_diamag}. Daten aus \cite{Gross_FK} und \cite{Blundell_magnetism}.
+    }
+\end{marginfigure}
+    
+
+Wir betrachten zunächst einen rein atomaren Effekt. Es ist also egal, ob das Atom in der Gasphase oder in einem Kristall vorliegt. Wir verlangen nur  vollständig gefüllte Schalen. Dann ist ein Festkörper ein Isolator. Für das Atom gilt $\bm{S} = \bm{L} = 0$ und nur der diamagnetische Term in Gl.~\ref{eq:7_H_atom_para_dia} trägt bei.  Weil $\bm{B}$ in z-Richtung orientiert ist, vereinfacht sich das zu
+\begin{equation}
+    \hat{H}_\text{dia} = 
+    \frac{e^2}{8 m_e} 
+     \sum_{i=1}^Z  \left[\bm{B} \times \bm{r}_i \right]^2
+     = \frac{e^2}{8 m_e} \, B^2 \,
+     \sum_{i=1}^Z 
+     (x_i^2 + y_i^2) \quad .
+\end{equation}
+Die Wellenfunktion ist aufgrund der gefüllten Schalen kugelsymmetrisch, so dass
+\begin{equation}
+    \braket{x_i^2} =  \braket{y_i^2}   = \frac{1}{3} \braket{r_i^2} \quad .
+\end{equation}
+Alles zusammen also 
+\begin{equation}
+ \chi = - \frac{N}{V} \, \frac{e^2 \mu_0}{6 m_e} \,   \sum_{i=1}^Z   \braket{r_i^2}
+ \approx  - \frac{N}{V} \, \frac{e^2 \mu_0}{6 m_e} \,   Z_a \,  r_a^2   \quad . 
+ \label{eq:7_atom_diamag}
+\end{equation}
+Im letzten Schritt haben wir ausgenutzt, dass durch die $r^2$-Abhängigkeit die $Z_a$ Elektronen in der äußeren Schale mit dem Radius $r_a$ dominieren. Dies beschreibt die experimentell gefundenen Werte erstaunlich gut.
+
+
+
+
+
+
+\section*{Langevin-Paramagnetismus}
+
+Wir bleiben bei der atomaren Betrachtung, erlauben aber teilweise gefüllte Schalen. Dann wird die Bestimmung von $\bm{S}$, $\bm{L}$ und $\bm{J}$ notwendig. Die Spin-Bahn-Kopplung muss berücksichtigt werden und die Hund'schen Regeln liefern den  Zustand mit der niedrigsten Energie. Bei vielen Atomen ist die Spin-Bahn-Wechselwirkung schwach und  die L-S-Kopplung (Russel-Saunders-Kopplung) ein passendes Modell. Dabei werden  erst alle $\bm{l}_i$ und $\bm{s}_i$ zu einem $\bm{L}$ bzw. $\bm{S}$ addiert, bevor diese sich zu $\bm{J}$ addieren. 
+
+In der L-S-Kopplung  berechnet sich der Landé-g-Faktor für den Gesamt-Drehimpuls $\bm{J}$ nach
+\begin{equation}
+    g_J = 1 + \frac{J (j+1) + S (S+1) - L (L+1)}{2 J (J+1)} \quad .
+\end{equation}
+Das magnetische Moment ist also
+\begin{equation}
+    \bm{\mu}_J = - g_J \mu_B  \frac{\bm J}{\hbar}
+\end{equation}
+bzw.
+\begin{equation}
+    \mu_J  = |\bm{\mu}_J | = g_J \, \mu_B  \, \sqrt{J (J+1)} \quad .
+\end{equation}
+
+Hier ist nun also ein permanentes magnetisches Moment $\bm{\mu}_J \neq 0$ vorhanden. Die Ausrichtung von diesem Moment im externen Magnetfeld dominiert die Magnetisierung über den ebenfalls vorhandenen Diamagnetismus der tieferliegenden gefüllten Schalen. Das ist also der Term in Gl.~\ref{eq:7_H_atom_para_dia}, der linear in $\bm{B}$ ist.
+
+\section*{Semi-klassische Beschreibung}
+
+Wir ignorieren für einen Augenblick die Quantisierung von $J_z$ und damit die von  $\mu_z$ und nehmen ein klassisches Dipolmoment   $\bm{\mu}$ an. Dessen Energie im externen Feld ist 
+\begin{equation}
+    E = - \bm{\mu} \cdot \bm{B} = - \mu \, B \, \cos \theta = E(\theta) \quad .
+\end{equation}
+Verschiedene Winkel $\theta$  zwischen magnetischem Moment und Magnetfeldrichtung liefern also verschiedene Energien. Diese Zustände sind bei einer Temperatur $T$ nach der Boltzmann-Statistik besetzt. Die Wahrscheinlichkeit $p(\theta)$ ist
+\begin{equation}
+    p(\theta) d \Omega = \frac{1}{Z} \, e^{- E(\theta) / k_b T}
+\end{equation}
+mit dem Raumwinkelelement $d\Omega$ und der Zustandssumme $Z$, die dafür sorgt, dass $p(\theta)$ normiert ist. Das mittlere magnetische Moment in z-Richtung $ \braket{\mu_z}$ ist also
+\begin{equation}
+    \braket{\mu_z} = \frac{\mu}{4 \pi } \int p(\theta) \, \cos \theta \, d\Omega \quad .
+\end{equation}
+Mit der Abkürzung 
+\begin{equation}
+    y = \frac{\mu B}{k_b T}
+\end{equation}
+erhält man durch Integration\sidenote{siehe \cite{Gross_FK} oder  \cite{Blundell_magnetism}} die \emph{Langevin-Funktion} $\mathcal{L}(y)$ 
+\begin{equation}
+    \frac{ \braket{\mu_z}}{\mu} = \coth y - \frac{1}{y} = \mathcal{L}(y) \quad .
+\end{equation}
+Die Magnetisierung ist dann
+\begin{equation}
+    M = \frac{N}{V}\braket{\mu_z} = n \braket{\mu_z} = n \mu \mathcal{L}(y)   \quad .
+\end{equation}
+Für kleine $y$ kann man den coth nähern und erhält die magnetische Suszeptibilität
+\begin{equation}
+    \chi = \mu_0 \frac{\partial M}{\partial B} = \frac{\mu_0 n \mu^2}{3 k_b T} \propto \frac{1}{T}  \quad .
+\end{equation}
+Wir haben damit das Curie-Gesetz\sidenote{Pierre Curie, 1959--1906, Nobelpreis 1903} gefunden, nach dem die Suszeptibilität reziprok mit der Temperatur fällt. Wie wir unten sehen werden, gilt dies bei miteinander wechselwirkenden Dipolmomenten nicht mehr.
+
+\section{Quantenmechanische Behandlung}
+
+In der Quantenmechanik kann ein Drehimpuls nicht mehr jede beliebige Orientierung relativ zur Vorzugsachse einnehmen. Damit sind die  Werte von $\mu_z$ quantisiert und es gibt nur noch $2J +1$ verschiedene Möglichkeiten
+\begin{equation}
+    m_J = -J, -J +1 , \dots , J - 1, J  \quad .
+\end{equation}
+ Die Rechnung ist analog zum klassischen Fall, nur dass Integrale über $\theta$ durch Summen über $m_J$ ersetzt werden.
+ Mit den Abkürzungen\sidenote{$\mu_B / k_b \approx 2/3 $~K/T.}
+\begin{equation}
+    y = \frac{g_J \, \mu_B \, B}{k_b T} \, J \quad \text{und} \quad M_\text{sat} = n \, g_J \, \mu_B \, J
+\end{equation}
+erhält man für die Magnetisierung $M$
+\begin{equation}
+    \frac{M}{M_\text{sat}} = \mathcal{B}_J(y) = 
+    \frac{2J +1}{2J } \coth \left( \frac{2J+1}{J} \, y \right) - 
+    \frac{1}{2J} \coth \left( \frac{1}{2J} \, y \right)  \label{eq:7_Brillouin_Funktion}
+\end{equation}
+mit der \emph{Brillouin-Funktion} $\mathcal{B}_J(y)$. Für $J \rightarrow \infty$ geht sie in die Langevin-Funktion über. Wir können wieder den coth für $y \ll 1$ nähern, um die Suszeptibilität zu erhalten
+\begin{equation}
+    \chi = \mu_0 \frac{\partial M}{\partial B} = \frac{\mu_0 n J (J+1) g_J^2 \mu^2}{3 k_b T}
+  =    \frac{\mu_0 n p^2 \mu^2}{3 k_b T}
+    \propto \frac{1}{T} \label{eq:7_chi_brillouin}
+\end{equation}
+mit der effektiven Magnetonenzahl
+\begin{equation}
+    p = g_J \, \sqrt{J (J+1)} \quad .
+\end{equation}
+
+\begin{marginfigure}[-50mm]
+    \inputtikz{\currfiledir brillouin}
+    \caption{Brillouin-Funktion $\mathcal{B}_J(y)$ für $J = 1/2$, 1, 2, $\infty$. Der letzte Fall entspricht der Langevin-Funktion $\mathcal{L}(y)$. }
+\end{marginfigure}
+
+\begin{marginfigure}
+    \inputtikz{\currfiledir henry_paramag}
+    \caption{Paramagnetische Antwort einiger Ionen im Vergleich zur Brillouin-Funktion. Daten aus \cite{Henry1952}. }
+\end{marginfigure}
+    
+
+
+
+
+    
+
+
+
+\section{Pauli-Paramagnetismus}
+
+Bislang haben wir nur Effekte der einzelnen Atome betrachtet und können damit nur Isolatoren beschreiben. Nun kommen freie Elektronen und damit Metalle hinzu. Wir hatten bereits in Kapitel \ref{chap:magnetic_field}  freie Elektronen im Magnetfeld behandelt und die Landau-Niveaus eingeführt. Die Energie der Elektronen-Zustände ist in diesem Formalismus
+\begin{equation}
+    E = \left( n + \frac{1}{2} \right) \hbar \omega_c \, + \,
+        \frac{\hbar^2}{2 m_e} \, k_z^2 \, \pm \, \mu_B \, B
+\end{equation}
+wobei wir $g_s m_s \approx 1$ angenommen haben. Die Niveaus spalten also je nach Spin-Richtung der Elektronen noch einmal auf. 
+
+Wir könnten jetzt argumentieren, dass Elektronen Spin-1/2-Systeme sind und darum
+Gl.~\ref{eq:7_chi_brillouin} mit $J = 1/2$ verwendet werden kann. Dies würde $\chi \propto 1/T$ liefern, was aber experimentell nicht gefunden wird. Der Grund liegt in der Fermi-Statistik. Bei üblichen Magnetfeldern ist
+$\mu_B \, B \ll k_b T \ll k_b T_F$. Die Magnetisierung, also die Verteilung der Elektronen auf spin-up ($n_+$) und spin-down ($n_-$), bzw.
+\begin{equation}
+    M = (n_+ - n_-) \mu_B
+\end{equation}
+kann sich nur sehr wenig ändern, wenn sich das Magnetfeld ändert. Es sind schlicht alle Zustände besetzt, so dass die Elektronen ihren Spin nicht umdrehen können. Der Anteil der Elektronen in passender Entfernung zur Fermi-Energie ist in etwa $T/T_F$, so dass
+\begin{equation}
+    \chi \propto \frac{1}{T} \, \frac{T}{T_F} = \frac{1}{T_F} = \text{const.}  \quad .
+\end{equation}
+
+Etwas genauer als diese Abschätzung ist es, wenn wir $n_\pm$ ausrechnen
+\begin{equation}
+    n_\pm = \frac{1}{2V} \int_0^\infty D(E \pm \mu_B B) \, f(E) \, dE
+\end{equation}
+mit der Zustandsdichte $D$. Man bildet also für die Magnetisierung die Differenz der Zustandsdichte über ein kleines Energieintervall $\pm \mu_B B \ll k_b T$. Dort können wir die Zustandsdichte Taylor-entwickeln und schreiben
+\begin{align}
+    M = (n_+ - n_-) \mu_B = & \frac{\mu_B^2 \, B}{V} \int_0^\infty \frac{\partial D}{\partial E} \, f(E) \,  dE \\
+    = & - \frac{\mu_B^2 \, B}{V} \int_0^\infty D(E) \, \frac{\partial f}{\partial E} \,  dE \\
+    \approx &  \frac{\mu_B^2 \, B}{V} D(E_F)
+\end{align}
+wobei wir im zweiten Schritt partielle Integration verwendet haben. Im dritten  haben wir angenommen, dass $T \ll T_F$ und damit die Ableitung von $f$ quasi eine Deltafunktion bei $E_F$ ist. Zusammen mit der Zustandsdichte freier Elektronen erhalten wir
+\begin{equation}
+    \chi_\text{Pauli} = \mu_0 \mu_B^2 \frac{D(E_F)}{V} = n \frac{3 \mu_0 \mu_B^2}{2 k_b T_F} = \text{const.}  \quad .
+\end{equation}
+Die überschlägige Abschätzung zuvor war also nicht so schlecht. Nur der Faktor $T/T_F$ ist der Unterschied zu Gl.~\ref{eq:7_chi_brillouin}. Auch bei höheren Temperaturen, wenn die Näherung als Delta-Funktion nicht mehr ganz so gut ist, ändert sich wenig. Insbesondere bleibt die Suszeptibilität temperaturunabhängig.
+
+
+\section*{Landau-Diamagnetismus}
+
+Der Vollständigkeit halber soll nicht unerwähnt bleiben, dass auch freie Elektronen Diamagnetismus zeigen. 
+In Kapitel \ref{chap:magnetic_field}
+hatten wir bereits gesehen, dass die innere Energie eines freien Elektronengases periodisch mit dem Magnetfeld variiert  und deswegen diverse von der inneren Energie abgeleitete Größen ebenfalls. Für die Magnetisierung ist dies der de Haas-van Alphén-Effekt. Die damit verbundene  Suszeptibilität ist gerade $-1/3$ des Pauli-Paramagnetismus. Weil beides ja immer zusammen auftritt, beobachtet man effektiv $2/3 \,\chi_\text{Pauli}$. Die effektive Masse der Elektronen $m^\star$ geht als zusätzlicher Faktor $(m_e /m^\star)^2$ ein.
+
+
+\section{Magnetische Ordnung}
+
+Manche Materialien zeigen ohne anliegendes externes Magnetfeld unterhalb einer kritischen Temperatur eine Ordnung in der Orientierung der magnetischen Momente und damit fast immer auch eine Magnetisierung. Um dieses Phänomen zu erklären werden wir im nächsten Abschnitt eine Wechselwirkung zwischen den mikroskopischen magnetischen Momenten einführen. Wir unterscheiden verschiedene Muster in der Ordnung:
+
+\paragraph*{Ferromagnetismus} Alle magnetischen Momente zeigen in dieselbe Richtung. Die Amplitude kann unterschiedlich sein,  oder nur eine Vektor-Komponente ist identisch. In Summe ergibt das einen von Null verschiedenen Wert, also eine Magnetisierung.
+
+\paragraph*{Antiferromagnetismus} Die Momente summieren sich zu Null, sind aber trotzdem geordnet. Nach außen hin erscheint das Material paramagnetisch.
+
+\paragraph*{Ferrimagnetismus} Die magnetischen Momente sind ebenfalls antiparallel ausgerichtet, aber unterschiedlich groß, so dass die Summe nicht Null ergibt und Magnetisierung ohne externes Feld sichtbar ist.
+
+\paragraph*{Helikale Ordnung} Magnetische Ordnungsphänomene sind sehr vielfältig. Die magnetischen Momente können beispielsweise auf einer Helix (Schraubenlinie) liegen.\sidenote{wie der Propeller eines fliegenden Flugzeugs mit einem Stroboskop fotografiert}
+
+\begin{questions}
+    \item Suchen Sie in Lehrbüchern oder im Internet nach grafischen Darstellungen magnetischer Ordnung und sortieren Sie diese in obigen Kategorien  ein.
+\end{questions}
+
+\section*{Austauschwechselwirkung}
+
+Die für die Ordnung verantwortliche Wechselwirkung ist die Austauschwechselwirkung, die schon beim \ch{H_2^+}-Molekül für die Bindung gesorgt hatte. Magnetische Dipol-Dipol-Wechselwirkung wäre zwar auch denkbar, ist aber viel zu schwach. Typische Energien entsprechen einer Temperatur von 1~K, so dass so Ordnung bei Raumtemperatur nicht beobachtbar wäre.
+
+Wir diskutieren ein einfaches Modell: Zwei Elektronen ($i=1,2$) sind an den Orten $\bm{r}_1$ und $\bm{r}_2$, und in den Zuständen $\phi_A$ und $\phi_B$. Daraus können wir wie in der Molekülphysik eine symmetrische ($+$) und antisymmetrische ($-$) Gesamt-Wellenfunkton herstellen:\sidenote{hier nur der Orts-Teil, da zusammen mit dem Spin-Teil beide anti-symmetrisch}
+\begin{equation}
+    \Psi_\pm  \propto \phi_a(\bm{r}_1) \phi_b(\bm{r}_2) \pm \phi_a(\bm{r}_2) \phi_b(\bm{r}_1)  \quad .
+\end{equation}
+Die Eigen-Energien sind dann 
+\begin{equation}
+    E_\pm = \braket{\Psi_\pm | \hat{H} | \Psi_\pm}
+\end{equation}
+und die Energie-Differenz ist die Austausch-Konstante $J_A$
+\begin{equation}
+    J_A = E_+ - E_-  \propto \iint \phi_a^\star(\bm{r}_1) \phi_b^\star(\bm{r}_2)  \,
+    \hat{H} \, \phi_a(\bm{r}_2) \phi_b(\bm{r}_1) \, d\bm{r}_1   d\bm{r}_2   \quad .
+\end{equation}
+Damit können wir die Gesamtenergie schreiben als
+\begin{equation}
+    \hat{H} = \frac{1}{4} (E_+ + 3 E_-) - J_A \frac{\bm{s}_1 \cdot \bm{s}_2}{\hbar^2}  \quad .
+    \label{eq:7_H_austausch_2e}
+\end{equation}
+Dabei bezeichnen die $\bm{s}_i$ den Spin des i-ten Elektrons. Die symmetrische Gesamtwellenfunktion $\Psi_+$ muss eine anti-symmetrische (Triplett, $S=1$) Spin-Wellenfunktion besitzen. $\Psi_-$ muss ein Singulett-Zustand ($S=0$) sein.  Durch Ausmultiplizieren von $\bm{S}^2 = (\bm{s}_1  + \bm{s}_2 )^2$ erhält man, dass
+\begin{equation}
+    \frac{\bm{s}_1 \cdot \bm{s}_2}{\hbar^2}
+    = \left\{ \begin{matrix}
+        - \frac{3}{4} \quad & \text{für Singulett} \quad &S=0 \\
+        + \frac{1}{4} \quad & \text{für Triplett} \quad & S=1 \\
+    \end{matrix}
+    \right.   \quad .
+\end{equation} 
+Wenn $J_A$ positiv ist, dann sind Triplett-Zustände energetisch bevorzugt, also eine parallele Anordnung der Spins wie im Ferromagnetismus. Bei negativen $J_A$ spricht man von antiferromagnetischer Kopplung.
+
+\section{Heisenberg- und Ising-Modell}
+
+Wir haben die  Austausch-Wechselwirkung mit Elektronen-Spins eingeführt, aber man kann analog natürlich mit allen magnetischen Momenten bzw. Drehimpuls-Äquivalenten arbeiten, und auch auf mehr als zwei Spins erweitern. Der erste Summand in Gl.~\ref{eq:7_H_austausch_2e} liefert nur einen konstanten Energie-Offset, den wir nun weglassen.  Für allgemeine Drehimpuls-artige Größen $\bm{S}_i$ ergibt der zweite Teil das \emph{Heisenberg-Modell der magnetischen Ordnung} mit
+\begin{equation}
+    \hat{H}_A = - \sum_{i > j} J_A^{ij} \, \frac{\bm{S}_i \cdot \bm{S}_j}{\hbar^2}  \quad .
+    \label{eq:7_Einstein_Ising_Modell}
+\end{equation}
+Die Summe läuft dabei so, dass alle Paare von Indizes $i$ und $j$ einmal genommen werden. Man nimmt an, dass die magnetischen Dipole auf einem Gitter angeordnet  sind, und der Index den Gitterplatz bezeichnet. Die Austausch-Konstante $J_A^{ij}$ hängt dann beispielsweise vom räumlichen Abstand der Gitterplätze  $i$ und $j$ ab.
+
+Das \emph{Ising-Modell} nimmt wieder Elektronen-Spins als Drehimpuls-artige Größe, erlaubt also nur die Möglichkeit 'up' und 'down'. Dadurch wird das Skalarprodukt von Vektoren  in Gl.~\ref{eq:7_Einstein_Ising_Modell} eine Multiplikation von Skalaren. 
+
+
+\section{Molekularfeldnäherung}
+
+
+Im Ising- oder Einstein-Modell koppelt die Austauschwechselwirkung alle magnetischen Momente miteinander, was die Rechnung aufwändig macht. Einfacher wird es, wenn man den Beitrag aller anderen magnetischen Momente zum Magnetfeld am Ort $i$ zusammenfasst zu einem effektiven mittleren Austausch- oder Molekularfeld. Dieser Ansatz von Pierre Weiss ist historisch älter als die Austauschwechselwirkung.
+
+Wir nehmen an, dass die Austauschwechselwirkung nur zwischen den nächsten Nachbarn wirkt, und dass sie für alle $z$  Nachbarn identisch ist. Dann ist der Energiebeintrag am Ort $i$
+\begin{equation}
+    E_i = - \frac{J_a}{\hbar} \, \sum_{j=1}^z \bm{S}_i \cdot \bm{S}_j 
+    \approx
+    - z \frac{J_a}{\hbar} \, \braket{\bm{S}_j} \cdot \bm{S}_i   \quad ,
+\end{equation}
+mit dem mittleren Drehimpuls $ \braket{\bm{S}_j}$ aller Nachbarn. Wir gehen zu makroskopischen Größen über, indem wir dies umschreiben als Produkt der Magnetisierung $\bm{M}$ und des magnetischen Momentes $\bm{\mu}$ via 
+\begin{equation}
+    \bm{M} = - n \, g_J \, \mu_B \frac{ \braket{\bm{S}_j}}{\hbar}
+    \quad \text{und} \quad
+    \bm{\mu}_i = - g_J  \, \mu_B \frac{ \bm{S}_i}{\hbar}
+\end{equation}
+und erhalten
+\begin{equation}
+    E_i  = - z \frac{J_a}{n \, g_J^2 \, \mu_B^2} \, \bm{\mu}_i  \cdot \bm{M}  = - \bm{\mu}_i \cdot \bm{B}_A
+\end{equation}
+mit dem \emph{Molekularfeld} $\bm{B}_A$ und der Molekularfeld-Konstante $\gamma$
+\begin{equation}
+    \bm{B}_A = \frac{J_a}{n \, g_J^2 \, \mu_B^2} \bm{M} 
+   % = \frac{J_a}{ g_J \, \mu_B \, \hbar}  \braket{\bm{S}_j}
+   \mu_0 \, \gamma \, \bm{M}   \quad . 
+\end{equation}
+
+\section*{Ferromagnetismus}
+
+In  der Molekularfeldnäherung ist das effektive Feld in der Probe die Summe aus dem extern angelegten Feld und dem Molekularfeld
+\begin{equation}
+    \bm{B}_\text{eff} = \bm{B}_\text{ext} +  \mu_0 \, \gamma \, \bm{M}  \quad .
+\end{equation}
+Wir berücksichtigen die Austauschwechselwirkung also, indem wir überall $\bm{B}$ durch $\bm{B}_\text{eff}$ ersetzen. Ferromagnetismus ist damit ein System von nicht wechselwirkenden magnetischen Momenten (durch die Brillouin-Funktion beschrieben) plus Molekularfeld. Die Magnetisierung $M$ ist nach Gl.~\ref{eq:7_Brillouin_Funktion}
+\begin{equation}
+    M = n \, g_J \, \mu_B \, J \, \mathcal{B}_J(y)
+    =  n \, g_J \, \mu_B \, J \, \mathcal{B}_J \left( \frac{g_j \mu_B J (B_\text{ext} + \mu_0 \gamma M)}{k_b T} \right)
+\end{equation}
+nur dass für $y$ jetzt $B_\text{eff}$ statt $B$ verwendet wird. Leider erscheint $M$ auf beiden Seiten des Gleichheitszeichens. Wir lösen das grafisch, indem wir beides 
+\begin{eqnarray}
+    M(y) = & n \, g_J \, \mu_B \, J \, \mathcal{B}_J(y)  \label{eq:7_inters1}\\
+    M(y) =  & \frac{k_b T}{\mu_0 \gamma g_J \mu_B J} y - \frac{B_\text{ext}}{\mu_0 \gamma}  \label{eq:7_inters2}
+\end{eqnarray}
+als Funktion von $y$ zeichnen und Schnittpunkte suchen.
+
+
+\begin{marginfigure}
+    \inputtikz{\currfiledir ferromag_B1}
+
+    \inputtikz{\currfiledir ferromag_B0}
+
+    \caption{Grafische Bestimmung der Magnetisierung eines Ferromagneten.}
+\end{marginfigure}
+
+
+
+Bei $B_\text{ext} = 0$ hängt es  von der Steigung der beiden Kurven ab, ob diese sich schneiden. Bei hohen Temperaturen $T > T_C$ ist Gl.~\ref{eq:7_inters1} steiler als die Asymptote an Gl.~\ref{eq:7_inters2} und nur der triviale Schnittpunkt bei $M=0$ bleibt. Es gibt also  spontane Magnetisierung nur unterhalb einer bestimmten Temperatur. Die charakteristische Temperatur $T_C$ nennt man ferromagnetische Curie-Temperatur
+\begin{equation}
+    T_C = n \gamma \frac{\mu_0 g_J^2 J(J+1) \mu_B^2}{3 k_b} = \gamma C  \label{eq:7_TC_ferro}
+\end{equation}
+mit der Curie-Konstanten $C$. 
+
+Bei angelegtem externen Feld $B_\text{ext} > 0$ findet sich immer ein Schnittpunkt, also eine von Null verschiedene Magnetisierung, unabhängig von der Temperatur. Das unterscheidet sich nicht von einem Paramagneten. Aus $\chi \approx \mu_0 M /B_\text{ext}$ erhält man  im paramagnetischen Bereich $T > T_C$  das Curie-Weiss'schen Gesetz der magnetischen Suszeptibilität
+\begin{equation}
+    \chi = \frac{C}{T - T_C}  \quad .
+\end{equation}
+Für Temperaturen $T <T_C$ im ferromagnetischen Bereich hängt die Magnetisierung von der Vorgeschichte der Probe ab und nicht nur vom aktuellen externen Magnetfeld. Daher hilft hier die Beschreibung durch eine  Suszeptibilität nicht.
+
+
+\begin{margintable}[-20mm]
+    \begin{tabular}{lll}
+      Material & $T_C$ (K) & $\mu / \mu_B$ \\
+      \ch{Fe} & 1043   & 2.2 \\
+      \ch{Co}  & 1394  & 1.7 \\
+      \ch{Ni} & 631 & 0.6 \\
+      \ch{Gd} & 289 & 7.5 \\
+      \ch{EuO} & 70 & 6.9 \\
+    \end{tabular}
+    \caption{Ferromagnete (Daten aus \cite{Blundell_magnetism})}
+\end{margintable}
+
+
+%XXX ggf. später mal Hunjkliner Fig 12.7 via pluto 
+% or data from The Magnetization of Pure Iron and Nickel Author(s): J. Crangle and G. M. Goodman,
+% https://www.jstor.org/stable/77809
+
+\section*{Untergitter: Ferri- und Antiferromagnetismus}
+
+Um Antiferromagnetismus und Ferrimagnetismus zu beschreiben führen wir zwei Untergitter ein. Ähnlich einem Schachbrett gehört jede Position des physikalischen Gitters entweder zu dem einen oder dem anderen Untergitter, gerade so, dass die nächsten Nachbarn immer dem anderen Untergitter angehören. Für jedes Untergitter definieren wir eine Magnetisierung $M_{A,B}$ und Molekularfeld-Konstanten $\gamma_{ij}$, die die Wechselwirkung innerhalb und zwischen den Untergittern beschreiben. Die jeweiligen Molekularfeld $\bm{B}^a$ sind also 
+\begin{align}
+    \bm{B}_A^a &=  \mu_0 \gamma_{AA} \, \bm{M}_A  +  \mu_0 \gamma_{AB} \, \bm{M}_B \\
+    \bm{B}_B^a &=  \mu_0 \gamma_{BA} \, \bm{M}_A  +  \mu_0 \gamma_{BB} \, \bm{M}_B    \quad .
+\end{align}
+Aus Symmetriegründen ist $\gamma_{AB}  = \gamma_{BA}$. 
+Antiferromagnetismus und Ferrimagnetismus unterscheiden sich in den $\gamma_{ij}$, die aber alle negativ sind, weil die zugehörige Austauschwechselwirkung $J_A$ im Gegensatz zum Ferromagnetismus negativ ist.
+
+
+
+\paragraph*{Ferrimagnetismus} Der Name wurde durch  Louis Néel bei der Beschreibung des Magnetismus von Ferriten (eine Form der Eisen-Oxyde)
+geprägt. In diesen Materialien sind die beiden Untergitter nicht identisch. Es gibt zweimal soviel B-Gitterpunkte wie A-Gitterpunkte, und beide Gitter sind durch unterschiedliche Atome besetzt. Wir beschreiben die magnetischen Eigenschaften jedes Untergitters durch seine Curie-Konstante $C_{A,B}$ (Gl.~\ref{eq:7_TC_ferro}). Analog zu Gl.~\ref{eq:7_TC_ferro} ergibt\sidenote{siehe \cite{Gross_FK}} sich dann eine ferrimagnetische Curie-Temperatur
+\begin{equation}
+    T_C = | \gamma_{AB} | \sqrt{C_A C_B}
+\end{equation}
+und eine Suszeptibilität oberhalb von $T_C$ zu
+\begin{equation}
+\chi= \frac{(C_A + C_B) T - 2 | \gamma_{AB}| C_A C_B}{T^2 - T_C^2}  \quad .
+\end{equation}
+Ferrimagnete zeigen also einen besonderen, charakteristischen Temperaturverlauf der Suszeptibilität, der deutlich von dem Curie-Weiss-Gesetz abweicht. Unterhalb von $T_C$ verbleibt eine beobachtbare spontane Magnetisierung, weil die beiden Untergitter sich nicht vollständig kompensieren.
+
+
+\begin{margintable}[-20mm]
+    \begin{tabular}{lll}
+      Material & $T_C$ (K) & $\mu / \mu_B$ \\
+      \ch{Fe3O4} & 858   & 4.1 \\
+      \ch{CoFe2O3}  & 793  & 3.7 \\
+      \ch{Y3Fe5O12} & 560 & 5.0 \\
+      \ch{Ho3Fe5O12} & 567 & 15.2 \\
+    \end{tabular}
+    \caption{Ferrimagnete (Daten aus \cite{Blundell_magnetism})}
+\end{margintable}
+
+\begin{margintable}
+    \begin{tabular}{lll}
+      Material & $T_N$ (K) & $J$ \\
+      \ch{MnF2} & 67   & $5/2$ \\
+      \ch{MnO} & 122   & $5/2$ \\
+      \ch{CoO} & 292  & $3/2$ \\
+      \ch{Cr2O3} & 307  & $3/2$ \\
+      \ch{$\alpha$-Fe2O3} & 950  & $5/2$ \\
+    \end{tabular}
+    \caption{Antiferromagnete (Daten aus \cite{Blundell_magnetism})}
+\end{margintable}
+
+\paragraph*{Antiferromagnetismus} Hier sind die beiden Untergitter identisch ($\gamma_{AA} = \gamma_{BB}$), aber die magnetischen Momente antiparallel orientiert, also $\bm{M}_A = - \bm{M}_B$. Die kritische Temperatur, hier Néel-Temperatur, ist
+\begin{equation}
+    T_N = | \gamma_{AB} - \gamma_{AA}| C \quad ,
+\end{equation}
+wobei $C$ die Curie-Konstante eines der Untergitter ist. Oberhalb der Néel-Temperatur $T_N$ ist die Suszeptibilität
+\begin{equation}
+    \chi = \frac{2 C}{T + T_N} \quad .
+\end{equation}
+Es gibt auch unterhalb von  $T_N$ keine  spontane Magnetisierung, weil die beiden Untergitter sich  vollständig kompensieren. Die Suszeptibilität ist in diesem Bereich\sidenote{siehe bspw. \cite{Gross_FK}
+} abhängig von der Orientierung des Magnetfelds,
+
+
+
+
+
+\paragraph*{Magnetische Ordnung und Suszeptibilität} Die Temperaturabhängigkeit der Suszeptibilität ist für Para-, Ferro- und Antiferromagnete ähnlich. Sie folgt 
+\begin{equation}
+    \chi \propto \frac{1}{T - \Theta} \quad .
+\end{equation}
+Man kann diese Gleichung an den experimentell gefundenen Verlauf anpassen und so die kritische Temperatur  $\Theta$ bestimmen. Falls $\Theta = 0$, so ist das Material ein Paramagnet. Falls $\Theta > 0$, dann liegt ein Ferromagnet vor und $T_C = \Theta$. Falls $\Theta < 0$, dann ist es ein Antiferromagnet und $T_N = - \Theta$. 
+
+
+\begin{marginfigure}
+    \inputtikz{\currfiledir chi_T}
+    \caption{Temperaturabhängigkeit der Suszeptibilität $\chi$ für Paramagnete (fett), Ferromagnete (obere Kurven) und Antiferromagnete (untere Kurve). Unterhalb von $T=\Theta$ liegt die geordnete Phase des (Anti-)Ferromagnets vor. Oberhalb sind beide paramagnetisch.}
+\end{marginfigure}
+    
+
+\section{Neutronenstreuung}
+
+ Neutronenstreuung ist die Methode der Wahl, um magnetische Ordnung zu detektieren. Die (de Broglie-) Wellenlänge ist viel kleiner als der Gitterabstand. Beugung am Kristall-Gitter ist also möglich. Gleichzeitig hat das Neutron auch einen Spin $1/2$, d.h. es wechselwirkt mit den magnetischen Momenten. Es gibt im Beugungsmuster also nicht nur einen Beitrag der Kerne des Gitters, sondern auch der Elektronen, wenn diese ein magnetisches Moment besitzen. Beide Effekte addieren sich.
+
+Im Experiment\footcite{Shull1951} von  Shull\sidenote{Clifford Glenwood Shull, 1915--2001, Nobelpreis 1994}, Strauser und Wollan, das in Abbildung \ref{fig:7_MnO_antiferro} gezeigt ist, wurden Neutronen an \ch{MnO} gebeugt. Oberhalb der Néel-Temperatur ist das Material paramagnetisch. Man findet Peaks entsprechend dem \ch{Mn}--\ch{Mn} Abstand von 4.43~\AA\ bei einer \ch{NaCl}-Kristallstruktur (fcc).
+
+ Unterhalb der Néel-Temperatur stellt sich antiferromagnetische Ordnung ein. Die magnetischen Momente der Mangan-Ionen sind alternierend antiparallel orientiert. Der Streuquerschnitt der magnetischen Neutronenstreuung hängt von der Orientierung der Spins relativ zur Bahnebene der Neutronen ab. Daher erscheinen nun die \ch{Mn}-Ionen unterschiedlich und das Gitter wird effektiv doppelt so groß mit $a_0 = 8.85$~\AA . Die zusätzlichen Peaks können in der neuen Gitterkonstante indizierter werden, in der alten benötigten sie halbzahlige Indizes.
+
+ Man erkennt in Abbildung \ref{fig:7_MnO_antiferro}  auch, dass die neu hinzukommenden Peaks in der Amplitude mit steigendem Streuwinkel $\theta$ kleiner werden. Eine solche Winkelabhängigkeit im Formfaktor gibt es bei Streuung an den Kernen nicht. Die Winkelabhängigkeit ergibt sich aus der Fourier-Transformation der räumlichen Verteilung der Streudichte. Bei den Kernen ist diese stark lokalisiert, nach Fourier-Transformation also quasi konstant. Bei den Elektronen ist dies nicht mehr der Fall. Der Amplitudenabfall spiegelt also die Ausdehnung der Elektronenwolke um das \ch{Mn}-Ion wider.
+
+\begin{marginfigure}[-50mm]
+    \inputtikz{\currfiledir MnO}
+    \caption{Kristallstruktur von \ch{MnO}. In der antiferromagnetischen Phase sind die Spins der Mangan-Ionen entweder parallel (rot) oder antiparallel (grün) zur Feldrichtung orientiert. Die Sauerstoff-Ionen (grau) tragen nicht zum Signal bei. Bei höheren Temperaturen verschwindet die Spin-Orientierung. Die Unterscheidung zwischen rot und grün fällt weg. Die Einheitszelle wird dadurch kleiner.}
+\end{marginfigure}
+
+
+    
+% from
+% http://webster.ncnr.nist.gov/resources/n-lengths/
+
+% Neutron scattering lengths and cross sections
+% Isotope 	conc 	Coh b 	Inc b 	Coh xs 	Inc xs 	Scatt xs 	Abs xs
+% Mn 	100 	-3.73 	1.79 	1.75 	0.4 	2.15 	
+
+% Neutron scattering lengths and cross sections
+% Isotope 	conc 	Coh b 	Inc b 	Coh xs 	Inc xs 	Scatt xs 	Abs xs
+% O 	--- 	5.803 	--- 	4.232 	0.0008 	4.232 	0.00019 
+
+\newpage
+\section{Zusammenfassung}
+
+\textit{Schreiben Sie hier ihre persönliche Zusammenfassung des Kapitels auf. Konzentrieren Sie sich auf die wichtigsten Aspekte und die am Anfang genannten Ziele des Kapitels.}
+
+\vspace*{10cm}
+\printbibliography[segment=\therefsegment,heading=subbibliography]
