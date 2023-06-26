@@ -163,7 +163,7 @@ Dies setzen wir ein und multiplizieren aus
 \begin{equation}
     \hat{H} = \hat{H}_\text{spin} + \sum_{i=1}^Z
     \frac{ \bm{p}_i^2}{2 m_e} + V_i
-+   \frac{ \bm{p}_i  \cdot \bm{B} \times \bm{r}_i}{4 m_e}
++   \frac{ e}{2 m_e} \bm{p}_i  \cdot \bm{B} \times \bm{r}_i
 +    \frac{e^2 \left[\bm{B} \times \bm{r}_i \right]^2}{8 m_e}  \quad .
 \end{equation}
 Den mittleren Term kann man durch den  Gesamt-Bahndrehimpuls $\bm{L}$ als  Summe der Einzel-Drehimpulse
@@ -173,7 +173,7 @@ Den mittleren Term kann man durch den  Gesamt-Bahndrehimpuls $\bm{L}$ als  Summe
  ersetzen, so dass wir erhalten
  \begin{equation}
     \hat{H} - \hat{H}_0 = 
-    \mu_B (\bm{L} + g\bm{S}) \cdot \bm{B}
+    \frac{\mu_B}{\hbar} (\bm{L} + g\bm{S}) \cdot \bm{B}
     + \frac{e^2}{8 m_e} 
      \sum_{i=1}^Z  \left[\bm{B} \times \bm{r}_i \right]^2 \quad . \label{eq:7_H_atom_para_dia}
 \end{equation}
@@ -432,17 +432,17 @@ Wenn $J_A$ positiv ist, dann sind Triplett-Zustände energetisch bevorzugt, also
 Wir haben die  Austausch-Wechselwirkung mit Elektronen-Spins eingeführt, aber man kann analog natürlich mit allen magnetischen Momenten bzw. Drehimpuls-Äquivalenten arbeiten, und auch auf mehr als zwei Spins erweitern. Der erste Summand in Gl.~\ref{eq:7_H_austausch_2e} liefert nur einen konstanten Energie-Offset, den wir nun weglassen.  Für allgemeine Drehimpuls-artige Größen $\bm{S}_i$ ergibt der zweite Teil das \emph{Heisenberg-Modell der magnetischen Ordnung} mit
 \begin{equation}
     \hat{H}_A = - \sum_{i > j} J_A^{ij} \, \frac{\bm{S}_i \cdot \bm{S}_j}{\hbar^2}  \quad .
-    \label{eq:7_Einstein_Ising_Modell}
+    \label{eq:7_Heisenberg_Ising_Modell}
 \end{equation}
 Die Summe läuft dabei so, dass alle Paare von Indizes $i$ und $j$ einmal genommen werden. Man nimmt an, dass die magnetischen Dipole auf einem Gitter angeordnet  sind, und der Index den Gitterplatz bezeichnet. Die Austausch-Konstante $J_A^{ij}$ hängt dann beispielsweise vom räumlichen Abstand der Gitterplätze  $i$ und $j$ ab.
 
-Das \emph{Ising-Modell} nimmt wieder Elektronen-Spins als Drehimpuls-artige Größe, erlaubt also nur die Möglichkeit 'up' und 'down'. Dadurch wird das Skalarprodukt von Vektoren  in Gl.~\ref{eq:7_Einstein_Ising_Modell} eine Multiplikation von Skalaren. 
+Das \emph{Ising-Modell} nimmt wieder Elektronen-Spins als Drehimpuls-artige Größe, erlaubt also nur die Möglichkeit 'up' und 'down'. Dadurch wird das Skalarprodukt von Vektoren  in Gl.~\ref{eq:7_Heisenberg_Ising_Modell} eine Multiplikation von Skalaren. 
 
 
 \section{Molekularfeldnäherung}
 
 
-Im Ising- oder Einstein-Modell koppelt die Austauschwechselwirkung alle magnetischen Momente miteinander, was die Rechnung aufwändig macht. Einfacher wird es, wenn man den Beitrag aller anderen magnetischen Momente zum Magnetfeld am Ort $i$ zusammenfasst zu einem effektiven mittleren Austausch- oder Molekularfeld. Dieser Ansatz von Pierre Weiss ist historisch älter als die Austauschwechselwirkung.
+Im Ising- oder Heisenberg-Modell koppelt die Austauschwechselwirkung alle magnetischen Momente miteinander, was die Rechnung aufwändig macht. Einfacher wird es, wenn man den Beitrag aller anderen magnetischen Momente zum Magnetfeld am Ort $i$ zusammenfasst zu einem effektiven mittleren Austausch- oder Molekularfeld. Dieser Ansatz von Pierre Weiss ist historisch älter als die Austauschwechselwirkung.
 
 Wir nehmen an, dass die Austauschwechselwirkung nur zwischen den nächsten Nachbarn wirkt, und dass sie für alle $z$  Nachbarn identisch ist. Dann ist der Energiebeintrag am Ort $i$
 \begin{equation}
@@ -462,7 +462,7 @@ und erhalten
 \end{equation}
 mit dem \emph{Molekularfeld} $\bm{B}_A$ und der Molekularfeld-Konstante $\gamma$
 \begin{equation}
-    \bm{B}_A = \frac{J_a}{n \, g_J^2 \, \mu_B^2} \bm{M} 
+    \bm{B}_A = \frac{z \, J_a}{n \, g_J^2 \, \mu_B^2} \bm{M} 
    % = \frac{J_a}{ g_J \, \mu_B \, \hbar}  \braket{\bm{S}_j}
    = \mu_0 \, \gamma \, \bm{M}   \quad . 
 \end{equation}
