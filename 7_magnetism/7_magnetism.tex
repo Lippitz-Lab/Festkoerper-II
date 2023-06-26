@@ -398,7 +398,7 @@ Manche Materialien zeigen ohne anliegendes externes Magnetfeld unterhalb einer k
 
 Die für die Ordnung verantwortliche Wechselwirkung ist die Austauschwechselwirkung, die schon beim \ch{H_2^+}-Molekül für die Bindung gesorgt hatte. Magnetische Dipol-Dipol-Wechselwirkung wäre zwar auch denkbar, ist aber viel zu schwach. Typische Energien entsprechen einer Temperatur von 1~K, so dass so Ordnung bei Raumtemperatur nicht beobachtbar wäre.
 
-Wir diskutieren ein einfaches Modell: Zwei Elektronen ($i=1,2$) sind an den Orten $\bm{r}_1$ und $\bm{r}_2$, und in den Zuständen $\phi_A$ und $\phi_B$. Daraus können wir wie in der Molekülphysik eine symmetrische ($+$) und antisymmetrische ($-$) Gesamt-Wellenfunkton herstellen:\sidenote{hier nur der Orts-Teil, da zusammen mit dem Spin-Teil beide anti-symmetrisch}
+Wir diskutieren ein einfaches Modell: Zwei Elektronen ($i=1,2$) sind an den Orten $\bm{r}_1$ und $\bm{r}_2$, und in den Zuständen $\phi_A$ und $\phi_B$. Daraus können wir wie in der Molekülphysik einen symmetrischen ($+$) und antisymmetrischen ($-$)  Orts-Anteil der Gesamt-Wellenfunkton herstellen:\sidenote{zusammen mit dem Spin-Teil dann immer anti-symmetrisch}
 \begin{equation}
     \Psi_\pm  \propto \phi_a(\bm{r}_1) \phi_b(\bm{r}_2) \pm \phi_a(\bm{r}_2) \phi_b(\bm{r}_1)  \quad .
 \end{equation}
@@ -411,12 +411,7 @@ und die Energie-Differenz ist die Austausch-Konstante $J_A$
     J_A = E_+ - E_-  \propto \iint \phi_a^\star(\bm{r}_1) \phi_b^\star(\bm{r}_2)  \,
     \hat{H} \, \phi_a(\bm{r}_2) \phi_b(\bm{r}_1) \, d\bm{r}_1   d\bm{r}_2   \quad .
 \end{equation}
-Damit können wir die Gesamtenergie schreiben als
-\begin{equation}
-    \hat{H} = \frac{1}{4} (E_+ + 3 E_-) - J_A \frac{\bm{s}_1 \cdot \bm{s}_2}{\hbar^2}  \quad .
-    \label{eq:7_H_austausch_2e}
-\end{equation}
-Dabei bezeichnen die $\bm{s}_i$ den Spin des i-ten Elektrons. Die symmetrische Gesamtwellenfunktion $\Psi_+$ muss eine anti-symmetrische (Triplett, $S=1$) Spin-Wellenfunktion besitzen. $\Psi_-$ muss ein Singulett-Zustand ($S=0$) sein.  Durch Ausmultiplizieren von $\bm{S}^2 = (\bm{s}_1  + \bm{s}_2 )^2$ erhält man, dass
+Nun nehmen wir den Spin der Elektronen hinzu. Damit die Gesamt-Wellenfunktion antisymmetrische ist, muss die symmetrische Wellenfunktion $\Psi_+$  eine anti-symmetrische (Singulett, $S=0$) Spin-Wellenfunktion besitzen. Ebenso muss $\Psi_-$  ein Triplett-Zustand ($S=1$) sein. Die Unterscheidung kann man mit den Einzel-Spin-Operatoren   $\bm{s}_i$  des i-ten Elektrons schreiben. Durch Ausmultiplizieren von $\bm{S}^2 = (\bm{s}_1  + \bm{s}_2 )^2$ findet man, dass
 \begin{equation}
     \frac{\bm{s}_1 \cdot \bm{s}_2}{\hbar^2}
     = \left\{ \begin{matrix}
@@ -425,6 +420,11 @@ Dabei bezeichnen die $\bm{s}_i$ den Spin des i-ten Elektrons. Die symmetrische G
     \end{matrix}
     \right.   \quad .
 \end{equation} 
+Damit können wir die Gesamtenergie kompakt schreiben als
+\begin{equation}
+    \hat{H} = \frac{1}{4} (E_+ + 3 E_-) - J_A \frac{\bm{s}_1 \cdot \bm{s}_2}{\hbar^2}  \quad .
+    \label{eq:7_H_austausch_2e}
+\end{equation}
 Wenn $J_A$ positiv ist, dann sind Triplett-Zustände energetisch bevorzugt, also eine parallele Anordnung der Spins wie im Ferromagnetismus. Bei negativen $J_A$ spricht man von antiferromagnetischer Kopplung.
 
 \section{Heisenberg- und Ising-Modell}
