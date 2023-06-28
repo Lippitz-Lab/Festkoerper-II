@@ -1,0 +1,489 @@
+%\renewcommand{\lastmod}{\today}
+\renewcommand{\chapterauthors}{Markus Lippitz}
+\renewcommand{\lastmod}{28. Juni 2023}
+
+\chapter{Optische Eigenschaften}
+
+
+
+
+\section{Ziele}
+ 
+
+
+\begin{itemize}
+\item Sie können die Quasiteilchen Phonon, Plasmon und Exziton sowie die zugehörigen Polaritonen benutzen, um optische Eigenschaften von Festkörpern wie die unten dargestellte Messung zu erklären.
+\end{itemize}
+
+
+
+
+\begin{figure}
+    \inputtikz{\currfiledir kojima_dispersion}
+     \caption{
+        Dispersion der Phonon-Polaritonen in  \ch{Bi4Ti3O12}, gemessen via THz-Spektroskopie. Für bestimmte Frequenzen (grau unterlegt) können elektromagnetische Wellen nicht in diesem Medium propagieren. Die Dispersionsrelation ergibt sich aus der Kopplung von freier elektromagnetischer Strahlung (diagonal, strichliert) mit optischen Phononen (waagerecht, grau). Daten aus \cite{Kojima2003}.
+    \label{fig:8_Kojima_dispersion} 
+     }
+\end{figure}
+ 
+
+
+% \begin{questions} 
+% \item Wie groß ist ein Molekül?
+% \item Welche physikalische Eigenschaft eine Moleküls wird bei Röntgenstreuung, STM und AFM abgebildet?
+% \end{questions}
+ 
+
+
+% Das Pluto-Skript hydrogen\_wave\_functions\pluto{hydrogen_wave_functions} ermöglicht es Ihnen, mit verschiedenen Varianten der grafischen Darstellung zu experimentieren.
+
+
+\section{Überblick}
+
+Das verbindende Thema dieses Kapitels ist die Wechselwirkung von Festkörpern mit elektromagnetischer Strahlung, also die optischen Eigenschaften der Materie. Genauso gut hätte man das Kapitel auch 'Quasiteilchen' oder 'Quasiteilchen aus Quasiteilchen' nennen können. Wir werden neben den Phononen noch zwei weitere Quasiteilchen einführen, und diese dann jeweils mit Photonen zu einem neuen Teilchen verbinden. Wir gehen hier beim Photon analog zum Kristall-Elektron vor, in das wir die Wechselwirkung mit dem Feld der Kerne projiziert hatten.
+
+\section*{Wiederholung}
+
+Optische Eigenschaften kondensierter Materie wurden schon einmal im Zusammenhang mit der Molekülspektroskopie besprochen. Schauen Sie noch einmal in Ihre Notizen zur Vorlesung EPC1, oder alternativ in mein Skript\footcite{lippitz_epc1} in Kapitel 4.
+
+\paragraph*{Makroskopische Maxwell-Gleichungen} Wir beschreiben die Wechselwirkung von Licht mit Materie durch die Maxwell-Gleichungen und die zugehörigen Materie-Gleichungen. Interessante Größen sind die Polarisation $\bm{P}$, die Suszeptibilität $\chi$ und die dielektrische 'Konstante' (besser: Funktion) $\epsilon$. Ich benutze die Form $D = \epsilon \epsilon_0 E$, also ein einheitenfreies $\epsilon$. Manche Bücher machen das aber auch anders.
+
+\paragraph*{Verschiebungs- und Orientierungs-Polarisation} Ladungsträger können sich verschieben und Moleküle umorientieren, wenn ein elektrisches Feld anliegt. Die Umorientierung ist identisch mit unserer Beschreibung des Paramagnetismus, also ebenfalls mit der Langevin-Funktion.
+
+\paragraph*{Lorentz-Oszillator-Modell} Dieses Modell der geladenen Masse an einer Feder ist zentral für viele Vorstellungen. Es liefert insbesondere die Lorentz-förmige Linienform einer Absorptionslinie.
+
+\paragraph*{Lokales Feld} Ein externes elektrisches Feld $E_\text{ext}$ verschiebt die umgebenden Ladungen und ändert so das lokale Feld $E_\text{loc}$ an dem Ort, der uns eigentlich interessiert. Dies wird durch die Lorentz-Beziehung beschrieben und mündet in der Clausius-Mossotti-Beziehung.
+
+\paragraph*{Kramers-Kronig-Beziehung} Real- und Imaginärteil vieler Größen, insbesondere der dielektrischen Funktion oder der Suszeptibilität, sind nicht unabhängig voneinander  sondern ineinander umrechenbar. Dies liegt an der Kausalität, dass also Materie erst nach Einschalten des elektrischen Feldes antworten kann, und wird in den Kramers-Kronig-Beziehungen zusammengefasst.
+
+\paragraph*{Messbare Größen} Wir diskutieren die Phänomene oft im Rahmen der komplexwertigen dielektrische Funktion $\epsilon(\omega)$. Messbar ist aber eigentlich der (komplexwertige) Brechungsindex $\tilde{n}(\omega)$, die Reflektivität $R$ bei senkrechtem Einfall und der Absorptionskoeffizient $K$. Schauen Sie sich die Zusammenhänge noch einmal an.
+
+\section*{Lokales Feld}
+
+Wir gehen noch etwas auf das lokale Feld in einer Probe ein.  In der  Lorentz-Methode werde alle Moleküle zusammen  als ein homogenes Medium mit der dielektrischen Konstante $\epsilon$ angesehen. Aus diesem Medium schneidet man eine Kugel aus, die gerade das einzelne, zu betrachtende Molekül oder Atom umschließt. In die so entstandene Aushöhlung setzt man das Molekül in Vakuum. Das externe elektrische Feld induziert eine Polarisation $\bm{P}$, nur kennen wir deren Größe noch nicht. Diese Polarisation bewirkt Oberflächenladungen am Rand der Kugel, die das lokale Feld in der Kugel modifizieren\sidenote{Die Rechnung ist typischerweise eine Übungsaufgabe in der Elektrodynamik.}
+ \begin{equation}
+    \bm{E}_\text{loc} =  \bm{E}_\text{ext} + \frac{\bm{P}}{3 \epsilon_0} \quad .
+\end{equation}
+In Festkörpern müssen wir aber auch berücksichtigen, dass die Probe irgendwo endet. Auch an dieser Oberfläche können Ladungen induziert werden, die dem internen Feld entgegenstehen. Dieses Feld von der Oberfläche nennt man Depolarisationsfeld $\bm{E}_N$. Man schreibt es auch in der Form
+\begin{equation}
+    \bm{E}_{N} =  -\frac{N}{\epsilon_0} \bm{P} \
+\end{equation}
+mit dem  Depolarisationsfaktor $N$, der von der Form der Probe abhängt. Für Kugeln ist $N=1/3$, für eine dünne Scheibe senkrecht bzw. parallel zum elektrischen Feld ist $N=1$ bzw. $N=0$. Insgesamt haben wir also
+\begin{equation}
+    \bm{E}_\text{loc} =  \bm{E}_\text{ext} - \frac{\bm{P}}{\epsilon_0} \left( N - \frac{1}{3} \right) \quad .
+    \label{eq:8_Eloc}
+\end{equation}
+
+
+\section*{Optische Phononen}
+
+Im ersten Teil der Festkörperphysik hatten Sie optische Phononen kennengelernt, also Schwingungen der Atomrümpfe in einem Gitter mit einer mindestens zweiatomigen Basis. Als Modell wird eigentlich immer die lineare zweiatomige Kette diskutiert. Im Grenzfall $\bm{k} \rightarrow 0$ bzw. unendlich langer Wellenlängen bewegen sich einfach zwei Ebenen von Atomen gegeneinander. Die Frequenz der Bewegung ist
+\begin{equation}
+    \omega_{0} = \sqrt{\frac{2c}{\mu}}
+\end{equation}
+mit der reduzierten Masse $\mu$ und der Kraftkonstanten $c$. Da alle Ionen gleicher Ladung $q$ derselben Bewegung folgen ist die Differentialgleichung  einfach und kommt ohne Index für das Atom aus
+\begin{align}
+    M_1 \ddot{\bm{u}}_1 - 2c (\bm{u}_1 - \bm{u}_2 )  =&  + q \bm{E}_\text{loc}  \\
+    M_2 \ddot{\bm{u}}_2 - 2c (\bm{u}_2 - \bm{u}_1 )  =& - q \bm{E}_\text{loc}  \quad .
+\end{align}
+Wir komprimieren dies auf eine Gleichung für den Abstand der Ebenen $\bm{u} = \bm{u}_1 - \bm{u}_2$
+\begin{equation}
+    \mu \ddot{\bm{u}} + \mu \omega_{0}^2 \bm{u} =  q \bm{E}_\text{loc} \quad .
+\end{equation}
+Diese Bewegung  $\bm{u}$ ist mit Ladung verknüpft und bewirkt so eine sich ändernde Polarisation $\bm{P}$, die wiederum auf das lokale elektrische Feld wirkt. Mit der Dichte $n$ der Ionen-Paaren ist die Polarisation aufgrund der Ionen selbst 
+\begin{equation}
+    \bm{P}_\text{ion} = n q \bm{u} =\epsilon_0  n \alpha_{ion} \bm{E}_\text{loc} 
+\end{equation}
+mit der Polarisierbarkeit der Ionen $\alpha_{ion}$. Weiter unten werden wir diese Polarisierbarkeit im statischen Grenzfall benötigen, also für Frequenzen gegen Null. Dazu lösen wir zunächst nach $\alpha_{ion}$ auf, und setzen dann die Lösung der Differentialgleichung für $\omega = 0$ ein, um $u$ zu entfernen. Das ergibt
+\begin{equation}
+    \alpha_{ion}(0) = \frac{q u}{\epsilon_0 E_\text{loc}} = \frac{q^2}{\epsilon_0 \omega_0^2 \mu} \quad .
+\end{equation}
+
+Zusätzlich gibt es aber auch noch Elektronenwolken um jedes Ion. Auch diese sind polarisierbar mit der Polarisierbarkeit je Ion $\alpha_{el}^+$ und $\alpha_{el}^-$. Wir führen eine effektive Polarisierbarkeit des Ionenpaars ein $\alpha_{el} = \alpha_{el}^+ + \alpha_{el}^-$ und erhalten
+\begin{equation}
+    \bm{P}_\text{el} = \epsilon_0 \, n \, \alpha_{el} \, \bm{E}_\text{loc} \quad .
+\end{equation} 
+Insgesamt ergibt dies
+\begin{equation}
+    \bm{P} = \bm{P}_\text{ion}  +  \bm{P}_\text{el} =   n q \bm{u} +  \epsilon_0 \, n \, \alpha_{el} \, \bm{E}_\text{loc}   \quad .
+    \label{eq:8_Pges_optische_Phononen}
+\end{equation} 
+
+Nun fehlt noch ein Ausdruck für den Zusammenhang zwischen Polarisation $\bm{P}$ und lokalem elektrischen Feld $\bm{E}_\text{loc}$. Dazu betrachten wir hier zunächst \emph{Eigenschwingungen}, legen also kein externes Feld an. Im nächsten Abschnitt kommt dann das externe Feld hinzu.
+
+Das Schwingungsmuster der Ionen im Kristall wird durch die Phasenfronten der ebenen Wellen bestimmt. Wir betrachten nun eine dünne Scheibe des Kristalls, die parallel zur Phasenfront, also senkrecht zum Wellenvektor ist.
+
+
+\paragraph*{Longitudinale Schwingungen} Bei einer longitudinalen Schwingung bewegen sich die Ionen in Richtung Scheibenoberfläche. Die Polarisation $\bm{P}$ steht also senkrecht auf der Scheibe. Damit ist der Depolarisationsfaktor $N=1$ und das lokale Feld ist nach Gl.     \ref{eq:8_Eloc}
+\begin{equation}
+    \bm{E}_\text{loc}  = - \frac{2}{3\epsilon_0} \bm{P} \quad .
+\end{equation}
+Dies setzen wir in Gl.~\ref{eq:8_Pges_optische_Phononen} ein und eliminieren $\bm{P}$
+\begin{equation}
+    \bm{E}_\text{loc} = - \frac{2}{3} n \alpha_{el} \bm{E}_\text{loc}  - \frac{2}{3\epsilon_0} n q \bm{u} \quad .
+\end{equation}
+Mittels der Definition von $\alpha_{ion}(0)$  lässt sich dies schreiben als
+\begin{equation}
+    \bm{E}_\text{loc} = - \frac{1}{q} \mu \omega_0^2 \, \frac{\frac{2}{3} n \alpha_{ion}(0)}{1 + \frac{2}{3} n \alpha_{el} } \quad .
+\end{equation}
+Damit haben wir den 'treibenden' Term in der Differentialgleichung gefunden, die hier eine freie Schwingung beschreibt, weil wir ja oben $\bm{E}_\text{ext} = 0$ gesetzt haben. Die Eigenfrequenz dieser Schwingung ist
+\begin{equation}
+    \omega_L = \omega_0 \, \sqrt{1 + \frac{\frac{2}{3} n \alpha_{ion}(0)}{1 + \frac{2}{3} n \alpha_{el}(0) }} \quad .
+\end{equation}
+Hier wurde auch der statische Grenzfall der elektronischen Polarisierbarkeit eingesetzt, weil die sich ergebenden Frequenz im infraroten Spektralbereich für Elektronen schon quasi Null sind, diese also instantan folgen.
+
+
+\paragraph*{Transversale Schwingungen} Bei einer transversalen Schwingung bewegen sich die Ionen in parallel zur  Scheibenoberfläche. Die Polarisation $\bm{P}$ ist parallel zur Scheibe. Damit ist der Depolarisationsfaktor $N=0$ und das lokale Feld ist nach Gl.~\ref{eq:8_Eloc}
+\begin{equation}
+    \bm{E}_\text{loc}  = + \frac{1}{3\epsilon_0} \bm{P} \quad . \label{eq:8:_Eloc_transversal}
+\end{equation}
+Die analoge Rechnung zu oben ergibt
+\begin{equation}
+    \omega_T = \omega_0 \, \sqrt{1 - \frac{\frac{1}{3} n \alpha_{ion}(0)}{1 - \frac{1}{3} n \alpha_{el}(0) }} \quad .
+\end{equation}
+
+
+Die Eigenfrequenz optischer Phononen spaltet sich also in der Nähe von $\bm{k} \approx 0$ auf in zwei verschiedene Werte für die transversale und longitudinale Mode, wenn die sich bewegenden Massen geladen sind. Dann erzeugen diese Ladungen nämlich eine Polarisation, die durch ein lokales Feld zurückwirkt auf die Ladungen selbst. Diese Rückwirkung hängt von der Orientierung der Polarisation relativ zur Phasenfront ab. Dies macht die rückstellende Feder effektiv weicher bzw. härter. Optische Phononen ungeladener Massen beispielsweise in Gittern mit zweiatomiger Basis aber nur einer Atomsorte zeigen diese Aufspaltung nicht.
+
+
+\section*{Lyddane-Sachs-Teller-Relation}
+
+Die Terme für die beiden neuen Eigenfrequenzen sind sehr ähnlich. Das Verhältnis  $\omega_L^2 / \omega_T^2$ ist
+\begin{equation}
+    \frac{\omega_L^2}{\omega_T^2} = 
+    \left[
+    1  + \frac{n \left[ \alpha_{el}(0) + \alpha_{ion}(0)   \right] }{1 - \frac{1}{3} n \left[ \alpha_{el}(0) + \alpha_{ion}(0)   \right]}
+    \right]
+    \left[
+        1  + \frac{n   \alpha_{el}(0)  }{1 - \frac{1}{3} n   \alpha_{el}(0) }
+    \right]^{-1} \quad .
+\end{equation}
+Beide Terme sind ähnlich zur nach $\epsilon$ aufgelösten Clausius-Mossotti-Beziehung\sidenote{siehe z.B. EPC1}
+\begin{equation}
+    \epsilon = 1 + \frac{n \alpha }{ 1- \frac{1}{3} n \alpha}
+\end{equation}
+und unterscheiden sich nur darin, dass im zweiten der Beitrag $\alpha_{ion}(0)$ fehlt. Wir identifizieren also den ersten Term als dielektrische Funktion bei der Frequenz $0$, also $\epsilon(0)$. Für Frequenzen im sichtbaren Spektralbereich, also oberhalb der der optischen Phononen ($\omega \gg \omega_0$), trägt die ionische Polarisierbarkeit nicht mehr bei. Die schweren Kerne können dem Feld nicht mehr folgen. Diese Frequenz ist aber immer noch klein gegen die Eigenfrequenz der Elektronenwolke im Ultravioletten, so dass $ \alpha_{el}(0)$ immer noch gerechtfertigt ist. Wir identifizieren den zweiten Term also mit der dielektrischen Funktion im Sichtbaren $\epsilon(\omega_{s})$. Damit erhalten wir die Lyddane-Sachs-Teller-Relation (LST-Relation)
+\begin{equation}
+    \frac{\omega_L^2}{\omega_T^2} =\frac{\epsilon(0)}{\epsilon(\omega_s)} \quad .
+\end{equation}
+Da  $\epsilon(\omega_{s}) \approx 1$ bedeutet ein kleines $\omega_T$ ein sehr hohes $\epsilon(0)$. Für \ch{PbTe} wird beispielsweise $\epsilon(0) \approx 1500$ erreicht.
+
+
+\section*{Erzwungene Schwingungen von Ionenkristallen}
+
+Mit der Lyddane-Sachs-Teller-Relation haben wir eigentlich schon den Bereich $\bm{E}_\text{ext} = 0$ verlassen, weil die dielektrische Funktion natürlich die Wechselwirkung von externen elektromagnetischen  Wellen mit der Materie beschreibt. Dies soll hier etwas genauer betrachtet werden. Wir wiederholen also die Argumentation von oben, nur verlangen jetzt $\bm{E}_\text{ext} \neq 0$. Elektromagnetische Wellen sind transversale Wellen, die auch nur mit transversalen optischen Phononen koppeln. Wir ersetzen also Gl.~\ref{eq:8:_Eloc_transversal} durch 
+\begin{equation}
+    \bm{E}_\text{loc}  = \bm{E}_\text{ext}  + \frac{1}{3\epsilon_0} \bm{P} 
+\end{equation}
+und erhalten dann analog zur mit longitudinalen Phononen vorgeführten Rechnung  
+\begin{equation}
+    \bm{E}_\text{loc} =
+ \frac{1}{1 - \frac{1}{3} n \alpha_{el} }  \bm{E}_\text{ext}  
+    + \frac{1}{q} \mu \omega_0^2 \, \frac{\frac{1}{3} n \alpha_{ion}(0)}{1 - \frac{1}{3} n \alpha_{el} } \quad .
+\end{equation}
+In der Differentialgleichung verbleibt damit ein treibender Term mit $ \bm{E}_\text{ext} $ und man bekommt die Lösung
+\begin{eqnarray}
+    \bm{u} =\frac{q}{\mu} \, \, \frac{1}{1 - \frac{1}{3} n \alpha_{el} } \, \, \frac{1}{\omega_T^2 - \omega^2} \bm{E}_\text{ext}  
+\end{eqnarray}
+wenn $\omega$ die Frequenz des Lichtfeldes $ \bm{E}_\text{ext}$ ist. Über 
+\begin{equation}
+    \bm{P}_\text{ion} = n q \bm{u} = \epsilon_0 \chi_\text{ion} \bm{E}_\text{ext} 
+\end{equation}
+erhalten wird die optische Suszeptibilität der Ionen
+\begin{equation}
+    \chi_\text{ion} = \frac{n q^2}{\epsilon_0 \mu} \, \frac{1}{1 - \frac{1}{3} n \alpha_{el} } \, \frac{1}{\omega_T^2} \, \, \frac{\omega_T^2}{\omega_T^2 - \omega^2} 
+    = \chi_\text{ion} (0) \, \frac{\omega_T^2}{\omega_T^2 - \omega^2}  \quad .
+\end{equation}
+Die dielektrische Funktion für Elektronen und Ionen zusammen ist
+\begin{align}
+    \epsilon(\omega) = & 1 + \chi_\text{el} + \chi_\text{ion}
+    = \epsilon(\omega_s) + \left[ \epsilon(0) - \epsilon(\omega_s) \right] \frac{\omega_T^2}{\omega_T^2 - \omega^2}  \\
+    = & \epsilon(\omega_s) \, \frac{\omega_L^2 - \omega^2}{\omega_T^2 - \omega^2}  \label{eq:8_eps_ion}
+\end{align}
+wobei wir im ersten Schritt die Definition von $\epsilon(\omega_s) = 1 + \chi_\text{el}(0)$ und im zweiten die Lyddane-Sachs-Teller-Relation ausgenutzt haben. Die dielektrische Funktion  $\epsilon(\omega)$ hat zwei Nullstellen, bei  $\omega = \omega_T$ und bei $\omega_L$. Dazwischen ist sie negativ. Der Reflexionskoeffizient bei senkrechtem Einfall ist
+\begin{equation}
+    R = \left| \frac{\sqrt{\epsilon} - 1 }{\sqrt{\epsilon} + 1} \right|^2 \quad .
+\end{equation}
+Für das Bereich zwischen $\omega_T$ und $\omega_L$ ist also $R=1$. Eine elektromagnetische Welle kann nicht in die Probe eindringen sondern wird vollständig reflektiert. Diesen Bereich nennt man \emph{Reststrahlenbande}. Außerhalb dieses Bereichs fällt die Reflektivität ab. Bei $\epsilon(\omega) = 1$ ist sie Null und eine Welle dringt verlustfrei in das Medium ein.
+
+\begin{marginfigure}[-80mm]
+    \inputtikz{\currfiledir diel_func_ions}
+    \caption{Dielektrische Funktion (oben) und Reflektivität (unten) aufgrund optischer Phononen in einem ionischen Kristall. strichliert: $R$ für $\Gamma =0$. Hier ist $\omega_L = 1.5 \omega_T$ und $\gamma = 0.1 \omega_T$ gewählt.
+    \label{fig:8_diel_func_ions} }
+\end{marginfigure}
+
+\begin{marginfigure}
+    \inputtikz{\currfiledir inas_refl}
+    \caption{Reflektivität von \ch{InAs} bei $T=4$~K im Vergleich zum Modell. Daten aus \cite{yu_cardona}
+    \label{fig:8_inas_refl} }
+\end{marginfigure}
+    
+
+Die Ausgangs-Differentialgleichung hatte keinen Dämpfungsterm. Wenn wir den einführen\sidenote{siehe \cite{Gross_FK} und \cite{yu_cardona}}, dann erhalten wir 
+\begin{equation}
+    \epsilon(\omega) = \epsilon(\omega_s)  \left(
+1 + 
+\frac{ \omega_L^2 -  \omega_T^2}{\omega_T^2 - \omega^2 - i \Gamma \omega}
+    \right)  \quad . \label{eq:8_eps_ion_gamma}
+\end{equation}
+Abbildung~\ref{fig:8_diel_func_ions}  zeigt den Real- und Imaginärteil.
+Die Beschreibung ändert sich nicht wesentlich. Wir erhalten einen stark absorbierenden Bereich bei $\omega_T$ und die Reflektivität in der Reststrahlenbande ist nicht perfekt. 
+
+
+Typische Werte von $\omega_L$ und $\omega_T$ liegen bei einigen $10^{13}$~Hz, also im Infraroten. Man kann die hohe und spektral schmale Reflektivität der optischen Phononen ausnutzen, um sie als selektive Spiegel zu verwenden. Nach mehrfacher Reflektion an solch einem Material wird ein ursprünglich breites infrarotes Schwarzkörper-Spektrum spektral schmal. Diese Reststrahlen hat man früher zur Spektroskopie anderer Materialien verwendet.
+
+
+
+
+\section*{Phonon-Polariton}
+
+Wir wollen die Ausbreitung von Licht in einem Ionen-Kristall noch etwas genauer betrachten und dabei ein weiteres Quasiteilchen einführen, das Polariton, genauer das Phonon-Polariton. Die Dispersionsrelation von Licht in einem Medium mit der dielektrischen Funktion $\epsilon(\omega)$ ist
+\begin{equation}
+   \omega = c k = \frac{c_0}{\sqrt{\epsilon(\omega)}} k \quad . \label{eq:8_light_line}
+\end{equation}
+Wir setzen für $\epsilon(\omega)$ den dämpfungsfreien Ausdruck  Gl.~\ref{eq:8_eps_ion} ein und quadrieren der Einfachheit halber
+\begin{equation}
+    \omega^2 = \frac{\omega_T^2 - \omega^2}{ \epsilon(\omega_s) (\omega_L^2 - \omega^2)} \, c_0^2 \, k^2 \quad .
+    \label{eq:8_phonon_polariton_dispersion}
+\end{equation}
+Abbildung \ref{fig:8_polariton_dispersion}  zeigt die Dispersionsrelation $\omega(k)$.
+In der Reststrahlenbande wird $  \omega^2 $ negativ, ist also kein reelwertiges $\omega$ möglich. Dies beschreibt den exponentiellen Abfall der Welle an der Grenzfläche. Außerhalb dieser Bandlücke finden wir zwei Äste, das untere und obere Polariton. Diese folgen streckenweise der linearen Dispersionsrelation von Licht mit $ \omega =  \frac{c_0}{n} k$, streckenweise der konstanten horizontalen Dispersionsrelation der Phononen $\omega \approx$~const. Der hier dargestellte Bereich des Wellenvektor $k$ ist ja viel kleiner als $\pi/a$ der Phononen. Das untere Polaritonen wechselt also mit steigendem $k$ von Photon-ähnlich zu Phonon-ähnlich, das obere andersherum. In den Übergangsbereichen, in denen Frequenz und Wellenlänge von Phonon und Photon gut übereinstimmen, da koppeln diese und bilden ein neues, hybrides System, das durch das Quasiteilchen Polariton beschrieben wird. 
+
+\begin{marginfigure}[-60mm]
+    \inputtikz{\currfiledir polariton_dispersion}
+    \caption{Dispersionsrelation von Phonon-Polaritonen (fett) als Kopplung von Licht (diagonal) und optischen Phononen (waagerecht). Hier ist $\omega_L = 1.5 \omega_T$ gewählt.
+    \label{fig:8_polariton_dispersion} }
+\end{marginfigure}
+
+Allgemein sind Polaritonen Quasiteilchen aus Photonen und einer Anregung, die an elektromagnetischen Wellen koppelt, also Ladung oder magnetische Momente besitzt. Wir werden unten noch das Plasmon-Polariton diskutieren. Ähnlich wie bei der effektiven Masse des Kristall-Elektrons werden nun dem Photon Eigenschaften des Kristalls zugeschrieben, nämlich die aus der Oszillation der geladenen Ionen, die an sich ja schon als Phonon quantisiert waren.
+
+
+\section*{Beispiel: \ch{Bi4Ti3O12}}
+
+Als Beispiel für Phonon-Polaritonen ist in Abb.~\ref{fig:8_Kojima_dispersion} 
+am Anfang des Kapitels Bismut-Titanat (\ch{Bi4Ti3O12}) gezeigt. Die Dispersionsrelation von Photonen $\omega \propto k$ ist, im Vergleich zu Phononen, sehr steil, weil die Wellenlänge viel größer als die Gitterkonstante ist. Die Abbildung zeigt also nur einen Ausschnitt in der Nähe von $k\approx 0$. 
+
+Um die Dispersionsrelation experimentell zu bestimmen muss man eigentlich nur nach Gl. \ref{eq:8_light_line} die dielektrische Funktion $\epsilon(\omega)$ kennen, bzw. den Brechungsindex $n = \sqrt{\epsilon}$. Allerdings ist der Realteil, der dispersive Teil des Brechungsindex relevant, nicht die Absorption, die durch den Imaginärteil beschrieben wird. Der interessante Frequenzbereich ist im Infraroten, bei $\omega \approx 1$~THz bzw. einer Wellenzahl $\tilde{\nu} = 50$cm$^{-1}$. Kojima et al.  verwenden darum THz-Spektroskopie.
+
+Ein gepulster Laser (100 fs Pulsdauer, 780~nm Wellenlänge, entspricht 385~THz) erzeugt über einen nichtlinearen optischen Prozess infrarote Strahlung einer Frequenz von etwa 1~THz. Bei dieser Frequenz ist die Wellenlänge so lang, dass innerhalb der Pulslänge quasi nur eine Oszillation des elektrischen Feldes stattfindet. Dieser THz-Puls wird durch die Probe geleitet und dann durch den inversen nichtlinearen Prozess abgetastet. Besonders dabei ist, dass so das Feld $E(t)$ und nicht die Intensität $I(t) \propto |E(t)|^2$ des transmittierten THz-Pulses bestimmt werden kann. Durch Fourier-Transformation erhalt man 
+\begin{equation}
+    E(\omega) = |E(\omega)| e^{i \phi(\omega)}
+\end{equation}
+und daraus die Phase $\phi(\omega)$ (siehe Abbildung \ref{fig:8_kojima_phase}). Diese beinhaltet gerade die Zeitverzögerung der Transmission durch die Probe, also den Brechungsindex, und so $k(\omega)$:
+\begin{equation}
+    k(\omega) = \frac{\phi(\omega)}{d} - \frac{\omega}{c_0} \quad .
+\end{equation}
+In Abbildung  Abb.~\ref{fig:8_Kojima_dispersion}  ist also $\omega$ über $ k(\omega)$ aufgetragen.
+
+\begin{marginfigure}
+    \inputtikz{\currfiledir kojima_phase}
+    \caption{Phase des durch die Probe transmittierten THz-Feldes. \label{fig:8_kojima_phase}
+    }
+\end{marginfigure}
+
+Das eingezeichnete Modell ist in Wesentlichen Gl.~\ref{eq:8_phonon_polariton_dispersion}, nur dass berücksichtigt werden muss, dass zwei optische Phonon-Moden in \ch{Bi4Ti3O12} existieren. Die Dispersionsrelation ist dann
+\begin{equation}
+    \omega^2 = \frac{c_0^2 \, k^2}{\epsilon(\omega_s)} \, \cdot  \,
+    \frac{\left(\omega_T^{(1)} \right)^2 - \omega^2}{   \left(\omega_L^{(1)} \right)^2 - \omega^2 }  \, \cdot \,
+    \frac{\left(\omega_T^{(2)} \right)^2 - \omega^2}{   \left(\omega_L^{(2)} \right)^2 - \omega^2}  \quad .
+\end{equation}
+Obwohl das zweite Phonon höherenergetisch ist, beeinflusst es noch die Messung. Wenn man es vernachlässigen würde müsste der obere Polariton-Ast steiler ansteigen (gepunktet).
+
+
+
+\section*{Optische Antwort freier Elektronen in Metallen}
+
+
+Wir können die freien Elektronen in Metallen analog zu den optischen Phononen beschreiben. Da bei freien Elektronen die Rückstellkraft Null ist verschwindet $\omega_T$. Die Rolle von $\omega_L$ übernimmt hier die Plasma-Frequenz $\omega_P$. Der konstante Beitrag der gebundenen Elektronen wird hier $\epsilon_\infty$ genannt. Damit wird Gl. \ref{eq:8_eps_ion_gamma} zu
+\begin{equation}
+    \epsilon     = \epsilon_\infty \left(1  - \frac{\omega_p^2}{\omega(\omega + i  \gamma)} \right) \quad .
+     \label{eq:8_eps_metall_gamma}
+\end{equation}
+Für kleine Dämpfung bzw. genügend hohe Frequenzen kann der Imaginärteil vernachlässigt werden
+\begin{equation}
+    \epsilon \approx  \epsilon_\infty \left( 1  - \frac{\omega_p^2}{\omega^2} \right) \quad .
+\end{equation}
+Für Frequenzen $\omega < \omega_P$ ist auch hier $\epsilon$ negativ und somit die Reflektivität $R=1$, falls $\gamma = 0$ angenommen wurde. Metalle reflektieren Licht über einen breiten Spektralbereich. Typische Werte von $\omega_P$ liegen im Ultravioletten, beispielsweise bei 7.5 eV für Kupfer. Gleichzeitig gibt es in Metallen auch noch Interband-Übergänge, die zu einer charakteristischen Absorption und somit beispielsweise zur Farbe von Gold oder Kupfer verglichen mit Silber führen.
+
+\begin{marginfigure}[-60mm]
+    \inputtikz{\currfiledir diel_func_metal}
+    \caption{Dielektrische Funktion und Reflektivität eines freien Elektronengases}
+\end{marginfigure}
+    
+
+
+
+Die Bedeutung der Plasma-Frequenz $\omega_P$ als Analogon zur longitudinalen Resonanz in ionischen Kristallen ergibt sich aus folgender Überlegung: Wir betrachten eine dünne Metallplatte im langwelligen Grenzfall einer longitudinalen Welle. Das bedeutet, dass wir alle Leitungs-Elektronen gleichförmig um die Distanz $s$ in Richtung Plattenoberseite  auslenken. Da die positiv geladenen Atom-Rümpfe stehen bleiben, ergibt sich oben eine Flächenladung
+%
+\begin{marginfigure}
+    \inputtikz{\currfiledir eels_al}
+    \caption{Energieverlust eines Elektronenstrahls beim Durchgang durch \ch{Al}. Daten aus \cite{Powell1959}. 
+    \label{fig:8_eels_al} }
+\end{marginfigure}
+%
+\begin{marginfigure}
+    \inputtikz{\currfiledir insb_plasmon}
+    \caption{Reflektivität von verschieden stark n-dotieren \ch{InSb}. Daten aus \cite{Spitzer1957}.
+    \label{fig:8_insb_plasmon} } 
+\end{marginfigure}
+%
+\begin{equation}
+    \rho_A = - n \, e \, s
+\end{equation}
+und unten gerade die gegenteilige Ladung. Dadurch entsteht ein elektrisches Feld 
+\begin{equation}
+    E = \frac{n e s}{\epsilon_\infty \epsilon_0}
+\end{equation}
+wobei $\epsilon_\infty$ die dielektrische Antwort der gebundenen Elektronen beschreibt. Das Feld bewirkt eine rückstellende Kraft. Die Bewegungsgleichung der freien Elektronen ist also
+\begin{equation}
+    m^\star \ddot{s} +  \frac{n e^2}{\epsilon_\infty \epsilon_0} s = 0
+\end{equation}
+mit der Eigenfrequenz $\omega_P$
+\begin{equation}
+    \omega_P = \sqrt{\frac{n e^2}{\epsilon_\infty \epsilon_0 m^\star}} \quad .
+\end{equation}
+Dies ist die charakteristische Frequenz aus Gl.~\ref{eq:8_eps_metall_gamma}. Bei dieser Resonanz bewegen sich alle freien Elektronen kollektiv in Phase, ähnlich zu den Atomrümpfen bei den Phononen. Die Anregung ist wiederum quantisiert und die Quanten werden \emph{Plasmon} genannt. Plasmonen sind Longitudinalwellen und dadurch, zumindest in der hier beschriebenen Form der Volumen-Plasmonen, nicht durch Licht anregbar. Sie wechselwirken aber mit den Elektronen eines Elektronenstrahls, beispielsweise in einem Transmissions-Elektronenmikroskop. Dadurch entsteht ein charakteristischer Energieverlust im Elektronenstrahl, der spektroskopiert\sidenote{electron energy loss spectroscopy, EELS} werden kann. Abb. \ref{fig:8_eels_al} zeigt ein solches Energie-Verlust-Spektrum. Man sieht den Peak beim Volumen-Plasmon (15.3~eV) und das unten eingeführte Oberflächen-Plasmon bei 10.8~eV.
+
+\begin{marginfigure}
+    \inputtikz{\currfiledir plasmon_dispersion}
+    \caption{Dispersionsrelation eines (Volumen-)Plasmon-Polaritons.
+    \label{fig:8_bulk_plasmon_dispersion}}
+\end{marginfigure}
+
+
+
+Plasmonen eistieren nicht nur in Metallen, sondern auch in anderen freien Elektronengasen, beispielsweise in hoch dotierten Halbleitern (Abb.~\ref{fig:8_insb_plasmon}). Dann hängt die Plasma-Frequenz $\omega_P$ von der Ladungsträgerdichte bzw. Dotierung und der effektiven Elektronenmasse ab.
+
+
+
+
+Analog zur Diskussion der Phonon-Polaritonen können wir auch Plasmon-Polaritonen einführen. Abb. \ref{fig:8_bulk_plasmon_dispersion} zeigt die Dispersionsrelation von Licht in einem Metall, dass durch die dielektrische Funktion Gl. \ref{eq:8_eps_metall_gamma} beschrieben ist. Wir finden wieder eine Bandlücke unterhalb von $\omega_P$ und die Kopplung zwischen dem Plasmon bei $\omega = \omega_P = $~const. und dem Photon mit $\omega = c_0 k / \sqrt{\epsilon_\infty}$.
+
+
+
+\section*{Oberflächen- und Partikel-Plasmon-Polaritonen}
+
+Kollektive Bewegungen der freien Elektronen gibt es nicht nur im Volumen eines Metalls, sondern auch an seiner Oberfläche. Man findet diese als Lösung der Maxwell-Gleichung, die an die Oberfläche gebunden sind, bei denen das Feld also exponentiell mit dem Abstand abfällt. Die Rechnung ist beispielsweise in \cite{Maier_plasmonics} dargestellt.
+
+Hier will ich es kürzer machen. Die Resonanz des Volumen-Plasmons haben wir oben bei der Frequenz $\omega_P$ gefunden, bei der gerade die dielektrische Funktion des Metalls $ \epsilon^{(m)}$ nach Gl.~\ref{eq:8_eps_metall_gamma} Null wurde, also 
+\begin{equation}
+    \epsilon^{(m)}(\omega_P) = 0 \quad .
+\end{equation}
+Bei einer Oberfläche sollte aber auch die dielektrische Funktion des anderen, dielektrischen Halbraums eingehen. Es verwundert darum nicht, dass die Bedingung für die Oberflächen-Plasmon-Resonanz ist
+\begin{equation}
+    \epsilon^{(m)}(\omega_{SP}) +  \epsilon^{(d)}(\omega_{SP}) = 0 \quad .
+\end{equation}
+Bei einem Dielektrikum ändert sich $\epsilon^{(d)}$ nur sehr langsam mit der Frequenz. Wir nehmen es hier als konstant an.
+Wenn wir die dämpfungsfreie metallische dielektrische Funktion einsetzen finden wir
+\begin{equation}
+   \omega_{SP} = \frac{\omega_P}{\sqrt{1 + \epsilon^{(d)} / \epsilon_\infty }} \quad .
+\end{equation}
+Die Dispersionsrelation lautet
+\begin{equation}
+    \omega = k c_0 \sqrt{ \frac{\epsilon^{(m)}  + \epsilon^{(d)}} {\epsilon^{(m)} \epsilon^{(d)}} }  \quad .
+\end{equation}
+An Oberflächen kommt also ein erlaubter Zustand, eine erlaubte optische Mode unterhalb von $\omega_P$ hinzu. Wieder finden wir die charakteristische Kopplung zwischen Plasmon bei konstantem $ \omega_{SP} $ und Licht bei $\omega = k c_0 / \sqrt{\epsilon^{(d)}}$.
+
+\begin{marginfigure}
+    \inputtikz{\currfiledir surface_plasmon_dispersion}
+    \caption{Dispersionsrelation eines Oberflächen-Plasmon-Polaritons.}
+\end{marginfigure}
+
+Der Vollständigkeit halber seien noch Partikel-Plasmonen erwähnt, eben gebundene Lösungen der Maxwell-Gleichungen an metallischen Partikeln. Für Durchmesser (viel) kleiner als die optische Wellenlänge kann man das quasi-statisch rechnen. Die Resonanzbedingung ist dann 
+\begin{equation}
+    \epsilon^{(m)}(\omega_{PP}) + 2 \epsilon^{(d)}(\omega_{PP}) = 0
+\end{equation}
+was
+\begin{equation}
+    \omega_{PP} = \frac{\omega_P}{\sqrt{1 + 2 \epsilon^{(d)}  / \epsilon_\infty} }
+ \end{equation}
+ergibt. Eine Dispersionsrelation macht bei einem punktförmigen System keinen Sinn mehr. Das Streu-Spektrum ist durch die Rayleigh-Streuung gegeben
+\begin{equation}
+    \sigma_{scat}(\omega) = \frac{8 \pi c_0^4 \omega^4}{3} \,  R^6  \,
+    \left|
+        \frac{\epsilon^{(m)}  - \epsilon^{(d)}} {\epsilon^{(m)} + 2\epsilon^{(d)} }  \quad ,
+    \right|^2
+\end{equation}
+die wie erwartet eine Resonanz bei $\omega_{PP}$ zeigt.
+
+
+
+% Wir betrachten enen Halbraum, der für $z<0$ metallosch sein, also duerch $\epsilon^{(m)}$ nach Gl.~\ref{eq:8_eps_metall_gamma} beschrieben, und für $z>0$ dielektrisch mit $\epsilon^{(d)}$. Wir suchen Lösungen der Maxwell-Gleichung, die an diese Grenzfläche gebunden sind, die Felder also exponentiell mit $|z|$ abfallen. Propagation entlang der Oberfläche, also in Richtung $x$ iist weiterhn erlaubt. Dann findet\sidenote{Maier Plasmionik} man Lösungen der Form
+% \begin{equation}
+%     \bm{E}^{(j)} = 
+%     E_x^{(j)} \begin{pmatrix}
+%         1 \\ 0 \\  - k_x / k_z^{(j)}
+%     \end{pmatrix}
+%     e^{i k_x x - i \omega t} \, e^{i k_z z}
+% \end{equation}
+% mit $j$ = $m$ oder $d$ und  den Komponenten des Wellenvektors 
+% \begin{align}
+%     k_x = & k_0 \sqrt{\frac{\epsilon^{(m)} \epsilon^{(d)}}{\epsilon^{(m)}  + \epsilon^{(d)}}}  \label{eq:kx_SPP}\\
+%     k_z^{(j)} = & k_0 \sqrt{\frac{(\epsilon^{(j)})^2}{\epsilon^{(m)}  + \epsilon^{(d)}}} 
+% \end{align}
+% Damkit das Feld mit  $|z|$ abfallen muss  $k_z^{(j)}$ imaghinär sein und damit es entlang der Grenzfläche propagiert,. muss $ k_x $ reel sein. Dies führt zu den Bedigunngen
+% \begin{equation}
+%     \Re \left\{ \epsilon^{(m)} \right\} < -  \epsilon^{(d)} \quad \text{und} \quad  \epsilon^{(d)} > 0
+% \end{equation}
+% wobei wir ein niocht absoirobeirend Dieleltrokum, also reelwerzoges $\epsilon^{(d)}$ angeommen haben. Diese Bedungung ist für Metalle bei Frequenzen unterhlab $\omega_P$ in der Refel erfüllt.
+
+% Gleichung  \label{eq:kx_SPP} beschereibt mit $k_0 = 2 \pi / \lambda = c_0 \omega$ die Dispersionsrelation des Oberflächen-Plasmon-Polaritonsd (SPP). Die charakteristische Frequenz ist die Asymtote für großes $k_x$
+% \begin{equation}
+%     \omega_{SPP} = \frac{\omega_P}{\sqrt{1 + \epsilon^{(d)}}}
+% \end{equation}
+
+
+
+\section*{Exzitonen in Halbleitern}
+
+Bereits bei der Einführung der Halbleiter hatten wir das Absorptionsspektrum besprochen und den Absorptionskoeffizient Gl.~\ref{eq:5_absorption_direct_HL}
+\begin{equation}
+    \alpha(\omega_\gamma) \propto ( m^\star_\text{komb})^{3/2}  \sqrt{\hbar \omega_\gamma - E_g}
+\end{equation}
+gefunden. Die Absorption sollte also mit der Bandkante einsetzen und steil ansteigen.
+
+
+
+Im Experiment findet sich aber insbesondere bei tiefen Temperaturen ein oder mehrerer Peaks in der Absorption bereits bei etwas niedrigeren Energien. Der Grund dafür sind \emph{Exzitonen}. Dies sind Quasiteilchen aus einem gebundenen Elektron-Loch-Paar. Bei der Beschreibung in Kapitel~\ref{chap:halbleiter}
+hatten wir ja die Ein-Elektron-Näherung verwendet, also insbesondere Wechselwirkungen und Korrelationen zwischen Elektronen vernachlässigt. In dieser Näherung gibt es Exzitonen nicht.
+
+\begin{marginfigure}
+    \inputtikz{\currfiledir gaas_exziton}
+    \caption{Absorption von \ch{GaAs} bei 21~K, im Vergleich zum $\sqrt{E-E_g}$-Modell. Daten aus \cite{Sturge1962}.}
+\end{marginfigure}
+
+Man unterscheidet stark gebundene Exzitonen, sogenannte Frenkel-Exzitonen, und schwach gebundene Wannier-Mott-Exzitonen. Der erste Fall tritt vorwiegend bei organischen Halbleitern mit kleiner dielektrischer Funktion auf. Hier sind Elektron und Loch am gleichen Gitterpunkt (= Molekül). Bei anorganischen Halbleitern ist die dielektrische Abschirmung zwischen Elektron und Loch viel größer ($\epsilon \approx 10 $), so dass die Bindung schwächer ist, typischerweise einige meV. Hier betrachten wir nur die Wannier-Mott-Exzitonen.
+
+
+Nun erlauben wir also eine Coulomb-Wechselwirkung zwischen Elektronen und Löchern. Die Konsequenzen sind wie beim Wasserstoff-Atom oder bei der Dotierung: Elektron und Loch kreisen um den gemeinsamen Schwerpunkt. Die Aufteilung Relativ- und Schwerpunkt-Koordinaten liefert die Energien
+\begin{equation}
+    E_{n,K} = E_g - E_x + E_{kin} =   E_g - \frac{1}{2} \, \frac{\mu^\star e^4}{(4 \pi \epsilon \epsilon_0)^2 \hbar^2} \, \frac{1}{n^2}
+    + \frac{\hbar^2 K^2}{2 (m_e^\star + m_h^\star)}
+\end{equation}
+mit der effektiven reduzierten Masse $\mu^\star$, dem Schwerpunkts-Impuls $K$ und der Quantenzahl $n=1, 2, \dots$. Exzitonen-Zustände liegen also unterhalb der Bandkante und folgen der parabelförmigen Dispersionsrelation.
+
+\begin{marginfigure}
+    \inputtikz{\currfiledir exziton_1P}
+
+    \vspace*{3mm}
+
+    \inputtikz{\currfiledir exziton_2P}
+
+    \caption{Einteilchen (oben) und Zweiteilchen (unten) Dispersionsrelation im Halbleiter. Unten sind die Exzitonen-Zustände eingezeichnet.}
+\end{marginfigure}
+
+Wie bei den Cooper-Paaren muss man auch hier vorsichtig sein, wie man das darstellt. Exzitonen sind Zwei-Teilchen-Zustände, die man nicht in Ein-Teilchen-Dispersionsrelation von Elektronen und Löcher einzeichnen kann bzw. sollte. Man zeichnet also eine Zwei-Teilchen-Dispersionsrelation von unkorrelierten Elektronen und Löchern, mit der kombinierten effektiven Masse $ m^\star_\text{komb}$ von oben und um die Exziton-Bindungsenergie $E_x$ darunter die Parabeln der Exzitonen. Eine genauere Diskussion findet sich in \cite{yu_cardona}.
+
+Dies erklärt in erster Näherung die gemessenen Absorptionsspektren. Wenn man genauer hinschaut, dann sieht man, dass nicht nur exzitonische Peaks der direkten Absorption vorgelagert sind, sondern dass auch der eigentlich wurzelförmige Verlauf modifiziert wird. Dies ist eine Folge von den Exziton-Polaritonen. Wieder gibt es Hybride aus Exzitonen und Photonen und die Dispersionsrelation spaltet an den Kreuzungspunkten auf. Dadurch verändert sich das Absorptionsspektrum.\sidenote{siehe \cite{yu_cardona}}
+
+
+
+
+
+\newpage
+\section{Zusammenfassung}
+
+\textit{Schreiben Sie hier ihre persönliche Zusammenfassung des Kapitels auf. Konzentrieren Sie sich auf die wichtigsten Aspekte und die am Anfang genannten Ziele des Kapitels.}
+
+\vspace*{10cm}
+\printbibliography[segment=\therefsegment,heading=subbibliography]
