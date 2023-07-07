@@ -1,0 +1,320 @@
+%\renewcommand{\lastmod}{\today}
+\renewcommand{\chapterauthors}{Markus Lippitz}
+\renewcommand{\lastmod}{7. Juli 2023}
+
+\chapter{Nanostrukturen}
+
+
+
+
+\section{Ziele}
+ 
+ 
+
+\begin{itemize}
+\item Sie können Beispiele von durch reduzierte Dimensionalität verursachte Effekte der Festkörperphysik nennen, beschreiben und in groben Zügen erklären. 
+\item Sie können erklären, wie es in einem Zwei-Niveau-System zum unten gezeigten \emph{anti-bunching} im Photonenstrom kommt und Beispiele für die Anwendung dieses Phänomens nennen.
+\end{itemize}
+
+
+
+
+\begin{figure}
+    \inputtikz{\currfiledir antibunching}
+     \caption{
+        Photon-Antibunching eines \ch{GaAs} Quantenpunkts. Das Modell berücksichtigt die Abweichung zum Zwei-Niveau-System. Daten ähnlich zu \cite{Wu2017a}
+    \label{fig:9_QD_antibunching} 
+     }
+\end{figure}
+ 
+
+
+% \begin{questions} 
+% \item Wie groß ist ein Molekül?
+% \item Welche physikalische Eigenschaft eine Moleküls wird bei Röntgenstreuung, STM und AFM abgebildet?
+% \end{questions}
+ 
+
+
+% Das Pluto-Skript hydrogen\_wave\_functions\pluto{hydrogen_wave_functions} ermöglicht es Ihnen, mit verschiedenen Varianten der grafischen Darstellung zu experimentieren.
+
+
+\section{Überblick}
+
+In den letzten Kapiteln haben wir Festkörper besprochen, die in drei oder zumindest zwei Dimensionen unendlich ausgedehnt sind. Hier sollen Strukturen niedrigerer Dimension besprochen werden, nämlich null- oder eindimensionale Nanostrukturen. Das findet natürlich weiterhin in einem dreidimensionalen Raum statt, so dass die Ausdehnung in zwei oder drei Raumrichtungen 'klein' ist. Was als 'klein' gilt hängt vom betrachteten Phänomen ab, das eine charakteristische  Längenskala besitzt. Typischerweise sind dies hier etwa 1 bis 100~nm.
+
+Wir werden optische und elektronische Eigenschaften diskutieren, die durch die niedrige Dimensionalität verursacht werden. In anderen Fällen spielen die Atome an der Oberfläche der Nanostruktur eine besondere Rolle, weil diese zum Beispiel weniger stark gebunden sind, oder weil sie besonders gute Katalysatoren sind. Bei Nanostrukturen gibt es besonders viel Oberfläche:
+\begin{eqnarray}
+    \frac{N_\text{surface}}{N_\text{total}} \approx \frac{3 a}{R}
+\end{eqnarray}
+mit der Gitterkonstanten  $a$ und dem Kugelradius $R$. Bei einer Kugel von $R=1$~nm sind etwa 50~\% der Atome an der Oberfläche!
+
+% \section{Abbildung von Nanostrukturen}
+
+% \paragraph*{optische Mikroskopie}
+
+% \paragraph*{Elektronen-Mikroskopie}
+
+% \paragraph*{Raster-Tunnel-Mikroskopie}
+
+% \paragraph*{Raster-Kraft-Mikroskopie}
+
+
+\section*{Herstellung von Nanostrukturen}
+
+Man unterscheidet generell zwei Wege zur Herstellung von Nanostrukturen. Im \emph{top-down} Verfahren werden Strukturen von außen durch passende Maschinen quasi ingenieurwissenschaftlich vorgegeben. Beispiele sind die optische Lithographie oder die Elektronenstrahl-Lithographie. Dabei wird ein Lack durch Licht bzw. Elektronen belichtet und die so entstehenden Strukturen  dann durch weitere Schritte (ätzen, aufdampfen, abscheiden) in das Ziel-Material übersetzt. Strukturgrößen sind durch die Strahlen auf ca. 10~nm (Elektronen) bzw. 100~nm (UV-Licht) gegeben. Im \emph{bottom-up} Verfahren werden Nanostrukturen wie in der Chemie synthetisiert. Atome beginnen in einem Lösemittel beispielsweise Kristallite zu bilden, die dann wachsen. Wenn man die Randbedingungen passend einstellt, können verschiedenen Formen entstehen (Kugel, Stäbchen, Platten). Die Reaktion bricht ab, wenn das Ausgangsmaterial aufgebraucht ist oder beispielsweise die Temperatur geändert wird. Dieser Ansatz erlaubt sehr kleine Strukturen. Ordnung auf langen Skalen (ca. $> 100$~nm) ist aber schwierig zu erreichen.
+
+
+\section*{Zweidimensionales Elektronengas}
+
+Insbesondere für elektrische Messungen an niedrigdimensionalen Halbleiter-Strukturen ist das zweidimensionale Elektronengas (2DEG) von besonderer Bedeutung. Man schränkt damit die freien Elektronen in einem Halbleiter zunächst einmal auf zwei Dimensionen ein, um dann in weiteren Schritten zu noch kleineren Strukturen überzugehen. Die Grundidee ist, an einer Grenzfläche gleichzeitig die Dotierung und die Bandlücke zu ändern. Dies ist in Abb.~\ref{fig:9_2deg} dargestellt. Links befindet sich ein nur schwach dotiertes Material mit kleiner Bandlücke, so dass sich das Fermi-Niveau in der Mitte der Lücke befindet. Rechts verwendet man ein Material mit größerer Bandlücke, das stark n-dotiert ist, das Fermi-Niveau sich also in der Nähe des Leitungsbands befindet. Dann bewirkt die Ladungsträger-Diffusion wie beim pn-Übergang eine Verbiegung des Bandes. Zusammen mit der abrupten Änderung der Bandlücke führt dies dazu, dass ein in eine Dimension kleiner Bereich unter das Fermi-Niveau fällt. Dort befinde sich also metallische Elektronen. Die Ausdehnung in Wachstumsrichtung ist allein durch die Materialparameter gegeben, nicht durch technische Strukturgrößen. So können sehr dünne, also zweidimensionale Elektronengase hergestellt werden.
+
+
+\begin{marginfigure}[-30mm]
+    \inputtikz{\currfiledir 2deg}
+    \caption{Am Übergang zwischen zwei Halbleitern verschiedener Bandlücke und Dotierung bildet sich ein 2DEG. \label{fig:9_2deg}}
+\end{marginfigure}
+
+
+Im nächsten Schritt schneidet man aus diesem 2d Elektronengas willkürliche Formen aus, in dem man Elektroden auf der Oberfläche des Halbleiters durch Nanostrukturierung anbringt. Diese bilden zusammen mit einem im Vergleich zu Abb. \ref{fig:9_2deg} tiefer in der Probe liegenden Bereich eine Art Plattenkondensator, mit dem die Energie der Elektronen im 2DEG angehoben oder abgesenkt werden kann. Insbesondere kann so an manchen Positionen das 2DEG komplett über das Fermi-Niveau angehoben also beseitigt werden. Auf  diese Wiese können beliebige Drähte, Punkte und Kontakte aus dem 2DEG ausgeschnitten werden.
+
+
+
+\section{Elektronische Struktur von eindimensionalen Drähten}
+
+
+Wir betrachten einen dünnen metallischen Draht, beispielsweise aus einem 2deg 'ausgeschnitten'. Dünn bedeutet, dass seine Ausdehnung in $xy$-Richtung vergleichbar mit der de~Broglie-Wellenlänge der Elektronen ist, also nur wenige Nanometer beträgt. In diese Richtung nimmt die Elektronen-Wellenfunktion dann die Form von stehenden Wellen an. Die  Quantenzahlen sind die Anzahl der Knoten  $i$ und $j$ in $x$ und $y$-Richtung und $E_{ij}$ die zugehörige Energie. In Richtung des Drahtes sind die Elektronen nicht eingeschränkt und weiterhin durch ebene Wellen und deren kinetische Energie beschrieben.  Gesamtenergie und Wellenfunktion sind 
+\begin{equation}
+    E_\text{ges} = E_{ij} + \frac{\hbar^2 k^2}{2m}
+    \quad \text{und} \quad
+    \Psi(x,y,z) = \Psi_{ij}(x,y) \, e^{i k z} \quad .
+\end{equation}
+Das hatten wir bereits völlig analog in Kapitel~\ref{chap:magnetic_field}  im Zusammenhang mit den Landau-Zylindern gesehen, nur dass dort die Quantisierung in $xy$-Richtung durch das Magnetfeld bewirkt wurde. Die Dispersionsrelation ist darum ebenfalls eine Schar von um $E_{ij}$ versetzte Parabeln und die Zustandsdichte  
+\begin{equation}
+    D(E)^{(1)} = \frac{2}{\hbar} \, \frac{L}{2 \pi } 
+     \, \sum_{ij} \sqrt{ \frac{2m}{ E - E_{ij}} } \, \Theta(E- E_{ij})
+    =   \frac{4 L}{h} 
+     \, \sum_{ij} \frac{1}{ v_{ij}} \, \Theta(E- E_{ij})
+\end{equation}
+mit der Gruppengeschwindigkeit $v_{ij}$
+\begin{equation}
+    v_{ij} = \frac{\partial \omega}{\partial k} = \sqrt{(E -  E_{ij}) \frac{2}{m}} \quad .
+\end{equation}
+In einer Dimension ist die Zustandsdichte also reziprok zur Gruppengeschwindigkeit und divergiert bei den $E_{ij}$.
+Diese charakteristische Form der Zustandsdichte kann man beispielsweise durch Tunnelspektroskopie in Kohlenstoff-Nanoröhrchen (CNT) nachweisen.
+
+
+
+\section{Quantisierung der Leitfähigkeit}
+
+
+Nun kontaktieren wir solch einen eindimensionalen metallischen Draht der Länge $L$ an beiden Seiten mit 'normalen' dreidimensionalen Leitern, die als Elektronen-Reservoire bei den Fermi-Energie $E_{F,1}$ und  $E_{F,2}$ dienen.\sidenote{sieh Kap. 7.5.1 in \cite{Gross_FK} oder Kap. 18 in \cite{Kittel_FK}}  Die Länge des Drahts $L$ sei kleiner als die mittlere freie Weglänge der Elektronen. Dadurch stoßen die Elektronen im Draht nicht. Jedes Elektron, dass links eintritt, verlässt den Draht recht mit Sicherheit. Dies nennt man \emph{ballistischen Transport}. Wegen der fehlenden Streuung sind die Elektronen auf ihrem Weg durch den Draht auch nicht im thermischen Gleichgewicht. Sie behalten daher die Fermi-Energie des Reservoirs, von dem sie stammen, und die Potentialdifferenz $e U = E_{F,1} - E_{F,2}$ fällt an den Kontakten Draht--Reservoir ab. Schließlich nehmen wir noch an, dass der Draht so dünn ist, dass nur die niedrigste Parabel in der Zustandsdichte besetzt ist und so die Summe über $ij$ wegfallen kann.
+
+Der Strom durch den Draht von links nach rechts ist  mit  der mittleren Gruppengeschwindigkeit $\braket{v}$
+\begin{align}
+    I_{LR} = & -e n \braket{v} = - \frac{e}{2 L} \int_0^\infty v(E) D(E) f(E - E_F) \, dE \\
+    = & - \frac{2 e}{h} \int_0^\infty  f(E - E_F) \,  dE \quad ,
+\end{align}
+wobei ein Faktor $1/2$ in der Zustandsdichte nur die von links nach rechts zeigenden Wellenvektoren berücksichtigt.\sidenote{und $n = N/L$ sowie $\braket{v} = (1/N) \int v$}  Der Gesamtstrom ist die Differenz der gegenläufigen Ströme, die aber eine unterschiedliche Fermi-Energie besitzen:
+\begin{equation}
+    I = - \frac{2 e}{h} \int_0^\infty  f(E - E_{F,1}) -  f(E - E_{F,2}) \, dE =  \frac{2 e^2}{h} \, U = \frac{2}{R_K} U \quad ,
+    \label{eq:9_IU_RK}
+\end{equation}
+wobei das Integral über die Differenz der leicht verschiedenen Fermi-Funktionen gerade $- e U$ ergibt. Damit haben wir wieder das Widerstands-Quantum oder von Klitzing-Konstante $R_K$ gefunden, die wir beim Quanten-Hall-Effekt schon gesehen hatten
+\begin{equation}
+    R_K = 25 \, 812.807\dots\text{ $\Omega$} \quad .
+\end{equation}
+Zur Bestimmung von $R_K$ bzw. $2e^2/h$ braucht es also kein hohes Magnetfeld. Ein eindimensionaler Leiter reicht aus. Weil ohne Magnetfeld aber die Spins entartet sind, tritt ein zusätzlicher Faktor 2 in Gl.~\ref{eq:9_IU_RK} auf. 
+Wenn die Wahrscheinlichkeit der Transmission eines Elektrons durch den Draht nicht genau eins sondern $\mathcal{T}$ ist, also Elektronen auch an den Kontrakten reflektiert werden, dann ist der Widerstand
+\begin{equation}
+    R = \frac{R_K}{\mathcal{T}} \quad .
+\end{equation}
+
+
+\begin{marginfigure}
+    \inputtikz{\currfiledir cond_quant}
+    \caption{Quantisierung der Leitfähigkeit in einem dünnen Kanal. Daten aus  \cite{Van_Wees1988} }
+\end{marginfigure}
+
+
+
+\section*{Resonantes Tunneln}
+
+
+
+Bislang war der eindimensionale Leiter an beiden Enden ideal kontaktiert. Nun nehmen wir an, dass die Kontakte durch Tunneln von Elektronen durch beispielsweise eine dünne Oxidschicht gebildet werden. In diesem Abschnitt nehmen wir wie oben an, dass die Elektronen im dünnen Draht nicht streuen, also durch eine kohärente Wellenfunktion beschrieben werden können. Da Wellenfunktionen und elektromagnetische Wellen sich sehr ähnlich verhalten ist der Weg und das Ergebnis identisch zum Fabry-Perot-Interferometer.
+
+Wir beschreiben das  Tunneln der Elektronen durch die dünne Isolatorschicht  durch einen komplexwertigen Transmissionskoeffizienten $t_i$ ($i=1,2$) der Wellenfunktion. Analog gibt es einen komplexwertigen Reflexionskoeffizient $r_i$. Da aber nicht Amplituden von Wellenfunktionen, sondern nur deren Quadrate physikalische Bedeutung haben, gilt nicht $r_t + t_i =1$, sondern
+\begin{equation}
+    |r_i|^2 + |t_i|^2 = 1 \quad .
+\end{equation}
+Wir setzen die Amplitude der von links einlaufenden Welle auf eins. Die direkt durch beide Barrieren transmittierte Welle hat die komplexwertige Amplitude
+\begin{equation}
+    a_\text{dir} = t_1 \, t_2 \, e^{i \phi/2} \quad \text{mit} \quad \phi = 2 k L \quad ,
+\end{equation}
+wobei $\phi$ die Phase aufgrund der Propagation beschreibt. Nun kann die Welle nicht nur direkt transmittiert werden, sondern zusätzlich auch noch zuerst an der zweiten und dann an der ersten Barriere reflektiert werden, was einem zusätzlichen Umlauf entspricht. Ebenso gibt es Pfade mit zwei, drei, vier etc. Umläufen. Jeder Pfad beinhaltet also $n$ Reflektionen an jeder Barriere und  eine Transmission durch jede Barriere. In Summe ist das also
+\begin{align}
+    a_\text{ges} = & t_1 \, t_2 \, e^{i \phi/2} \left( 1 + r_1 \, r_2 \,  e^{i \phi} 
+    + (r_1 \, r_2 \,  e^{i \phi} )^2 + \cdots  \right) \\
+     = & \frac{ t_1 \, t_2 \, e^{i \phi/2}}{1 - r_1 \, r_2 \,  e^{i \phi} } \quad .
+\end{align}
+Die Transmissionswahrscheinlichkeit  für Elektronen ist das Betragsquadrat von $ a_\text{ges}$
+\begin{equation}
+    \mathcal{T} = |  a_\text{ges} |^2 = \frac{|t_1|^2  |t_2|^2 }{1 + |r_1|^2  |r_2|^2 - 2 |r_1|^2  |r_2|^2 \cos \phi^\star}
+\end{equation}
+mit $\phi^\star = \phi  + \arg r_1 + \arg r_2$. Die effektive Phase ist also die Summe aus der geometrischen Phase ($\phi = 2 k L $) und den aus den komplexwertigen\sidenote{$\arg ( a e^{ib} ) = b$ für reelwertige $a,b$.} Reflexionskoeffizienten $r_i$.
+
+Die Transmission kommt zu einem Maximum, wenn die effektive Phase $\phi^\star$ gerade ein ganzzahliges Vielfaches von $2\pi$ ist. Falls beide Barrieren gleich  sind, also $t_1 = t_2$, dann ist 
+\begin{equation}
+    \mathcal{T} (\phi^\star = 2 \pi n) =\frac{|t_1|^4}{ (1- |r_1|^2)^2} = 1 \quad .
+\end{equation}
+Obwohl die Transmission durch jede einzelne Barriere mit einer Wahrscheinlichkeit (deutlich) kleiner als Eins erfolgt, ist die Transmission durch beide Barrieren zusammen perfekt. Dies nennt man \emph{resonantes Tunneln}.
+
+Die Resonanzbedingung 
+\begin{equation}
+    \phi^\star = 2 \pi n =  \phi  + \arg r_1 + \arg r_2 = 2 k L + \arg r_1 + \arg r_2
+\end{equation}
+ist bei gegebener Struktur eine Bedingung an den Wellenvektor $k$. Wenn $k$ so ist, dass eine stehende Welle zwischen den beiden Barrieren entsteht, dann wird die Transmission maximal. Wir können die stehende Welle als Teilchen im Kasten sehen. Das bedeutet, dass es für gewisse $k$ und damit gewissen Energien Zustände in diesem Kasten (Draht-Stück) gibt. Tunneln ist dann besonders effizient, wenn es 'innen' gerade einen Zustand passender Energie gibt.
+
+
+\section{Resonante Tunneldiode}
+
+Für das resonante Tunneln  war es nicht notwendig, dass das Material zwischen den beiden Tunnel-Kontakten eindimensional ist. Es muss nur kurz genug sein, damit die Quantisierung von $k$ relevante Energien liefert. Und es muss kalt und störstellenfrei sein, damit sich eine kohärente Wellenfunktion ausbildet.
+
+Eine Möglichkeit der Realisierung sind Halbleiter-Heterostrukturen, also Halbleiter, deren Zusammensetzung und Dotierung sich in eine Raumrichtung (die Wachstumsrichtung) ändert. Resonante Tunneldioden wurden durch Esaki und Tsu realisiert (Model: \cite{Tsu1973}, Experiment: \cite{Chang1974}). Eine stark n-dotierte Schicht \ch{GaAs} bildet die beiden quasi metallischen Kontakte nach außen. Das Fermi-Niveau liegt hier nahe an der Bandkante. Den Isolator für die Tunnelkontakte bildet ein dünner (80 \AA) Bereich aus \ch{AlGaAs}, das eine größere Bandlücke besitzt und so für die Elektronen eine Barriere von 0.4~eV bildet. In der Mitte befindet sich wieder \ch{GaAs} mit einer geringeren Dotierung. Die Breite von 50~\AA\  ist so eingestellt, dass sich zwei Zustände $E_1 = 78$~meV und $E_2 =285$~meV über der Bandkante bilden.
+
+Nun wird außen eine Potentialdifferenz $U$ angelegt. Das Potential fällt jeweils über die Barrieren ab, aber nicht über den mittleren Bereich, weil dort die Wellenfunktion ja kohärent sein soll. Aus Symmetriegründen ist der Kasten energetisch also genau in der Mitte zwischen den beiden Kontakten, also um $eU/2$ gegenüber jedem verschoben. Es kommt zur Resonanz im Tunnelstrom, wenn
+\begin{equation}
+    \frac{e U }{2 } = E_i \quad \text{bzw.} \quad U = \frac{2 E_i}{e}  \quad .
+\end{equation}
+
+Abbildung  \ref{fig:9_esaki} zeigt die Daten als Tunnelstrom $I$ und Leitwert $G \propto dI / dV$. In diesen ersten Experimenten ist dem Effekt noch ein zusätzlicher Tunnelstrom überlagert. Das resonante Tunneln bewirkt die scharfen Minima im Leitwert $G$. Diese wären eigentlich bei $U_1 = \pm 0.16$~V und $U_2 =  \pm 0.56$~V zu erwarten, hier aber zu etwas positiveren Werten verschoben.
+
+Technologisch relevant ist der negative differentielle Widerstand. Wenn man ausgehend von der Resonanz im Tunnelstrom die angelegte Potentialdifferenz weiter erhöht, dann wird der Strom geringer. Der Widerstand als lokale Ableitung von Spannung nach Strom (daher 'differentiell') ist hier negativ. Dies kann benutzt werden, um interne Widerstände in Oszillator-Schaltkreisen zu kompensieren. Da Tunneln instantan ist, sind Tunneldioden sehr schnell. So können Hochfrequenz-Oszillatoren aufgebaut werden.
+
+
+\begin{marginfigure}
+    \inputtikz{\currfiledir esaki}
+    \caption{Resonantes Tunneln (fett) durch eine Doppel-Barriere in \ch{AlGaAS}/\ch{GaAs}. Der  Leitwert $G \propto dI / dV$ ist dünn gezeichnet und willkürlich skaliert. Daten aus  \cite{Chang1974}.
+    \label{fig:9_esaki}}
+\end{marginfigure}
+
+\section{Coulomb-Blockade}
+
+Wir betrachten noch eine weitere Variation des Themas 'kleiner Leiter mit Kontakten'. Bislang hatten wir gefordert, dass im Leiter eine kohärente Wellenfunktion der Elektronen vorliegen soll, er also klein und störstellenfrei sein muss. Diese Anforderung an die Kohärenz lassen wir nun fallen. Wir betrachten eine kleine metallische Insel, die über zwei Tunnelkontakte mit makroskopischen Leitern verbunden ist. Das ist wie bei dem Experiment von Esaki und Tsu, nur dass hier die Kleinheit wichtig, die Kohärenz aber nicht notwendig ist. 
+
+In diesem Fall können wir die kleine metallische  Insel als Kondensator-Kugel auffassen, auf die wir Ladung bringen können. Die elektrostatische Energie der Insel ist
+\begin{equation}
+    E = \frac{Q^2}{2 C} - Q U_G
+\end{equation}
+mit der Ladung $Q$, der Kapazität $C$ und dem Potential am Boden des Topfes $U_G$ (wie Gate-Spannung). Wir zählen die Elektronen ($Q = N e$) und ignorieren alle Terme, die von $N$ unabhängig sind. Damit erhalten wir
+\begin{equation}
+    E(N) = E_c \, \left( N - \frac{C U_G}{e} \right)^2  \quad \text{mit} \quad E_c = \frac{e^2}{2C} \quad .
+\end{equation}
+Wir finden also wieder eine Sequenz von diskreten Zuständen auf der Insel. Damit deren energetische Abstand relevant wird, muss die Kapazität $C$ klein genug ($\approx 1 $~fF) und die Temperatur niedrig genug ($\approx 1$~K) sein. Das erreicht man mit metallischen Inseln von etwa 100~nm Größe. Die charakteristische Energie $E_c$ liegt dann bei etwa 100~\textmu eV.
+
+Der Effekt ist rein klassisch. Wenn bereits eine passende Anzahl Elektronen auf der Insel sind, dann liegt der nächste Zustand höher als die Fermi-Energie der Zuleitungen und kann nicht erreicht werden. Die Elektronen blockierten sich gegenseitig durch Coulomb-Abstoßung. Auf diese Weise kann man beispielsweise Elektronen zählen, in dem man schrittweise die Gate-Spannung $U_g$ und damit die zugänglichen Zustände auf der Insel verändert.
+
+
+
+\section{Optische Eigenschaften von Quantenpunkten}
+
+Als zweite Kategorie von Experimenten sollen hier die optischen Eigenschaften von Quantenpunkten besprochen werden. Quantenpunkte sind quasi nulldimensionale Einschlüsse eines Halbleiters mit einer kleinen Bandlücke in einer umgebenden Matrix, die aus einem Halbleiter mit größeren Bandlücke gebildet wird. Dadurch erhält man ein 'Teilchen im Kasten' für elektronische Zustände. Die Herstellung erfolgt durch Epitaxie, also der Abscheidung eines kristallinen Films auf einem kristallinen Substrat. Dazu wird ein Substrat, typischerweise der 'äußere' Halbleiter, in einem sehr guten Vakuum (UHV, $10^{-9}$~Pa) mit dem anderen Halbleiter bedampft. Es bildet sich ein wenige Atomlagen dicker Film, der auf verschiedene Weisen die Oberfläche benetzt. Je nach Oberflächen- und Grenzflächenspannung unterscheidet man drei Fälle:
+
+\paragraph*{Frank-van der Merwe Wachstum} Das aufgebrachte Material benutzt das Substrat vollständig und es bildet sich ein glatter Film.
+
+\paragraph*{Volmer-Weber Wachstum} Das aufgebrachte Material bildet Tröpfchen auf der Oberfläche, um so den Kontakt mit dem Substrat zu reduzieren.
+
+\paragraph*{Stranki-Krastanow Wachstum} Zunächst bildet sich ein wenige Monolagen dicker Film. Weil aber die Gitterkonstante der Materialien verschieden ist, ist es bald energetisch günstiger, Tröpfchen zu bilden.
+
+In sehr vielen Fällen wird Stranki-Krastanow Wachstum verwendet. Man kann aber auch erst eine Art Opfer-Töpfchen wachsen, dann die Zwischenräume füllen, die Opfer-Tröpfchen durch Ätzen wieder entfernen und in die sich so ergebenden Vertiefungen die eigentlichen Quantenpunkte wachsen lassen. 
+
+
+
+Sowohl die Bandlücke als auch die Gitterkonstante von Halbleitern unterscheiden sich.  Wir betrachten hier Systeme aus \ch{AlAs} und \ch{GaAs}. Beide haben eine ähnliche Gitterkonstante aber eine andere Bandlücke:  1.42 eV (\ch{GaAs}) bzw 2.16 eV (\ch{AlAs}).  Durch die Zusammensetzung $x$ in \ch{Al_x Ga_{1-x} As} lassen sich Zwischenwerte in der Bandlücke einstellen. So entsteht also ein 'Teilchen im Kasten'.
+\begin{marginfigure}
+
+    \includegraphics*[]{\currfiledir svg/pfeiffer_QD_TEM.pdf}
+    \caption{TEM-Querschnitt durch einen Quantenpunkte (hier mit plasmonischer Antenne). Daten aus \cite{Pfeiffer2014}.}
+\end{marginfigure}
+
+Wie beim Atom nennt man die Zustände energetisch aufsteigend s, p, d, etc. Der s-Zustand kann zwei Elektronen unterschiedlichen Spins aufnehmen. Man unterscheidet daher zwei Exzitonen $\ket{01}$ und $\ket{10}$. Den durch zwei Elektronen besetzten Zustand nennt man Biexziton\sidenote{Man kürzt auch ab: Exziton (X) und Biexziton (XX).} $\ket{11}$. Dies ist gebundener Zustand aus zwei Exzitonen und liegt um die Bindungsenergie $\Delta E_{XX}$ unter der Summe der beiden Exziton-Anregungsenergien. Die beiden Exziton-Übergänge unterschieden sich in ihrer Polarisationsrichtung und leicht in der Anregungsenergie  aufgrund der Feinstruktur-Aufspaltung.
+
+
+\begin{marginfigure}
+    \includegraphics*[]{\currfiledir svg/wolpert_QD_spectra.pdf}
+    \caption{Emissionsspektren eines \ch{GaAs} Quantenpunkts als Funktion der Polarisationsrichtung in der Detektion. Daten aus \cite{Wolpert2012b}.}
+\end{marginfigure}
+
+
+\begin{questions}
+    \item Suchen Sie im Internet oder Lehrbuchen nach grafischen Darstellungen der drei Wachstumsarten.
+\end{questions}
+
+
+\section{Einzelphotonenquelle}
+
+Obwohl wir bereits vier\sidenote{mit dem Grundzustand $\ket{00}$} Zustände eingeführt haben und es noch viele weitere gibt, kann man durch passende Wahl der Anregungs-Wellenlänge und -Leistung und ggf. einem spektralen Filter in der Detektion den Quantenpunkt als \emph{Zwei-Niveau-System} betrachten. Dies gilt ebenso für Atome und Farbstoff-Moleküle. Eine wichtige Eigenschaft von optischen Zwei-Niveau-Systemen ist, dass sie Einzelphotonenquellen sind. Ein solches System kann zu jedem beliebigen Zeitpunkt nur ein einziges Photon emittieren. Direkt nach der Emission ist das System bestimmt im Grundzustand, weil es ja keine weiteren Zustände gibt. Aus dem Grundzustand heraus kann aber nicht emittiert werden, weil dies der energetisch niedrigste Zustand ist. Also vergeht bis zur nächsten Emission mindestens der Zeitraum, der zur erneuten Anregung notwendig ist. 
+
+Ein Laser hingegen ist keine Einzelphotonenquelle. Die Wahrscheinlichkeit, $n$ Photonen in einem Zeitintervall $T$ zu detektieren, ist bei kohärentem Licht Poisson-verteilt, also 
+\begin{equation}
+    P(n) = \frac{ \lambda^n}{n!} e^{-\lambda}
+\end{equation}
+wobei $\lambda$ hier nicht die Wellenlänge, sondern die mittlere Photonenzahl im Intervall $T$ bezeichnet. Unabhängig von $\lambda$ ist $P(n > 1)$ nie Null. Egal wie sehr man einen Laser abschwächt, egal wie kurz man $T$ wählt, es gibt immer eine gewisse Wahrscheinlichkeit, zwei oder mehr Photonen zu detektieren. Genau das ist bei einer Einzelphotonenquelle nicht der Fall.
+
+Einzelphotonenquelle zeigen also keine Poisson-Verteilung in der Photonenstatistik, sondern \emph{antibunching}. Kurze Zeitabstände kommen seltener vor, als nach der Poisson-Verteilung erwartet. Glühlampen-Licht zeigt das Gegenteil: bunching. Hier kommen kurze Abstände häufiger vor als in Laser-Licht gleicher Intensität.
+
+
+Die Methode der Wahl zur Beschreibung dieses Phänomens ist die Intensitäts-Autokorrelation. Man vergleicht die Intensität $I(t) \propto |E(t)|^2$ eines Lichtstrahls zu Zeitpunkt $t$ dem der um die Zeit $\tau$ verschobenen:
+\begin{equation}
+    g^{(2)}(\tau) = \frac{\braket{I(t) I(t+ \tau)}}{\braket{I(t)}^2} =  \frac{G(\tau)}{\braket{I(t)}}
+\end{equation}
+wobei wir angenommen haben, dass $\braket{I(t)}$ konstant ist, die Intensität sich also auf langsamen Zeitskalen nicht ändert.
+Der Index $(2)$ verweist auf das Quadrat des elektrischen Feldes. $G(\tau)$ ist nicht-normierte Korrelationsfunktion, also die Häufigkeit, mit der  zwei Photonen im Abstand $\tau$ zu finden sind. Für kohärentes Licht ist 
+\begin{equation}
+    g^{(2)}_\text{kohärent}(\tau) = 1 \quad .
+\end{equation}
+Man kann $I(t)$ für Licht bestimmen, in dem man Photonen innerhalb eines kurzen Intervalls $T$ zählt und dann $ g^{(2)}(\tau)$ mit der Zählrate $n(t)$ schreibt. Um antibunching zu detektiere, muss $T$ dann aber sehr klein sein (ca. 100 ps). Gleichzeitig erfordert die Mittelung eine lange Gesamtzeit, also sehr viele Daten. Das ist in aktuellen Experimenten möglich. Datensparsamer und daher früher verwendet ist die Näherung, nicht beliebige Paare von Photonen in  $G(\tau)$ zu betrachten, sondern nur Paare von zeitlich aufeinander folgenden Photonen, die mit der Häufigkeit $C(\tau)$ auftreten. Diese Größen sind miteinander verknüpft:
+\begin{equation}
+    G(\tau) = C(\tau) + \int_0^\tau C(\tau') C(\tau-\tau') d\tau' + \dots \quad .
+\end{equation}
+Das Integral behandelt dabei alle Fälle, bei denen genau ein Photon zum Zeitpunkt $\tau'$ zwischen den Photonen-Paar in $G(\tau)$ ist. Weitere Doppel-, Dreifach- etc. Integrale würden dann zwei, drei etc. Photonen dazwischen beschreiben. Falls die Photonen-Rate klein genug bzw. die interessierende Zeit $\tau$ kurz genug ist, können wir $G(\tau) \approx C(\tau)$ annehmen.
+
+\begin{marginfigure}
+    \inputtikz{\currfiledir HBT}
+    \caption{Hanbury Brown--Twiss Experiment. Man bestimmt den zeitlichen Abstand $\tau$ zwischen zwei Photonen. \label{fig:9_HBT}}
+\end{marginfigure}
+
+Diese Abstände zwischen zeitlich benachbarten Photonen-Paaren  bestimmt man durch ein Experiment, das nach  Robert Hanbury Brown und Richard Q. Twiss HBT-Experiment genannt wird. Abbildung~\ref{fig:9_HBT} zeigt eine Skizze. Aufgrund der Totzeit nach der Detektion eines Photons in einem Detektor  kann man kleine Abstände nicht mit einem einzigen Detektor messen. Man teilt den Photonenstrom auf zwei Detektoren auf und bestimmt die Verteilung der zeitlichen Abstände von Detektionsereignissen. 
+
+Für ein Zwei-Niveau-System lässt sich  $C(\tau)$ leicht bestimmen. Direkt nach dem ersten Photon ist man mit absoluter Sicherheit im Grundzustand. In den angeregten Zustand kommt man mit der Anregungsrate $W_P$, von dort wieder zurück in den Grundzustand mit der Rate $\Gamma$ der spontanen Emission. Die charakteristische Zeit $t_d$ ist das Reziproke der Gesamt-Rate für einen Zyklus
+\begin{equation}
+    t_d = \frac{1}{W_P + \Gamma} \quad \text{und so} \quad  g^{(2)}_\text{TLS}(\tau) \approx 1 - a e^{- \tau / t_d} \quad .
+\end{equation}
+Die Amplitude $a$ ist im idealen Fall $a=1$. In Wirklichkeit bewirken Dunkelrauschen und Hintergrund-Photonen $a < 1$. Der Fall $a> 0.5$ kann aber nur durch eine Einzelphotonenquelle  bzw. einen einzelnes Zwei-Niveau-System erzeugt werden kann.  
+
+Ein solches Experiment ist in Abb. \ref{fig:9_QD_antibunching} am Anfang des Kapitels für einen \ch{GaAs} Quantenpunkt  gezeigt. Die optische Anregung erfolgte hier über den umgebenden Halbleiter, nicht direkt über das Exziton. Dies führt zu den 'Überschwingern' mit $g>1$, die im Modell berücksichtigt sind. 
+
+
+
+
+
+\section{Quantum Key Distribution}
+
+Eine zunehmend auch technologisch wichtige Anwendung von Einzelphotonenquellen ist die quantenmechanisch sichere Übermittlung eines Chiffrier-Schlüssels. Es existieren verschiedene Arten zur Verschlüsslung von Nachrichten. Man kann beispielsweise ausnutzen, dass eine große Zahl nur aufwändig in ihre Primfaktoren zerlegt werden kann, der umgekehrt Weg aber einfach ist. Wie kompliziert das Brechen der Verschlüsselung aber ist hängt von den zu Verfügung stehenden Technologien ab und ist für die Zukunft evtl. schwer vorherzusagen. Eine niemals zu brechende Verschlüsselung ist die exklusiv-oder-Verknüpfung (XOR) des Ausgangstextes mit einem Schlüssel, der genauso lang ist wie die Nachricht und niemals wieder verwendet wird. Diesen Schlüssel nennt man 'One-Time-Pad'. Der Empfänger braucht denselben Schlüssel, führt wieder eine XOR-Operation mit der chiffrieren Nachricht durch, und erhält den Klartext. Damit hat man das Problem der Verschlüsselung aber nur verwandle in das Problem der Übertragung des Schlüssels. Man könnte beispielsweise Datenträger mit dem (sehr langen) Schlüssel vorab mit einem vertrauenswürdigen Boten verteilen.
+
+Hier kommt Quantum Key Distribution ins Spiel. Man verteilt den Schlüssel in Form einzelner Photonen, so dass Sender (Alice) und Empfänger (Bob) später beide denselben Schlüssel verwenden können. Die chiffrierte Nachricht kann dann über einen normalen Kanal übermittelt werden. 
+
+Ich beschreibe hier das BB84-Protokoll\sidenote{siehe auch Kap. 11.8.2 in \cite{Gerry_Knight_QO}, Original in \cite{BB84}.} von  Charles Bennett und Gilles Brassard. Wir benutzen vier lineare Polarisationszustände von Licht: horizontal ($\ket{h}$) und vertikal ($\ket{v}$), diagonal ($\ket{+}$) und anti-diagonal ($\ket{-}$). Die sind nicht unabhängig voneinander, aber $\ket{h}$  und $\ket{v}$  sowie $\ket{+}$  und $\ket{-}$ bilden eine Basis. Alice sendet jetzt Photonen an Bob und wählt für jedes Photon zufällig einen der vier Zustände. Bob weiß davon nichts, entscheidet sich zufällig für eine der beiden Basen, und misst in dieser Basis den Polarisationszustand des ankommenden Photons, beispielsweise mit einem Polarisations-Strahlteiler und zwei Photodetektor. Die Wahl der Basen könnte über eine passend gedrehte Wellenplatte erfolgen. Wenn Alice und Bob mit Senden und Messen fertig sind, dann übermittelt Alice über einen offenen Kanal die von ihr gewählte Basis, nicht den Polarisationszustand. Bob vergleicht dies mit seiner Liste und teilt Alice ebenfalls per offenen Kanal mit, wann sie übereinstimmend gewählt haben. Beide streichen die anderen Photonen. Nun haben beide aber eine Liste von Polarisationszuständen, die Bob in der gleichen Basis gemessen hat, in der Alice gesendet hat. Der Zustand ist jetzt ein Bit des Schlüssels.
+
+Hierzu sind unabdingbar einzelne Photonen erforderlich. Andernfalls könnte die lauschende Eve einen Teil des Strahls abfangen und selbst messen, womöglich gar in beiden Basen gleichzeitig. Nur wenn es ein einziges Photon ist, dann ist sicher, dass die Messung den Zustand zerstört und dieser nicht ein zweites Mal gemessen werden kann.  
+
+
+
+\newpage
+\section{Zusammenfassung}
+
+\textit{Schreiben Sie hier ihre persönliche Zusammenfassung des Kapitels auf. Konzentrieren Sie sich auf die wichtigsten Aspekte und die am Anfang genannten Ziele des Kapitels.}
+
+\vspace*{9cm}
+\printbibliography[segment=\therefsegment,heading=subbibliography]
