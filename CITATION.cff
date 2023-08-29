@@ -1,13 +1,16 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
 cff-version: 1.2.0
-message: "If you use this book, please cite it as below."
+title: Festkörperphysik II - Skript zur Vorlesung
+message: 'If you use this book, please cite it as below.'
+type: book
 authors:
   - family-names: Lippitz
     given-names: Markus
-    orcid: "https://orcid.org/0000-0003-1218-6511"
-title: "Festkörperphysik II - Skript zur Vorlesung"
+    orcid: 'https://orcid.org/0000-0003-1218-6511'
+url: 'https://github.com/MarkusLippitz/Festkoerper-II'
 version: 23.8
-date-released: 2023-08-24
+date-released: '2023-08-24'
 doi: 10.5281/zenodo.8279873
-url: "https://github.com/MarkusLippitz/Festkoerper-II"
-preferred-citation:
-  type: book
+
