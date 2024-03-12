@@ -1,12 +1,13 @@
+'@context': https://schema.org/
 creativeWorkStatus: Published
+type: LearningResource
 name: Festkörperphysik II - Skript zur Vorlesung
 description: >-
   Skript zur Vorlesung Festkörperphysik II im 6. Semester des
   Bachelor-Studiengangs Physik der Universität Bayreuth. Themen sind
-  anhamonische Gittereigenschaften, freie Elektronen, Bänder, Halbleiter,
+  anharmonische Gittereigenschaften, freie Elektronen, Bänder, Halbleiter,
   Supraleiter, Magnetismus, optische Eigenschaften, Nanostrukturen.
-license:
-  id: https://creativecommons.org/licenses/by-sa/4.0/deed.de
+license: https://creativecommons.org/licenses/by-sa/4.0/deed.de
 id: https://github.com/MarkusLippitz/Festkoerper-II
 creator:
   - givenName: Markus
@@ -25,6 +26,7 @@ inLanguage:
   - de
 about:
   - https://w3id.org/kim/hochschulfaechersystematik/n0128
+image: https://www.ep3.uni-bayreuth.de/pool/bilder/epc2-banner.png
 learningResourceType:
   - https://w3id.org/kim/hcrt/script
 educationalLevel:
