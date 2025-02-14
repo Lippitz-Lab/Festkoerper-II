@@ -1,0 +1,62 @@
+% \documentclass[margin=0mm]{standalone}
+% \input{../tikz_header}
+
+
+%\begin{document}
+%
+
+
+
+
+\begin{tikzpicture}
+%\useasboundingbox (0,0) rectangle (5,5);
+%\draw (11,10) rectangle ++(5,5);
+
+
+
+\tikzmath{\u=2; \v=0.3; \w=2;}   
+
+
+% cables U0
+\draw[thick, blue] (0, {\v/2}, {\w/2} ) -- ++ (-0.7, 0,0) -- ++ (0,0,2.5) 
+     -- ({\u/2 - 0.1},{\v/2}, 3.5) ;
+
+\draw[thick, blue]   ({\u/2 + 0.1},{\v/2},3.5) -- ++ (1.6, 0,0)
+     -- ++ (0,0,-2.5) -- ++ (-0.7, 0,0);
+
+% voltage source
+\draw[fill, blue] ({\u/2 - 0.1},{\v/2},3.5) circle (0.05);
+\draw[fill, blue] ({\u/2 + 0.1},{\v/2},3.5) circle (0.05) node [below] {$U_0$};
+
+% current meter
+\fill[ white]  ({\u/2 + 0.8},{\v/2},3.5) circle (0.2);
+\draw[blue]  ({\u/2 + 0.8},{\v/2},3.5) circle (0.2);
+\draw[blue, ->]  ({\u/2 + 0.8},{\v/2},3.5)  -- ++ (225:0.4) -- ++ (45:0.8);
+\node[below, blue] at  ({\u/2 + 0.8},0 ,3.5) {$I$};
+
+% cables U Hall
+\draw[red, thick] ( {\u/2}, {\v/2}, \w) -- ++ (0,0,0.6) -- ++ (3, 0,0) -- ++ (0,0,-3.2) -- ++ (-3, 0,0) -- ++ (0,0,0.6);
+  
+\fill[ white] ( 3.4, {\v/2}, {\w + 0.6}) circle (0.2);
+\draw[red] (3.4 , {\v/2}, {\w+ 0.6}) circle (0.2);
+\draw[red, ->]  ( 3.4, {\v/2}, {\w + 0.6})  -- ++ (225:0.4) -- ++ (45:0.8);
+\node[below, red] at  ( 3.4, 0, {\w + 0.6}) {$U_H$};
+
+
+
+% Hall bar
+
+\draw[fill, gray] (0,\v,0) -- (\u,\v,0) -- (\u, \v, \w) -- (0, \v, \w) -- cycle;
+\draw[fill, gray!50!white] (0,\v,\w) -- (\u,\v, \w) -- (\u, 0, \w) -- (0, 0, \w) -- cycle;
+
+\draw[fill, gray!50!white] (\u,\v,\w) -- (\u,\v, 0) -- (\u, 0, 0) -- (\u, 0, \w) -- cycle;
+
+\draw [->, very thick] ( {\u/2}, \v ,{\w/2}) -- ++ (0, 1, 0) node[right] {$\boldmath{B}$};
+ 
+\draw[red, thick] ( {\u/2}, {\v/2}, \w) -- ++ (0,0,0.6);
+\draw[thick, blue] (\u, {\v/2}, {\w/2} ) -- ++ (+0.7, 0,0) ;
+
+  \end{tikzpicture}
+
+
+%\end{document}

@@ -28,16 +28,6 @@ Im letzten Kapitel haben wir die Bandstruktur diskutiert, also die möglichen Zu
 
 Eigentlich bräuchte man für diese Phänomene die zeitabhängige Schrödingergleichung. Dies wird aber zu aufwändig. Daher machen wir semi-klassische Modelle und beschreiben die Zustände der Elektronen im Rahmen der Quantenmechanik, den Einfluss äußerer Kräfte aber klassisch.
 
-% \begin{questions} 
-% \item Wie groß ist ein Molekül?
-% \item Welche physikalische Eigenschaft eine Moleküls wird bei Röntgenstreuung, STM und AFM abgebildet?
-% \end{questions}
- 
-
-
-% Das Pluto-Skript hydrogen\_wave\_functions\pluto{hydrogen_wave_functions} ermöglicht es Ihnen, mit verschiedenen Varianten der grafischen Darstellung zu experimentieren.
-
-
 
 
 \section{Fermi-Flächen}
@@ -324,10 +314,11 @@ Wenn kein Magnetfeld anliegt, sind alle Zustände bis zur Fermi-Energie $E_F$ ge
 \end{equation}
 In diesem Fall ändert sich die innere Energie nicht. Die Zustände ändern zwar ihre Energie, weil alle auf die Landau-Niveaus verschoben  werden, aber gleich viele werden angehoben wie abgesenkt: die bis zum Abstand $\hbar \omega_c/2$ unterhalb des Niveaus werden angehoben; die bis zu diesem Abstand darüber werden abgesenkt.
 
-\begin{figure}
-   \includegraphics*[width=100mm]{\currfiledir sketches/de_haas.png}
+\begin{marginfigure}
+   %\includegraphics*[width=100mm]{\currfiledir sketches/de_haas.png}
+   \inputtikz{\currfiledir de_haas}
    \caption{Zustandsdichte in zwei Dimensionen. Bei gewissen Feldstärken $B$ ist die innere Energie größer als ohne Feld. \label{fig:4_de_haas} }
-\end{figure}
+\end{marginfigure}
 
 Falls die Feldstärke $B$ aber anders ist, die Entartung $g_e$ also nicht gerade passt, dann gibt es  ein nur teilweise besetztes Landau-Niveau. Bei schrittweise befüllen dieses letzten Niveaus werden aber zunächst nur Energien angehoben. Erst nach der Halbbesetzung werden Energie abgesenkt. In Summe ist bleibt unabhängig von $B$ immer eine Anhebung übrig.
 
@@ -387,7 +378,7 @@ Im Fall von Wärmekapazität Beryllium (Abb. \ref{fig:4_beryllium}) misst man be
 Wir verlassen für einen Augenblick die quantenmechanische Beschreibung und betrachten den klassischen Hall-Effekt. Er erlaubt es, die Ladungsträgerkonzentration zu bestimmen und zwischen Elektronen und Löchern zu unterscheiden. Er dient uns aber auch als Basis für den Quanten-Hall-Effekt im darauffolgenden Abschnitt.
 
 \begin{marginfigure}
-   \includegraphics*[width=49mm]{\currfiledir sketches/hall.png}
+   \inputtikz{\currfiledir hall}
    \caption{Geometrie zum Hall-Effekt.}
 \end{marginfigure}
 

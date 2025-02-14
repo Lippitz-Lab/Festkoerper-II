@@ -1,0 +1,57 @@
+% \documentclass[margin=0mm]{standalone}
+% \input{../tikz_header}
+
+
+% \begin{document}
+
+
+
+
+
+\begin{tikzpicture}[font=\footnotesize]
+  %\useasboundingbox (0,0) rectangle (5,5);
+  %\draw (11,10) rectangle ++(5,5);
+  
+ \begin{scope}
+   \node at (0.75, 3) {p dotiert};
+    \draw[thick] (0,0) node[left] {V} -- ++ (1.5,0);
+  \draw[thick] (0,2.5) node[left] {C} -- ++ (1.5,0);
+  \draw[thick, dashed] (0,0.5) node[left] {A} -- ++ (1.5,0);
+  \draw[thick, dotted] (0,0.7) node[left] {$E_F$} -- ++ (1.5,0);
+
+  \node at (4.25, 3) {n dotiert};
+
+  \draw[thick] (3.5,0) -- ++ (1.5,0) node[right] {V};
+  \draw[thick] (3.5,2.5)  -- ++ (1.5,0) node[right] {C};
+  \draw[thick, dashed] (3.5,2.0)  -- ++ (1.5,0) node[right] {D};
+  \draw[thick, dotted] (3.5,1.7)  -- ++ (1.5,0)node[right] {$E_F$};
+
+ \end{scope}
+
+
+ \begin{scope}[yshift=-35mm]
+
+  \draw[thick, dotted] (0,0) node[left] {$E_F$}  -- ++ (5.5,0);
+
+  \draw[thick] (0,-0.7) node[left] {V} -- ++ (1.5,0)  .. controls (2.5, -0.7) and (2.5, -1.7) .. 
+  (3.5,-1.7) -- ++ (1.5,0) node[right] {V};
+
+
+\draw[thick] (0,1.8) node[left] {C} -- ++ (1.5,0)  .. controls (2.5, 1.8) and (2.5, 0.8) .. 
+ (3.5,+0.8)  -- ++ (1.5,0) node[right] {C};
+
+\draw[thick, dashed] (0,-0.2) node[left] {A} -- ++ (1.5,0);
+%\draw[thick, dotted] (0,0.7) node[left] {$E_F$} -- ++ (1.5,0);
+
+\draw[thick, dashed] (3.5,0.3)  -- ++ (1.5,0) node[right] {D};
+%\draw[thick, dotted] (3.5,1.7)  -- ++ (1.5,0)node[right] {$E_F$};
+
+\draw[dashed] (0,1.8)  -- ++ (4,0);
+\draw[<->] (3.5, 1.8) -- node [right] {$e \, V_D$} (3.5, 0.8);
+
+\end{scope}
+
+
+\end{tikzpicture}
+
+%\end{document}
