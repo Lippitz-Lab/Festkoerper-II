@@ -1,6 +1,6 @@
 %\renewcommand{\lastmod}{\today}
 \renewcommand{\chapterauthors}{Markus Lippitz}
-\renewcommand{\lastmod}{28. April 2023}
+\renewcommand{\lastmod}{18. März 2025}
 
 \chapter{Wärmeleitung und anharmonische Effekte}
 
@@ -27,7 +27,7 @@
 
 \section{Überblick}
 
-Bis zu diesem Punkt wurden das Bindungspotential der Atome im Festkörper als harmonisch, also rein parabelförmig angenommen. In diesem Kapitel gehen wir darüber hinaus und betrachten, wie in der Molekülphysik, anharmonische höhere Terme in Bindungspotential. Dies führt zur thermischen Ausdehnung und zur  Phonon--Phonon--Wechselwirkung. Mit ihr werden wir die oben gezeigte Temperaturabhängigkeit der Wärmeleitfähigkeit erklären.
+Bis zu diesem Punkt wurden das Bindungspotential der Atome im Festkörper als harmonisch, also rein parabelförmig angenommen. In diesem Kapitel gehen wir darüber hinaus und betrachten, wie in der Molekülphysik, anharmonische höhere Terme in Bindungspotential. Dies führt zur thermischen Ausdehnung und zur  Phonon--Phonon--Wechselwirkung. Mit ihr werden wir die oben gezeigte Temperaturabhängigkeit der Wärmeleitfähigkeit erklären.  Die makroskopischen, klassischen Größen Wärmeleitfähigkeit und thermische Ausdehnung stehen in direktem Zusammenhang mit den mikroskopischen Vorstellungen des Phonons als Quasiteilchen, das sich wie in der kinetischen Gastheorie bewegt.
 
 Dieses Kapitel stellt die Verbindung zum vorangegangenen Semester her. Sie haben Gelegenheit, die zentralen Konzepte der ersten Kapitel der Festkörperphysik aus dem letzten Semester zu wiederholen. Wir brauchen den reziproken Raum, die Dispersionsrelation und die sich daraus ergebende Zustandsdichte, wenn wir im nächsten Kapitel zu Elektronen wechseln.
 
@@ -80,7 +80,9 @@ Vergewissern Sie sich, dass Sie die folgenden Fragen beantworten können, und le
 
 \section{Thermische Ausdehnung}
 
-Bislang haben wir das Bindungspotential $U(x)$ der Atome als harmonisch angenommen. Die Abhängigkeit von der Auslenkung $x$ um die Ruheposition war also $U(x) \propto x^2$. Nun wollen wir betrachten, welchen Effekt höhere Terme im Potential haben. Bei den Molekül-Schwingungen hatten wir bereits das Morse-Potential besprochen, mit dem ebenfalls die Abweichungen von der harmonischen Form modelliert wurde. Damals hat dies zu Verschiebung der ansonsten äquidistanten Schwingungsniveaus und zu einer Änderung das Auswahlregel für Schwingungsübergänge geführt.
+Die thermische Ausdehnung von Festkörpern ist ein Beispiel dafür, wie mikroskopische Eigenschaften des Bindungspotentials und der Phononenstatistik direkt in makroskopischen, 'alltäglichen' Eigenschaften sichtbar werden. Insbesondere zeigt sich, dass ein harmonisches Bindungspotential eine zu grobe Näherung ist.
+
+Bislang haben wir das Bindungspotential $U(x)$ der Atome als harmonisch angenommen. Die Abhängigkeit von der Auslenkung $x$ um die Ruheposition war also $U(x) \propto x^2$. Nun wollen wir betrachten, welchen Effekt höhere Terme im Potential haben. Bei den Molekül-Schwingungen hatten wir bereits das Morse-Potential besprochen, mit dem ebenfalls die Abweichungen von der harmonischen Form modelliert wurde. Damals hat dies zu Verschiebung der ansonsten äquidistanten Schwingungsniveaus und zu einer Änderung das Auswahlregel für Schwingungsübergänge geführt. Hier verwenden wir ein allgemeines polynomiales Modell, d.h. wir parametrisieren etwas anders.
 
 Sei also\sidenote{Siehe auch \cite{Kittel_FK} eq. 5.38 und \cite{Kopitzki_FK} eq. 2.57} 
 \begin{eqnarray}
@@ -88,7 +90,7 @@ Sei also\sidenote{Siehe auch \cite{Kittel_FK} eq. 5.38 und \cite{Kopitzki_FK} eq
 \end{eqnarray}
 mit $c$, $g$ und $f$ als positive Konstanten. Die Nullpunktsenergie ist hier der Einfachheit halber weggelassen. Der ungerade $x^3$-Term flacht die positive $x$ Seite ab und macht die negative Seite steiler. Der $x^4$-Term wirkt symmetrisch, macht aber das Potential bei hohen Energien bzw. großen $x$  breiter und so die Bindung weicher.
 
-Nun interessiert die mittlere Auslenkung $\braket{x}$ bei einer durch die Boltzmann-Verteilung gegebenen Besetzung der Schwingungszustände. Ein Zustand mit dem Bindungsabstand $x$ tritt auf mit der Wahrscheinlichkeit\sidenote{Siehe z.B. Gl. 22.8 in \cite{Fliessbach_statistik}.}
+Nun interessiert die mittlere Auslenkung $\braket{x}$ aus der Ruheposition bei einer durch die Boltzmann-Verteilung gegebenen Besetzung der Schwingungszustände. Ein Zustand mit dem Bindungsabstand $x$ tritt auf mit der Wahrscheinlichkeit\sidenote{Siehe z.B. Gl. 22.8 in \cite{Fliessbach_statistik}.}
 \begin{equation}
     \frac{e^{- \beta U(x)}}{\int  e^{- \beta U(x')} dx'} \quad ,
 \end{equation}
@@ -97,7 +99,9 @@ Damit ist die mittlere Auslenkung
 \begin{equation}
   \braket{x} =   \frac{\int x e^{- \beta U(x)} dx}{\int e^{- \beta U(x')} dx'} \quad .
 \end{equation}
-Der Nenner hängt ja nicht von $x$, sondern nur von $x'$ ab und kann so vor das $dx$-Integral gezogen werden. Nun machen wir die Annahme, das $U(x) \ll k_B T$, also $\beta U(x) \ll 1$ und schreiben im Zähler
+Der Nenner hängt ja nicht von $x$, sondern nur von $x'$ ab und kann so vor das $dx$-Integral gezogen werden. 
+
+Zur weiteren Vereinfachung nehmen wir an, dass $U(x)$ für typische thermische Energien $\sim k_B T$ klein genug ist, sodass $\beta U(x) \ll 1$ gilt. Dann können wir die Exponentialfunktion als Reihe darstellen. Der wesentliche Beitrag im Zähler kommt dabei von den ersten Termen der Exponentialreihe:
 \begin{equation}
     e^{- \beta U(x)} = e^{- \beta c x^2} e^{+ \beta (g x^3 + f x^4)} \approx e^{- \beta c x^2}  \left( 1+ \beta g x^3 + \beta f x^4 \right)
     \quad .
@@ -107,19 +111,73 @@ Im Nenner ignorieren wir gleich alle Terme jenseits von $c x^2$. Damit erhält m
     \braket{x} = \frac{3 g}{4 c^2} k_B T \quad .
 \end{equation}
 Wie erwartet spielt der $f x^4$-Term keine Rolle für die Änderung des Bindungsabstands.
-Sobald aber ein kubischer Term im Potential vorhanden ist ($g \neq 0$), dann ändert sich die mittlere Auslenkung hin zu größeren Werten, proportional zur Temperatur $T$. Die Gitterkonstante ändert sich also linear in der Temperatur, bzw. der Wärme-Ausdehnungskoeffizient $\alpha$ ist 
-\begin{equation}
-    \alpha = \frac{d}{dT} \frac{ \braket{x}}{R_0} = \frac{3 g k_B}{4 c^2 R_0}  \quad ,
-\end{equation}
-mit dem mittleren Bindungsabstand $R_0$ bei $T=0$.
+Sobald aber ein kubischer Term im Potential vorhanden ist ($g \neq 0$), dann ändert sich die mittlere Auslenkung hin zu größeren Werten, proportional zur Temperatur $T$. 
 
+Die Gitterkonstante $R(T)$ ändert sich also linear mit der Temperatur
+\begin{equation}
+    R(T) = R_0 + \braket{x}  = R_0 + \frac{3 g}{4 c^2} k_B T \quad ,
+\end{equation}
+mit dem  Bindungsabstand $R_0$ bei $T=0$.
+Der Wärme-Ausdehnungskoeffizient $\alpha$ ist dann
+\begin{equation}
+    \alpha = \frac{1}{R_0} \, \frac{dR}{dT}=    
+    \frac{d}{dT} \frac{ \braket{x}}{R_0} = \frac{3 g k_B}{4 c^2 R_0}  \quad .
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%
 \begin{questions} 
 \item Wie groß ist ein typischer Wärme-Ausdehnungskoeffizient $\alpha$? Wie könnte man damit die Koeffizienten $c$ und $g$ des Potentials vergleichen?
-\item Warum nimmt man hier die Boltzmann-Verteilung, und nicht Bose-Einstein?
+% {
+% Typischerweise liegt der \emph{Wärmeausdehnungskoeffizient} \(\alpha\) bei Metallen und vielen Festkörpern im Bereich  
+% \[
+%   10^{-6}\,\text{K}^{-1} 
+%   \quad\text{bis}\quad 
+%   10^{-5}\,\text{K}^{-1}.
+% \]
+% Ein konkretes Beispiel ist Aluminium mit \(\alpha \approx 2.4\times 10^{-5}\,\mathrm{K}^{-1}\).  
+% Bei Gläsern oder Keramiken liegen die Werte oft etwas niedriger, bei Kunststoffen kann \(\alpha\) deutlich höher sein.
+
+% In unserem eindimensionalen Modell folgt 
+% \[
+%   \alpha 
+%   \;=\; 
+%   \frac{d}{dT}\,\frac{\langle x\rangle}{R_0}
+%   \;=\; 
+%   \frac{3\,g\,k_B}{4\,c^2\,R_0}.
+% \]
+% Bei einer typischen Gitterkonstante \(R_0\) in der Größenordnung einiger Å (\(\sim 10^{-10}\,\mathrm{m}\)) kann man daraus in einer Größenordnungsschätzung das Verhältnis von \(g\) zu \(c\) ableiten. Nimmt man etwa
+
+% \[
+%   \alpha \approx 10^{-5}\,\mathrm{K}^{-1}, 
+%   \quad
+%   R_0 \approx 2\times10^{-10}\,\mathrm{m},
+%   \quad
+%   k_B \approx 1.38\times10^{-23}\,\mathrm{J/K},
+% \]
+% dann folgt aus
+% \[
+%   \frac{3\,g\,k_B}{4\,c^2\,R_0} \approx 10^{-5}\,\mathrm{K}^{-1}
+%   \quad\Longrightarrow\quad
+%   g \;\sim\; \frac{4\,c^2\,R_0\,\alpha}{3\,k_B}\,.
+% \]
+% So sieht man, dass \(g \neq 0\) sein muss, aber typischerweise gegenüber \(c\) sehr klein bleibt, damit \(\alpha\) in der beobachteten Größenordnung liegt. In der Praxis sind \(c\), \(g\) und \(f\) reine Modellparameter, die nicht direkt gemessen, sondern an experimentelle Befunde angepasst werden.
+% }
+%
+%%%%%%%%%%%%%%%%%%
+\item {Warum nimmt man hier die Boltzmann-Verteilung, und nicht Bose-Einstein?}
+% {
+%     Die \emph{Boltzmann-Verteilung} wird hier verwendet, weil wir eine \emph{klassische} Beschreibung der Atomschwingungen annehmen. Dies ist sinnvoll, solange
+% \[
+%   k_B T 
+%   \;\gg\; 
+%   \hbar \omega
+% \]
+% für typische Schwingungsfrequenzen \(\omega\). Dann ist die thermische Energie hoch genug, um sehr viele energetische Zustände zu besetzen, sodass sich die diskreten Phononenzustände „verschmieren“. Formal nähert sich in diesem Hochtemperatur-Limes die Bose-Einstein-Verteilung der klassischen Maxwell-Boltzmann-Verteilung an.
+
+% Bei \emph{tieferen Temperaturen} (insbesondere unterhalb der Debye-Temperatur \(\Theta_D\)) müsste man hingegen die quantisierte Natur der Phononen berücksichtigen. Dann ergibt sich aus der \emph{Bose-Einstein-Statistik} eine andere thermische Besetzung. In diesen Bereichen zeigt sich, dass die thermischen Eigenschaften (einschließlich Wärmeausdehnung) oft deutlich vom klassischen Boltzmann-Bild abweichen.
+% }
 \end{questions}
  
-
-
 
 % XXX TODO: Lösungen Anharm. Potential Kernwellenfunktionen und Verschiebung des Mittelwerts
 
@@ -133,9 +191,10 @@ mit dem mittleren Bindungsabstand $R_0$ bei $T=0$.
 
 \section*{Phonon--Phonon-Wechselwirkung}
 
-Die Anharmonizität des Potentials führt dazu, dass die Phononen miteinander wechselwirken. Die Einführung der Normalmoden in der Molekül- oder Festkörperphysik war möglich, weil dort das Potential als harmonisch angenommen wurde. Der $x^3$-Term führt dazu, dass die einzelnen Moden nicht mehr unabhängig voneinander sind, miteinander koppeln.\sidenote{Eine Rechnung findet sich in \cite{Gross_FK}.} Ein Molekül im Vakuum kann so Energie von einer hoch angeregten Schwingungsmode auf alle anderen Moden verteilen. Im Bild der quantisierten Schwingungen, wenn man also Phononen als Teilchen betrachtet, dann bedeutet dies, dass Phononen miteinander unter Beachtung der Energie- und Impulserhaltung wechselwirken, wie Billardkugeln.
+Die Anharmonizität des Potentials führt dazu, dass die Phononen miteinander wechselwirken. Die Einführung der Normalmoden in der Molekül- oder Festkörperphysik war möglich, weil dort das Potential als harmonisch angenommen wurde. Der $x^3$-Term führt dazu, dass die einzelnen Moden nicht mehr unabhängig voneinander sind, miteinander koppeln.\sidenote{Eine Rechnung findet sich in \cite{Gross_FK}.} Ein Molekül im Vakuum kann so Energie von einer hoch angeregten Schwingungsmode auf alle anderen Moden verteilen. 
 
-Das kann man experimentell nachweisen. Zwei sich kreuzende Ultraschallwellen erzeugen eine dritte Welle in der durch die Impulserhaltung erwarteten Richtung (Abb.~\ref{fig:1_US_interaction}).
+Die Phonon--Phonon-Wechselwirkung unterstreicht die Beschreibung von Phononen als Quasi-Teilchen. Phononen wechselwirken  miteinander wie Billardkugeln unter Beachtung der Energie- und Impulserhaltung. Das kann man experimentell nachweisen. Zwei sich kreuzende Ultraschallwellen erzeugen eine dritte Welle in der durch die Impulserhaltung erwarteten Richtung (Abb.~\ref{fig:1_US_interaction}).
+Phonon--Phonon-Streuung ist also ein direktes Ergebnis der Anharmonizität und spielt eine wichtige Rolle bei den unten besprcohen Transportphänomenen wie der Wärmeleitung.
 
 \begin{figure} 
     \input{\currfiledir fig_interaction.tikz.tex}
@@ -143,14 +202,29 @@ Das kann man experimentell nachweisen. Zwei sich kreuzende Ultraschallwellen erz
     \label{fig:1_US_interaction}
 \end{figure}
 
+
+
 \begin{questions} 
-    \item Falls Sie die 'Moderne Optik' besucht haben: Könnte man diesen Effekt auch im Wellen-Bild beschreiben?
+    \item Falls Sie die 'Moderne Optik' besucht haben: Könnte man diesen Effekt auch mit der nichtlinearen Optik im Wellen-Bild beschreiben? Wo steckt dabei die Anharmonizität des Potentials?
 \end{questions}
+
+% chatbot
+
+% \begin{itemize}
+%   \item In der nichtlinearen Optik betrachtet man Phänomene wie Frequenzverdopplung, \emph{Sum-} und \emph{Differenzfrequenzerzeugung} oder \emph{optische Mischprozesse}. Diese Effekte basieren darauf, dass das polarisierbare Medium (z.B. ein Kristall) eine nichtlineare Beziehung zwischen elektrischer Feldstärke und induzierter Polarisation aufweist. Mathematisch äußert sich dies in zusätzlichen Ter\^me höherer Ordnung (z.B. $\chi^{(2)}$, $\chi^{(3)}$) in der Konstitutionsgleichung des Materials.
+% \item Überträgt man dieses Prinzip auf die akustischen Schwingungen (Phononen) im Festkörper, lassen sich \emph{interagierende} Wellenzug-Komponenten analog zu "nichtlinearen" Effekten auffassen. Die \emph{Anharmonizität} des Gitters --- hier repräsentiert durch kubische oder quartische Terme im Potential --- spielt dabei die gleiche Rolle wie die "nichtlineare Suszeptibilität" im optischen Bereich. Sie ermöglicht "Mischprozesse" zwischen den akustischen Wellen.
+% \item Im Wellenbild bedeutet dies: Ein oder mehrere "Pump-Wellen" (z.B. Ultraschallwellen unterschiedlicher Frequenz) erzeugen eine "Signal-Welle" neuer Frequenz, sofern Energie- und Impulserhaltung erfüllt sind (analog zur Phasenkopplung in der Optik). Im Rahmen der Phononenbilder (also der Teilcheninterpretation) entspräche dies \emph{Streuprozessen} zwischen Phononen.
+% \item Die \emph{Anharmonie} ist dabei der zentrale Punkt: Bei rein harmonischer (linearisierter) Betrachtung hätten wir keine Kopplung zwischen verschiedenen Normalmoden und könnten keine "neuen" Frequenzen erzeugen. Erst die zusätzlichen, nichtlinearen Terme (im Potential $\propto x^3, x^4, \dots$) erlauben, dass Wellen sich gegenseitig modulieren.
+% \item Die enge Analogie zu nichtlinearer Optik liegt also darin, dass man sowohl bei Photonen (elektromagnetische Wellen) als auch bei Phononen (elastische Wellen) in Materialien nichtlineare Kopplungen \emph{braucht}, um Energie zwischen verschiedenen Frequenzen / Moden zu übertragen.
+% \end{itemize}
+
+% \noindent\textbf{Kurzfazit:}\newline\emph{Ja, der Effekt lässt sich auch analog zur nichtlinearen Optik verstehen. Die Anharmonizität des Gitters spielt dieselbe Rolle wie die nichtlineare Suszeptibilität des Mediums in der Optik und erlaubt "Mischprozesse" zwischen Wellen verschiedener Frequenzen.}
+
      
 
 \section*{Wärmeleitfähigkeit}
 
- Bislang hatte der Festkörper überall die gleiche Temperatur. Nun betrachten wir beispielsweise einen Stab, der an beiden Enden durch ein Wärmebad auf eine zeitliche konstante aber verschiedene Temperatur gehalten wird. Makroskopisch ist der Fluss der thermischen Energie, also die Wärmestromdichte $\mathbf{j}_q$ abhängig von der Wärmeleitfähigkeit $K$ und dem Gradienten der Temperatur $T$, also
+ Bislang hatte der Festkörper überall die gleiche Temperatur. Nun betrachten wir beispielsweise einen (dielektrischen\sidenote{In Metallen dominiert die Wärmelkeitung durch Elektronen.}) Stab, der an beiden Enden durch ein Wärmebad auf eine zeitliche konstante aber verschiedene Temperatur gehalten wird. Makroskopisch ist der Fluss der thermischen Energie, also die Wärmestromdichte $\mathbf{j}_q$ abhängig von der Wärmeleitfähigkeit $K$ und dem Gradienten der Temperatur $T$, also
 \begin{equation}
     \mathbf{j}_q = - K \, \nabla T \quad .
 \end{equation}
@@ -158,7 +232,25 @@ Wir modellieren den Wärmestrom analog zur kinetischen Gastheorie  als Diffusion
 \begin{equation}
     K  = \frac{1}{3} \, C \, v \, \ell \quad , \label{eq:2_def_waermeleitf}
 \end{equation}
-mit der Wärmekapazität pro Volumen $C$, der Teilchengeschwindigkeit $v$ und der mittleren freien Weglänge $\ell$. Hier ist nun $C$ die Wärmekapazität der Phononen, $v$ deren Schallgeschwindigkeit und $\ell$ eine noch zu beschaffende mittlere freie Weglänge. Eigentlich sind alle drei Größen von der Frequenz und ggf. auch der Richtung abhängig. Dies ignorieren wir hier und verstehen sie als effektive Größen. Das ist die \emph{Dominante-Phononen-Näherung}, ähnlich wie beim Einstein-Modell die optischen Phononen als deltaförmige Zustandsdichte angenommen wurden.
+mit der Wärmekapazität pro Volumen $C$, der Teilchengeschwindigkeit $v$ und der mittleren freien Weglänge $\ell$. Hier ist nun $C$ die Wärmekapazität der Phononen aus dem letzten Semester, $v$ deren Ausbreitungs- oder Schallgeschwindigkeit und $\ell$ eine noch zu beschaffende mittlere freie Weglänge, also dem räumlichen Abstand zwischen zwei Stößen. Die Wechselwirkung mit anderen Phononen des letzten Abschnitts begrenzen also die mittlere freie Weglänge, ebenso Defekte im Kristall und die Kristalloberfläche.
+
+In typischen Festkörpern liegen die Schallgeschwindigkeiten $v$ bei einigen 1000~m/s und die mittlere freie Weglänge  $\ell$ bei einigen Nanometern bis Mikrometern. Die Wärmeleitfähigkeit variiert zwischen etwa 1~W/(m~K) bei schlechten Wärmeleitern und über 2000~W/(m~K) in Diamant.
+
+Eigentlich sind alle drei Größen von der Frequenz und ggf. auch der Richtung abhängig. Dies ignorieren wir hier und verstehen sie als effektive Größen. Das ist die \emph{Dominante-Phononen-Näherung}, ähnlich wie beim Einstein-Modell die optischen Phononen als deltaförmige Zustandsdichte angenommen wurden.
+
+
+
+\begin{questions}
+\item Inwiefern spielen Oberflächen- und Grenzflächeneffekte (z. B. bei dünnen Filmen oder nanostrukturierten Materialien) eine Rolle für die Wärmeleitfähigkeit, und wie könnte man theoretisch oder experimentell abschätzen, ab welcher Längenskala diese Effekte dominant werden?
+\end{questions}
+
+
+% \begin{itemize}
+%   \item In sehr kleinen Strukturen (z. B. in dünnen Schichten oder Nanodrähten) wird die freie Weglänge der Phononen oft durch die \emph{Geometrie} begrenzt: Die Phononen treffen häufiger auf Oberflächen oder Grenzflächen, was zusätzliche Streukanäle eröffnet. Dadurch sinkt die effektive mittlere freie Weglänge \(\ell\), und damit auch die Wärmeleitfähigkeit.
+%   \item Theoretisch kann man mit Modellen wie dem \emph{Casimir-Limit} (wo die Grenzflächen dominieren) oder \emph{modifizierten Boltzmann-Transport-Gleichungen} die reduzierte Leitfähigkeit bei endlichen Strukturdimensionen abschätzen. Experimentell misst man z. B. die Wärmeleitfähigkeit in dünnen Filmen verschiedener Dicke (\(100\,\mathrm{nm}\) bis \(\mu\mathrm{m}\)) und vergleicht die resultierenden Werte mit dem \(3\,C\,v\,\ell\)-Ansatz (\(v\) = Phononengeschwindigkeit, \(\ell\) = freie Weglänge) unter Berücksichtigung von Grenzflächenstreuung.
+%   \item Typischerweise zeigt sich ein \emph{starker Abfall} der Wärmeleitfähigkeit, sobald die Strukturgröße \emph{vergleichbar} oder \emph{kleiner} als die typische freie Weglänge der Phononen (im makroskopischen Material) wird. Bei Metallen kommen zusätzlich Elektronengrenzflächenstreuungen ins Spiel.
+%   \item So kann man durch Variation der Probengeometrie (z. B. Materialdicke) abschätzen, bei welcher Längenskala Oberflächen- und Grenzflächeneffekte dominieren. Dies spielt insbesondere bei der Entwicklung von Mikro- und Nanoelektronik eine große Rolle.
+% \end{itemize}
 
 
 
@@ -170,21 +262,49 @@ mit der Wärmekapazität pro Volumen $C$, der Teilchengeschwindigkeit $v$ und de
      \label{fig:1_crosssection}
 \end{marginfigure}
 
-Die mittlere freie Weglänge kann rein geometrisch verstanden werden als Weglänge, bis zu der ein Strahl wieder auf eine Zielscheibe trifft. Die Fläche der Zielscheibe entspricht dabei dem Wechselwirkungsquerschnitt $\sigma$. Dazu benötigt man nur die Anzahl der Scheiben pro Volumen, also die Dichte $n$. Damit ist die mittlere freie Weglänge $\ell$
+Die mittlere freie Weglänge $\ell$ kann rein geometrisch verstanden werden als Weglänge, bis zu der ein Strahl wieder auf eine Zielscheibe trifft. Die Fläche der Zielscheibe entspricht dabei dem Wechselwirkungsquerschnitt $\sigma$. Dazu benötigt man nur die Anzahl der Scheiben pro Volumen, also die Dichte $n$. Damit ist die mittlere freie Weglänge $\ell$
 \begin{equation}
     \ell = \frac{1}{n \, \sigma} \quad .  \label{eq:1_def_weglaenge} 
 \end{equation}
 In der Sprache der Streutheorie, wie beispielsweise bei der Röntgenstreuung, ist der Wechselwirkungsquerschnitt $\sigma$ proportional zum Betragsquadrat $|\mathcal{A}|^2$ der Streuamplitude.
 
-Dem Scheibchen-Bild nahe kommt die Streuung an Punktdefekten im Kristall. Wenn die Ausdehnung $a$ des Defekts viel kleiner als die Wellenlänge $\lambda$ des Phonons ist, dann ist die Physik völlig analog zur Rayleigh-Streuung, beispielsweise von Licht an Luft-Molekülen. Der Streuquerschnitt ist in diesem Fall
+Dem Scheibchen-Bild nahe kommt die Streuung an Punktdefekten im Kristall. Punktdefekte können Atomfehlstellen, Substitutionsatome oder kleine Einschlüsse sein; jede Abweichung vom periodischen Gitter führt zu Streuung. Wenn die Ausdehnung $a$ des Defekts viel kleiner als die Wellenlänge $\lambda$ des Phonons ist, dann ist die Physik völlig analog zur Rayleigh-Streuung, beispielsweise von Licht an Luft-Molekülen. Der Streuquerschnitt ist in diesem Fall
 \begin{equation}
     \sigma \propto \frac{a^6}{\lambda^4} \quad \text{oder} \quad \propto a^6 \, \omega^4 \quad .
 \end{equation}
-Dieser Effekt ist nicht temperaturabhängig, kann also nicht helfen, die Temperaturabhängigkeit der Wärmeleitung zu erklären. Er liefert vielmehr eine von der Qualität der Probe abhängenden konstanten Beitrag.
+Dieser Effekt ist nicht temperaturabhängig, kann also nicht helfen, die Temperaturabhängigkeit der Wärmeleitung zu erklären. Er liefert vielmehr eine von der Qualität der Probe abhängenden konstanten Beitrag, der bei tiefen Temperaturen erreicht wird. In hochreinen Einkristallen kann die mittlere freie Weglänge dann sehr groß werden.
 
 
+\begin{questions}
+    \item Worin unterscheiden und worin ähneln sich die Streuprozesse in Gasen und Festkörpern, insbesondere welche Prozesse führen zur  Temperaturabhängigkeit der mittleren freuen Weglänge?
+\end{questions}
+    
+    
+    % \begin{itemize}
+    
+    %     \item \textbf{Gemeinsamkeiten:}
+    %     \begin{itemize}
+    %       \item In beiden Systemen beschreibt die \emph{mittlere freie Weglänge} \(\ell\) den typischen Abstand, den ein Teilchen (Molekül im Gas bzw. Phonon oder Elektron im Festkörper) ohne wesentliche Streuung zurücklegt.
+    %       \item Maßgeblich sind stets Erhaltungssätze (Energie, Impuls) und der Streuquerschnitt zwischen "Teilchen" (Gasatome/-moleküle oder Phononen, Elektronen und Defekte im Festkörper).
+    %     \end{itemize}
+      
+    %     \item \textbf{Unterschiede in den Streuprozessen:}
+    %     \begin{itemize}
+    %       \item \textbf{Gase:} Häufige Stöße zwischen Gasmolekülen \emph{untereinander}, v. a. elastische Kollisionen (wie "Billiardkugeln"), sowie evtl. Kollisionen mit Behälterwänden. Temperaturänderungen beeinflussen Geschwindigkeit und Dichte der Moleküle, weshalb \(\ell\) sowohl von der Geschwindigkeitsverteilung als auch vom (ggf. variablen) Volumen abhängt.
+    %       \item \textbf{Festkörper:} Die Teilchen, die "gestreut" werden, sind oft \emph{Phononen} (elastische Gitter-Schwingungsquanten) oder \emph{Elektronen}. Streuzentren sind \emph{Defekte}, \emph{Grenzflächen}, \emph{Phononen untereinander} (Phonon--Phonon-Streuung) oder auch Elektronen. Das Kristallgitter ist weitgehend "fix", sodass sich seine Dichte mit Temperatur kaum ändert, aber die \emph{Phononenzahl} und Verteilung \(\propto T\) sehr wohl.
+    %     \end{itemize}
+      
+    %     \item \textbf{Temperaturabhängigkeit der mittleren freien Weglänge:}
+    %     \begin{itemize}
+    %       \item \textbf{In Gasen:} Bei konstantem Volumen nimmt die Teilchengeschwindigkeit mit steigender Temperatur zu, was zu häufigeren Kollisionen und somit kleinerer \(\ell\) führen kann. In einem System mit variablem Volumen (z. B. unter konstantem Druck) sinkt bei höherer Temperatur die Dichte, was tendenziell zu weniger Stößen führt. Die resultierende Temperaturabhängigkeit von \(\ell\) ergibt sich aus dem Zusammenspiel dieser Effekte.
+    %       \item \textbf{In Festkörpern:} Mit steigender Temperatur werden mehr Phononen angeregt, die sich gegenseitig streuen. Auch höhere Frequenz-Moden werden stärker besetzt, was die Streurate zusätzlich erhöht (z. B. durch \(\propto \omega^4\)-Abhängigkeit bei Rayleigh-Streuung). Insgesamt führt das im Hochtemperaturbereich zu einer abnehmenden \(\ell\). Bei sehr tiefen Temperaturen (\(T\to 0\)) hingegen verschwindet ein Großteil der thermischen Phononen, und \(\ell\) kann sehr groß werden (\emph{ballistische} Transportregime).
+    %     \end{itemize}
+      
+    %   \item \textbf{Zusammenfassung:} Trotz ähnlichem Grundprinzip (Kollisionen zwischen "Teilchen" und definierter mittlerer freier Weglänge) unterscheiden sich Gase und Festkörper durch unterschiedliche Streuungsmechanismen und Randbedingungen (z. B. fixiertes Volumen vs. variable Dichte, unterschiedliche Teilchenarten). Das führt zu teils markant anderer Temperaturabhängigkeit von \(\ell\) in beiden Systemen.
+    %   \end{itemize}
+    
 
-\section{Phonon--Phonon--Streuung}
+%\section{Phonon--Phonon--Streuung}
 
 
 % Bei der Phonon--Phonon--Wechselwirkung sind \emph{drei} Phononen involviert. In den Ultraschall-Beispiel oben laufen 2 Phononen ein und ein drittes wird erzeugt und läuft aus, mit $\omega_\text{out}  = \omega_\text{in} + \omega_{US}$. Genauso ist auch möglich, dass ein Phonon einläuft, und zwei neue unter Energie- und Impulserhaltung auslaufen ($\omega_\text{in}  = \omega_\text{out} + \omega_{US}$). Beide Richtungen zusammen begrenzen die mittlere freie Weglänge eines Phonons. Es ist aber ein Wechselspiel zwischen Erzeugung und Vernichtung von Phononen. Wir nehmen nun an, dass sich die Energie nicht sehr ändert, also $\omega_\text{in}  = \omega_\text{out} = \omega$.
@@ -207,10 +327,11 @@ Dieser Effekt ist nicht temperaturabhängig, kann also nicht helfen, die Tempera
 
 % weil für tiefe Temperaturen das Integral konstant ist.
 
+\section{Phonon--Phonon--Streuung}
 
 Auch die Phonon--Phonon--Wechselwirkung kann die freie Weglänge begrenzen, indem zwei einfallende Phononen in ein neues umgewandelt werden. Aus der Sicht eines der einfallenden Phononen ist die Streuwahrscheinlichkeit proportional zur Dichte $n(T)$ der anderen Phononen, also erwarten wir
 \begin{equation}
-    \ell \propto \frac{1}{n(T)} \quad .
+    \ell \propto \frac{1}{n(T)} \quad . \label{eq:1_ell_n}
 \end{equation}
 
 
@@ -219,7 +340,8 @@ Bei der Streuung von Phononen in einem Kristall muss man allerdings den reziprok
 \begin{equation}
     \mathbf{k}_1 +  \mathbf{k}_2 =  \mathbf{k}_3 +  \mathbf{G}_{hkl}  \quad .
 \end{equation}
-Der reziproken Gittervektor $\mathbf{G}_{hkl}$ meint eine (unendliche) Menge von Vektoren, die sich aus den Linearkombinationen der primitiven Einheitsvektoren mit den Koeffizienten $h,k,l$ zusammensetzt. Damit unterscheiden wir den \emph{Normalprozess} ($\mathbf{G} = 0$) vom \emph{Umklappprozess} ($\mathbf{G} \neq 0$). Im Normalprozess gilt die Impulserhaltung in der strengen Form wie im Vakuum. Bei einem Gas von Phononen bleibt der Gesamtimpuls dann aber erhalten. Die Drift-Geschwindigkeit der Phononen kann sich nicht ändern und dieser Fall trägt nicht zu einem Wärmewiderstand bei.
+Der reziproken Gittervektor $\mathbf{G}_{hkl}$ meint eine (unendliche) Menge von Vektoren, die sich aus den Linearkombinationen der primitiven Einheitsvektoren mit den Koeffizienten $h,k,l$ zusammensetzt. 
+
 
 \begin{marginfigure}
     \inputtikz{\currfiledir umklapp}
@@ -227,25 +349,46 @@ Der reziproken Gittervektor $\mathbf{G}_{hkl}$ meint eine (unendliche) Menge von
    \label{fig:1_umklapp}
 \end{marginfigure}
 
-Beim Umklappprozess kann sich aber die Richtung ändern. Die Summe $ \mathbf{k}_1 +  \mathbf{k}_2 $ kann gerade über die erste Brillouin-Zone hinaus reichen, wird durch $\mathbf{G}$ zurück verschoben und kann dann entgegen der ursprünglichen Vektoren zeigen (siehe Abbildung~\ref{fig:1_umklapp}). Damit ändert sich der Gesamtimpuls des Phononen-Gases, was einem Wärmewiderstand entspricht.
+Bei der Impulserhaltung unterscheiden wir den \emph{Normalprozess} ($\mathbf{G} = 0$) vom \emph{Umklappprozess} ($\mathbf{G} \neq 0$). Im Normalprozess gilt die Impulserhaltung in der strengen Form wie im Vakuum. Bei einem Gas von Phononen bleibt der Gesamtimpuls dann aber erhalten.  Die Drift-Geschwindigkeit der Phononen kann sich nicht ändern. Es wird keine Netto-Wärmestrom verhindert und dieser Fall trägt nicht zu einem Wärmewiderstand bei. 
+
+Beim Umklappprozess (U-Prozess) kann sich aber die Richtung ändern. Die Summe $ \mathbf{k}_1 +  \mathbf{k}_2 $ kann gerade über die erste Brillouin-Zone hinaus reichen, wird durch $\mathbf{G}$ zurück verschoben und kann dann entgegen der ursprünglichen Vektoren zeigen (siehe Abbildung~\ref{fig:1_umklapp}). Damit ändert sich der Gesamtimpuls des Phononen-Gases, was einem Wärmewiderstand entspricht.
 
 \begin{questions} 
-    \item Zeigt Abbildung \ref{fig:1_umklapp} den Realraum oder den reziproken Raum?  Wie sieht das im anderen Raum aus?
-    \item Wie kommt es, dass hier die Impulserhaltung verletzt ist?
+    \item Zeigt Abbildung %\ref{fig:1_umklapp} 
+    den Realraum oder den reziproken Raum?  Wie sieht das im anderen Raum aus?
+    \item Wie kommt es, dass hier die Impulserhaltung (scheinbar) verletzt ist?
 \end{questions}
      
+
+    % \begin{itemize}
+    %   \item \textbf{Antwort:} In der Regel stellt man Umklappprozesse (U-Prozesse) in der \emph{reziproken} Raumdarstellung (\(\mathbf{k}\)-Raum) dar, weil das dortige Phononenbild direkt mit den Wellenvektoren arbeitet. Die Abbildung in der Frage zeigt, wie \(\mathbf{k}_1 + \mathbf{k}_2\) "aus der ersten Brillouin-Zone herausragt" und dann mithilfe eines reziproken Gittervektors \(\mathbf{G}\) \emph{zurückgefaltet} wird.\newline
+    %   \item Im \emph{Realraum} würde man dagegen die Schwingung selbst bzw. "Phonon-Kollisionsprozesse" betrachten. Man sähe beispielsweise die Überlagerung zweier elastischer Wellen, aber es gäbe dort keinen Vektor \(\mathbf{G}\). Stattdessen würde man die Änderung des Schwingungsmusters (Ausbreitungsrichtung) an den Gitterdefekten oder durch Wechselwirkung im Kristall beobachten.
+    % \end{itemize}
+    
+    % \item \textbf{Wie kommt es, dass hier die Impulserhaltung (scheinbar) verletzt ist?}
+    % \begin{itemize}
+    %   \item \textbf{Antwort:} Physikalisch wird der \emph{Gesamtimpuls} des Systems (Phononen \emph{plus} Kristallgitter) \emph{erhalten}. Das Gitter selbst kann einen reziproken Gittervektor \(\mathbf{G}\) "aufnehmen" oder "abgeben".\newline
+    %   \item In einem unendlich ausgedehnten Kristall existieren unendlich viele mögliche \(\mathbf{G}\)-Vektoren, welche die "Impulsbilanz" im \(\mathbf{k}\)-Raum umklappen, ohne die \emph{physikalische} Impulserhaltung zu verletzen. Man sagt: \(\mathbf{k}\) wird nur "modulo \(\mathbf{G}\)" erhalten.\newline
+    %   \item Daher ist die Impulserhaltung an die periodische Struktur des Kristalls angepasst und wird mathematisch durch
+    %   \[
+    %     \mathbf{k}_1 + \mathbf{k}_2 = \mathbf{k}_3 + \mathbf{G},
+    %   \]
+    %   statt durch \(\mathbf{k}_1 + \mathbf{k}_2 = \mathbf{k}_3\). Dies \emph{scheint} zunächst einer üblichen Impulserhaltung zu widersprechen, wird jedoch durch das Gitter (bzw. "Gitterimpuls") ausgeglichen.
+    % \end{itemize}
+    % \end{enumerate}
+
 
 \section{Temperaturabhängigkeit des Umklappprozesses}
 
 Damit der Umklappprozess stattfindet, muss
 \begin{equation}
-    | \mathbf{k}_1 +  \mathbf{k}_2| \ge \frac{1}{2} | \mathbf{G} | \quad ,
+    | \mathbf{k}_1 +  \mathbf{k}_2| \ge \frac{1}{2} | \mathbf{g} | \quad ,
 \end{equation}
-wobei $\mathbf{G}$ hier den kleinsten reziproken Gittervektor meint. Wir benötigen die Energie der Phononen mit solchen Impulsen $\mathbf{k}_i$. Dazu nehmen wir das Debye-Modell an, also einen linearen Zusammenhang zwischen dem Betrag des Impulses und der Frequenz des Phonons und eine Debye-Temperatur $\Theta$.  Am Rand der Brillouin-Zone haben die Phononen in diesem Modell die Energie $k_B \Theta$, so dass eine charakteristische Energie für den Einsatz des Umklappprozesses $k_B \Theta / 2$ ist. Die Besetzungsdichte bei dieser Energie ist in der Bose-Einstein-Verteilung
+wobei $\mathbf{g}$ hier den kürzesten reziproken Gittervektor aus $\mathbf{G}_{hkl}$ meint. $\mathbf{g}/2$ ist also gerade die Grenze der 1. Brillouin-Zone. Wir benötigen die Energie der Phononen mit solchen Impulsen $\mathbf{k}_i$. Dazu nehmen wir das Debye-Modell an, also einen linearen Zusammenhang zwischen dem Betrag des Impulses und der Frequenz des Phonons. Das Modell wird durch die Steigung der Dispersionsrelation bzw. die Debye-Temperatur $\Theta$ parametrisiert, die materialabhängig ist.  Am Rand der Brillouin-Zone haben die Phononen in diesem Modell die Energie $k_B \Theta$, so dass eine charakteristische Energie für den Einsatz des Umklappprozesses $k_B \Theta / 2$ ist. Die Besetzungsdichte bei dieser Energie ist in der Bose-Einstein-Verteilung
 \begin{equation}
     \braket{n} \propto \frac{1}{e^{\Theta / 2T} -1}
 \end{equation}
-und die mittlere freie Weglänge ist somit
+und die mittlere freie Weglänge ist mit Gl.  \ref{eq:1_ell_n}
 \begin{equation}
     \ell \propto e^{\Theta / 2T} -1 = 
     \left\{
@@ -256,7 +399,9 @@ und die mittlere freie Weglänge ist somit
     \right. \quad .
 \end{equation}
 
-Bei sehr tiefen Temperaturen ist also die mittlere freie Weglänge durch die Streuung an Punktdefekten begrenzt und fällt dann exponentiell mit der Temperatur ab, weil immer mehr Phononen als Streupartner hinzu kommen. Mit steigender Temperatur geht der exponentielle Abfall oberhalb der Debye-Temperatur $\Theta$ in einen $1/T$-Verlauf über.
+
+Bei sehr tiefen Temperaturen ist also die mittlere freie Weglänge nur durch die Streuung an Punktdefekten begrenzt. Dies nennt man 'ballistischen Transport'. Bei reinen Kristallen kann die freie Weglänge sehr lang werden.
+Sie fällt dann exponentiell mit steigender Temperatur ab, weil immer mehr Phononen als Streupartner hinzu kommen. Mit weiter steigender Temperatur geht der exponentielle Abfall oberhalb der Debye-Temperatur $\Theta$ in einen $1/T$-Verlauf über.
 
 
 Für die Wärmeleitfähigkeit benötigen wir noch die Temperaturabhängigkeit der Wärmekapazität $C$. Diese ist nach dem Debye-Modell proportional zu $T^3$ bei $T \ll \Theta$. Weit oberhalb $\Theta$ gilt das Dulong-Petit-Gesetz und die Wärmekapazität ist konstant. Insgesamt erhalten wir damit 
@@ -270,9 +415,10 @@ Für die Wärmeleitfähigkeit benötigen wir noch die Temperaturabhängigkeit de
     \end{matrix*}
     \right. \quad .
 \end{equation}
-Der Exponent $n$ bei $ T \ll \Theta  $ soll die genaue Temperaturabhängigkeit offen lassen. Dazu müsste man das Integral im Debye-Modell der Wärmekapazität im Bereich $T \approx \Theta$ lösen. 
+Der Exponent $n$ bei $ T \ll \Theta  $ soll die genaue Temperaturabhängigkeit offen lassen. Dazu müsste man das Integral im Debye-Modell der Wärmekapazität im Bereich $T \approx \Theta$ lösen.
 
-Für Silizium finden wir in den gemessenen Daten (Abb.~\ref{fig:1_WL_Si}) sowohl die $T^3$-Abhängigkeit bei tiefen Temperaturen, als auch die $T^{-1}$ oberhalb der Debye-Temperatur. Der Übergangsbereich ist aufwändiger zu modellieren.  Natriumfluorid (\ch{NaF}) verhält sich ähnlich (Abb.~\ref{fig:1_WL_NaF}).
+
+Für Silizium finden wir in den gemessenen Daten (Abb.~\ref{fig:1_WL_Si}) sowohl die $T^3$-Abhängigkeit bei tiefen Temperaturen, als auch die $T^{-1}$ oberhalb der Debye-Temperatur. Der Übergangsbereich ist aufwändiger zu modellieren.  Natriumfluorid (\ch{NaF}) verhält sich ähnlich (Abb.~\ref{fig:1_WL_NaF}), wenn man die etwas andere Debye-Temperatur berücksichtig.
 
 \begin{figure}
     \inputtikz{\currfiledir fig_NaF}
@@ -298,3 +444,6 @@ Für Silizium finden wir in den gemessenen Daten (Abb.~\ref{fig:1_WL_Si}) sowohl
 \vspace*{10cm}
 
 \printbibliography[segment=\therefsegment,heading=subbibliography]
+
+
+%\listofanswer
