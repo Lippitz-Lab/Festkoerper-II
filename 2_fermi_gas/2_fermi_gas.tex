@@ -1,6 +1,6 @@
 %\renewcommand{\lastmod}{\today}
 \renewcommand{\chapterauthors}{Markus Lippitz}
-\renewcommand{\lastmod}{6. Juni 2023}
+\renewcommand{\lastmod}{20. März 2025}
 
 \chapter{Fermi-Gas}
 \label{chap:fermi-gas}
@@ -13,7 +13,7 @@
 
 
 \begin{itemize}  
-\item Sie können den elektrischen Widerstand von Metallen erklären.
+\item Sie können das Konzept der Fermi-Kugel benutzen, um den elektrischen Widerstand von Metallen zu erklären.
 \item Sie können den mikroskopischen  Ursprung des Wiedemann-Franz-Gesetzes erklären, also warum die Temperaturabhängigkeit der elektrischen und  der thermischen Leitfähigkeit in Metallen so ähnlich bis identisch ist.
 
 \end{itemize}
@@ -43,7 +43,7 @@ In diesem Kapitel bildet der Kristall ein großes Kastenpotential, aber die Kern
 
 \section{Freies Elektronengas}
 
-In beispielsweise Alkali-Metallen sind die meisten Elektronen an 'ihren' Atomkern gebunden und nur sehr wenige Elektronen pro Atomkern tragen zur Bindung bei. Diese Elektronen sehen nicht das vollständige Coulomb-Potential der stark positiv geladenen Atomrümpfe. Die gebundenen Elektronen schirmen dies ab, so dass nur ein schwaches und räumlich eher konstantes Potential verbleit. In diesem Potential bewegen sich die Valenz-Elektronen der Alkali-Atome wie ein Gas. Man spricht daher von freien Elektronengas oder auch Fermi-Gas.
+In beispielsweise Alkali-Metallen sind die meisten Elektronen an 'ihren' Atomkern gebunden und nur sehr wenige Elektronen pro Atomkern tragen zur Bindung bei. Diese Elektronen sehen nicht das vollständige Coulomb-Potential der stark positiv geladenen Atomrümpfe. Die gebundenen Elektronen schirmen dies ab, so dass nur ein schwaches und räumlich beinahe konstantes Potential verbleit. In diesem Potential bewegen sich die Valenz-Elektronen der Alkali-Atome wie ein Gas. Man spricht daher von freien Elektronengas oder auch Fermi-Gas.
 
 Wir könnten die freien Elektronen als Teilchen im 3D-Kasten modellieren. Die Schrödingergleichung innerhalb des Kastens beinhaltet dann nur noch die kinetische Energie
 \begin{equation}
@@ -63,7 +63,7 @@ Die Gleichungen werden angenehmen, wenn wir (wie bei den Phononen) periodische R
 \begin{equation}
     \psi(\mathbf{r}) =  \psi(\mathbf{r} + L \mathbf{\hat{e}_i}) \quad ,
 \end{equation}
-mit $\mathbf{\hat{e}_i}$ einem kartesischen Einheitsvektor.
+mit $\mathbf{\hat{e}_i}$ einem kartesischen Einheitsvektor. Damit umgehen wir auch das Problem, was außerhalb des Kastens eigentlich passiert.
 Wie bei den Phononen sind die möglichen Werte des Wellenvektors  $\mathbf{k}$ diskret
 \begin{equation}
     k_i = \frac{2 \pi}{L} \, m_i \quad \text{mit} \quad i = x,y,z \quad . \label{eq:2:k_randbed} 
@@ -73,6 +73,8 @@ Wie bei den Phononen sind die möglichen Werte des Wellenvektors  $\mathbf{k}$ d
 
 
 \section*{Zustandsdichte}
+
+Die Zustandsdichte beschreibt die Anzahl der Zustände pro Energieintervall, manchmal zusätzlich pro Volumen. Durch die Quantisierung der Wellenfunktion im Kasten sind nur noch diskrete Energien möglich. Je größer der Kasten wird, desto dichter liegen diese diskreten Niveaus beieinander. Man kann sie dann abzählen und eine Dichte (Anzahl pro Energieintervall) angeben. Der Weg zur Berechnung einer Zustandsdichte ist eigentlich immer derselbe, den Sie schon bei den Phononen gesehen hatten: Man beginnt im reziproken Raum, weil es dort einfach ist, und wandelt das dann in eine Energie um.
 
 Die Zustandsdichte im reziproken Raum ist konstant:
 \begin{equation}
@@ -91,7 +93,7 @@ Jetzt müssen wir noch berücksichtigen, dass wir jeden Zustand nach dem Pauli-P
 \begin{equation}
     D(E) dE = 2 D'(E) dE =  \frac{(2m)^{3/2}}{2 \pi^2 \hbar^3} \, V \,  \sqrt{E} \, dE \quad .
 \end{equation}
-
+Damit haben wir die Zustandsdichte von freien Elektronen.
 
 \begin{marginfigure}
     \inputtikz{\currfiledir fermi-gas}
@@ -106,11 +108,12 @@ Jetzt müssen wir noch berücksichtigen, dass wir jeden Zustand nach dem Pauli-P
 
 \section*{Fermi-Energie und Fermi-Kugel}
 
-Elektronen sind Fermionen, haben einen halbzahligen Spin und unterliegen  dem Pauli-Prinzip und der Fermi-Dirac-Statistik. Im thermischen Gleichgewicht ist also jeder Zustand besetzt wie 
+In Metallen, insbesondere Alkali-Metallen sind die Eigenschaften maßgeblich durch die freien Elektronen bestimmt.
+Elektronen sind Fermionen, haben einen halbzahlgen Spin und unterliegen  dem Pauli-Prinzip und der Fermi-Dirac-Statistik. Das macht die Besetzung der Zustände besonders. Im thermischen Gleichgewicht ist  jeder Zustand besetzt wie 
 \begin{equation}
     f(E) = \frac{1}{e^{(E-\mu)/k_B T} + 1}
 \end{equation}
-mit dem chemischen Potential $\mu$. Die Fermi-Dirac-Verteilung ist (um das Pauli-Verbot zu erfüllen) maximal Eins. Wenn $f(E) \ll 1$, also $E- \mu \gg k_B T$, dann geht sie in die Boltzmann-Verteilung über.
+mit dem chemischen Potential $\mu$. Die Fermi-Dirac-Verteilung ist (um das Pauli-Verbot zu erfüllen) maximal Eins. Wenn $f(E) \ll 1$, also $E- \mu \gg k_B T$, dann geht sie in die Boltzmann-Verteilung über. Dies wird später bei den Halbleitern wichtig werden, da dort die interessanten Energien $E$ relativ weit weg von $^mu$ sind.
 
 \begin{marginfigure}
     \inputtikz{\currfiledir FD_stat}
@@ -134,8 +137,9 @@ Bei $E = \mu$ geht die Fermi-Dirac-Verteilungsfunktion immer durch $1/2$. Am abs
 Damit ist die Fermi-Energie \emph{nicht} temperaturabhängig. Später werden wir den Begriff 'Fermi-Niveau' einführen, der nur ein anderes Wort für chemisches Potential ist und damit temperaturabhängig.
 
 
-Wir berechnen die Fermi-Energie $E_F$, indem wir bei $T=0$ nach und nach Elektronen in unseren Kasten einfüllen, also 
-die Zustandsdichte $D(E)$ soweit aufintegrieren, bis wir $N$ Elektronen untergebracht haben. Die Elektronendichte $n$ ist also\sidenote{Analog kann man ein temperaturabhängiges chemisches Potential ausrechnen. Siehe \cite{Hunklinger2014} oder \cite{Gross_FK}.  }
+Wir berechnen die Fermi-Energie $E_F$, indem wir bei $T=0$ nach und nach Elektronen in unseren Kasten einfüllen.
+Bei $T=0$ füllen die Elektronen nach dem Pauli-Prinzip die tiefsten Zustände auf, so dass im Impulsraum eine gefüllte Kugel entsteht. Die Energie des höchsten gefüllten Zustandes ist die Fermi-Energie.
+Wir integrieren also die Zustandsdichte $D(E)$ soweit auf, bis wir $N$ Elektronen untergebracht haben. Die Elektronendichte $n$ ist also\sidenote{Analog kann man ein temperaturabhängiges chemisches Potential ausrechnen. Siehe \cite{Hunklinger2014} oder \cite{Gross_FK}.  }
 \begin{equation}
     n = \frac{N}{V} = \int_0^{E_F} D(E) \, dE \quad .
 \end{equation}
@@ -147,10 +151,11 @@ Alle Komposita mit 'Fermi-' sind entsprechend definiert. Der Fermi-Impuls $k_F$ 
 \begin{equation}
     k_F = (3 \pi^2 \, n)^{1/3} \quad .
 \end{equation}
-Die \emph{Fermi-Kugel} ist die Kugel im reziproken Raum mit dem Radius $k_F$. Am absoluten Nullpunkt sind also alle Elektronen innerhalb dieser Kugel. Später werden wir Beispiele dafür sehen, dass die Form keine Kugel mehr ist, sondern durch eine mehr oder weniger komplexe \emph{Fermi-Fläche} eingeschlossen wird.
+Die \emph{Fermi-Kugel} ist die Kugel im reziproken Raum mit dem Radius $k_F$. Am absoluten Nullpunkt sind also alle Elektronen innerhalb dieser Kugel. Während die Fermi-Fläche im freien Elektronengas kugelförmig ist, wird sie in realen Materialien durch die Bandstruktur des Kristalls verzerrt. Dies führt zu komplexen \emph{Fermi-Flächen}, welche die elektronischen Transporteigenschaften bestimmen.
 
 
-Die Fermi-Energie von den hier betrachteten Metallen liegt typischerweise im Bereich von einigen Elektronvolt und die Fermi-Temperatur damit bei einigen 10~000~K, weit jenseits der Schmelztemperatur. Für Elektronen im Festkörper besteht also kein so großer Unterschied zum absoluten Nullpunkt. Die Stufenfunktion der Fermi-Dirac-Verteilung wird etwas abgerundet. Wenn man es maßstabsgerecht zeichnen würde, dann könnte man aber bei Raumtemperatur keinen Unterschied erkennen.
+Bei Metallen trägt jedes Atom ein (oder mehr) Elektronen bei. Die Elektronendichte ist also etwa $n \approx 10^{28}$~m$^3$.
+Die Fermi-Energie von den hier betrachteten Metallen liegt typischerweise im Bereich von einigen Elektronvolt und die Fermi-Temperatur damit bei einigen 10~000~K, weit jenseits der Schmelztemperatur. Für Elektronen im Festkörper besteht also kein so großer Unterschied zum absoluten Nullpunkt. Die Stufenfunktion der Fermi-Dirac-Verteilung wird etwas abgerundet. Wenn man es maßstabsgerecht zeichnen würde, dann könnte man aber bei Raumtemperatur keinen Unterschied erkennen. In Halbleitern später ist die Ladungsträgerdichte viel kleiner.
 
 
 \begin{questions} 
@@ -163,11 +168,13 @@ Die Fermi-Energie von den hier betrachteten Metallen liegt typischerweise im Ber
 
 \section*{Wärmekapazität der freien Elektronen}
 
+Neben den Gitterschwingungen (Phononen) tragen auch Elektronen zur Wärmekapazität von Metallen bei. Da die Elektronendichte in Metallen hoch ist, würde man erwarten, dass dieser Beitrag groß ist. Es zeigt sich jedoch, dass nur ein kleiner Teil der Elektronen thermisch angeregt werden kann -- eine direkte Folge der Fermi-Dirac-Statistik.
+
 Analog zum Vorgehen bei den Phononen berechnen wir die Wärmekapazität der Elektronen als Ableitung der inneren Energie nach der Temperatur. Wir beginnen\sidenote{\cite{Hunklinger2014} folgend} mit der spezifischen inneren Energie $u$
 \begin{equation}
     u = \frac{U}{V} = \int_0^\infty E \, D(E) \, f(E) \,  dE \quad .
 \end{equation}
-Am absoluten Nullpunkt läuft das Integral nur bis $E_F$ und $f(E)$ ist so einfach, dass wir es weglassen können
+Am absoluten Nullpunkt geht $f(E)$  in die Heavyside-Funktion über, so dass wir einfach das Integral nur bis $E_F$ laufen lassen
 \begin{equation}
     u_0 = u(T=0) = \int_0^{E_F} E \, D(E) \, dE = \frac{3n}{5} \, k_B \, T_F \quad .
 \end{equation}
@@ -175,7 +182,7 @@ Bei einem klassischen freien Gas von Teilchen hätten wir
 \begin{equation}
     u_\text{klassisch} = \frac{3 n}{2} \, k_B \, T \quad \text{und} \quad c_\text{klassisch} = \frac{3 n}{2} \, k_B  \quad .
 \end{equation}
-Weil $T_F \gg T$ ist die innere Energie eines freien Elektronengases sehr hoch, was am Ende ein Effekt des Pauli-Verbots ist. Wir müssen zu sehr hochenergetischen Zuständen ausweichen, um noch Elektronen zufügen zu können.
+Weil $T_F \gg T$ sind viele Elektronen schon bei Energie deutlich größer als $k_B T$. Dies ist eine Konsequenz des  Pauli-Verbots. Damit ist die  innere Energie eines freien Elektronengases sehr hoch. Wir müssen zu sehr hochenergetischen Zuständen ausweichen, um noch Elektronen zufügen zu können.
 
 \begin{marginfigure}
     \inputtikz{\currfiledir fermi-dirac}
@@ -188,14 +195,13 @@ Die Ableitung $\partial u / \partial T$ ist aufwändig. Lehrbücher zeigen ein p
 \begin{equation}
     c_\text{geschätzt} = c_\text{klassisch}  \, \frac{T}{T_F} = \frac{3 n \, k_B}{2}  \, \frac{T}{T_F} \quad .
 \end{equation}
-Eine etwas bessere Rechnung ergibt einen um den Faktor $\pi^2/3$ größeren Wert
+Eine etwas bessere Rechnung\sidenote{Integration der Fermi-Dirac-Statistik und Taylor-Reihe um $E_F$} ergibt einen um den Faktor $\pi^2/3$ größeren Wert
 \begin{equation}
     c_\text{el} = \frac{\pi^2 \, n \, k_B}{2}  \, \frac{T}{T_F} = \gamma T \label{eq:2_WK_elek}
 \end{equation}
 mit der Sommerfeld-Konstanten $\gamma$.
 
-
-Zusammen mit dem Debye-Modell für die Phononen können wir so nun auch die Wärmekapazität von Metallen beschreiben. Wir erhalten
+In Metallen tragen sowohl Phononen als auch Elektronen zur Wärmekapazität bei. Während die Phononen bei niedrigen Temperaturen mit dem Debye-Modell $T^3$-abhängig sind und bei hohen Temperaturen das Dulong-Petit-Gesetz erreichen, ist der Beitrag der Elektronen linear mit $T$. Die gesamte Wärmekapazität ist somit die Summe dieser beiden Terme:
 \begin{equation}
     c_\text{ges} = \gamma \, T \, + \, 
         \left\{ 
@@ -215,7 +221,8 @@ mit $\beta$ aus dem Debye-Modell und $n_A$ der Teilchenzahl-Dichte der Atom-Kern
 \end{marginfigure}
 
 
-Dieses Modell beschreibt die Wärmekapazität von Alkali-Metallen und anderen 'einfachen' Metallen gut (Abb.~\ref{fig:2_Cu_WK}). In anderen Fällen finden sich deutliche Abweichung, beispielsweise bei Nickel. Hier ist die gemessene Wärmekapazität um etwa den Faktor 15 höher als die wie oben berechnete. Bei den Alkali-Metallen ist die Annahme des freien Elektronengases gerechtfertigt. Bei Nickel tragen aber Elektronen zur Wärmekapazität bei, die aus atomaren d-Orbitalen stammen, daher eine Vorzugsrichtung haben und keine isotrope Zustandsdichte im Kristall besitzen. Dies führt zu einer hohen Zustandsdichte an der Fermi-Energie und so zu einer erhöhten Wärmekapazität.\sidenote{siehe \cite{Hunklinger2014}, Abbildung 8.9}
+Dieses Modell beschreibt die Wärmekapazität von Alkali-Metallen und anderen 'einfachen' Metallen gut (Abb.~\ref{fig:2_Cu_WK}). In anderen Fällen finden sich deutliche Abweichung, beispielsweise bei Nickel. Hier ist die gemessene Wärmekapazität um etwa den Faktor  15 höher als die wie oben berechnete. Bei den Alkali-Metallen ist die Annahme des freien Elektronengases gerechtfertigt. Bei Nickel tragen aber Elektronen zur Wärmekapazität bei, die aus atomaren d-Orbitalen stammen, daher eine Vorzugsrichtung haben und keine  isotrope Zustandsdichte im Kristall besitzen. Dies führt zu einer hohen Zustandsdichte an der Fermi-Energie und einem größeren  elektronischen Beitrag zur Wärmekapazität, da mehr Zustände in einem schmalen Energiebereich $k_B T$ thermisch angeregt werden können. \sidenote{siehe \cite{Hunklinger2014}, Abbildung 8.9}
+
 
 
 \begin{questions} 
@@ -228,11 +235,15 @@ Dieses Modell beschreibt die Wärmekapazität von Alkali-Metallen und anderen 'e
 
 \section{Drude-Modell}
 
-Lassen Sie uns zunächst das Drude-Modell besprechen. Dies liefert das Ohm'sche Gesetz, also ein richtiges Ergebnis, aber aus heutiger Sicht aus den falschen Gründen. Es wurde 1900 von Paul Drude eingeführt. Die Annahmen sind ein freies Elektronengas, das nur mit den  Atomrümpfen, aber nicht miteinander stößt. Ohne externes Feld bewegen die Elektronen sich thermisch, aber ohne Vorzugsrichtung. Der Mittelwert über alle (vektoriellen) Geschwindigkeiten des Elektronengases ist also $\braket{\mathbf{v}} = 0$. Das externe elektrische Feld $\mathcal{E}$ überlagert der thermischen Bewegung eine Driftbewegung mit der Geschwindigkeit $\mathbf{v}_d = \braket{\mathbf{v}}$. Nach einem Abschalten des Feldes würde die Driftbewegung durch die Stöße langsam zum Erliegen kommen. Die Bewegungsgleichung ist also\footcite{Singleton_band_theory,Simon_solid_state_basics}
+Die herausragende Eigenschaft der Metalle ist ihre elektrische Leitfähigkeit. Die Leitfähigkeit ist hoch, aber nicht unendlich. Die Frage ist also, was die Bewegung der Elektronen so einschränkt, dass die Leitfähigkeit begrenzt bleibt. Dies wurde erstmals von Paul Drude um 1900 erklärt. Das Drude-Modell liefert das Ohmsche Gesetz, also ein richtiges Ergebnis, aber aus heutiger Sicht aus den falschen Gründen. Erst Arnold Sommerfeld und Hans Bethe brachten um 1933 die Quantenmechanik ins Spiel und lieferten die moderne Erklärung.
+
+Die Annahmen des Drude-Modells sind ein freies Elektronengas, das nur mit den  Atomrümpfen, aber nicht miteinander stößt. Ohne externes Feld bewegen die Elektronen sich thermisch, aber ohne Vorzugsrichtung. Der Mittelwert über alle (vektoriellen) Geschwindigkeiten des Elektronengases ist also $\braket{\mathbf{v}} = 0$. Das externe elektrische Feld $\mathcal{E}$ überlagert der thermischen Bewegung eine Driftbewegung mit der Geschwindigkeit $\mathbf{v}_d = \braket{\mathbf{v}}$. Nach einem Abschalten des Feldes würde die Driftbewegung durch die Stöße langsam zum Erliegen kommen. Die Bewegungsgleichung ist also\footcite{Singleton_band_theory,Simon_solid_state_basics}
 \begin{equation}
    m \frac{d \braket{\mathbf{v}} }{dt} = -e \, \mathcal{E} - m \frac{\braket{\mathbf{v}} }{\tau} \quad .
 \end{equation}
-$\tau$ ist dabei die mittlere Zeit zwischen zwei Stößen. Im stationären Fall 
+$\tau$ ist dabei die mittlere Zeit zwischen zwei Stößen, also ein Maß für die Wechselwirkung der Elektronen mit dem Gitter. Sie hängt von der Temperatur, dem Material und seiner Reinheit ab. In Metallen beträgt $\tau \approx 10$~fs. Die Geschwindigkeit eines Elektrons bei $E_F$ beträgt etwa $10^6$~m/s, so dass die mittlere freie Weglänge einige 10~nm beträgt.
+
+Im stationären Fall der Driftbewegung
 ($d \braket{\mathbf{v}} / dt = 0$) erhält man   
 \begin{equation}
    \mathbf{v}_d =\braket{\mathbf{v}} =  - \frac{e \tau}{m} \mathcal{E} = - \mu \mathcal{E} 
@@ -251,10 +262,10 @@ Dieses Modell ignoriert völlig das Pauli-Prinzip und dass es eine Fermi-Dirac-V
 
 \section{Drude-Sommerfeld-Modell}
 
-Arnold Sommerfeld entwickelte eine verbesserte Theorie. Die Elektronen sind quasi frei, es gilt die Schrödinger-Gleichung und das Pauli-Prinzip. Die Fermi-Fläche sei eine Kugel\sidenote{Was in diesem Kapitel trivial ist, später aber bedeutet, dass nur der Betrag des Wellenvektors $k$ in die Energie eingeht und die Fermi-Fläche den Rand der Brillouinzone nicht berührt.}.
-Ohne externes Feld fliest im thermischen Gleichgewicht kein Strom, weil die Fermi-Kugel um $\mathbf{k} = 0$ zentriert ist. Weil wir Isotropie angenommen haben gibt es auch in nur teilweise gefüllten Bändern für jedes Elektron mit $\mathbf{k}$ eines mit  $-\mathbf{k}$.
+Arnold Sommerfeld und Hans Bethe entwickelten eine verbesserte Theorie. Die Elektronen sind quasi frei, es gilt die Schrödinger-Gleichung und das Pauli-Prinzip. Die Fermi-Fläche sei eine Kugel\sidenote{Was in diesem Kapitel trivial ist, später aber bedeutet, dass nur der Betrag des Wellenvektors $k$ in die Energie eingeht und die Fermi-Fläche den Rand der Brillouinzone nicht berührt.}.
+Ohne äußeres Feld fließt im thermischen Gleichgewicht kein Strom, da die Fermikugel um $\mathbf{k} = 0$ zentriert ist. Da wir Isotropie angenommen haben gibt es für jedes Elektron mit $\mathbf{k}$ eines mit $-\mathbf{k}$.
 
-Eine externes Feld $\bm{\mathcal{E}}$ bewegt  jedes Elektron und damit die gesamte Fermikugel kontinuierlich immer weiter von der Gleichgewichtsposition weg:
+Eine externes Feld $\bm{\mathcal{E}}$ beschleunigt jedes Elektron, ändert also zeitlich kontinuierlich den Impuls der Elektronen. Damit bewegt sich  die gesamte Fermikugel kontinuierlich immer weiter von der Gleichgewichtsposition weg:
 \begin{equation}
    \hbar \frac{d \mathbf{k}}{dt} = -e \bm{\mathcal{E}} = \mathbf{F} \quad .
 \end{equation}
@@ -262,28 +273,29 @@ Streuprozesse können dann aber Elektronen von 'vorne' an der Fermikugel in den 
 \begin{equation}
  \delta k = \frac{-e \tau \mathcal{E}}{\hbar}     
 \end{equation}  
-aus dem Ursprung verschoben sein. Nur der Anteil $\delta k / k_F$ der Elektronen trägt zum Ladungstransport bei. Das sind aber die an der Fermi-Kante, also die schnellsten von allen. Für die Leitfähigkeit ergibt das Sommerfeld-Modell 
+aus dem Ursprung verschoben sein. Nur der kleine Anteil $\delta k / k_F$ der Elektronen trägt zum Ladungstransport bei. Das sind aber die an der Fermi-Kante, also die schnellsten von allen. Für die Leitfähigkeit ergibt das Sommerfeld-Modell 
 \begin{equation}
    \sigma = n e \mu  = \frac{n e^2 }{m} \, \tau(E_F)
 \end{equation}
 mit $\tau(E_F)$ der Stoßzeit der Elektronen an der Fermi-Kante. Der Unterschied zum Drude-Modell besteht nur in einer etwas anderen Bedeutung zweier Parameter. Damit ist nicht überraschend, dass auch das Drude-Modell die experimentellen Ergebnisse richtig wiedergibt.
 
+Obwohl das Sommerfeld-Modell die gleiche Formel für die Leitfähigkeit liefert, ist die physikalische Interpretation völlig unterschiedlich: Während das Drude-Modell davon ausgeht, dass alle Elektronen gleichermaßen zur Stromleitung beitragen, zeigt das Sommerfeld-Modell, dass nur die Elektronen an der Fermikante tatsächlich relevant sind.
+
 \begin{questions} 
-    \item Erklären Sie, warum das Drude- und das Sommerfeld-Modell zum (scheinbar ?) gleichen Ergebnis kommen.
+    \item Warum ergeben das Drude-Modell und das Sommerfeld-Modell trotz völlig unterschiedlicher physikalischer Annahmen die gleiche Formel für die elektrische Leitfähigkeit?
 \end{questions}
-    
-    
+
 
 
 \section{Temperaturabhängigkeit der elektrischen Leitfähigkeit}
 
 Die elektrische Leitfähigkeit $\sigma$ ist temperaturabhängig über die mittlere Stoßzeit $\tau$. Elektronen können mit verschiedenen anderen Partnern streuen (stoßen): mit Phononen, mit Defekten und mit der Probenoberfläche. Dabei addieren sich die Streu-Raten, also die reziproken Stoß-Zeiten. Nur die Streuung an Phononen ist temperaturabhängig. Die anderen Effekte führen zu einem konstanten Wert, der bei tiefen Temperaturen erreicht wird, wenn keine Phononen besetzt sind.
 
-Bereits in Kapitel 1 hatten wir die mittlere freie Weglänge definiert als (Gl. \ref{eq:1_def_weglaenge} )
+Bereits in Kapitel 1 hatten wir die mittlere freie Weglänge definiert als (Gl. \ref{eq:1_def_weglaenge})
 \begin{equation}
    \ell = \frac{1}{n \, \sigma_{st}} = \tau \, v_F \quad ,
 \end{equation}
-wobei wir hier den Streuquerschnitt $\sigma_{st}$ genannt haben, um ihn von der Leitfähigkeit $\sigma$ zu unterscheiden. $\sigma_{st}$ ist für unsere Zwecke konstant. Elektronen bewegen sich mit der Fermi-Geschwindigkeit $v_F$, die so den Zusammenhang zwischen Stoßzeit und Weglänge herstellt.
+wobei wir hier den Streuquerschnitt $\sigma_{st}$ genannt haben, um ihn von der Leitfähigkeit $\sigma$ zu unterscheiden. $\sigma_{st}$ ändert sich bei diesen Temperaturen kaum, ist also für unsere Zwecke konstant. Elektronen bewegen sich mit der Fermi-Geschwindigkeit $v_F$, die so den Zusammenhang zwischen Stoßzeit und Weglänge herstellt.
 
 Bei einer Temperatur $T$ (viel) größer als der Debye-Temperatur $\Theta$ ändert sich die Dichte $n$ der Phononen wie $T/\Theta$, so dass wir für die Leitfähigkeit $\sigma$ erhalten
 \begin{equation}
@@ -294,8 +306,13 @@ Bei einer Temperatur $T$ (viel) größer als der Debye-Temperatur $\Theta$ ände
       \end{matrix}
    \right.  \quad .
 \end{equation}
-Der Übergangsbereich ist wie immer aufwändig und durch das Bloch-Grüneisen-Gesetz beschrieben, das einen $T^{-5}$-Term liefert.\sidenote{Siehe z.B. \cite{Hunklinger2014}}
+Bei hohen Temperaturen ist die Leitfähigkeit also völlig durch die Dichte $n$ der Phononen bestimmt.
+Der Übergangsbereich ist wie immer aufwändig (Dichte der thermisch angeregten Phononen) und durch das Bloch-Grüneisen-Gesetz beschrieben, das einen $T^{-5}$-Term liefert.\sidenote{Siehe z.B. \cite{Hunklinger2014}}
 
+
+\begin{questions}
+    \item Warum nimmt die elektrische Leitfähigkeit $\sigma$ bei hohen Temperaturen ($T \gg \Theta$) mit $1/T$ ab, obwohl sich die Elektronendichte $n$ nicht ändert? Welche Rolle spielt die mittlere Stoßzeit $\tau$ dabei
+\end{questions}
 
 \section{Thermische Leitfähigkeit der Elektronen}
 
@@ -310,12 +327,17 @@ wobei jetzt alle Größen als elektronische zu verstehen sind, also $K$ die elek
    K  =  \frac{1}{3} \frac{\pi^2 \, n \, k_B}{2}  \, \frac{T}{T_F}  \, v_F \, \ell
    =     \frac{\pi^2 }{3} \frac{ n \, k_B^2 \tau}{m}  \, T 
 \end{equation}
-mit $T_F = m v_F^2 / (2 k_B)$. Die Temperaturabhängigkeit der Stoßzeit $\tau$ der Elektronen mit Phononen muss aber wie oben mit berücksichtigt werden. 
+mit $T_F = m v_F^2 / (2 k_B)$. Die Temperaturabhängigkeit der Stoßzeit $\tau$ der Elektronen mit Phononen muss aber wie oben mit berücksichtigt werden. Abgesehen davon ist die Wärmeleitfähigkeit $K$ proportional zur Temperatur $T$.
 
+
+\begin{questions}
+    \item Warum tragen nur Elektronen nahe der Fermi-Energie $E_F$ zur Wärmeleitung bei, obwohl die Gesamtheit der Elektronen die Energie speichert? Welche Parallelen gibt es zur elektrischen Leitfähigkeit?
+
+\end{questions}
 
 \section{Wiedemann-Franz-Gesetz}
 
-Da in der Temperaturabhängigkeit der elektrischen und auch der thermischen Leitfähigkeit die Temperaturabhängigkeit der Elektron-Phonon-Streuung auftaucht, ist es nicht verwunderlich, dass beide Leitfähigkeiten miteinander in Beziehung stehen. Das ist das Wiedemann-Franz-Gesetz
+Da in der Temperaturabhängigkeit der elektrischen und auch der thermischen Leitfähigkeit die Temperaturabhängigkeit der Elektron-Phonon-Streuung in der Stoßzeit $\tau$ auftaucht, ist es nicht verwunderlich, dass beide Leitfähigkeiten miteinander in Beziehung stehen. Das ist das Wiedemann-Franz-Gesetz
 \begin{equation}
    \frac{K_{el}}{\sigma} = \frac{\pi^2}{e} \, \left( \frac{k_B}{e} \right)^2 \, T = L \, T
 \end{equation}
@@ -323,6 +345,9 @@ mit der universellen Lorenz-Zahl $L \approx 2.5 \cdot 10^{-8}$~$\Omega$WK$^{-2}$
 
 Das Drude-Modell sagt das Wiedemann-Franz-Gesetz richtig voraus. Dabei kompensieren sich allerdings der Fehler in der Wärmekapazität der Elektronen mit dem in ihrer Geschwindigkeit\sidenote{siehe \cite{Gross_FK}, Kap. 7.3.2.1}.
 
+\begin{questions}
+    \item  Warum bedeutet das Wiedemann-Franz-Gesetz, dass gute elektrische Leiter auch gute Wärmeleiter sind? 
+\end{questions}
 
 
 \newpage
