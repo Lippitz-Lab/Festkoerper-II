@@ -1,6 +1,6 @@
 %\renewcommand{\lastmod}{\today}
 \renewcommand{\chapterauthors}{Markus Lippitz}
-\renewcommand{\lastmod}{11. Mai  2023}
+\renewcommand{\lastmod}{20. März  2025}
 
 \chapter{Elektronen in Festkörpern}
 \label{chap:bandstruktur}
@@ -26,7 +26,7 @@
 
 \section{Überblick}
 
-Die zentrale Frage dieses Kapitels ist, wie das Coulomb-Potential der Atomkerne die Wellenfunktion und insbesondere die Energie-Eigenwerte der Elektronen beeinflusst. Im letzten Kapitel hatten wir schon das freie Elektronengas behandelt. Der Kristall bildet dabei ein großes Kastenpotential, aber die Kerne selbst kommen nicht vor
+Die zentrale Frage dieses Kapitels ist, wie das Coulomb-Potential der Atomkerne die Wellenfunktion und insbesondere die Energie-Eigenwerte der Elektronen beeinflusst. Im letzten Kapitel hatten wir schon das freie Elektronengas behandelt. Der Kristall bildet dabei ein großes Kastenpotential, aber die Kerne selbst kommen nicht vor.
 Wir betrachten nun zwei weitere Fälle: 
 \begin{itemize}
     \item die Näherung des (beinahe) leeren Gitters (\textit{empty lattice approximation}): die Kerne liefern ein periodisches, aber ansonsten sehr schwaches Potential
@@ -52,14 +52,14 @@ mit $\mathbf{R}$ einem Gittervektor im Realraum, also einer ganzzahligen Lineark
 \begin{equation}
     V(\mathbf{r}) = \sum_{\mathbf{G}} V_{\mathbf{G}} \, e^{i \mathbf{G} \cdot \mathbf{r} }
 \end{equation} 
-mit $\mathbf{G} = \mathbf{G}_{hkl}$ einem reziproken Gittervektor mit den ganzzahligen Koeffizienten $h,k,l$.
+mit $\mathbf{G} = \mathbf{G}_{hkl} =   h \mathbf{b}_1 + k \mathbf{b}_2 + l \mathbf{b}_3$ einem reziproken Gittervektor mit den ganzzahligen Koeffizienten $h,k,l$.
 
 
 Wir machen  für die Wellenfunktion den Ansatz einer Linearkombination von ebenen Wellen mit dem Wellenvektor $\mathbf{k}$
 \begin{equation}
     \psi(\mathbf{r}) = \sum_{\mathbf{k}} C_{\mathbf{k}} \, e^{i \mathbf{k} \cdot \mathbf{r} } \quad . \label{eq:2_psi_allg}
 \end{equation}
-Der Wellenvektor  $\mathbf{k}$ kann wie immer (siehe beispielsweise  Gl.~\ref{eq:2:k_randbed}) nur diskrete Werte annehmen. Anders als bei den Phononen kann er aber auch außerhalb der ersten Brillouin-Zone liegen, da die Elektronen-Wellenfunktion  nicht nur an Gitterpunkten physikalische Bedeutung hat. Elektronen können an 'verschiedeneren' Orten des Kristalls sein als Kerne.
+Der Wellenvektor  $\mathbf{k}$ kann wie immer (siehe beispielsweise  Gl.~\ref{eq:2:k_randbed}) nur diskrete Werte annehmen. Anders als bei den Phononen kann er aber auch außerhalb der ersten Brillouin-Zone liegen, da die Elektronen-Wellenfunktion  nicht nur an Gitterpunkten physikalische Bedeutung hat sondern im ganzen Raum. Elektronen können an 'verschiedeneren' Orten des Kristalls sein als Kerne.
 
 Nun setzen alles in die Schrödingergleichung ein
 \begin{eqnarray}
@@ -81,58 +81,56 @@ Mit $\mathbf{k} = \mathbf{k}' + \mathbf{G}$ erhalten wir
     \right]
     = 0  \quad .
 \end{equation}
-Diese Gleichung muss für jedes $\mathbf{r}$ gelten, also muss der Inhalt der Klammer für jedes $\mathbf{k}$  Null sein
+Diese Gleichung muss für jedes $\mathbf{r}$ gelten, also muss der Inhalt der Klammer für jedes $\mathbf{k}$  Null sein:
 \begin{equation}
         \left( \frac{\hbar^2 | \mathbf{k}|^2}{2m} - E \right) C_{\mathbf{k}}
     + \sum_{\mathbf{G}} V_{\mathbf{G}} \, C_{\mathbf{k}- \mathbf{G}} 
     = 0  \quad . \label{eq:3_SG_rezi}
 \end{equation}
-Dieser Satz von Gleichung ist die \emph{Schrödinger-Gleichung im reziproken Raum}, für Elektronen in einem gitterperiodischen Potential. Dies ist ein unendlich großes Gleichungssystem, weil die Summe über $\mathbf{G}$ zunächst nicht beschränkt ist. In der Praxis zeigt sich aber, dass bei Coulomb-artigen Potentialen die Fourier-Koeffizienten  $ V_{\mathbf{G}} $ des Potentials schnell mit $|\mathbf{G}|$ abfallen, so dass letztendlich doch nicht so viele Gleichungen gekoppelt sind. 
+Dieser Gleichungssystem ist die \emph{Schrödinger-Gleichung im reziproken Raum}, für Elektronen in einem gitterperiodischen Potential. Wir sehen den Wellenvektor $\mathbf{k}$ als Quantenzahl an. Für jedes $\mathbf{k}$ findet man eine Energie $E_\mathbf{k}$ und eine Wellenfunktion $\Psi_\mathbf{k}$ als Lösung der Schrödingergleichung.
+
+Das Gleichungssystem  ist zunächst unendlich groß, weil die Summe über $\mathbf{G}$ erst einmal nicht beschränkt ist. In der Praxis zeigt sich aber, dass bei Coulomb-artigen Potentialen die Fourier-Koeffizienten  $ V_{\mathbf{G}} $ des Potentials schnell mit $|\mathbf{G}|$ abfallen, so dass letztendlich doch nicht so viele Gleichungen gekoppelt sind. 
 Auch koppelt das Gleichungssystem nicht alle Koeffizienten $C_i$ miteinander, sondern nur die, die  um einen reziproken Gittervektor $\mathbf{G}$ auseinander liegen, also $C_\mathbf{k}$ mit $C_\mathbf{k \pm G'}$, $C_\mathbf{k \pm G''}$, etc. 
 
-Oben in Gl.~\ref{eq:2_psi_allg} hatten wir die Wellenfunktion $\psi$ als Linearkombination von ebenen Wellen geschrieben. Die Summe lief dabei über den vollständigen  reziproken Raum.
-Nun hat sich herausgestellt, dass nur manche Koeffizienten vorkommen, nämlich gerade die, die um $\mathbf{G}$ auseinander liegen.  Wir schreiben stattdessen mit weniger Summanden die Wellenfunktion $\psi$ 
+Daher können wir die  Wellenfunktion $\psi$ etwas 'sparsamer' schreiben. Statt die Summe in  Gl.~\ref{eq:2_psi_allg} über den gesamten reziproken Raum laufen zu lassen, also reellwertige Koeffizienten für die Linearkombination von $\mathbf{b}_i$ zuzulassen, summieren wir nun nur über Punkte des reziproken Raumes, die um ganzzahlige reziproke Gittervektoren auseinander liegen, also über viel weniger Punkte. Damit wird $\psi$
 \begin{equation}
-    \psi_\mathbf{k}(\mathbf{r}) =  \sum_{\mathbf{G}} C_{\mathbf{k}-\mathbf{G}} \, e^{i (\mathbf{k}- \mathbf{G}) \cdot \mathbf{r} } 
+    \psi_\mathbf{k}(\mathbf{r}) =  \sum_{\mathbf{G}} C_{\mathbf{k}-\mathbf{G}} \, e^{i (\mathbf{k}- \mathbf{G}) \cdot \mathbf{r} }  \quad .
 \end{equation}
-wobei der Wellenvektor $\mathbf{k}$ jetzt als Quantenzahl gesehen wird. Wir können ihn immer so wählen, dass er in der ersten Brillouinzone liegt.\sidenote{Den Rest kann man immer in die Summe über $\mathbf{G}$ verschieben.} Ebenso bekommt die Energie $E$ aus Gl.~\ref{eq:3_SG_rezi} ein   $\mathbf{k}$ als Index
-\begin{equation}
-    E_\mathbf{k} = E(\mathbf{k}) \quad .
-\end{equation}
-Für Werte von  $\mathbf{k}$ außerhalb der ersten Brillouinzone braucht es eine gesonderte Behandlung. Für diese gibt es immer einen  reziproken Gittervektor $\mathbf{G}_n$ so, dass damit $\mathbf{k}$ wieder in die erste Brillouinzone verschoben würde. Wir definieren damit
-\begin{equation}
-    E_n(\mathbf{k}) = E(\mathbf{k} + \mathbf{G}_n)
-\end{equation}
-mit $\mathbf{k}$ innerhalb der ersten Brillouinzone.
-Der Index  $n$ nennt sich Band-Index und ist so sortiert, dass die Energien $E_n$ aufsteigend sind.
+
 
 \begin{questions}
     \item Wie kommt es, dass aus einer Schrödingergleichung im Realraum jetzt ein ganzes Gleichungssystem (\ref{eq:3_SG_rezi}) in reziproken Raum wird?
-    \item Skizzieren Sie eine Elektronen-Wellenfunktion mit $k$ innerhalb und außerhalb der ersten Brillouinzone.
+    \item Skizzieren Sie eine Elektronen-Wellenfunktion für ein $k$ innerhalb und außerhalb der ersten Brillouinzone.
 \end{questions}
 
 
 \section{Bloch-Theorem}
 
-\begin{marginfigure}
-    \inputtikz{\currfiledir fig_bloch_example}
-    \caption{Die Wellenfunktion $\psi$ ist das Produkt einer ebenen Welle $e^{i k x}$ mit einer gitterperiodischen Funktion $u_k(x)$. Dargestellt ist jeweils der Realteil. Graue Kreise symbolisieren die Atomkerne. }
-\end{marginfigure}
 
-
-Wir schreiben die Wellenfunktion noch einmal um
+Bevor wir auf die Energien $E_\mathbf{k}$ eingehen, betrachten wie die Wellenfunktionen $ \psi_\mathbf{k}(\mathbf{r})$ noch etwas genauer. Wir wir gleich sehen werden, können wir dabei $\mathbf{k}$ auf die erste Brillouinzone beschränken. 
+Wir klammern eine ebene Welle aus:
 \begin{eqnarray}
     \psi_\mathbf{k}(\mathbf{r}) = & \sum_{\mathbf{G}} C_{\mathbf{k}-\mathbf{G}} \, e^{i (\mathbf{k}- \mathbf{G}) \cdot \mathbf{r} }
     = e^{i \mathbf{k} \cdot \mathbf{r} } \,
     \sum_{\mathbf{G}} C_{\mathbf{k}-\mathbf{G}} \, e^{-i \mathbf{G} \cdot \mathbf{r} } \\
     = & u_\mathbf{k}(\mathbf{r}) \; e^{i \mathbf{k} \cdot \mathbf{r} } 
 \end{eqnarray}
-mit $\mathbf{k}$ aus der ersten Brillouinzone und  einer gitterperiodischen Funktion $u_\mathbf{k}(\mathbf{r})$, die eine ebene Welle $e^{i \mathbf{k} \cdot \mathbf{r} }$ räumlich moduliert. Diese Art der Aufteilung nennt man \emph{Bloch-Wellen}. Das \emph{Bloch-Theorem} besagt, dass Lösungen der Schrödingergleichung in einem periodischen Potential von dieser Form sein müssen. Unsere Rechnung oben ist eine Herleitung des Bloch-Theorems.\sidenote{Für Theoretiker siehe z.B. \cite{Czycholl_theo_FK1}.} Die Aufteilung zwischen ebener Welle und $u(\mathbf{r})$ ist dabei nicht eindeutig, weil immer ein Phasenfaktor zwischen beiden verschoben werden kann.
+Jede Wellenfunktion lässt sich also schreiben als Produkt einer ebenen Welle $e^{i \mathbf{k} \cdot \mathbf{r} }$ aus der ersten Brillouinzone und einer gitterperiodischen Funktion $u_\mathbf{k}(\mathbf{r})$, die diese räumlich moduliert. Diese Art der Aufteilung nennt man \emph{Bloch-Wellen}. Das \emph{Bloch-Theorem} besagt, dass allgemein Lösungen der Schrödingergleichung in einem periodischen Potential von dieser Form sein müssen\sidenote{siehe z.B. \cite{Czycholl_theo_FK1}}. Die Aufteilung zwischen ebener Welle und $u(\mathbf{r})$ ist dabei nicht eindeutig, weil immer ein Phasenfaktor zwischen beiden verschoben werden kann.
+
+\begin{marginfigure}
+    \inputtikz{\currfiledir fig_bloch_example}
+    \caption{Die Wellenfunktion $\psi$ ist das Produkt einer ebenen Welle $e^{i k x}$ mit einer gitterperiodischen Funktion $u_k(x)$. Dargestellt ist jeweils der Realteil. Graue Kreise symbolisieren die Atomkerne. }
+\end{marginfigure}
+
+Elektronen sind also in einem Kristall keine ebenen Wellen mehr wie im freien Raum. Die ebenen Wellen des freien Raumes  werden durch die Funktionen $u_\mathbf{k}(\mathbf{r})$ moduliert. Diese beschreiben den Einfluss der Gitters, insbesondere seine Periodizität. 
 
 
+Die  $u_\mathbf{k}(\mathbf{r})$ sind durch die Fourier-Darstellung gitterperiodisch, also 
+\begin{equation}
+    u_\mathbf{k}(\mathbf{r}) =u_\mathbf{k}(\mathbf{r + R }) \quad .
+\end{equation}
 
-
-Bloch-Wellen sind periodisch im reziproken Raum:
+Bloch-Wellen $\psi_\mathbf{k}(\mathbf{r})$ sind periodisch im reziproken Raum:
 \begin{eqnarray}
     \psi_{\mathbf{k} + \mathbf{G}}(\mathbf{r}) = & 
      e^{i (\mathbf{k} + \mathbf{G}) \cdot \mathbf{r} } \, \sum_{\mathbf{G}'} C_{\mathbf{k} +  \mathbf{G} -\mathbf{G}'} \, e^{-i \mathbf{G}' \cdot \mathbf{r} } \\
@@ -140,26 +138,36 @@ Bloch-Wellen sind periodisch im reziproken Raum:
      = &  e^{i \mathbf{k}  \cdot \mathbf{r} } \, \sum_{\mathbf{G}''} C_{\mathbf{k} - \mathbf{G}''} \, e^{-i \mathbf{G}''   \cdot \mathbf{r} } \\
  = &  \psi_{\mathbf{k}}(\mathbf{r})  \quad .
     \end{eqnarray}
+Daher reicht es aus $\mathbf{k}$ aus der ersten Brillouinzone zu wählen.
+
 Das bedeutet auch, dass $\hbar \mathbf{k}$ nicht als Impuls verstanden werden kann. Noch deutlicher: Bloch-Wellen sind keine Eigenfunktionen des Impuls-Operators. Manchmal bezeichnet man  $\mathbf{k}$ als \emph{Kristallimpuls}, eine Art verallgemeinertem Impuls. Da ein Kristall keine vollständige Translationsinvarianz mehr besitzt, gilt eben auch die Impulserhaltung nur noch eingeschränkt. Das ist hier völlig analog zu der Diskussion bei Phononen. 
+
+Wenn es für die Wellenfunktion $ \psi_{\mathbf{k}}(\mathbf{r}) $ egal ist, ob man einen reziproken Gittervektor $\mathbf{G}$ addiert, dann ist es das auch für die Energie, also
+\begin{equation}
+    E_\mathbf{k} = E_{\mathbf{k} + \mathbf{G}} \quad .
+\end{equation}
 
 
 
 \section{Reduziertes Zonenschema}
 
-Zu Demonstrationszwecken machen wir nun eine sehr weitgehende Näherung: wir nehmen wie beim freien Elektronengas an, dass gar kein Potential vorhanden ist, aber die Periodizität des Raums weiterhin erhalten bleibt (ohne zu sagen, was da nun noch periodisch sein soll). Wir wenden also den Formalismus auf $V=0$ an. Damit verschwinden alle Fourier-Koeffizienten $V_\mathbf{G}$ und das Gleichungssystem Gl. \ref{eq:3_SG_rezi} zerfällt in einzelne Gleichungen mit der Lösung
+Zur Veranschaulichung machen wir nun eine sehr weitgehende Näherung: wir nehmen wie beim freien Elektronengas an, dass gar kein Potential vorhanden ist, aber die Periodizität des Raums weiterhin erhalten bleibt (ohne zu sagen, was da nun noch periodisch sein soll). Wir wenden also den Formalismus auf $V=0$ an. Damit verschwinden alle Fourier-Koeffizienten $V_\mathbf{G}$ und das Gleichungssystem Gl. \ref{eq:3_SG_rezi} zerfällt in einzelne Gleichungen mit der Lösung
 \begin{equation}
-    E(\mathbf{k}) = \frac{\hbar^2}{2m} \left| \mathbf{k}  \right|^2 
+    E_\mathbf{k} = \frac{\hbar^2}{2m} \left| \mathbf{k}  \right|^2 
     \quad \text{und} \quad 
     \psi = e^{i \mathbf{k} \cdot \mathbf{r}} \quad .
 \end{equation}
-Im Eindimensionalen ist das  wie erwartet ein parabelförmiger Zusammenhang zwischen Wellenvektor und Energie. Wenn wir $\mathbf{k}$ über den ganzen reziproken Raum laufen lassen, nicht nur die erste Brillouinzone, dann nennt man diese Darstellung \emph{ausgedehntes Zonenschema}.
+Im Eindimensionalen ist das  wie erwartet ein parabelförmiger Zusammenhang zwischen Wellenvektor und Energie. Wenn wir $\mathbf{k}$ über den ganzen reziproken Raum laufen lassen, nicht nur die erste Brillouinzone, dann nennt man diese Darstellung \emph{ausgedehntes Zonenschema} (Abbildung  \ref{fig:3_zone_scheme} links).
 
-Jetzt nehmen wir die Periodizität hinzu:
+Jetzt nehmen wir die Periodizität aus den Bloch-Wellen hinzu. Wir können einen reziproken Gittervektor addieren und die Energie ändert sich nicht. Für jeden reziproken Gittervektor $\mathbf{G}$ bekommen wir eine neue, verschobene Parabel. Das ist das \emph{periodische Zonenschema}. 
+Damit wird klar, dass  der Zusammenhang zwischen dem Wellenvektor $\mathbf{k}$ und der Energie nicht eindeutig ist. Man definiert einen \emph{Band-Index} $n$ der die Energien in der ersten Brillouinzone aussteigend sortiert.
 \begin{equation}
-    E_n(\mathbf{k}) = E(\mathbf{k} + \mathbf{G}_n) 
-     = \frac{\hbar^2}{2m} \left| \mathbf{k} + \mathbf{G}_n \right|^2 \quad \text{und} \quad \psi_n = e^{i (\mathbf{k} + \mathbf{G}_n) \cdot \mathbf{r}} \quad .
+    E_{n,\mathbf{k}} 
+     = \frac{\hbar^2}{2m} \left| \mathbf{k} + \mathbf{G}_n \right|^2 \quad \text{und} \quad \psi_{n,\mathbf{k}} = e^{i (\mathbf{k} + \mathbf{G}_n) \cdot \mathbf{r}} \quad .
 \end{equation}
-Im Eindimensionalen sind das Parabeln, die von jedem Punkt  $\mathbf{G}_n $ im reziproken Raum starten. Diese Darstellung nennt man \emph{periodisches Zonenschema}. Aufgrund der Periodizität ist aber alle Information schon in der ersten Brillouinzone enthalten. Man kann die Darstellung also auf diese beschränken. Dies nennt man  \emph{reduziertes Zonenschema}. Man kann sich das so vorstellen, dass die Parabel ausgehend von  $\mathbf{k} = 0$  an den Grenzen der Brillouinzone zurückgefaltet wird. Wenn sie dann später nochmals auf eine Grenze trifft, wird sie wieder gefaltet.
+Im Eindimensionalen sind das Parabeln, die von jedem Punkt  $\mathbf{G}_n $ im reziproken Raum starten. Diese Darstellung nennt man \emph{periodisches Zonenschema}. 
+
+Aufgrund der Periodizität ist aber alle Information schon in der ersten Brillouinzone enthalten. Man kann die Darstellung also auf diese beschränken. Dies nennt man  \emph{reduziertes Zonenschema}. Man kann sich das so vorstellen, dass die Parabel ausgehend von  $\mathbf{k} = 0$  an den Grenzen der Brillouinzone zurückgefaltet wird. Wenn sie dann später nochmals auf eine Grenze trifft, wird sie wieder gefaltet.
 
 
 Im Dreidimensionalen zeichnet man die Energie entlang eines Pfades durch den reziproken Raum, beispielsweise entlang der $x$-Komponente des Wellenvektors. Dann 
@@ -201,7 +209,7 @@ Damit wird die Schrödingergleichung \ref{eq:3_SG_rezi} zu
 \end{equation}
 Die dreidimensionale Lösung dieses Gleichungssystems ist in Abb.~\ref{fig:3_al_empty_lattice} dargestellt und kommt der vollständigen Rechnung schon sehr nahe. Das Pluto-Skript\pluto{al_dispersion} für diese Abbildung ist inspiriert von \cite{Polakovic_cmpm3}.
 
-Interessant wird es an der Grenze der Brillouinzone, also bei $k = \pm g/2$. Dort schneiden sich zwei Parabeln. Die Zustände sind ohne Potential also energetisch entartet. Lassen Sie uns diese Stelle im Fall von  $V_{\pm g} \neq 0$ genauer betrachten. Bei beispielsweise $k = + g/2$  sind die ersten beiden Diagonalelemente von Gl. \ref{eq:3_SG_empty_lattice} nahe Null, das dritte betragsmäßig deutlich größer. Damit die dritte Zeile sich trotzdem zu Null summiert, muss also hier $C_{k+g} \approx 0$ sein. Andersherum: An der rechten Grenze der Brillouinzone schneiden sich die Parabeln, die von $G =0$ und von $G=+g$ ausgehen. Nur diese beiden Koeffizienten $C_{k-G}$ bzw. diese ebenen Wellen tragen bei. Das Gleichungssystem wird noch einfacher 
+Interessant wird es an der Grenze der Brillouinzone, also bei $k = \pm g/2$. Dort schneiden sich zwei Parabeln. Die Zustände sind ohne Potential also energetisch entartet. Lassen Sie uns diese Stelle im Fall von  $V_{\pm g} \neq 0$ genauer betrachten. Bei beispielsweise $k = + g/2$  sind die ersten beiden Diagonalelemente von Gl. \ref{eq:3_SG_empty_lattice} nahe Null, das dritte betragsmäßig deutlich größer. Damit die dritte Zeile sich trotzdem zu Null summiert, muss also hier $C_{k+g} \approx 0$ sein. Andersherum: An der rechten Grenze der Brillouinzone schneiden sich die Parabeln, die von $G =0$ und von $G=+g$ ausgehen. Nur diese beiden Koeffizienten $C_{i}$ bzw. diese ebenen Wellen tragen bei. Das Gleichungssystem wird noch einfacher 
 \begin{equation}
     \begin{pmatrix}
         E_k^0 - E &  V_{g}  \\
@@ -213,7 +221,7 @@ Interessant wird es an der Grenze der Brillouinzone, also bei $k = \pm g/2$. Dor
    \end{pmatrix}
   = 0 \quad . \label{eq:3_SG_empty_lattice_2}
  \end{equation}
-Wir nehmen weiterhin an, dass das Potential inversionssymmetrisch ist, also $V_g = V_{-g}$. Damit finden wir die Energie-Eigenwerte
+Wir nehmen weiterhin an, dass das Potential inversionssymmetrisch ist, also $V_g = V_{-g}$, bzw. $V(x) \propto -\cos(g x)$. Damit finden wir die Energie-Eigenwerte
 \begin{equation}
     E_\pm = \frac{ E_k^0 +   E_{k-g}^0}{2} \mp \sqrt{  \left( \frac{ E_k^0 -   E_{k-g}^0}{2} \right)^2 + V_g^2 }  \quad .
 \end{equation}
