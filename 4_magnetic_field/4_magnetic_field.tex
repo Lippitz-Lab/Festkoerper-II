@@ -1,6 +1,6 @@
 %\renewcommand{\lastmod}{\today}
 \renewcommand{\chapterauthors}{Markus Lippitz}
-\renewcommand{\lastmod}{20. Juli 2023} 
+\renewcommand{\lastmod}{21. März 2025} 
 
 \chapter{Kristall-Elektronen im Magnetfeld}
 
@@ -20,20 +20,17 @@
     \caption{Quanten-Hall-Effekt in einem effektiv zweidimensionalen Elektronengas (\cite{Klitzing1984}). Der Querwiderstand $\rho_{xy}$ nimmt nur diskrete Werte 25812~$\Omega / p$ an, wobei $p$ die Anzahl der voll besetzen Landau-Niveaus ist. An diesen Plateaus verschwindet der Längswiderstand $\rho_{xx}$.}
     \label{fig:4_qhe_gaas}
 \end{figure}
- 
 
 \section{Überblick}
 
-Im letzten Kapitel haben wir die Bandstruktur diskutiert, also die möglichen Zustände eines Elektrons als Funktion der Quantenzahlen Wellenvektor $\mathbf{k}$ und Band-Index $n$. Ein externes Magnetfeld erlaubt einerseits, bestimmte  Eigenschaften der Bandstruktur zu bestimmen. Daher können wir dieses Kapitel auch sehen als experimentelle Überprüfung des vorangegangenen. Andererseits führt ein starkes Magnetfeld aber auch zu einer zusätzlichen Quantisierung der Elektronen-Zustände.
+Im vorigen Kapitel haben wir die Bandstruktur besprochen, die die möglichen Zustände eines Elektrons als Funktion des Wellenvektors $\mathbf{k}$ und des Bandindex $n$ beschreibt. Mit Hilfe eines externen Magnetfeldes können wir bestimmte Eigenschaften der Bandstruktur experimentell bestimmen. Dieses Kapitel kann daher als experimentelle Verifizierung des vorangegangenen Kapitels angesehen werden. Außerdem führt ein starkes Magnetfeld zu einer weiteren Quantisierung der Elektronenzustände.
 
-Eigentlich bräuchte man für diese Phänomene die zeitabhängige Schrödingergleichung. Dies wird aber zu aufwändig. Daher machen wir semi-klassische Modelle und beschreiben die Zustände der Elektronen im Rahmen der Quantenmechanik, den Einfluss äußerer Kräfte aber klassisch.
-
+Für diese Phänomene würde man idealerweise die zeitabhängige Schrödingergleichung verwenden, aber diese ist zu komplex. Daher verwenden wir semiklassische Modelle, die die Elektronenzustände quantenmechanisch beschreiben, während der Einfluss äußerer Kräfte klassisch behandelt wird. Ziel ist es zu verstehen, wie sich Elektronen in einem Magnetfeld bewegen und wie ihre Energieniveaus beeinflusst werden.
 
 
 \section{Fermi-Flächen}
 
-
-Bevor wir zur Bewegung der Elektronen unter Einfluss eines magnetischen Felds übergehen, müssen wir  die Form der Fermi-Flächen diskutieren, die dabei eine Rolle spielen werden. Wir hatten im vorletzten Kapitel gesehen, dass bei einem freien Elektronengas und $T=0$ alle Zustände unterhalb einer charakteristischen Energie $E_F$ und damit auch unterhalb eines charakteristischen Wellenvektors $k_F = (3 \pi^2 n)^{1/3}$ vollständig besetzt sind. Im reziproken Raum entspricht dies einer Kugel mit dem Radius $k_F$, der Fermi-Kugel.
+Bevor wir uns der Bewegung der Elektronen unter dem Einfluss eines magnetischen Feldes zuwenden, müssen wir die Form der Fermiflächen diskutieren, die dabei eine Rolle spielen. Nur Elektronen in der Nähe der Fermifläche tragen zum Transport bei, wie wir im Drude-Sommernefdl-Modell gesehen haben.  In einem freien Elektronengas und $T=0$ sind alle Zustände unterhalb einer charakteristischen Energie $E_F$ und damit auch unterhalb eines charakteristischen Wellenvektors $k_F = (3 \pi^2 n)^{1/3}$ vollständig besetzt. Im reziproken Raum entspricht dies einer Kugel mit dem Radius $k_F$, der Fermi-Kugel.
 
 Die Bandstruktur führt dazu, dass die Form von einer Kugel abweichen wird. Wir bezeichnen dann als \emph{Fermi-Fläche} die Fläche im reziproken Raum, die genau alle besetzten Zustände bei $T=0$ einschließt. Die möglichen Werte des Wellenvektors $\mathbf{k}$ sind diskret. Die Gesamtzahl der  $\mathbf{k}$-Werte in der ersten Brillouinzone entspricht der Anzahl primitiver Einheitszellen im Kristall. Weil ein Elektron zwei verschiedene Spin-Eigenwerte annehmen kann, gibt es in der ersten Brillouinzone also doppelt so viele Zustände für Elektronen wie Atome im Kristall, falls nur ein Atom in der Einheitszelle ist.
 
@@ -57,13 +54,14 @@ Im ausgedehnten Zonenschema findet man so durch 'Hälse' verbundene Flächen, di
 
 
 \begin{figure}
-   \includegraphics*[width=30mm]{\currfiledir fermi-surfaces/K.jpg}
-  \hspace*{4mm}
-   \includegraphics*[width=30mm]{\currfiledir fermi-surfaces/Ca.jpg}
-   \hspace*{4mm}
-   \includegraphics*[width=30mm]{\currfiledir fermi-surfaces/Cu.jpg}
+   \includegraphics*[width=33mm]{\currfiledir fermi-surfaces/K.jpg}
+  \hspace*{1mm}
+   \includegraphics*[width=33mm]{\currfiledir fermi-surfaces/Ca.jpg}
+   \hspace*{1mm}
+   \includegraphics*[width=34mm]{\currfiledir fermi-surfaces/Cu.jpg}
 
    \caption{Fermi-Oberflächen von \ch{K}, \ch{Ca} und \ch{Cu} (von links). \cite{Choy00_fermi_surfaces} }
+   \label{fig:4_fermi_surfaces}
 \end{figure}
     
 
@@ -73,7 +71,7 @@ Im ausgedehnten Zonenschema findet man so durch 'Hälse' verbundene Flächen, di
 
 \section{Zyklotron-Resonanz}
 
-Die Zyklotron-Resonanz ist eine experimentelle Methode, mit der die Form der Fermi-Fläche bestimmt werden kann. Man legt ein statisches Magnetfeld $\mathbf{B}$ an und bestimmt die Absorption einer Radiowelle variabler Frequenz.\sidenote{Eigentlich macht man es genau andersherum: konstante Frequenz, variables Feld. Aber sorum erklärt es sich einfacher.} Man findet charakteristische Frequenzen, bei denen die Absorption besonders hoch ist. Aus diesen Zyklotron-Resonanzfrequenzen kann man den Umfang der Fermi-Fläche geschnitten mit einer Ebene senkrecht zum Magnetfeld bestimmen.
+Die Zyklotron-Resonanz ist eine experimentelle Methode, mit der die Form der Fermi-Fläche bestimmt werden kann. Man legt ein statisches Magnetfeld $\mathbf{B}$ an und bestimmt die Absorption einer Radiowelle variabler Frequenz.\sidenote{Eigentlich macht man es genau umgekehrt: konstante Frequenz, variables Feld. Aber so ist es einfacher zu erklären.} Man findet charakteristische Frequenzen, bei denen die Absorption besonders hoch ist. Aus diesen Zyklotronresonanzfrequenzen kann man den Umfang der Fermi-Fläche bestimmen, die von einer Ebene senkrecht zum Magnetfeld geschnitten wird.
 
 
 Betrachten wir zunächst klassische freie Elektronen im Magnetfeld. Die Bewegungsgleichung ist 
@@ -81,10 +79,10 @@ Betrachten wir zunächst klassische freie Elektronen im Magnetfeld. Die Bewegung
    \hbar \frac{d \mathbf{k}}{dt} = \mathbf{F}(\mathbf{r}, t) = q \left[ \bm{\mathcal{E}}(\mathbf{r}, t) +   \mathbf{v}(\mathbf{k}) \times \mathbf{B}(\mathbf{r}, t)\right]  \quad .
 \end{equation}
 Wir haben hier kein elektrisches Feld und setzten $\mathbf{B} = B_0 \hat{\mathbf{e}}_z$. Damit ist die Bewegung in $z$-Richtung frei und wir erhalten ein Gleichungssystem für die Bewegung in der $xy$-Ebene
-\begin{eqnarray}
+\begin{align}
    m \dot{v}_x & = -e B_0 \, v_y \\
-   m \dot{v}_y & = e B_0 \, v_x  \quad .
-\end{eqnarray}
+   m \dot{v}_y & = +e B_0 \, v_x  \quad .
+\end{align}
 Die Lösung ist eine kreisförmige Bahn mit der Zyklotron-Frequenz $\omega_c$
 \begin{equation}
    \omega_c = \frac{e \, B }{m} \quad .
@@ -123,21 +121,24 @@ Beim freien Elektron ändert sich die Länge des Wellenvektors $k$ nicht. Die um
 Nur im Fall freier Elektronen ist die Masse $\tilde{m}$ die Ruhemasse des Elektrons. Ansonsten behält man aber diesen Zusammenhang bei und steckt das Ergebnis von Gl.~\ref{eq:4_t_zykl} in die 
  \emph{Zyklotron-Masse}, die sich von der effektivem Masse $m^\star$ unterscheidet.
 
-Bislang haben wir zwar Kreisfrequenzen, aber noch keine Absorption. Alle Elektronen bewegen sich auf geschlossenen Bahnen, nehmen dabei aber keine Energie auf, weil ja gerade $E (\mathbf{k}) = \text{const.}$ gilt. Nun strahlen wir Mikrowellen der Frequenz $\omega_{RF} = \omega_c$ ein. Nur Elektronen in der Nähe der Fermi-Energie also der Fermi-Fläche können Energie aufnehmen. Die Zyklotron-Resonanz misst also die Länge der Bahnen auf der Fermi-Fläche; je nach Orientierung des Magenfeldes laufen die Bahnen in unterschiedlichen Flächen. Scharfe Resonanzen bekommt man nur, wenn die mittlere Stoßzeit groß gegenüber der Umlaufzeit ist, also mehrere Umläufe ungestört absolviert werden können. Man benutzt also hohe Magnetfelder und damit hohe Umlauf-Frequenzen sowie tiefe Temperaturen und reine Substanzen.
+ Bis hierher haben wir zwar Kreisfrequenzen, aber noch keine Absorption. Alle Elektronen bewegen sich auf geschlossenen Bahnen, nehmen aber keine Energie auf, weil eben $E (\mathbf{k}) = \text{const.}$ gilt. Nun werden Mikrowellen mit der Frequenz $\omega_{RF} = \omega_c$ eingestrahlt. Nur Elektronen in der Nähe der Fermikante können Energie aufnehmen. Die Zyklotronresonanz misst also die Länge der Bahnen auf der Fermifläche; je nach Orientierung des Magenfeldes verlaufen die Bahnen in unterschiedlichen Bereichen. Scharfe Resonanzen erhält man nur, wenn die mittlere Stoßzeit groß gegenüber der Umlaufzeit ist, also mehrere Umläufe ungestört durchlaufen werden können. Man verwendet daher hohe Magnetfelder und damit hohe Umlauffrequenzen sowie tiefe Temperaturen und reine Substanzen.
 
-Weiterhin tragen nur \emph{extremale Bahnen} bei. Das sind Bahnen, bei denen es viele Bahnen ähnlicher Frequenz gibt,
-oder andersherum sich die Frequenz nur geringfügig ändert, wenn die die Komponenten des Wellenvektors parallel zum Magnetfeld sich ändert, die Bahn also stabil gegen Störungen ist. 
+Weiterhin tragen nur \emph{extremale Bahnen} bei. Dies sind Bahnen, bei denen es viele Bahnen mit ähnlicher Frequenz gibt oder umgekehrt, bei denen sich die Frequenz nur wenig ändert, wenn sich die Komponenten des Wellenvektors parallel zum Magnetfeld ändern. Die Bahnen sind also stabil gegenüber Störungen.
 
 \begin{marginfigure}
-   \includegraphics*[width=49mm]{\currfiledir sketches/cyclotron_res.png}
-   \caption{Nur extremale Bahnen entlang der Fermi-Oberfläche tragen zur Zyklotron-Resonanz bei.}
+   \inputtikz{\currfiledir extremal}
+   \caption{Nur extremale Bahnen (blau) entlang der Fermi-Oberfläche sind stabile tragen zur Zyklotron-Resonanz bei. Die rot gezeichneten Bahnen sind instabil.}
 \end{marginfigure}
+ 
 
+\begin{questions}
+   \item Welche extremale Bahnen erwarten Sie in den in Abb.  \ref{fig:4_fermi_surfaces} gezeigten Fermi-Flächen?  
+\end{questions}
 
 \section{Beispiel: Germanium}
 
 
-Germanium (\ch{Ge}) ist ein indirekter Halbleiter mit kubisch-flächenzentrierter  (fcc) Kristallstruktur, mehr dazu im nächsten Kapitel.  Die Fermi-Energie liegt bei einem Halbleiter in der Bandlücke und eine Fermi-Oberfläche lässt sich so nicht definieren. Wir betrachten darum hier eine Iso-Energie-Fläche für angeregte Elektronen im Leitungsband. Von der Idee her ist das aber identisch mit der Spektroskopie der Fermi-Flächen. Die Bandstruktur von Germanium ist etwas speziell. Insbesondere liegt das Minimum des Leitungsbandes nicht im $\Gamma$-Punkt, sondern an den L-Punkten am Rand der Brillouinzone. Die Iso-Energie-Fläche nehmen die Form von Ellipsoiden an, deren Mittelpunkt an den L-Punkten liegt und deren lange Achse in Richtung $\Gamma$-Punkt zeigt. Es gibt zwar 8 L-Punkte, aber die Hälfte der Ellipsoide liegt außerhalb der ersten Brillouinzone, so dass effektiv nur 4 vollständige Ellipsoide betrachtet werden müssen.
+Germanium (\ch{Ge}) ist ein indirekter Halbleiter mit kubisch-flächenzentrierter (fcc) Kristallstruktur.  Die Fermi-Energie eines Halbleiters liegt in der Bandlücke, so dass eine Fermi-Fläche nicht definiert werden kann. Daher betrachten wir hier eine Isoenergiefläche für angeregte Elektronen im Leitungsband. Von der Idee her ist dies aber identisch mit der Spektroskopie von Fermi-Flächen. Die Bandstruktur von Germanium ist etwas speziell. Insbesondere liegt das Minimum des Leitungsbandes nicht am $\Gamma$-Punkt, sondern an den L-Punkten am Rand der Brillouin-Zone. Die iso-Energieflächen haben die Form von Ellipsoiden, deren Mittelpunkt in den L-Punkten liegt und deren lange Achse zum $\Gamma$-Punkt zeigt. Obwohl es 8 L-Punkte gibt, liegt die Hälfte der Ellipsoide außerhalb der ersten Brillouin-Zone, so dass effektiv nur 4 vollständige Ellipsoide betrachtet werden müssen.
 
 \begin{marginfigure}[-40mm]
    \inputtikz{\currfiledir fcc-3d_2x}
@@ -154,15 +155,13 @@ Germanium (\ch{Ge}) ist ein indirekter Halbleiter mit kubisch-flächenzentrierte
 \end{figure}
 
 
-Die Form dieser Iso-Energie-Fläche haben \cite{Dresselhaus1955} durch Zyklotron-Resonanz bestimmt. Es ist im Experiment viel einfacher, den Mikrowellengenerator bei konstanter Frequenz zu betreiben und die Amplitude und Richtung des Magnetfelds zu variieren. Es ist also immer 
-$\omega_c = 2 \pi \cdot 24$~GHz. Abbildung \ref{fig:4_Germanium_res}(links) zeigt das Resonanz-Spektrum für eine bestimmtem Orientierung des Magnetfelds relativ zur Probe. Man findet fünf Resonanzen, von denen sich die mittleren drei den Elektronen im Leitungsband zuordnen lassen. In der gewählten Anordnung von Probe und Magnetfeld sind zwei der vier Ellipsoide äquivalent, so dass effektiv drei verschiedene Ellipsoide sichtbar sind, die jeder eine Resonanz im Spektrum ergeben.
+Die Form dieser Iso-Energie-Fläche wurde von \cite{Dresselhaus1955} durch Zyklotronresonanz bestimmt. Im Experiment ist es viel einfacher, den Mikrowellengenerator mit konstanter Frequenz zu betreiben und die Amplitude und Richtung des Magnetfeldes zu variieren. Die Frequenz ist dann immer $\omega_c = 2 \pi \cdot 24$~GHz. Abbildung \ref{fig:4_Germanium_res}(links) zeigt das Resonanzspektrum für eine bestimmte Orientierung des Magnetfeldes relativ zur Probe. Man findet fünf Resonanzen, von denen die drei mittleren den Elektronen im Leitungsband zugeordnet werden können. Bei der gewählten Anordnung von Probe und Magnetfeld sind zwei der vier Ellipsoide äquivalent, so dass effektiv drei verschiedene Ellipsoide sichtbar sind, die jeweils eine Resonanz im Spektrum ergeben.
 
-Dann wird die Richtung des Magnetfelds in der (110)-Ebene variiert.\sidenote{Siehe Festkörperphysik I zur Definiton von Ebenen und Richtungen. Insbesondere benennt man Richtungen in fcc-Kristallen  mit sc-Koordinaten.}  Angegeben ist jeweils der Winkel $\theta$ zur [001]-Achse. Mit dem Winkel ändert sich die Schnittebene, auf der die Zyklotron-Bahnen laufen und somit deren Fläche. Man kann die Ellipsoide durch zwei effektive Massen $m_l$, $m_t$ in longitudinaler und transversaler Richtung beschreiben. Bei einem Winkel $\alpha$ zwischen Magnetfeld und langer Achse des Ellipsoiden ergibt sich eine effektive Masse $m_{ell}$
+Dann wird die Richtung des Magnetfeldes in der (110)-Ebene variiert.\sidenote{Siehe Festkörperphysik I zur Definition von Ebenen und Richtungen. Insbesondere werden Richtungen in fcc-Kristallen mit sc-Koordinaten bezeichnet.}.  Angegeben ist jeweils der Winkel $\theta$ zur [001]-Achse. Mit dem Winkel ändert sich die Schnittebene, auf der die Zyklotronbahnen verlaufen, und damit ihre Fläche. Die Ellipsoide können durch zwei effektive Massen $m_l$, $m_t$ in Längs- und Querrichtung beschrieben werden. Für einen Winkel $\alpha$ zwischen dem Magnetfeld und der Längsachse des Ellipsoids ergibt sich eine effektive Masse $m_{ell}$ 
 \begin{equation}
-   \left( \frac{1}{m_{ell}} \right)^2 = \frac{\cos^2 \alpha}{m_t^2} + \frac{\sin^2 \alpha}{m_t \, m_l} \quad .
-\end{equation}
-Diese effektive Masse bestimmt die Lage der Zyklotron-Resonanz. Der gesamte Datensatz in Abb.~\ref{fig:4_Germanium_res}(rechts) kann daher beschrieben werden durch $m_l = 1.58 \, m_e$ und $m_t =  0.082 \, m_e$, wobei $m_e$ die freie Elektronenmasse ist.
-
+   \left( \frac{1}{m_{ell}} \right)^2 = \frac{\cos^2 \alpha}{m_t^2} + \frac{\sin^2 \alpha}{m_t \, m_l} \quad
+\end{equation} 
+Diese effektive Masse bestimmt die Lage der Zyklotronresonanz. Der gesamte Datensatz in Abb.~\ref{fig:4_Germanium_res}(rechts) kann daher durch $m_l = 1.58 \, m_e$ und $m_t = 0.082 \, m_e$ beschrieben werden, wobei $m_e$ die Masse des freien Elektrons ist.
 
 
 \begin{questions}
@@ -174,9 +173,9 @@ Diese effektive Masse bestimmt die Lage der Zyklotron-Resonanz. Der gesamte Date
 
 \section{Landau-Niveaus}
 
-Wir haben bei der Zyklotron-Resonanz die Elektronenbahnen klassisch behandelt. In der Quantenmechanik würde man eigentlich eine einzige Wellenfunktion pro Bahn erwarten, also insbesondere, dass sich die Phase nur um Vielfache von $2\pi$ pro Umlauf ändert. Dies führt zu quantisierten Bahnen und einer Aufspaltung der Zustände in Landau-Niveaus. Den Energiebeitrag der Elektronenpins im Magnetfeld vernachlässigen wir.
+Bei der Zyklotronresonanz haben wir die Elektronenbahnen klassisch behandelt. In der Quantenmechanik erwartet man eine einzige Wellenfunktion pro Bahn, d.h. insbesondere, dass sich die Phase nur um ein Vielfaches von $2\pi$ pro Umlauf ändert. Dies führt zu quantisierten Bahnen und einer Aufspaltung der Zustände in Landau-Niveaus. Wir vernachlässigen den Energiebeitrag der Elektronenspins im Magnetfeld.
 
-Wir müssen also das Magnetfeld $\mathbf{B}$ mit in die Schrödingergleichung aufnehmen\sidenote{siehe Kap. 9.3.2 in \cite{Hunklinger2014} und  Kap. 9.6.1 in \cite{yu_cardona}}. Die geschieht über das zugehörige Vektorpotential $\mathbf{A}$ 
+Wir müssen also das Magnetfeld $\mathbf{B}$ in die Schrödingergleichung einbeziehen\sidenote{siehe Kap. 9.3.2 in \cite{Hunklinger2014} und Kap. 9.6.1 in \cite{yu_cardona}}. Dies geschieht über das zugehörige Vektorpotential $\mathbf{A}$
 \begin{equation}
    \frac{1}{2m} \left( \frac{\hbar}{i} \nabla - q \mathbf{A}  \right)^2 \, \psi = E \psi \quad .
 \end{equation}
@@ -216,14 +215,14 @@ Die Gesamtenergie hat die Eigenwerte
 \begin{equation}
    E = \left( n + \frac{1}{2} \right) \hbar \omega_c + \frac{\hbar^2}{2m} k_z^2 \quad .
 \end{equation}
-Insgesamt gibt es eine freie Bewegung in $z$-Richtung, also die des Magnetfelds, in eine quantisierte geschlossene Kreisbahn in der $xy$-Ebene. Abbildung \ref{fig:4_dispersion_3d_b} zeigt die Dispersionsrelation entlang $k_z$. In Metallen liegen die Zustände allerdings sehr viel dichter: Bei einem Magnetfeld von 1~T beträgt $\hbar \omega_c$ etwa 0.1~meV, verglichen mit $E_F \approx 10$~eV.
+Insgesamt gibt es eine freie Bewegung in $z$-Richtung, d.h. in Richtung des Magnetfeldes, und eine quantisierte geschlossene Kreisbahn in der $xy$-Ebene. Abbildung \ref{fig:4_dispersion_3d_b} zeigt die Dispersionsrelation entlang $k_z$. In Metallen liegen die Zustände jedoch viel dichter beieinander: Bei einem Magnetfeld von 1~T beträgt $\bar \omega_c$ etwa 0.1~meV, verglichen mit $E_F \approx 10$~eV.
 
 \begin{marginfigure}
    \inputtikz{\currfiledir dispersion_3d_b}
    \caption{Dispersionsrelation entlang $k_z$ ohne Magnetfeld (fett) und nach Quantisierung der Kreisbahnen (dünn). \label{fig:4_dispersion_3d_b}}
 \end{marginfigure}
 
-Die $x$ und $y$-Komponente des Wellenvektors sind keine guten Quantenzahlen mehr, also nicht mehr zeitlich konstant, also kein Eigenwert des Hamilton-Operators. Die Energie ist gegeben durch die Komponente $k_\perp$ senkrecht zum Magnetfeld
+Die $x$ und $y$-Komponente des Wellenvektors sind nicht mehr zeitlich konstant, und nicht mehr Eigenwerte des Hamilton-Operators. Dies sind keine 'guten' Quantenzahlen mehr. Die Energie ist gegeben durch die Komponente $k_\perp$ senkrecht zum Magnetfeld
 \begin{equation}
    k_{\perp, n} = \sqrt{ \frac{2m}{\hbar^2} \left( n + \frac{1}{2}\right) \hbar \omega_c} \quad .
 \end{equation}
@@ -245,7 +244,7 @@ Die Fläche zwischen zwei Kreisen ist im reziproken Raum für alle Kreise gleich
 \begin{equation}
    \Delta S = S_{n+1} - S_n = \frac{2 \pi e B}{\hbar} \quad . 
 \end{equation}
-Ohne Magnetfeld ist sind Zustände im reziproken Raum homogen verteilt, die Zustandsdichte konstant. Mit Magnetfeld werden die Zustände so umverteilt, dass sie in der $xy$-Ebene auf Kreisen liegen, und zwar auf jedem Kreis gleich viele. Das sind gerade die, die innerhalb des Kreises bis zum vorangegangen liegen. Der Entartungsgrad $g_e$ lässt sich schreiben als
+Ohne Magnetfeld ist sind Zustände im reziproken Raum homogen verteilt, die Zustandsdichte konstant. Mit Magnetfeld werden die Zustände so umverteilt, dass sie in der $xy$-Ebene auf Kreisen liegen, und zwar auf jedem Kreis gleich viele. Das sind gerade die, die innerhalb des Kreises bis zum vorangegangen liegen würden. Der Entartungsgrad $g_e$ lässt sich schreiben als
 \begin{equation}
    g_e =  \Delta S \frac{L^2}{(2\pi)^2} = \frac{e B L^2}{h} = \frac{\Phi}{2 \Phi_0} \label{eq:4_landau_entartung}
 \end{equation}
@@ -253,10 +252,7 @@ mit der Fläche der Probe $L^2$ senkrecht zum Magnetfeld, dem magnetischen Fluss
 \begin{equation}
    \Phi_0 = \frac{h}{2 e} \quad .
 \end{equation}
-Der Begriff des \emph{Flussquants} greift dem Kapitel zur Supraleitung vorweg. Dort wird auch der Faktor 2 klar, weil dort Elektronen gepaart auftreten werden. Man kann die Stärke des Magnetfelds in Anzahl Flussquanten messen (bei gegebener Probengröße). Genau diese Anzahl definiert die Anzahl der Zustände auf den Landau-Kreisen, also deren Entartung.
-
-
-
+Der Begriff \emph{Flussquant} greift dem Kapitel über die Supraleitung vorweg. Dort wird auch der Faktor 2 deutlich, da die Elektronen dort paarweise auftreten. Die Stärke des Magnetfeldes kann (bei gegebener Probengröße) in Flussquanten gemessen werden. Genau diese Zahl bestimmt die Anzahl der Zustände auf den Landau-Kreisen, also deren Entartung.
 
 In $z$-Richtung hat das Magnetfeld keinen Einfluss. Hier liegen die Zustände weiterhin homogen. Es bilden sich  konzentrische Zylinder, die bis zur Fermi-Fläche mit Elektronen besetzt sind. Die Landau-Kreise sind also eigentlich Landau-Zylinder.
 
@@ -265,29 +261,31 @@ In $z$-Richtung hat das Magnetfeld keinen Einfluss. Hier liegen die Zustände we
    \item Skizzieren Sie, wie in 3 Dimensionen die Landau-Zylinder in der Fermi-Kugel liegen, oder suche Sie solch ein Bild im Internet.
 \end{questions}
 
+
+
 \section{Dimensionalität und Zustandsdichte}
 
 
-Lassen Sie uns zunächst die Zustandsdichte ohne Magnetfeld aber bei reduzierter Dimensionalität betrachten. Wir nehmen ein freies Elektronengas an. Die Gruppengeschwindigkeit ist $v_g = \hbar k / m$. Damit wird die  Zustandsdichte in $n$ Dimensionen 
+Betrachten wir zunächst die Zustandsdichte ohne Magnetfeld, aber mit reduzierter Dimensionalität, bevor wir zum Magnetfeld zurückkehren. Der Einfachheit halber nehmen wir ein freies Elektronengas an. Die Gruppengeschwindigkeit ist $v_g = \hbar k / m$. Damit ist die Zustandsdichte in $n$ Dimensionen
 \begin{equation}
     D(E)^{(n)} dE = 2 \, \frac{L^n}{\hbar (2 \pi)^n} \, \frac{m}{\hbar k} \,  dE \, \int_{E = \text{const.}} d S_E 
 \end{equation}
 und somit
 \begin{eqnarray}
-   D(E)^{(3)} = &  \frac{(2m)^{3/2}}{2 \pi^2 \hbar^3} \, L^3 \,  E^{1/2}  \\
-   D(E)^{(2)} = &  \frac{m}{\pi \hbar^2} \, L^2   = \text{const.} \\
-   D(E)^{(1)} = &  \frac{1}{\pi \hbar} \, L \, E^{-1/2}    \quad .
+   D(E)^{(3d)} = &  \frac{(2m)^{3/2}}{2 \pi^2 \hbar^3} \, L^3 \,  E^{1/2}  \\
+   D(E)^{(2d)} = &  \frac{m}{\pi \hbar^2} \, L^2   = \text{const.} \\
+   D(E)^{(1d)} = &  \frac{1}{\pi \hbar} \, L \, E^{-1/2}    \quad .
 \end{eqnarray}
 Für punktförmige Objekte, also null Dimensionen erhält man wie für Atome diskrete Zustände
 \begin{equation}
-   D(E)^{(0)} =  2 \, \delta(E-E_0) \quad .
+   D(E)^{(0d)} =  2 \, \delta(E-E_0) \quad .
 \end{equation}
 
-Ein angelegtes Magnetfeld lässt eine freie Bewegung nur noch in der $z$-Richtung zu. Damit ändert sich effektiv die Dimensionalität der Probe. Nicht mehr alle drei Dimensionen sind relevant, sondern nur noch eine. Dies sieht man auch in der Zustandsdichte. Die Gesamtenergie jedes Zustands lässt sich aufspalten in die  Energie der Kreisbewegung und die der freien Bewegung
+Nun kehren wir zum Magnetfeld zurück. Ein angelegtes Magnetfeld lässt auch im Dreidimensionalen eine freie Bewegung nur noch in der $z$-Richtung zu. Damit ändert sich effektiv die Dimensionalität der Probe. Nicht mehr alle drei Dimensionen sind relevant, sondern nur noch eine. Dies sieht man auch in der Zustandsdichte. Die Gesamtenergie jedes Zustands lässt sich aufspalten in die  Energie der Kreisbewegung und die der freien Bewegung
 \begin{equation}
    E = E_n + E_z =  \left(n + \frac{1}{2} \right) \hbar \omega_c +  \frac{\hbar^2}{2m} k_z^2 \quad .
 \end{equation}
-Dann verschiebt $E_n$ die Energieskala, die in $ D(E)^{(1)}$ eingeht. Die Gesamt-Zustandsdichte ist also\footcite{Czycholl_theo_FK1}
+Dann verschiebt $E_n$ die Energieskala, die in $ D(E)^{(1)}$ eingeht. Die Gesamt-Zustandsdichte für 3 Dimensionen plus Magnetfeld ist also\footcite{Czycholl_theo_FK1}
 \begin{equation}
    D(E)^{(3d + B)} = 
     \frac{(2m)^{3/2}}{4 \pi^2 \hbar^3}
@@ -301,7 +299,12 @@ wobei durch die Stufenfunktion $\Theta$ nur Summanden mit $E \ge E_n$ beitragen.
 \end{marginfigure}
 
 
-Wenn wir von einer zweidimensionalen Probe ausgehen, dann ist ohne Magnetfeld die Zustandsdichte konstant. Mit Magnetfeld bleibt nur eine äquidistante Reihe von Delta-Funktionen $\delta(E-E_n)$ bei den Zyklotron-Energien $E_n$, da keine freie Bewegung mit variabler Energie mehr möglich ist. 
+Wenn wir von einer zweidimensionalen Probe ausgehen, dann ist ohne Magnetfeld die Zustandsdichte konstant. Mit Magnetfeld bleibt nur eine äquidistante Reihe von Delta-Funktionen $\delta(E-E_n)$ bei den Zyklotron-Energien $E_n$, da keine freie Bewegung mit variabler Energie mehr möglich ist
+\begin{equation}
+   D(E)^{(2d + B)} \propto \sum_n  \delta(E-E_n) \quad . \label{eq:4_dos_2d_b}
+\end{equation} 
+
+
 
 
 \section{Innere Energie} 
@@ -310,9 +313,11 @@ Die Änderung der Zustandsdichte durch das Magnetfeld hat einen überraschenden 
 
 Wenn kein Magnetfeld anliegt, sind alle Zustände bis zur Fermi-Energie $E_F$ gefüllt (bei $T=0$), alle darüber leer. Jetzt schalten wir das Magnetfeld ein und wählen seine Stärke gerade so, dass die Entartung $g_e$ (Gl.~\ref{eq:4_landau_entartung}) passend ist (siehe Abb.~\ref{fig:4_de_haas}), nämlich  die Gesamtzahl $N$ der Elektronen ein ganzzahliges Vielfaches des Entartungsgrads ist
 \begin{equation}
-   N = p \, g_e \quad \text{mit} \quad p \in \mathcal{N} \quad .
+   N = p \, g_e \quad \text{mit} \quad p \in \mathbb{N}  \quad .
 \end{equation}
 In diesem Fall ändert sich die innere Energie nicht. Die Zustände ändern zwar ihre Energie, weil alle auf die Landau-Niveaus verschoben  werden, aber gleich viele werden angehoben wie abgesenkt: die bis zum Abstand $\hbar \omega_c/2$ unterhalb des Niveaus werden angehoben; die bis zu diesem Abstand darüber werden abgesenkt.
+
+Ist aber die Feldstärke $B$ anders, d.h. die Entartung $g_e$ ist nicht genau gleich, so liegt ein nur teilweise besetztes Landau-Niveau vor. Beim allmählichen Füllen dieses letzten Niveaus werden jedoch zunächst nur Energien angehoben. Erst nach der halben Besetzung werden Energien abgesenkt. Insgesamt bleibt unabhängig von $B$ immer eine Anhebung übrig.
 
 \begin{marginfigure}
    %\includegraphics*[width=100mm]{\currfiledir sketches/de_haas.png}
@@ -320,7 +325,7 @@ In diesem Fall ändert sich die innere Energie nicht. Die Zustände ändern zwar
    \caption{Zustandsdichte in zwei Dimensionen. Bei gewissen Feldstärken $B$ ist die innere Energie größer als ohne Feld. \label{fig:4_de_haas} }
 \end{marginfigure}
 
-Falls die Feldstärke $B$ aber anders ist, die Entartung $g_e$ also nicht gerade passt, dann gibt es  ein nur teilweise besetztes Landau-Niveau. Bei schrittweise befüllen dieses letzten Niveaus werden aber zunächst nur Energien angehoben. Erst nach der Halbbesetzung werden Energie abgesenkt. In Summe ist bleibt unabhängig von $B$ immer eine Anhebung übrig.
+
 
 Die innere Energie oszilliert also mit der Zahl der besetzten Niveaus $p$, wobei ein nicht-ganzzahliges $p$ nun eine teilweise Besetzung bedeutet. Das Minimum der inneren Energie ist bei $E_F(B=0)$.
 Weil
@@ -333,7 +338,8 @@ treten die Minima mit einer Periode des reziproken Feldes
 \end{equation}
 auf.
 
-Interessanter ist aber die Größe $S_F$ des höchsten besetzten Landau-Niveaus im reziproken Raum. Dies ist der Schnitt der Fermi-Fläche in  einer Ebene senkrecht zum Magnetfeld und erlaubt und so, die Fermi-Fläche auszumessen. Sei bei einem Feld $B_n$ gerade $n$ Landau-Niveaus voll besetzt. Die Größe $S_F$ des obersten Niveaus im reziproken Raums ist durch Gl. \ref{eq:4_Sn} gegeben:
+
+Interessanter ist jedoch die Größe des höchsten besetzten Landau-Niveaus im reziproken Raum, die wir mit $S_F$ bezeichnen. Dies ist der Schnitt durch die Fermi-Fläche in einer Ebene senkrecht zum Magnetfeld und erlaubt somit die  Fermi-Fläche auszumessen. Für ein Feld $B_n$ seien gerade $n$ Landau-Niveaus besetzt. Die Größe $S_F$ des obersten Niveaus im reziproken Raum wird durch Gl. \ref{eq:4_Sn} gegeben:
 \begin{equation}
    S_F =  \frac{2 \pi e B_n}{\hbar} \left( n + \frac{1}{2}\right)  \overset{!}{=} \frac{2 \pi e B_{n+1}}{\hbar} \left( n + 1+ \frac{1}{2}\right)  
 \end{equation}
@@ -341,6 +347,8 @@ so dass
 \begin{equation}
    \delta \left(\frac{1}{B}  \right) = \frac{2 \pi e }{\hbar \, S_F} \quad .
 \end{equation}
+
+Die innere Energie variiert also periodisch im $1/B$. Die Periodenlänge $ \delta \left(1/B  \right)$ erlaubt es, die   Größe $S_F$ der fermi-Fläche geschnitten senkrecht zum Magnetfeld zu bestimmen.
 
 \begin{questions}
    \item Machen Sie sich klar, was in Abb.~\ref{fig:4_de_haas} passiert. Wie ändert sich die Besetzung der Landau-Niveaus und die innere Energie, wenn man die magnetische Feldstärke variiert? Das ist der zentrale Punkt für den Rest des Kapitels.
@@ -371,29 +379,34 @@ Im Fall von Wärmekapazität Beryllium (Abb. \ref{fig:4_beryllium}) misst man be
    \caption{Fermi-Flächen von  Beryllium (\cite{Choy00_fermi_surfaces}).}
 \end{marginfigure}
 
+\begin{questions}
+   \item Wie hängt die  Oszillation in der Wärmekapazität von der Orientierung des Magnetfeldes ab? 
+\end{questions}
 
 
 \section{Hall-Effekt}
 
-Wir verlassen für einen Augenblick die quantenmechanische Beschreibung und betrachten den klassischen Hall-Effekt. Er erlaubt es, die Ladungsträgerkonzentration zu bestimmen und zwischen Elektronen und Löchern zu unterscheiden. Er dient uns aber auch als Basis für den Quanten-Hall-Effekt im darauffolgenden Abschnitt.
+Im letzten Teil dieses Kapitels verlassen wir die Resonanzen an der Oberfläche der Fermi-Fläche und betrachten den Hall-Effekt, aber wieder bei tiefen Temperaturen und hohen Magnetfeldern. Die Landau-Niveaus werden also weiterhin eine Rolle spielen. Ziel ist es, den Verlauf der Längs- und Querwiderstände in der Abbildung am Anfang des Kapitels zu erklären, eben den Quanten-Hall-Effekt.
+
+Zunächst verlassen wir für einen Moment die quantenmechanische Beschreibung und betrachten den klassischen Hall-Effekt. Er erlaubt uns, die Ladungsträgerkonzentration zu bestimmen und zwischen Elektronen und Löchern zu unterscheiden. Er dient uns aber auch als Grundlage für den Quanten-Hall-Effekt im nächsten Abschnitt.
 
 \begin{marginfigure}
    \inputtikz{\currfiledir hall}
    \caption{Geometrie zum Hall-Effekt.}
 \end{marginfigure}
 
-Wir betrachten die Bewegung eines quasi-freien Elektrons ($q=-e$) unter elektrischen und magnetischen Feldern und berücksichtigen Stöße wie im Drude-Modell. Relevant ist die mittlere Geschwindigkeit $\mathbf{v}_d = \braket{\mathbf{v}}$, bei der also die thermische Bewegung herausgemittelt ist. Für diese gilt
+Wir betrachten die Bewegung eines quasi-freien Elektrons ($q=-e$) unter elektrischen und magnetischen Feldern und berücksichtigen Stöße wie im Drude-Modell. Relevant ist die mittlere (Drift-) Geschwindigkeit $\mathbf{v}_d = \braket{\mathbf{v}}$, bei der also die thermische Bewegung herausgemittelt ist. Für diese gilt
 \begin{equation}
    m^\star \frac{d \braket{\mathbf{v} }} {dt} = 
    -e \left[ \bm{\mathcal{E}} + \braket{\mathbf{v}} \times \bm{B} \right] 
    - m^\star \frac{\braket{\mathbf{v}}}{\tau} \quad .
 \end{equation}
 Das Magnetfeld zeigt in $z$-Richtung und wir sind nur am stationären Fall interessiert ($d \braket{\mathbf{v} } / dt = 0$). Dann erhalten wir
-\begin{eqnarray}
+\begin{align}
    v_{d,x} =& - \frac{e \tau}{m^\star} ( \mathcal{E}_x + v_{d,y} B ) \\
    v_{d,y} =& - \frac{e \tau}{m^\star} ( \mathcal{E}_y - v_{d,x} B ) \\
    v_{d,z} =& - \frac{e \tau}{m^\star} \mathcal{E}_z  \quad .
-\end{eqnarray}
+\end{align}
 Mit der Definition der Stromdichte $\mathbf{j} = - e n \mathbf{v}_d = \bm{\sigma} \bm{\mathcal{E}}$ 
  und der Zyklotron-Frequenz $\omega_c = e B /m^\star$ 
  bekommen wir den Leitfähigkeitstensor $\bm{\sigma}$
@@ -411,7 +424,7 @@ Wir machen das Experiment so, dass nur Strom in $x$-Richtung fliesst, also $j_y 
 \begin{equation}
    \mathcal{E}_y = - \omega_c \tau \mathcal{E}_x =  - \omega_c \tau \frac{j_x}{\sigma_0} = R_H \, B \, j_x \quad .
 \end{equation}
-Das Magnetfeld bewirkt also ein elektrisches Hall-Feld in $y$-Richtung, obwohl der Strom in $x$-Richtung fliesst. Die Hall-Konstante $R_H$ ist also
+Das Magnetfeld bewirkt also ein elektrisches Hall-Feld in $y$-Richtung, obwohl der Strom in $x$-Richtung fliesst. Die Hall-Konstante $R_H$ ist defniert als
 \begin{equation}
    R_H = \frac{ \mathcal{E}_y }{j_x B} = - \frac{1}{n \, e} \quad .
 \end{equation}
@@ -421,7 +434,7 @@ Da sich $\mathcal{E}_y$, $j_x$ und $B$ messen lassen, kann man so die Ladungstr�
    \begin{tabular}[pos]{lrrrr}
       Element  & \ch{Li} & \ch{Na} & \ch{Be} & \ch{Al} \\
       Wertigkeit & 1    &    1    & 2         & 3 \\
-      $n$/Atom & 0.8     & 1.2  & -0.4   & -0.9 \\
+      $n$/Atom & 0.8     & 1.2  & -0.4   & -0.9 \\[2mm]
    \end{tabular}
    \caption{Ladungträgerdichte $n$ bestimmt aus der Hall-Konstanten $R_H$ (aus \cite{Hunklinger2014}). Ein negatives Vorzeichen bedeutet Löcherleitung.}
 \end{margintable}
@@ -438,22 +451,34 @@ Analog zum Querwiderstand $\rho_{xy} = R_H \, B$ ist später auch  der Längswid
 \end{equation}
 interessant.  
 
+\begin{questions}
+   \item Wahrscheinlich ist Ihnen der klassische Hall-Effekt schon früher einmal begegnet. Vergleichen Sie die damalige Darstellung (unter Umständen  ohne Leitfähigkeitstensor) mit dieser hier.
+\end{questions}
+
+
 
 \section{Quanten-Hall-Effekt}
 
 Beim klassischen Hall-Effekt hatten wir gefordert, dass die  Probe flach  ist, also kein Feld oder Stromfluss in $z$-Richtung geschieht. Das verschärfen wir jetzt und fordern eine quantenmechanisch-zweidimensionale Probe, also eine, bei der in $z$-Richtung keine Quantenzahlen mehr relevant sind, insbesondere kein $k_z$. Solche Strukturen nennt man zweidimensionales Elektronengas (2DEG) und kann sie an Grenzflächen zwischen zwei Halbleitern erzeugen.
 
-Wenn wir ein starkes Magnetfeld anlegen und die Proben rein genug sind, so dass $\omega_c \tau \gg 1$, und die Temperatur $T$ kalt genug, dann erhalten wir wie oben besprochen als Zustandsdichte eine äquidistante Reihe von Delta-Funktionen $\delta(E-E_n)$.  Bei manchen Magnetfeldern $B$ sind dann alle Landau-Niveaus vollständig gefüllt und das nächste $\hbar \omega_c$ in der Energie 
-  entfernt. Damit sind keine Streuprozesse möglich und $\tau$ wird unendlich. Damit werden im Leitfähigkeitstensor  
-  Gl. \ref{eq:4_sigma_tensor} die Einträge $\sigma_{xx} = \sigma_{yy} = 0$. Der Einfachheit halber in zwei Dimensionen also
+Wenn wir ein starkes Magnetfeld anlegen und die Proben rein genug sind, so dass $\omega_c \tau \gg 1$, und die Temperatur $T$ kalt genug, dann erhalten wir wie oben besprochen (Gl. \ref{eq:4_dos_2d_b}) als Zustandsdichte eine äquidistante Reihe von Delta-Funktionen $\delta(E-E_n)$.  Bei manchen Magnetfeldern $B$ sind dann alle Landau-Niveaus vollständig gefüllt und das nächste Niveau $\hbar \omega_c$ in der Energie 
+  entfernt. Damit sind keine Streuprozesse möglich und $\tau$ wird unendlich. Wir wiederholen hier die relevanten $x$ und $y$-Komponenten des Leitfähigkeitstensors (Gl. \ref{eq:4_sigma_tensor} )
   \begin{equation}
+   \bm{\sigma} = \frac{ n e^2 \tau}{ m^\star( 1+ \omega_c^2 \tau^2)}
+   \begin{pmatrix}
+      1  & - \omega_c \tau \\
+      \omega_c \tau & 1   \\
+   \end{pmatrix} 
+\end{equation}
+ Für  $\tau \rightarrow \infty$ wird daraus
+\begin{equation}
    \bm{\sigma}_{\tau \rightarrow \infty} =
    \begin{pmatrix}
       0  & -\sigma_\infty  \\
      \sigma_\infty  & 0   \\
    \end{pmatrix} \quad .
 \end{equation} 
-  Die Kreuz-Terme $\sigma_{xy}$ und $\sigma_{yx}$ bleiben von Null  verschieden, weil auch $\sigma_0 \propto \tau$. Der Widerstandstensor ist das Inverse\sidenote{Man invertiert den Tensor (die Matrix), nicht jedes Element!} des Leitfähigkeitstensors
+Die Diagonal-Einträge verschwinden. $\sigma_{xx} = \sigma_{yy} = 0$.  Die Kreuz-Terme $\sigma_{xy}$ und $\sigma_{yx}$ bleiben aber von Null  verschieden. Der Widerstandstensor ist das Inverse\sidenote{Man invertiert den Tensor (die Matrix), nicht jedes Element!} des Leitfähigkeitstensors
   \begin{equation}
    \bm{\rho}_{\tau \rightarrow \infty} = 
    \bm{\sigma}_{\tau \rightarrow \infty}^{-1} =
@@ -462,8 +487,7 @@ Wenn wir ein starkes Magnetfeld anlegen und die Proben rein genug sind, so dass 
      -1/\sigma_\infty  & 0   \\
    \end{pmatrix} \quad .
 \end{equation}
-Das Längsfeld $\mathcal{E}_x$ verschwindet, weil zwar $j_x \neq 0$ aber  $\sigma_{xx} = 0$ und wie immer  $j_y = 0$. Damit wird auch der Längs-Widerstand $\rho_{xx} = 0$.
-Das Hall-Feld $\mathcal{E}_y$ bewirkt den Stromfluss in $x$-Richtung.
+Das Längsfeld $\mathcal{E}_x$ verschwindet, weil zwar $j_x \neq 0$ aber  $\sigma_{xx} = 0$ und wie immer  $j_y = 0$. Damit wird auch der Längs-Widerstand $\rho_{xx} = 0$. Das Hall-Feld $\mathcal{E}_y$ bewirkt den Stromfluss in $x$-Richtung.
 
 Das hat Klaus von Klitzing 1980 auch genau  so gefunden\sidenote{siehe \cite{Klitzing1980}. Nobelpreis K. von Klitzing 1985}. Etwas neuere Daten sind in Abbildung~\ref{fig:4_qhe_gaas} gezeigt. An den Stellen, an denen der Längs-Widerstand $\rho_{xx}$ verschwindet, also gerade alle Landau-Niveaus vollständig gefüllt sind, ist die Elektronendichte
 \begin{equation}
@@ -473,18 +497,22 @@ mit ganzzahligem $p$. Der Quer-Widerstand wird somit
 \begin{equation}
   \rho_{xy} = R_H B =  - \frac{B}{n \, e} = \frac{1}{p} \, \frac{h}{e^2} = \frac{1}{p} \, R_K
 \end{equation} 
-mit der Naturkonstanten $R_K = 25812,8\dots$~$\Omega$. Dies wird heute als Widerstandsnormal genutzt, und auch im die Sommerfeld'sche Feinstrukturkonstante $\alpha$ zu bestimmen
+mit der Naturkonstanten $R_K = 25812,8\dots$~$\Omega$, die als von Klitzing-Widerstand bezeichnet wird. Dies wird heute als Widerstandsnormal genutzt,  auch um die Sommerfeld'sche Feinstrukturkonstante $\alpha$ zu bestimmen
 \begin{equation}
    \alpha = \frac{\mu_0 \, c}{2} \, \frac{e^2}{h} = \frac{\mu_0 \, c}{2} \, \frac{1}{R_K} \approx \frac{1}{137} \quad .
 \end{equation}
 
 
 
-Überraschend war jedoch, dass sich \emph{Plateaus} ausbilden, also  $\rho_{xx}$  und $\rho_{xy}$ über ein gewisses Intervall von $B$ einen konstanten Wert annehmen. Eigentlich sollte ja nur für genau einen Wert von  $B$ alle Landau-Niveaus gefüllt sein. Der Längswiderstand $\rho_{xx}$ ist in Abbildung~\ref{fig:4_qhe_gaas} aber beinahe durchgängig Null.  Eine einfache phänomenologische Erklärung findet sich in der Zustandsdichte einer realen Probe. In Wirklichkeit wird die nicht allein eine Sequenz von Delta-Funktionen sein. Defekte und Verunreinigungen führen zu einer kontinuierlichen Verteilung von Zuständen auf der Energieskala. Diese Defekt-Zustände sind aber im Gegensatz zu den Landau-Niveaus im Raum lokalisiert und tragen nicht zur Leitfähigkeit bei, aber zur Fermi-Energie. Wenn das Magnetfeld  etwas erhöht wird, sollte in einer idealen Probe sofort das nächst tiefer  Landau-Niveau depopuliert werden, weil die Fermi-Energie direkt zu diesem Niveau springt. In einer realen Probe werden aber zunächst alle Defekt-Zustände dazwischen depopuliert und das Landau-Niveau bleibt vollständig besetzt. Solange es also noch besetzte Defekt-Zustände zwischen zwei landau-Niveaus gibt, bleibt der Quanten-Hall-Effekt bestehen.
+Überraschend war jedoch, dass sich \emph{Plateaus} ausbilden, also  $\rho_{xx}$  und $\rho_{xy}$ über ein gewisses Intervall von $B$ einen konstanten Wert annehmen. Eigentlich sollte ja nur für genau einen Wert von  $B$ alle Landau-Niveaus gefüllt sein. Der Längswiderstand $\rho_{xx}$ ist in Abbildung~\ref{fig:4_qhe_gaas} aber beinahe durchgängig Null.  Eine einfache phänomenologische Erklärung findet sich in der Zustandsdichte einer realen Probe. In Wirklichkeit wird die nicht allein eine Sequenz von Delta-Funktionen sein. Defekte und Verunreinigungen führen zu einer kontinuierlichen Verteilung von Zuständen auf der Energieskala. Diese Defekt-Zustände sind aber im Gegensatz zu den Landau-Niveaus im Raum lokalisiert und tragen nicht zur Leitfähigkeit bei, aber zur Fermi-Energie. Wenn das Magnetfeld  etwas erhöht wird, sollte in einer idealen Probe sofort das nächst tiefere  Landau-Niveau depopuliert werden, weil die Fermi-Energie direkt zu diesem Niveau springt. In einer realen Probe werden aber zunächst alle Defekt-Zustände dazwischen depopuliert und das Landau-Niveau bleibt vollständig besetzt. Solange es also noch besetzte Defekt-Zustände zwischen zwei Landau-Niveaus gibt, bleibt der Quanten-Hall-Effekt bestehen.
 
-Tiefergehende Erklärungen benutzen 'skipping orbits' in Randkanälen (am Rand der Probe). Heutzutage wird der Quanten-Hall-Effekt als ein topologischer Effekt gesehen, der also unter stetigen Verformungen erhalten  bleibt. Er wird auch als ganzzahliger Quanten-Hall-Effekt bezeichnet, weil es auch einen 'fractional quantum Hall effect' gibt, bei dem $p$ rationale Zahlen annimmt. Für diesen haben Robert Laughlin, Horst Störmer und Daniel Tsui 1998 den Nobelpreis bekommen.
+Tiefergehende Erklärungen verwenden 'skipping orbits' in den Randkanälen (am Rand der Probe). In gewissem Sinne ist es auch hier die Abweichung von der unendlich ausgedehnten Idealform, die den Quanten-Hall-Effekt erzeugt.
+Heutzutage wird der Quanten-Hall-Effekt als ein topologischer Effekt gesehen, der also unter stetigen Verformungen erhalten  bleibt. Er wird auch als ganzzahliger Quanten-Hall-Effekt bezeichnet, weil es auch einen 'fractional quantum Hall effect' gibt, bei dem $p$ rationale Zahlen annimmt. Für diesen haben Robert Laughlin, Horst Störmer und Daniel Tsui 1998 den Nobelpreis bekommen. Mehr zum Quanten-Hall-Effekt findet sich in Kapitel 10.5 von \cite{Gross_FK} oder Kapitel 4.6 von \cite{Czycholl_theo_FK2}.
 
 
+\begin{questions}
+   \item Warum muss die Probe zweidimensional sein, damit der Quanten-Hall-Effekt auftritt?
+\end{questions}
 
 
 
