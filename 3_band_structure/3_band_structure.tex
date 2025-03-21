@@ -1,6 +1,6 @@
 %\renewcommand{\lastmod}{\today}
 \renewcommand{\chapterauthors}{Markus Lippitz}
-\renewcommand{\lastmod}{20. März  2025}
+\renewcommand{\lastmod}{21. März  2025}
 
 \chapter{Elektronen in Festkörpern}
 \label{chap:bandstruktur}
@@ -62,16 +62,16 @@ Wir machen  für die Wellenfunktion den Ansatz einer Linearkombination von ebene
 Der Wellenvektor  $\mathbf{k}$ kann wie immer (siehe beispielsweise  Gl.~\ref{eq:2:k_randbed}) nur diskrete Werte annehmen. Anders als bei den Phononen kann er aber auch außerhalb der ersten Brillouin-Zone liegen, da die Elektronen-Wellenfunktion  nicht nur an Gitterpunkten physikalische Bedeutung hat sondern im ganzen Raum. Elektronen können an 'verschiedeneren' Orten des Kristalls sein als Kerne.
 
 Nun setzen alles in die Schrödingergleichung ein
-\begin{eqnarray}
+\begin{align}
     \hat{H}  \psi(\mathbf{r}) = \left( - \frac{\hbar^2}{2m} \nabla^2 + V(r) \right) \psi(\mathbf{r}) =  & E  \psi(\mathbf{r}) \\
      \left( - \frac{\hbar^2}{2m} \nabla^2 + \sum_{\mathbf{G}} V_{\mathbf{G}} \, e^{i \mathbf{G}  \cdot \mathbf{r} } \right) \sum_{\mathbf{k}} C_{\mathbf{k}} \, e^{i \mathbf{k} \cdot \mathbf{r} } =  & E  \sum_{\mathbf{k}} C_{\mathbf{k}} \, e^{i \mathbf{k} \cdot \mathbf{r} }
-\end{eqnarray}
+\end{align}
 Wir multiplizieren die Klammer aus, leiten dabei die Wellenfunktion ab (was ein $- | \mathbf{k}|^2$ liefert), und benennen übergangsweise den Summationsindex nach $\mathbf{k}'$ um:
-\begin{eqnarray}
+\begin{equation}
     \sum_{\mathbf{k}}  \frac{\hbar^2 | \mathbf{k}|^2}{2m} C_{\mathbf{k}} \, e^{i \mathbf{k} \cdot \mathbf{r} } 
     + \sum_{\mathbf{G}, \mathbf{k}'} V_{\mathbf{G}} \, C_{\mathbf{k}'} \, e^{i (\mathbf{G}+\mathbf{k}')  \cdot \mathbf{r} }  
-    =  & E  \sum_{\mathbf{k}} C_{\mathbf{k}} \,       e^{i \mathbf{k} \cdot \mathbf{r} } 
-\end{eqnarray}
+    =   E  \sum_{\mathbf{k}} C_{\mathbf{k}} \,       e^{i \mathbf{k} \cdot \mathbf{r} } 
+\end{equation}
 Mit $\mathbf{k} = \mathbf{k}' + \mathbf{G}$ erhalten wir 
 \begin{equation}
     \sum_{\mathbf{k}}   e^{i \mathbf{k} \cdot \mathbf{r} } 
@@ -109,12 +109,12 @@ Daher können wir die  Wellenfunktion $\psi$ etwas 'sparsamer' schreiben. Statt 
 
 Bevor wir auf die Energien $E_\mathbf{k}$ eingehen, betrachten wie die Wellenfunktionen $ \psi_\mathbf{k}(\mathbf{r})$ noch etwas genauer. Wir wir gleich sehen werden, können wir dabei $\mathbf{k}$ auf die erste Brillouinzone beschränken. 
 Wir klammern eine ebene Welle aus:
-\begin{eqnarray}
+\begin{align}
     \psi_\mathbf{k}(\mathbf{r}) = & \sum_{\mathbf{G}} C_{\mathbf{k}-\mathbf{G}} \, e^{i (\mathbf{k}- \mathbf{G}) \cdot \mathbf{r} }
     = e^{i \mathbf{k} \cdot \mathbf{r} } \,
     \sum_{\mathbf{G}} C_{\mathbf{k}-\mathbf{G}} \, e^{-i \mathbf{G} \cdot \mathbf{r} } \\
-    = & u_\mathbf{k}(\mathbf{r}) \; e^{i \mathbf{k} \cdot \mathbf{r} } 
-\end{eqnarray}
+    = & u_\mathbf{k}(\mathbf{r}) \; e^{i \mathbf{k} \cdot \mathbf{r} }  \quad .
+\end{align}
 Jede Wellenfunktion lässt sich also schreiben als Produkt einer ebenen Welle $e^{i \mathbf{k} \cdot \mathbf{r} }$ aus der ersten Brillouinzone und einer gitterperiodischen Funktion $u_\mathbf{k}(\mathbf{r})$, die diese räumlich moduliert. Diese Art der Aufteilung nennt man \emph{Bloch-Wellen}. Das \emph{Bloch-Theorem} besagt, dass allgemein Lösungen der Schrödingergleichung in einem periodischen Potential von dieser Form sein müssen\sidenote{siehe z.B. \cite{Czycholl_theo_FK1}}. Die Aufteilung zwischen ebener Welle und $u(\mathbf{r})$ ist dabei nicht eindeutig, weil immer ein Phasenfaktor zwischen beiden verschoben werden kann.
 
 \begin{marginfigure}
@@ -131,14 +131,14 @@ Die  $u_\mathbf{k}(\mathbf{r})$ sind durch die Fourier-Darstellung gitterperiodi
 \end{equation}
 
 Bloch-Wellen $\psi_\mathbf{k}(\mathbf{r})$ sind periodisch im reziproken Raum:
-\begin{eqnarray}
+\begin{align}
     \psi_{\mathbf{k} + \mathbf{G}}(\mathbf{r}) = & 
      e^{i (\mathbf{k} + \mathbf{G}) \cdot \mathbf{r} } \, \sum_{\mathbf{G}'} C_{\mathbf{k} +  \mathbf{G} -\mathbf{G}'} \, e^{-i \mathbf{G}' \cdot \mathbf{r} } \\
      = &  e^{i \mathbf{k}  \cdot \mathbf{r} } \, \sum_{\mathbf{G}'} C_{\mathbf{k} - (\mathbf{G}' -\mathbf{G})} \, e^{-i (\mathbf{G}' - \mathbf{G}) \cdot \mathbf{r} } \\
      = &  e^{i \mathbf{k}  \cdot \mathbf{r} } \, \sum_{\mathbf{G}''} C_{\mathbf{k} - \mathbf{G}''} \, e^{-i \mathbf{G}''   \cdot \mathbf{r} } \\
  = &  \psi_{\mathbf{k}}(\mathbf{r})  \quad .
-    \end{eqnarray}
-Daher reicht es aus $\mathbf{k}$ aus der ersten Brillouinzone zu wählen.
+    \end{align}
+Daher reicht es aus $\mathbf{k}$ aus der ersten Brillouinzone zu wählen. Man kann die räumlich schnelle Modulation durch Wellenvektoren außerhalb der ersten Brillouinzone so in die gitterperiodische Funktion $u(\mathbf{r})$ verschieben, dass nur noch ein räumlich langsamer Anteil entsprechend einem Wellenvektor innerhalb der ersten Brillouinzone übrigbleibt.
 
 Das bedeutet auch, dass $\hbar \mathbf{k}$ nicht als Impuls verstanden werden kann. Noch deutlicher: Bloch-Wellen sind keine Eigenfunktionen des Impuls-Operators. Manchmal bezeichnet man  $\mathbf{k}$ als \emph{Kristallimpuls}, eine Art verallgemeinertem Impuls. Da ein Kristall keine vollständige Translationsinvarianz mehr besitzt, gilt eben auch die Impulserhaltung nur noch eingeschränkt. Das ist hier völlig analog zu der Diskussion bei Phononen. 
 
@@ -159,19 +159,18 @@ Zur Veranschaulichung machen wir nun eine sehr weitgehende Näherung: wir nehmen
 \end{equation}
 Im Eindimensionalen ist das  wie erwartet ein parabelförmiger Zusammenhang zwischen Wellenvektor und Energie. Wenn wir $\mathbf{k}$ über den ganzen reziproken Raum laufen lassen, nicht nur die erste Brillouinzone, dann nennt man diese Darstellung \emph{ausgedehntes Zonenschema} (Abbildung  \ref{fig:3_zone_scheme} links).
 
-Jetzt nehmen wir die Periodizität aus den Bloch-Wellen hinzu. Wir können einen reziproken Gittervektor addieren und die Energie ändert sich nicht. Für jeden reziproken Gittervektor $\mathbf{G}$ bekommen wir eine neue, verschobene Parabel. Das ist das \emph{periodische Zonenschema}. 
-Damit wird klar, dass  der Zusammenhang zwischen dem Wellenvektor $\mathbf{k}$ und der Energie nicht eindeutig ist. Man definiert einen \emph{Band-Index} $n$ der die Energien in der ersten Brillouinzone aussteigend sortiert.
+Jetzt nehmen wir die Periodizität aus den Bloch-Wellen hinzu. Wir addieren jeweils einen reziproken Gittervektor, so dass wir wieder in der ersten Brillouin-Zone landen. Die Energie bleibt unverändert. Das nennt man \emph{reduziertes Zonenschema}. Man kann sich auch vorstellen, dass die Dispersionsrelation immer wieder zurückgefaltet wird, wenn sie die Grenze der Brillouinzone erreicht. Dies ist eine allgemeine Eigenschaft von Blochwellen, d.h. von Lösungen der Schrödingergleichung in einem periodischen Potential. So kann man auch den optischen Zweig der Phononen als zurückgefaltete akustische Phononen auffassen, wenn die Brillouin-Zone halb so groß ist.\sidenote{Falls Sie diese Übungsaufgabe einmal gesehen haben}
+
+
+Es wird deutlich, dass der Zusammenhang zwischen dem Wellenvektor $\mathbf{k}$ und der Energie nicht eindeutig ist. Man definiert einen \emph{Band-Index} $n$, der die Energien in der ersten Brillouin-Zone aufsteigend sortiert. Was wir als 'Rückfaltung' beschreiben, ist eigentlich die Addition der reziproken Gittervektoren. Für jeden reziproken Gittervektor $\mathbf{G}_n$ erhalten wir eine neue verschobene Parabel, also
 \begin{equation}
     E_{n,\mathbf{k}} 
      = \frac{\hbar^2}{2m} \left| \mathbf{k} + \mathbf{G}_n \right|^2 \quad \text{und} \quad \psi_{n,\mathbf{k}} = e^{i (\mathbf{k} + \mathbf{G}_n) \cdot \mathbf{r}} \quad .
 \end{equation}
-Im Eindimensionalen sind das Parabeln, die von jedem Punkt  $\mathbf{G}_n $ im reziproken Raum starten. Diese Darstellung nennt man \emph{periodisches Zonenschema}. 
-
-Aufgrund der Periodizität ist aber alle Information schon in der ersten Brillouinzone enthalten. Man kann die Darstellung also auf diese beschränken. Dies nennt man  \emph{reduziertes Zonenschema}. Man kann sich das so vorstellen, dass die Parabel ausgehend von  $\mathbf{k} = 0$  an den Grenzen der Brillouinzone zurückgefaltet wird. Wenn sie dann später nochmals auf eine Grenze trifft, wird sie wieder gefaltet.
+Zeichnet man diese $ E_{n,\mathbf{k}} $ über den gesamten reziproken Raum und nicht nur über die erste Brillouin-Zone, so spricht man von einem \emph{periodischen Zonenschema}.  Man kann sich auch vorstellen, dass viele \emph{reduziertes Zonenschema} nebeneinander periodisch wiederholt werden.
 
 
-Im Dreidimensionalen zeichnet man die Energie entlang eines Pfades durch den reziproken Raum, beispielsweise entlang der $x$-Komponente des Wellenvektors. Dann 
-kommt zu den Rück-Faltungen noch hinzu, dass es einen Offset aufgrund der $y$ und $z$-Komponenten in $\mathbf{G}_n $ gibt. Dies allein erklärt schon einen großen Teil der Dispersionsrelation, nämlich die gestrichelten Linien in Abb.~\ref{fig:3_al_empty_lattice}.
+Im Eindimensionalen sind die $ E_{n,\mathbf{k}} $    Parabeln, die von jedem Punkt  $\mathbf{G}_n $ im reziproken Raum starten. Im Dreidimensionalen zeichnet man die Energie entlang eines Pfades durch den reziproken Raum, beispielsweise entlang der $x$-Komponente des Wellenvektors. Dann kommt zu den Rück-Faltungen noch hinzu, dass es einen Offset aufgrund der $y$ und $z$-Komponenten in $\mathbf{G}_n $ gibt. Dies allein erklärt schon einen großen Teil der Dispersionsrelation, nämlich die gestrichelten Linien in Abb.~\ref{fig:3_al_empty_lattice}.
 
 \begin{figure}
     \inputtikz{\currfiledir fig_zone_scheme}
@@ -180,13 +179,12 @@ kommt zu den Rück-Faltungen noch hinzu, dass es einen Offset aufgrund der $y$ u
 
 \begin{questions}
     \item Skizzieren Sie für ein dreidimensionales kubisch-primitives Gitter die Dispersionsrelation entlang $k_x$ in der Näherung $V \approx 0$.
+    \item Skizzieren Sie zwei Wellenfunktionen bei gleichem Wellenvektor $\mathbf{k}$ innerhalb der ersten Brillouinzone aber verschiedenem Band-Index $n$.
 \end{questions}
 
 
 
 \section{Näherung der beinahe freien Elektronen}
-
-
 
 Nun wollen wir das Potential hinzunehmen, aber weiterhin als 'schwach' betrachten, eben 'beinahe freie' Elektronen. Im Englischen  nennt man das \emph{empty lattice approximation}. In der Schrödingergleichung \ref{eq:3_SG_rezi} kommen die Fourier-Koeffizienten $V_\mathbf{G}$ des Potentials vor. Im Eindimensionalen ist $G_n = 2 \pi n / a$, mit der Gitterkonstante $a$. Das betragsmäßig kleinste $G$ ist also $g = 2 \pi / a$. Wir nehmen also an, dass nur $V_{\pm g}$ von Null verschieden ist. $V_0$ beschreibt einen konstanten Offset, den wir bei einer Energie-Achse immer zu Null wählen können. Alle höheren $V_G$ sollen der Einfachheit halber ebenfalls Null sein.  Wenn die $V_{\pm g}$ klein sind, dann wir die Lösung ähnlich dem vorangegangenen Abschnitt sein, also zurückgefaltete Parabeln innerhalb der ersten Brillouinzone:
 \begin{equation}
@@ -209,7 +207,7 @@ Damit wird die Schrödingergleichung \ref{eq:3_SG_rezi} zu
 \end{equation}
 Die dreidimensionale Lösung dieses Gleichungssystems ist in Abb.~\ref{fig:3_al_empty_lattice} dargestellt und kommt der vollständigen Rechnung schon sehr nahe. Das Pluto-Skript\pluto{al_dispersion} für diese Abbildung ist inspiriert von \cite{Polakovic_cmpm3}.
 
-Interessant wird es an der Grenze der Brillouinzone, also bei $k = \pm g/2$. Dort schneiden sich zwei Parabeln. Die Zustände sind ohne Potential also energetisch entartet. Lassen Sie uns diese Stelle im Fall von  $V_{\pm g} \neq 0$ genauer betrachten. Bei beispielsweise $k = + g/2$  sind die ersten beiden Diagonalelemente von Gl. \ref{eq:3_SG_empty_lattice} nahe Null, das dritte betragsmäßig deutlich größer. Damit die dritte Zeile sich trotzdem zu Null summiert, muss also hier $C_{k+g} \approx 0$ sein. Andersherum: An der rechten Grenze der Brillouinzone schneiden sich die Parabeln, die von $G =0$ und von $G=+g$ ausgehen. Nur diese beiden Koeffizienten $C_{i}$ bzw. diese ebenen Wellen tragen bei. Das Gleichungssystem wird noch einfacher 
+Interessant wird es an der Grenze der Brillouinzone, also bei $k = \pm g/2$. Dort schneiden sich zwei Parabeln. Die Zustände sind ohne Potential also energetisch entartet. Lassen Sie uns diese Stelle im Fall von  $V_{\pm g} \neq 0$ genauer betrachten. Bei beispielsweise $k = + g/2$  sind die ersten beiden Diagonalelemente von Gl. \ref{eq:3_SG_empty_lattice} nahe Null, das dritte betragsmäßig deutlich größer. Damit die dritte Zeile sich trotzdem zu Null summiert, muss also hier $C_{k+g} \approx 0$ sein. Andersherum: An der rechten Grenze der Brillouinzone schneiden sich die Parabeln, die von $G =0$ und von $G=+g$ ausgehen. Nur diese beiden Koeffizienten $C_{i}$ bzw. diese ebenen Wellen\sidenote{Wir zeichnen die Energie in der Dispersionsrelation, aber es gehört immer eine Wellenfunktion $\psi$ dazu, die eine Bloch-Welle ist.} tragen bei. Das Gleichungssystem wird noch einfacher 
 \begin{equation}
     \begin{pmatrix}
         E_k^0 - E &  V_{g}  \\
@@ -236,6 +234,7 @@ Die Dispersionsrelation $E(k)$ nähert sich mit horizontaler Asymptote der Grenz
 
 \begin{questions}
     \item Lesen Sie den Blog-Artikel \cite{Polakovic_cmpm3}. Das sollten Sie jetzt alles gut verstehen.
+    \item Im periodischen Zonenschema (Abb. \ref{fig:3_zone_scheme}) kommt es an vielen Stellen zu einer Entartung. Skizzieren sie dieses Schema für den Fall $V \neq 0$.
 \end{questions}
 
 
@@ -248,10 +247,10 @@ Für die  Koeffizienten  $C_{k}$ und $C_{k - g}$ findet man durch Einsetzen der 
 \end{equation}
 Bei $k = g/2$ wird der Zähler also $\pm |V_g|$ und damit die beiden Koeffizienten betragsmäßig gleich.
 An dieser Stelle sind die Eigenfunktionen  also
-\begin{eqnarray}
+\begin{align}
     \psi_+ & \propto e^{i g x /2} +  e^{-i g x /2} \propto \cos (gx /2) \\
     \psi_- &\propto e^{i g x /2} -  e^{-i g x /2} \propto \sin (gx /2) \quad .
-\end{eqnarray}
+\end{align}
 Die Ladungsdichte ist das Betragsquadrat der Wellenfunktion. Bei einer ebenen Welle ist die Ladungsdichte räumlich konstant. Durch die Überlagerung zweier ebener Wellen ergibt sich ein Interferenzmuster in der Ladungsdichte
 \begin{equation}
     |\psi_+|^2 \propto \cos^2 \left( \frac{\pi x}{a}  \right) \quad \text{und} \quad  |\psi_-|^2 \propto \sin^2 \left( \frac{\pi x}{a}  \right)  \quad .
@@ -260,13 +259,18 @@ Die Atomkerne mit dem zugehörigen attraktiven Coulomb-Potential sitzen bei $x =
 
 An der Grenze der Brillouinzone können zwei ebene Wellen also so hybridisieren, dass dadurch für eine der beiden neuen Eigenfunktionen die Energie abgesenkt wird. Im Gegenzug erhöht sich die Eigenenergie der anderen. Dies ist sehr ähnlich dem bindenden und anti-bindenden Potential bei \ch{H2+} in der Molekülphysik. Fern der Grenzen der Brillouinzone sind die Energien der beiden Zustände so unterschiedlich, dass die Beschreibung durch die alten, ungekoppelten Zustände gültig bleibt: Der Term $ E_k^0 -   E_{k-g}^0$ ist viel größer als $V_g$, so dass der Effekt von $V_g$ vernachlässigt werden kann.
 
-Eigenwert-Gleichungen der Form \ref{eq:3_SG_empty_lattice_2} sind ein häufig vorkommendes Motiv in der Physik. Zwei Zustände geringfügig unterschiedlicher Energie koppeln dann zu neuen, hybridisierten Zuständen, wenn ihre Energiedifferenz kleiner als die Kopplungsenergie ist. Wenn man die Energiedifferenz variiert (hier durch Ändern von $k$) dann werden die Energien sich kreuzen (wie im letzten Abschnitt). Die Kopplungsenergie $V_g$ führt zu einer Vermeidung der Kreuzung (engl. \emph{avoided crossing}). Das ist kein quantenmechanischer Effekt. Auch bei den gekoppelten Pendeln sieht man das, wenn man die Eigenfrequenz der Pendel verstimmt, um so die Eigenenergien unterschiedlich zu machen.
+Eigenwert-Gleichungen der Form \ref{eq:3_SG_empty_lattice_2} sind ein häufig vorkommendes Motiv in der Physik. Zwei Zustände geringfügig unterschiedlicher Energie koppeln dann zu neuen, hybridisierten Zuständen, wenn ihre Energiedifferenz kleiner als die Kopplungsenergie ist. Wenn man die Energiedifferenz variiert (hier durch Ändern von $k$) dann werden die Energien sich kreuzen (wie im letzten Abschnitt). Die Kopplungsenergie $V_g$ führt zu einer Vermeidung der Kreuzung (engl. \emph{avoided crossing}). Das ist kein quantenmechanischer Effekt. Auch
+gekoppelte Pendel koppeln nur, wenn die Eigenfrequenzen vor der Kopplung sehr ähnlich waren. Wenn sie dann aber koppeln, dann findet man zwei verschiedene Eigenfrequenzen, deren Abstand durch die Stärke der Kopplung bestimmt ist.
+
 
 
 \section*{Anschauliche Interpretation II}
 
 Man kann auch aus einem anderen Blickwinkel darauf schauen. Eine ebene Welle $e^{i k x}$, die in positive $x$-Richtung läuft, wird an dem Gitter der Atome mit der Gitterkonstante $a$ gestreut.  In der Laue-Streutheorie entspricht das der Addition eines reziproken Gittervektors $G$, hier der kleinste $g = \pm 2 \pi /a$. Dadurch entsteht eine auslaufende Welle mit dem Wellenvektor $k - g$, also in negative $x$-Richtung laufend.  An der Stelle $k = \pm g/2$, also am Rand der Brillouinzone, hat diese nach links laufende Welle genau den gleichen Wellenvektor, wie die Welle, die zur Parabel bei $G=+g$ gehört. Diese beiden interferieren also konstruktiv miteinander. Anders gesprochen: die Streuung führt bei Erfüllen der Laue-Bedingung $\Delta k = G$ zur Interferenz der beiden Wellen. Dies entspricht dem Koppeln der Zustände wie oben besprochen.
 
+\begin{questions}
+    \item Im periodischen Zonenschema (Abb. \ref{fig:3_zone_scheme}) kommt es an vielen Stellen zu einer Entartung. Welche Fourier-Koeffizienten des Potentials bewirken wo eine Bandlücke?
+\end{questions}
 
 \section*{Näherung stark gebundener Elektronen}
 
@@ -315,6 +319,9 @@ Insgesamt haben wir damit\sidenote{Die Summen über $\tilde{E}$ und $\alpha$ lie
 \end{equation}
 Das Coulomb-Integral $\alpha$ bewirkt einer Energie-Absenkung, weil auch die Nachbar-Atome etwas attraktives Coulomb-Potential beisteuern. Das Transfer-Integral $\beta$ kann sowohl positiv als auch negativ sein, und auch richtungsabhängig, wie bei der kovalenten Bindung in der Molekülphysik. Auch da hatten wir gesehen, dass s- und p-Orbitale je nach Anordnung anziehende oder abstoßende Energiebeiträge liefern können. Genau das gleiche passiert hier. Dieses Integral liefert die Abhängigkeit von Wellenvektor $\mathbf{k}$ und damit die Dispersionsrelation.
 
+\begin{questions}
+    \item Schauen Sie sich noch einmal die quantenmechanische Behandlung von \ch{H2^+} in der Molekülphysik an und vergleichen das mit diesem 'tight-binding' Modell.
+\end{questions}
 
 \section{Beispiel: kubisch-primitives Gitter}
 
@@ -323,6 +330,8 @@ Als Beispiel betrachten wir ein kubisch-primitives Gitter, erlauben nur Wechselw
     E = \tilde{E} - \alpha - 2 \beta \left[ \cos( k_x a ) +  \cos( k_y a ) +  \cos( k_z a ) \right] \quad .
 \end{equation}
 Insgesamt wird damit ein Band der Breite $\tilde{E} - \alpha \pm  6 \beta $ abgedeckt. Das Band hat einen Kosinus-förmigen Verlauf. Am $\Gamma$-Punkt und an der Grenze der Brillouinzone stimmt es somit mit dem parabelförmigen Verlauf der Näherung quasi-feier Elektronen überein. 
+
+Ein wichtiger Aspekt des 'tight binding'-Modells ist, dass die Zustände der Elektronen im Kristall mit den atomaren Zuständen der Energie $\tilde{E} $ verknüpft sind. Damit verbunden sind 'vererbte' Eigenschaften der atomaren Zustände, wie z.B. die Form der atomaren Wellenfunktion oder die Spinorientierung, die sich in den Zuständen der Bandstruktur widerspiegeln.
 
 
 % \section{Beispiel: Diamant und Kaliumchlorid (\ch{KCl}) }
@@ -336,7 +345,7 @@ Insgesamt wird damit ein Band der Breite $\tilde{E} - \alpha \pm  6 \beta $ abge
 % XXX Hunklinger Fig 8.24 und 25
 
 
-\section{Metalle, Halbleiter und Isolatoren}
+\section{Vokabeln: Metalle, Halbleiter und Isolatoren}
 
 Sowohl in der Näherung der schwach gebundenen Elektronen (empty lattice approximation), als auch in der der stark gebunden Elektronen (tight binding) haben wir eine Dispersionsrelation für die Elektronen\sidenote{Evl. besser \emph{das Elektron}, weil wir ja in der Ein-Elektron-Näherung sind.} gefunden, die \emph{Bandlücken} besitzt. Durch diese Lücken entstehen Bänder. Die entscheidende Frage für sehr viele Eigenschaften der Materialien ist nun, bis wohin Elektronen eingefüllt sind. Wo liegt die Fermi-Energie $E_F$, also welches ist das höchste besetzte Niveau bei $T=0$? Wie die Lage von $E_F$ welche Eigenschaften beeinflusst werden wir im nächsten Kapitel besprechen.
 
@@ -352,11 +361,11 @@ Wir hatten oben die Wellenfunktion des Elektrons als (ebene) Bloch-Welle geschri
 \begin{equation}
    \phi_\mathbf{k}(\mathbf{r}) =  u_\mathbf{k}(\mathbf{r}) \; e^{i \mathbf{k} \cdot \mathbf{r} } \quad ,
 \end{equation}
-die zwar eine gitterperiodische Modulation $u_\mathbf{k}(\mathbf{r})$ besitzt, aber ansonsten räumlich unendlich ausgedehnt ist. Das ist für Transportprozesse ungeeignet. Das Teilchen-Bild ist besser an die Fragestellung angepasst. Wir bauen also aus verschiedenen Bloch-Wellen ein Wellenpaket, das sich dann wie ein Teilchen benimmt:
-\begin{eqnarray}
+die zwar eine gitterperiodische Modulation $u_\mathbf{k}(\mathbf{r})$ besitzt, aber ansonsten räumlich unendlich ausgedehnt ist. Das ist für \emph{Transportprozesse} ungeeignet. Das Teilchen-Bild ist besser an die Fragestellung angepasst. Wir bauen also aus verschiedenen Bloch-Wellen ein Wellenpaket, das sich dann wie ein Teilchen benimmt:
+\begin{align}
    \psi_{n, \mathbf{k}}(\mathbf{r},t) =  & \sum_{\mathbf{k}'}  a(\mathbf{k}') \, \phi_\mathbf{k'}(\mathbf{r}) \, e^{-i E_n(\mathbf{k}') t / \hbar} \\
-   = & \sum_{\mathbf{k}'}  a(\mathbf{k}') \,  u_\mathbf{k}(\mathbf{r}) \, e^{i (\mathbf{k}' \cdot \mathbf{r}  - E_n(\mathbf{k}') t / \hbar )} \quad ,
-\end{eqnarray}
+   = & \sum_{\mathbf{k}'}  a(\mathbf{k}') \,  u_\mathbf{k'}(\mathbf{r}) \, e^{i (\mathbf{k}' \cdot \mathbf{r}  - E_n(\mathbf{k}') t / \hbar )} \quad ,
+\end{align}
 wobei die Summe in $\mathbf{k}'$ über das Intervall $\mathbf{k} \pm \delta \mathbf{k} / 2$ läuft. $E_n(\mathbf{k}')$ ist die Dispersionsrelation des $n$-ten Bandes.
 Die Idee ist, dem Wellenpaket des Elektrons eine Gruppengeschwindigkeit $\mathbf{v}_n$ zuzuordnen, über
 \begin{equation}
@@ -365,18 +374,23 @@ Die Idee ist, dem Wellenpaket des Elektrons eine Gruppengeschwindigkeit $\mathbf
 Dazu muss aber $\mathbf{k}$ gut genug definiert sein, also $\delta \mathbf{k}$ klein genug, insbesondere gegenüber der Größe der Brillouinzone. Das geht dann, wenn der Gitterabstand im Realraum viel kleiner ist als die Ausdehnung des Wellenpakets, die wiederum viel kleiner sein muss als die Wellenlänge des externen elektrischen Feldes. Dies nennt man ein semi-klassisches Modell. Da sich der Bandindex $n$ in unserem Modell nicht ändern kann lassen wir ihn zukünftig weg.
 
 
+\begin{questions}
+    \item Vergleichen Sie die Bewegung eines Elektrons als Wellenpaket mit Wellen auf einem Seil. Was ist das Analogon zum Elektron? Was ist die Gruppen- und Phasengeschwindigkeit?
+\end{questions}
+
 \section{Effektive Masse}
 
+Wir verwenden nun diese Wellenpaketdarstellung des Teilchens, um seine Bewegung unter der Wirkung einer Kraft darzustellen, die aus elektromagnetischen Feldern resultiert.
 Die Bewegungsgleichung ist klassisch $\mathbf{F} = \dot{\mathbf{p}}$. Analog gilt hier
 \begin{equation}
    \hbar \frac{d \mathbf{k}}{dt} = \mathbf{F}(\mathbf{r}, t) = q \left[ \bm{\mathcal{E}}(\mathbf{r}, t) +   \mathbf{v}(\mathbf{k}) \times \mathbf{B}(\mathbf{r}, t)\right]
    \label{eq:2_Bewegungsgleichung}
 \end{equation}
 wobei $\hbar \mathbf{k}$ als Quasi-Impuls zu verstehen ist, also jederzeit ein reziproker Gittervektor $\mathbf{G}$ addiert werden kann. Die Ladung des Elektrons ist $q = -e$.
-Eine externe Kraft führt also zu einer Bewegung des Elektrons im reziproken Raum.
+Eine äußere Kraft führt also zu einer Bewegung des Elektrons im reziproken Raum.
 
 
-Nun beschaffen wir uns einen Term für die Masse des so beschriebenen Elektrons. Wir starten mit der zeitlichen Ableitung von Gl.~\ref{eq:3_v_gruppe}
+Nun beschaffen wir uns einen Term für die Masse des so beschriebenen Elektrons. Die Masse ist die Proportionalitätskonstante zwischen Kraft und Beschleunigung und damit die zentrale Größe für die Bewegung eines Teilchens. Wir starten mit der zeitlichen Ableitung von Gl.~\ref{eq:3_v_gruppe}
 \begin{equation}
   \frac{\partial \mathbf{v}}{\partial t} = \frac{1}{\hbar}   \frac{\partial^2 E(\mathbf{k})}{\partial t \partial \mathbf{k}} 
   = \frac{1}{\hbar^2}   \frac{\partial^2 E_n(\mathbf{k})}{\partial \mathbf{k} \partial \mathbf{k}} \, \hbar \dot{\mathbf{k}}
@@ -400,12 +414,16 @@ Das ist beispielsweise in der Nähe der Ober- und Unterkanten eines Bandes der F
 Die effektive Masse ist also der Parameter, der die (inverse) Breite eines parabelförmigen Bandes beschreibt. Stark gekrümmte Bänder haben eine geringe effektive Masse, und andersherum.
 
 Was ist hier passiert? 
-Wir haben den Einfluss der vielen Coulomb-Potentiale um die Atomkerne im Kristall zusammengefasst und in eine Eigenschaft des Elektrons gesteckt. Die (effektive) Masse des Elektrons hängt nun vom Kristall ab, in dem es steckt. Das erlaubt es uns aber, das komplizierte Problem 'Elektron zwischen vielen Kernen' in ein einfaches Teilchen-Modell zu überführen. Nur müssen wir uns von der klassischen Vorstellung einer Masse lösen. Die effektive Masse hängt von der Krümmung des Bandes ab. Die kann aber Null werden (die Masse dadurch unendlich), oder auch negativ. Im 'tight binding' Modell ist die Dispersionsrelation
+Wir haben den Einfluss der vielen Coulomb-Potentiale um die Atomkerne im Kristall zusammengefasst und in eine Eigenschaft des Elektrons gesteckt. Die (effektive) Masse des Elektrons hängt nun vom Kristall ab, in dem es sich bewegt. Das erlaubt es uns aber, das komplizierte Problem 'Elektron zwischen vielen Kernen' in ein einfaches Teilchen-Modell zu überführen. Nur müssen wir uns von der klassischen Vorstellung einer Masse lösen. Die effektive Masse hängt von der Krümmung des Bandes ab. Die kann aber Null werden (die Masse dadurch unendlich), oder auch negativ. Im 'tight binding' Modell ist die Dispersionsrelation
 \begin{equation}
    E(k) = - \cos ( k a ) \quad \text{und somit} \quad    m^\star(k) = \frac{\hbar^2}{a^2 \cos ( k a )}
 \end{equation}
 an der Grenze der Brillouinzone ($k = \pi / a$) ist also $m^\star = - \hbar^2 / a^2$. Die Masse ist nur der Proportionalitätsfaktor zwischen Kraft und Beschleunigung. Hier wirkt die Kraft in eine Richtung, die Beschleunigung geht in die entgegengesetzte.
 
+\begin{questions}
+    \item Man kann die Bewegung einer Kugel in einer Flüssigkeit als Analogon zur Bewegung eines Elektrons im Festkörper sehen. Die Reibung mit der Flüssigkeit ändert die effektive Masse der Kugel. Skizzieren Sie diese effektive Masse.
+    \item Tensorielle Massen sind gewöhnungsbedürftig. Beschreiben Sie die Wirkung des Kiels eines Segelschiffes als tensorielle Masse.
+\end{questions}
 
 \section{Nebenbemerkung: Bloch-Oszillationen}
 
@@ -432,16 +450,16 @@ mit dem Kristall-Volumen $V$ und der Fermi-Dirac-Verteilung $f(E,T)$. Der erste 
    =  \frac{-e}{4 \pi^3 \hbar} \int_\text{besetzt}  \nabla_\mathbf{k} \, E(\mathbf{k}) \, d\mathbf{k}  \quad .
 \end{equation}
 Dieses Integral wird Null, wenn das Band vollständig besetzt ist. Dann gibt es aufgrund der Punktsymmetrie des reziproken Gitters für jedes Elektron mit $\mathbf{k}$ eines mit $-\mathbf{k}$, das also bei ansonsten gleicher Energie und Geschwindigkeit in die entgegengesetzte Richtung läuft. Ein voll besetztes Band trägt nicht zum Ladungstransport bei! Damit können wir aber schreiben
-\begin{eqnarray}
+\begin{align}
    \mathbf{j} = &  \frac{-e}{4 \pi^3} \int_\text{besetzt}   \mathbf{v}(\mathbf{k}) \, d\mathbf{k}  \\
-  =  &  \frac{-e}{4 \pi^3} \left[  \int_\text{1.BZ}   \mathbf{v}(\mathbf{k}) \, d\mathbf{k} -  \int_\text{leer}   \mathbf{v}(\mathbf{k}) \, d\mathbf{k} \right]
+  =  &  \frac{-e}{4 \pi^3} \left[  \int_\text{1.BZ}   \mathbf{v}(\mathbf{k}) \, d\mathbf{k} -  \int_\text{leer}   \mathbf{v}(\mathbf{k}) \, d\mathbf{k} \right] \\
   =  &  \frac{+e}{4 \pi^3}  \int_\text{leer}   \mathbf{v}(\mathbf{k}) \, d\mathbf{k} 
-\end{eqnarray}
+\end{align}
 weil eben das Integral über die komplette erste Brillouinzone Null ergibt. Anstatt über alle besetzten Zustände zu integrieren und mit einer negativen Ladung zu multiplizieren können wir auch über alle unbesetzten Zustände integrieren und mit einer positiven Ladung multiplizieren. Wir nennen die unbesetzten Zustände für Elektronen \emph{Löcher} und weisen ihnen eine positive Elementarladung zu.
 
 Das hat große Vorteile, weil wir oft über nahezu volle Bänder integrieren müssen. Dann ist es einfacher, nur über den leeren Anteil der Löcher zu integrieren, insbesondere auch, weil wir dann in der Nähe des Maximums des Bandes\sidenote{Löcher sind wie Luftblasen und steigen nach oben} das Band wie in GL.~\ref{eq:3_parabel_band} parabolisch nähern können.
 
-Um Elektronen von Löchern zu unterscheiden kennzeichnen wir erstere mit dem Index 'n', letztere mit einem 'p'. Weil $\int_\text{voll} \mathbf{k} d\mathbf{k} = 0$ ist ein Loch immer das Gegenteil des Elektrons, dessen Stelle es einnimmt, also
+Um Elektronen von Löchern zu unterscheiden kennzeichnen wir erstere mit dem Index 'n' (wie negativ geladen), letztere mit einem 'p' (wie positiv geladen). Weil $\int_\text{voll} \mathbf{k} d\mathbf{k} = 0$ ist ein Loch immer das Gegenteil des Elektrons, dessen Stelle es einnimmt, also
 \begin{equation}
    \mathbf{k}_p = - \mathbf{k}_n \quad \quad E_p(\mathbf{k}) = - E_n(\mathbf{k}) \quad \quad m^\star_p = - m^\star_n
    \quad \quad q_p = - q_n = + e
@@ -452,6 +470,37 @@ aber
 \end{equation}
 weil dabei zweimal das Vorzeichen gewechselt wird. Ein Loch wirkt wie ein Teilchen mit positiver Ladung. Bei einem angelegten elektrischen Feld haben wir also Ladungstransport durch Elektronen, die sich in die eine Richtung bewegen, und Löcher, die sich in die andere Richtung bewegen. Die Summe aus beiden bildet den beobachteten Strom.
 
+Das Konzept 'Loch' sieht harmlos aus, ist aber für die Festkörperphysik von zentraler Bedeutung! Es vereinfacht die Beschreibung der $10^{23}$ Elektronen in einem Festkörper erheblich. 
+
+\begin{questions}
+    \item Finden Sie Analogien zum 'Loch' in der Festkörperphysik und wie diese helfen, Dinge zu vereinfachen.
+\end{questions}
+
+\section{Von Sommerfeld zu Bloch}
+
+Lassen Sie uns hier noch einmal die wesentlichen Eigenschaften des Elektrons als freies Elektron nach Sommerfeld und als Elektron im Kristall nach Bloch gegenüberstellen, inspiriert durch Kap. 9 von \cite{Gross_FK}.
+
+\begin{table*}
+
+
+\begin{tabular}{lll}
+            & Sommerfeld & Bloch \\
+             & frei & im Kristall  \\
+Quantenzahlen & $\mathbf{k}$ & $\mathbf{k}$, $n$\\
+Bedeutung von $\hbar\mathbf{k}$  & Impuls & Kristallimpuls \\
+Wertebereich $\mathbf{k}$ & beliebig & 1. BZ \\
+Anzahl Zustände in 1. BZ & $N_{EZ}$  & $N_{EZ}$  \\
+Energie & $E(\mathbf{k}) = \frac{\hbar^2 |\mathbf{k}|^2}{2m}$ & $E_n(\mathbf{k}) = E(\mathbf{k} + \mathbf{G}_n)$ \\
+Geschwindigkeit & $\mathbf{v} = \frac{1}{\hbar} \frac{\partial E}{ \partial \mathbf{k}} = \frac{\hbar \mathbf{k}}{m}$ & 
+  $\mathbf{v} = \frac{1}{\hbar} \frac{ \partial E_n}{ \partial \mathbf{k}} $ \\
+  Masse & $m$ & $m^\star$ \\
+  Wellenfunktion & ebene Welle & Bloch-Welle \\
+   & $\psi_\mathbf{k}(\mathbf{r}) = \frac{e^{i \mathbf{k} \mathbf{r}}} {\sqrt{V}}$ &
+ $\psi_{\mathbf{k}, n}(\mathbf{r})  = u_{\mathbf{k}, n}(\mathbf{r}) \, e^{i \mathbf{k} \mathbf{r}} $ \\
+ & &  $u_{\mathbf{k}, n}(\mathbf{r})  = u_{\mathbf{k}, n}(\mathbf{r} + \mathbf{R})$ \\ 
+\end{tabular}
+\caption{Gegenüberstellung des freien Elektrons mit dem Kristall-Elektron.}
+\end{table*}
 
 \newpage
 \section{Zusammenfassung}
