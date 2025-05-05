@@ -1,6 +1,6 @@
 %\renewcommand{\lastmod}{\today}
 \renewcommand{\chapterauthors}{Markus Lippitz}
-\renewcommand{\lastmod}{20. März 2025}
+\renewcommand{\lastmod}{5. Mai 2025}
 
 \chapter{Fermi-Gas}
 \label{chap:fermi-gas}
@@ -59,7 +59,7 @@ mit dem Wellenvektor $\mathbf{k}$ und der Normierung auf das Volumen $V$ des Kas
 \end{equation}
 und ist von der Richtung natürlich unabhängig.
 
-Die Gleichungen werden angenehmen, wenn wir (wie bei den Phononen) periodische Randbedingungen einführen: alle Eigenschaften sollen im Ort periodisch mit der Kasten-Größe $L$ sein, also 
+Die Gleichungen werden angenehm, wenn wir (wie bei den Phononen) periodische Randbedingungen einführen: alle Eigenschaften sollen im Ort periodisch mit der Kasten-Größe $L$ sein, also 
 \begin{equation}
     \psi(\mathbf{r}) =  \psi(\mathbf{r} + L \mathbf{\hat{e}_i}) \quad ,
 \end{equation}
@@ -113,7 +113,7 @@ Elektronen sind Fermionen, haben einen halbzahlgen Spin und unterliegen  dem Pau
 \begin{equation}
     f(E) = \frac{1}{e^{(E-\mu)/k_B T} + 1}
 \end{equation}
-mit dem chemischen Potential $\mu$. Die Fermi-Dirac-Verteilung ist (um das Pauli-Verbot zu erfüllen) maximal Eins. Wenn $f(E) \ll 1$, also $E- \mu \gg k_B T$, dann geht sie in die Boltzmann-Verteilung über. Dies wird später bei den Halbleitern wichtig werden, da dort die interessanten Energien $E$ relativ weit weg von $^mu$ sind.
+mit dem chemischen Potential $\mu$. Die Fermi-Dirac-Verteilung ist (um das Pauli-Verbot zu erfüllen) maximal Eins. Wenn $f(E) \ll 1$, also $E- \mu \gg k_B T$, dann geht sie in die Boltzmann-Verteilung über. Dies wird später bei den Halbleitern wichtig werden, da dort die interessanten Energien $E$ relativ weit weg von $\mu$ sind.
 
 \begin{marginfigure}
     \inputtikz{\currfiledir FD_stat}
@@ -154,7 +154,7 @@ Alle Komposita mit 'Fermi-' sind entsprechend definiert. Der Fermi-Impuls $k_F$ 
 Die \emph{Fermi-Kugel} ist die Kugel im reziproken Raum mit dem Radius $k_F$. Am absoluten Nullpunkt sind also alle Elektronen innerhalb dieser Kugel. Während die Fermi-Fläche im freien Elektronengas kugelförmig ist, wird sie in realen Materialien durch die Bandstruktur des Kristalls verzerrt. Dies führt zu komplexen \emph{Fermi-Flächen}, welche die elektronischen Transporteigenschaften bestimmen.
 
 
-Bei Metallen trägt jedes Atom ein (oder mehr) Elektronen bei. Die Elektronendichte ist also etwa $n \approx 10^{28}$~m$^3$.
+Bei Metallen trägt jedes Atom ein (oder mehr) Elektronen bei. Die Elektronendichte ist also etwa $n \approx 10^{28}$~m$^{-3}$.
 Die Fermi-Energie von den hier betrachteten Metallen liegt typischerweise im Bereich von einigen Elektronvolt und die Fermi-Temperatur damit bei einigen 10~000~K, weit jenseits der Schmelztemperatur. Für Elektronen im Festkörper besteht also kein so großer Unterschied zum absoluten Nullpunkt. Die Stufenfunktion der Fermi-Dirac-Verteilung wird etwas abgerundet. Wenn man es maßstabsgerecht zeichnen würde, dann könnte man aber bei Raumtemperatur keinen Unterschied erkennen. In Halbleitern später ist die Ladungsträgerdichte viel kleiner.
 
 
@@ -311,7 +311,7 @@ Der Übergangsbereich ist wie immer aufwändig (Dichte der thermisch angeregten 
 
 
 \begin{questions}
-    \item Warum nimmt die elektrische Leitfähigkeit $\sigma$ bei hohen Temperaturen ($T \gg \Theta$) mit $1/T$ ab, obwohl sich die Elektronendichte $n$ nicht ändert? Welche Rolle spielt die mittlere Stoßzeit $\tau$ dabei
+    \item Warum nimmt die elektrische Leitfähigkeit $\sigma$ bei hohen Temperaturen ($T \gg \Theta$) mit $1/T$ ab, obwohl sich die Elektronendichte nicht ändert? Welche Rolle spielt die mittlere Stoßzeit $\tau$ dabei
 \end{questions}
 
 \section{Thermische Leitfähigkeit der Elektronen}
