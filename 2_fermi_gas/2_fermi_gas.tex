@@ -47,7 +47,7 @@ In beispielsweise Alkali-Metallen sind die meisten Elektronen an 'ihren' Atomker
 
 Wir könnten die freien Elektronen als Teilchen im 3D-Kasten modellieren. Die Schrödingergleichung innerhalb des Kastens beinhaltet dann nur noch die kinetische Energie
 \begin{equation}
-    - \frac{\hbar^2}{2m} \nabla  \psi(\mathbf{r}) = E  \psi(\mathbf{r})
+    - \frac{\hbar^2}{2m} \nabla^2  \psi(\mathbf{r}) = E  \psi(\mathbf{r})
 \end{equation}
 und ihre Lösung sind ebene Wellen 
 \begin{equation}
@@ -74,7 +74,7 @@ Wie bei den Phononen sind die möglichen Werte des Wellenvektors  $\mathbf{k}$ d
 
 \section*{Zustandsdichte}
 
-Die Zustandsdichte beschreibt die Anzahl der Zustände pro Energieintervall, manchmal zusätzlich pro Volumen. Durch die Quantisierung der Wellenfunktion im Kasten sind nur noch diskrete Energien möglich. Je größer der Kasten wird, desto dichter liegen diese diskreten Niveaus beieinander. Man kann sie dann abzählen und eine Dichte (Anzahl pro Energieintervall) angeben. Der Weg zur Berechnung einer Zustandsdichte ist eigentlich immer derselbe, den Sie schon bei den Phononen gesehen hatten: Man beginnt im reziproken Raum, weil es dort einfach ist, und wandelt das dann in eine Energie um.
+Die Zustandsdichte beschreibt die Anzahl der Zustände pro Energie- oder Wellenvektor-Intervall ($D(E) \, dE$ oder $D(k) \, dk$). Manchmal findet man auch zusätzlich eine Normierung auf das  Volumen, die wir hier aber nicht durchführen. Durch die Quantisierung der Wellenfunktion im Kasten sind nur noch diskrete Energien möglich. Je größer der Kasten wird, desto dichter liegen diese diskreten Niveaus beieinander. Man kann sie dann abzählen und eine Dichte (Anzahl pro Energieintervall) angeben. Der Weg zur Berechnung einer Zustandsdichte ist eigentlich immer derselbe, den Sie schon bei den Phononen gesehen hatten: Man beginnt im reziproken Raum, weil es dort einfach ist, und wandelt das dann in eine Energie um.
 
 Die Zustandsdichte im reziproken Raum ist konstant:
 \begin{equation}
@@ -141,7 +141,7 @@ Wir berechnen die Fermi-Energie $E_F$, indem wir bei $T=0$ nach und nach Elektro
 Bei $T=0$ füllen die Elektronen nach dem Pauli-Prinzip die tiefsten Zustände auf, so dass im Impulsraum eine gefüllte Kugel entsteht. Die Energie des höchsten gefüllten Zustandes ist die Fermi-Energie.
 Wir integrieren also die Zustandsdichte $D(E)$ soweit auf, bis wir $N$ Elektronen untergebracht haben. Die Elektronendichte $n$ ist also\sidenote{Analog kann man ein temperaturabhängiges chemisches Potential ausrechnen. Siehe \cite{Hunklinger2014} oder \cite{Gross_FK}.  }
 \begin{equation}
-    n = \frac{N}{V} = \int_0^{E_F} D(E) \, dE \quad .
+    n = \frac{N}{V} =\frac{1}{V} \, \int_0^{E_F} D(E) \, dE  =    \frac{(2m)^{3/2}}{2 \pi^2 \hbar^3} \,  \int_0^{E_F}  \sqrt{E} \, dE \quad .
 \end{equation}
 Damit erhalten wir
 \begin{equation}
@@ -172,11 +172,11 @@ Neben den Gitterschwingungen (Phononen) tragen auch Elektronen zur Wärmekapazit
 
 Analog zum Vorgehen bei den Phononen berechnen wir die Wärmekapazität der Elektronen als Ableitung der inneren Energie nach der Temperatur. Wir beginnen\sidenote{\cite{Hunklinger2014} folgend} mit der spezifischen inneren Energie $u$
 \begin{equation}
-    u = \frac{U}{V} = \int_0^\infty E \, D(E) \, f(E) \,  dE \quad .
+    u = \frac{U}{V} = \frac{1}{V} \, \int_0^\infty E \, D(E) \, f(E) \,  dE \quad .
 \end{equation}
 Am absoluten Nullpunkt geht $f(E)$  in die Heavyside-Funktion über, so dass wir einfach das Integral nur bis $E_F$ laufen lassen
 \begin{equation}
-    u_0 = u(T=0) = \int_0^{E_F} E \, D(E) \, dE = \frac{3n}{5} \, k_B \, T_F \quad .
+    u_0 = u(T=0) = \frac{1}{V} \, \int_0^{E_F} E \, D(E) \, dE = \frac{3n}{5} \, k_B \, T_F \quad .
 \end{equation}
 Bei einem klassischen freien Gas von Teilchen hätten wir 
 \begin{equation}

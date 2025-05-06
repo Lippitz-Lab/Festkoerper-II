@@ -1,0 +1,114 @@
+
+\renewcommand{\lastmod}{6. Mai 2025}
+\renewcommand{\chapterauthors}{Markus Lippitz}
+
+
+\chapter{Zustandsdichte}
+
+
+\section{Zustandsdichte für Phononen im reziproken Raum $D(k) \, dk$ }
+
+Zunächst betrachten wir nicht die eigentlich benötigte Zustandsdichte im Frequenzraum $D(\omega) d\omega$, sondern die im reziproken Raum $D(k) dk$. Die Argumentation und die Rechenschritte sind dabei dieselben, die auch bei der Herleitung der optischen Modendichte bei der Schwarzkörperstrahlung verwendet wurde\sidenote{z.B. Vorlesung EPB2 Atome, Kerne, Teilchen}.
+
+Wir betrachten eine lineare Kette von Atomen mit periodischen Randbedingungen, also eine ringförmige Kette mit der Auslenkung $u_0 = u_N$ bei $N$ Atomen in der Kette.  Die Auslenkung der Masse am Index $s$ ist mit dem Ansatz der ebenen Welle
+\begin{equation}
+ u_s = u \, e^{- i \omega \, t} \, e^{i s \, k a}
+\end{equation}
+mit der Länge $k$ des Wellenvektors im reziproken Raum und der Länge $a$ des  Gittervektors  im  Realraum. Die Randbedingung $u_0 = u_N$ erfordert dann
+\begin{equation}
+ N \, k \, a = 2 \pi \, n \quad ,
+\end{equation}
+wobei $n$ eine beliebige ganze Zahl ist.
+Die Gesamtlänge der Kette ist $L = N a$. Damit kann $k$ nur diskrete Werte annehmen, die den Abstand $\Delta k$ haben
+\begin{equation}
+\Delta  k = \frac{2 \pi }{L}  \quad .
+\end{equation}
+Die Dichte $ D(k) \, dk$ der möglichen Werte von $k$ auf der $k$-Achse ist ein Wert pro $\Delta k$, also
+\begin{equation}
+ D(k) \, dk = \frac{L}{2 \pi} \, dk  \quad .
+\end{equation}
+Die Zustandsdichte ist im $k$-Raum also konstant.
+Analog kann man im Zwei- oder Dreidimensionalen verfahren, also bei Quadraten oder Kuben der Kantenlänge $L$. Die Zustandsdichte ist
+\begin{equation}
+D(k) = \frac{N_\text{PEZ}}{V_{BZ}}  = 
+\frac{V_\text{Kristall}} {(2 \pi)^d} =
+ \left(\frac{L}{2 \pi} \right)^d 
+\end{equation}
+mit der Dimensionalität $d$ und der Anzahl der primitiven Einheitszellen $N_\text{PEZ}$. Das ist wie oben die Zustandsdichte für eine Art der Bewegung (transversal oder longitudinal, akustisch oder optisch). Bei $p$ Atomen je Einheitszelle gibt es $3p$ Äste in der Dispersionsrelation und die Gesamt-Zustandsdichte im Dreidimensional ist entsprechend größer:
+\begin{equation}
+  D^{3D, ges}(k) =  3 \, p \,   \left(\frac{L}{2 \pi} \right)^3 \quad .
+  \end{equation}
+Was ist hier passiert? Die physikalisch sinnvollen Werte von $k$ waren schon nach oben beschränkt, weil es nicht hilft, wenn die Welle schneller oszilliert als der Abstand der Atome ist. Bei einem Ring von Atomen ist nun aber auch nicht jede Wellenlänge wählbar, da nur stehende Wellen auf dem Ring möglich sind.\sidenote{Analog stehende Wellen auf einer endlichen Kette mit freien / festen Randbedingungen} Mögliche Werte der Wellenlänge haben die Form $\lambda_0 / n$, und damit mögliche Werte des Wellenvektors $n / \lambda_0$. Dadurch wird die $k$-Achse diskret. Dies spielt aber nur bei der Zustandsdichte eine Rolle, da die Punkte so dicht liegen, dass dies höchstens bei sehr kleinen Kristallen auflösbar ist.
+
+Aus dem Blickwinkel der Normalmoden findet sich das gleiche Ergebnis. Bei $p$ Atomen je primitiver Einheitszelle und $N_\text{PEZ}$ primitiven Einheitszellen im Kristall erwarten wir $3 p \, N_\text{PEZ}$ Normalmoden. In der Dispersionsrelation der Phononen gibt es dann $3p$ Äste und $N_\text{PEZ}$ diskrete Werte auf der $k$-Achse, also ebenso viele Zustände für Phononen wie Normalmoden.
+
+
+
+
+\section{Zustandsdichte im Frequenz-Raum $D(\omega) \, d\omega$ }
+
+Eine Zustandsdichte ist die Anzahl von Zuständen in einem festen Intervall, bisher einem festen Intervall auf der $k$-Achse, jetzt auf der $\omega$-Achse. Da der Zusammenhang zwischen Wellenvektor und Frequenz kein konstanter Faktor ist, ist dies nicht völlig trivial. Die Wahl des Intervalls ist typischerweise in der Variablen der Zustandsdichte kodiert, also $D(x)$ meint eigentlich $D(x) \, dx$. Es ist trotzdem sinnvoll, das $dx$ möglichst oft explizit mitzuschreiben.
+
+Im Eindimensionalen können wir einfach mit $d \omega$ erweitern
+\begin{equation}
+D(k) \, dk  =  \frac{L}{2 \pi}\, \frac{dk}{d\omega} \, d\omega 
+= \frac{L}{2 \pi}\, \frac{1}{v_g} \, d\omega
+= D(\omega) \, d\omega
+\end{equation}
+mit der Gruppengeschwindigkeit $v_g = d\omega / dk$.
+
+\begin{marginfigure}
+\inputtikz{\currfiledir dos_kette_2atom}
+
+\caption{Lineare zweiatomige Kette:  Zustandsdichte (links) und Dispersionsrelation (rechts). Zustände (Kreise) sind äquidistant auf der $k$-Achse, aber nicht mehr auf de $\omega$-Achse. Die Zustandsdichte divergiert an den Van-Hove-Singularitäten, wenn die Gruppengeschwindigkeit Null wird.}
+\end{marginfigure}
+
+
+Im Zwei- oder Dreidimensionalen gehen wir einen anderen Weg. Wir nutzen aus, dass im reziproken Raum die Zustände äquidistant sind, die Zustandsdichte also konstant ist. Alle Zustände bei gegebenem, festem $\omega$ bilden die Fläche\sidenote{in 3D, sonst Kurve in 2D} $S(\omega)$. Die Zustände bei $\omega + \Delta\omega$ bilden eine weitere Fläche. Wir zählen somit die Zustände im Intervall $\Delta\omega$, indem wir das Volumen zwischen den beiden Flächen bestimmen und mit der Zustandsdichte im $k$-Raum multiplizieren
+\begin{equation}
+D(\omega) \Delta\omega 
+= \int_{\omega}^{\omega + \Delta\omega } D(\omega) \, d \omega
+= \int_{\mathbf{k}(\omega)}^{\mathbf{k}(\omega + \Delta\omega) } D(\mathbf{k}) \, d \mathbf{k}
+=
+\left( \frac{L}{2 \pi} \right)^d \, 
+\int_{\mathbf{k}(\omega)}^{\mathbf{k}(\omega + \Delta\omega) } 
+ \, d \mathbf{k} \quad .
+\end{equation}
+Das Volumenelement $d \mathbf{k}$ teilen wir auf in einen Teil entlang der Fläche konstanter Frequenz $S(\omega)$ und einem Teil senkrecht dazu:  $d \mathbf{k} = dk_\perp \, dS_\omega$. Weil sich $\omega$ in Richtung $ dS_\omega$ nicht ändert,  kann man dann die Gruppengeschwindigkeit schreiben als
+\begin{equation}
+v_g = \left| \frac{d\omega}{d \mathbf{k}} \right| 
+= \left| \text{grad}_\mathbf{k}  \, \omega \right| 
+= \left| \nabla_\mathbf{k} \,  \omega \right| 
+= \sqrt{ \left| \frac{d\omega}{d S_\omega}\right| ^2 +
+\left(\frac{d\omega}{d k_\perp}\right)^2  } 
+= \left| \frac{d\omega}{d k_\perp} \right|
+\end{equation}
+und so
+\begin{equation}
+d \mathbf{k} = dk_\perp \, dS_\omega = dS_\omega \frac{d \omega}{|v_g|} \quad .
+\end{equation}
+Damit erhalten wir
+\begin{equation}
+D(\omega) d\omega = \left( \frac{L}{2 \pi} \right)^d \, d\omega \, \int_{\omega = \text{const.}}\,   \frac{1}{|v_g|} \, dS_\omega \quad . \label{eq:WK_dos_omega}
+\end{equation}
+\begin{marginfigure}
+\inputtikz{\currfiledir dos_sketch}
+
+\caption{Skizze zur Bestimmung der Zustandsdichte im Frequenzraum.}
+\end{marginfigure}
+Wir müssen also nur noch ein Oberflächenintegral über eine Fläche konstanter Frequenz $\omega$ ausführen und dabei den Kehrwert der Gruppengeschwindigkeit integrieren. Einfach wird dies im isotropen Fall, wenn die Frequenz $\omega$ der Phononen nur vom Betrag des Wellenvektors $k$ abhängt und nicht von seiner Richtung. Damit sind die Flächen konstanter Frequenz Kugeln mit dem Radius $k$.  Die Gruppengeschwindigkeit ist dann natürlich auch konstant über die Kugeloberfläche. Wir erhalten dann
+\begin{equation}
+D(\omega) d\omega = \left( \frac{L}{2 \pi} \right)^3 \,     \frac{ 4 \pi \, k^2 }{|v_g|}   \, d\omega  \quad ,
+\end{equation} 
+wobei $k$ hier als $k(\omega)$ zu verstehen ist.\sidenote{Das ist immer noch die Zustandsdichte pro Ast in der Dispersionsrelation. Bei $p$ Atomen pro Einheitszelle kommt in Dreidimensionalen also noch der Faktor $3p$ hinzu, um die Gesamt-Zustandsdichte zu erhalten.}
+
+Sowohl im eindimensionalen als auch im dreidimensionalen Fall geht die Gruppengeschwindigkeit als Kehrwert ein. In der zweiatomigen Kette beispielsweise geht diese asymptotisch gegen Null in der Nähe der Bandlücke, wodurch der Integrand in Gl.~\ref{eq:WK_dos_omega} divergiert. Diese Punkte nennt man \emph{Van-Hove-Singularitäten}. Im Eindimensionalen divergiert hier die Zustandsdichte. In zwei und drei Dimensionen finden sich davon noch endlich hohe Spitzen.
+
+
+
+
+
+
+
+%-------------------
+
