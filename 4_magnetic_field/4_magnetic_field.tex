@@ -1,6 +1,6 @@
 %\renewcommand{\lastmod}{\today}
 \renewcommand{\chapterauthors}{Markus Lippitz}
-\renewcommand{\lastmod}{21. März 2025} 
+\renewcommand{\lastmod}{19. Mai 2025} 
 
 \chapter{Kristall-Elektronen im Magnetfeld}
 
@@ -30,7 +30,7 @@ Für diese Phänomene würde man idealerweise die zeitabhängige Schrödingergle
 
 \section{Fermi-Flächen}
 
-Bevor wir uns der Bewegung der Elektronen unter dem Einfluss eines magnetischen Feldes zuwenden, müssen wir die Form der Fermiflächen diskutieren, die dabei eine Rolle spielen. Nur Elektronen in der Nähe der Fermifläche tragen zum Transport bei, wie wir im Drude-Sommernefdl-Modell gesehen haben.  In einem freien Elektronengas und $T=0$ sind alle Zustände unterhalb einer charakteristischen Energie $E_F$ und damit auch unterhalb eines charakteristischen Wellenvektors $k_F = (3 \pi^2 n)^{1/3}$ vollständig besetzt. Im reziproken Raum entspricht dies einer Kugel mit dem Radius $k_F$, der Fermi-Kugel.
+Bevor wir uns der Bewegung der Elektronen unter dem Einfluss eines magnetischen Feldes zuwenden, müssen wir die Form der Fermiflächen diskutieren, die dabei eine Rolle spielen. Nur Elektronen in der Nähe der Fermifläche tragen zum Transport bei, wie wir im Drude-Sommerfeld-Modell gesehen haben.  In einem freien Elektronengas und $T=0$ sind alle Zustände unterhalb einer charakteristischen Energie $E_F$ und damit auch unterhalb eines charakteristischen Wellenvektors $k_F = (3 \pi^2 n)^{1/3}$ vollständig besetzt. Im reziproken Raum entspricht dies einer Kugel mit dem Radius $k_F$, der Fermi-Kugel.
 
 Die Bandstruktur führt dazu, dass die Form von einer Kugel abweichen wird. Wir bezeichnen dann als \emph{Fermi-Fläche} die Fläche im reziproken Raum, die genau alle besetzten Zustände bei $T=0$ einschließt. Die möglichen Werte des Wellenvektors $\mathbf{k}$ sind diskret. Die Gesamtzahl der  $\mathbf{k}$-Werte in der ersten Brillouinzone entspricht der Anzahl primitiver Einheitszellen im Kristall. Weil ein Elektron zwei verschiedene Spin-Eigenwerte annehmen kann, gibt es in der ersten Brillouinzone also doppelt so viele Zustände für Elektronen wie Atome im Kristall, falls nur ein Atom in der Einheitszelle ist.
 
@@ -213,7 +213,7 @@ Die Gesamtenergie hat die Eigenwerte
 \begin{equation}
    E = \left( n + \frac{1}{2} \right) \hbar \omega_c + \frac{\hbar^2}{2m} k_z^2 \quad .
 \end{equation}
-Insgesamt gibt es eine freie Bewegung in $z$-Richtung, d.h. in Richtung des Magnetfeldes, und eine quantisierte geschlossene Kreisbahn in der $xy$-Ebene. Abbildung \ref{fig:4_dispersion_3d_b} zeigt die Dispersionsrelation entlang $k_z$. In Metallen liegen die Zustände jedoch viel dichter beieinander: Bei einem Magnetfeld von 1~T beträgt $\bar \omega_c$ etwa 0.1~meV, verglichen mit $E_F \approx 10$~eV.
+Insgesamt gibt es eine freie Bewegung in $z$-Richtung, d.h. in Richtung des Magnetfeldes, und eine quantisierte geschlossene Kreisbahn in der $xy$-Ebene. Abbildung \ref{fig:4_dispersion_3d_b} zeigt die Dispersionsrelation entlang $k_z$. In Metallen liegen die Zustände jedoch viel dichter beieinander: Bei einem Magnetfeld von 1~T beträgt $\hbar \omega_c$ etwa 0.1~meV, verglichen mit $E_F \approx 10$~eV.
 
 \begin{marginfigure}
    \inputtikz{\currfiledir dispersion_3d_b}
@@ -307,15 +307,15 @@ Wenn wir von einer zweidimensionalen Probe ausgehen, dann ist ohne Magnetfeld di
 
 \section{Innere Energie} 
 
-Die Änderung der Zustandsdichte durch das Magnetfeld hat einen überraschenden Einfluss auf die innere Energie. Wir diskutieren dies  für eine zweidimensionale Probe. Man kann sich den dreidimensionalen Zustandsdichte aber als etwas ausgeschmierte 2d Dichte vorstellen und erwartet somit ähnliche Ergebnisse.
+Die Änderung der Zustandsdichte durch das Magnetfeld hat einen überraschenden Einfluss auf die innere Energie. Wir diskutieren dies  für eine zweidimensionale Probe. Man kann sich die dreidimensionale Zustandsdichte aber als etwas ausgeschmierte 2d Dichte vorstellen und erwartet somit ähnliche Ergebnisse.
 
 Wenn kein Magnetfeld anliegt, sind alle Zustände bis zur Fermi-Energie $E_F$ gefüllt (bei $T=0$), alle darüber leer. Jetzt schalten wir das Magnetfeld ein und wählen seine Stärke gerade so, dass die Entartung $g_e$ (Gl.~\ref{eq:4_landau_entartung}) passend ist (siehe Abb.~\ref{fig:4_de_haas}), nämlich  die Gesamtzahl $N$ der Elektronen ein ganzzahliges Vielfaches des Entartungsgrads ist
 \begin{equation}
-   N = p \, g_e \quad \text{mit} \quad p \in \mathbb{N}  \quad .
+   N = p \, g_e \quad \text{mit} \quad p \in \mathbb{N}  \quad . \label{eq:4_N_ge}
 \end{equation}
 In diesem Fall ändert sich die innere Energie nicht. Die Zustände ändern zwar ihre Energie, weil alle auf die Landau-Niveaus verschoben  werden, aber gleich viele werden angehoben wie abgesenkt: die bis zum Abstand $\hbar \omega_c/2$ unterhalb des Niveaus werden angehoben; die bis zu diesem Abstand darüber werden abgesenkt.
 
-Ist aber die Feldstärke $B$ anders, d.h. die Entartung $g_e$ ist nicht genau gleich, so liegt ein nur teilweise besetztes Landau-Niveau vor. Beim allmählichen Füllen dieses letzten Niveaus werden jedoch zunächst nur Energien angehoben. Erst nach der halben Besetzung werden Energien abgesenkt. Insgesamt bleibt unabhängig von $B$ immer eine Anhebung übrig.
+Ist aber die Feldstärke $B$ anders, d.h. die Entartung $g_e$ ist nicht genau gleich wie von Gl.~\ref{eq:4_N_ge} gefordert, so liegt ein nur teilweise besetztes Landau-Niveau vor. Beim allmählichen Füllen dieses letzten Niveaus werden jedoch zunächst nur Energien angehoben. Erst nach der halben Besetzung werden Energien abgesenkt. Insgesamt bleibt unabhängig von $B$ immer eine Anhebung übrig.
 
 \begin{marginfigure}
    %\includegraphics*[width=100mm]{\currfiledir sketches/de_haas.png}
@@ -346,7 +346,7 @@ so dass
    \delta \left(\frac{1}{B}  \right) = \frac{2 \pi e }{\hbar \, S_F} \quad .
 \end{equation}
 
-Die innere Energie variiert also periodisch im $1/B$. Die Periodenlänge $ \delta \left(1/B  \right)$ erlaubt es, die   Größe $S_F$ der fermi-Fläche geschnitten senkrecht zum Magnetfeld zu bestimmen.
+Die innere Energie variiert also periodisch im $1/B$. Die Periodenlänge $ \delta \left(1/B  \right)$ erlaubt es, die   Größe $S_F$ der Fermi-Fläche geschnitten senkrecht zum Magnetfeld zu bestimmen.
 
 \begin{questions}
    \item Machen Sie sich klar, was in Abb.~\ref{fig:4_de_haas} passiert. Wie ändert sich die Besetzung der Landau-Niveaus und die innere Energie, wenn man die magnetische Feldstärke variiert? Das ist der zentrale Punkt für den Rest des Kapitels.
@@ -422,7 +422,7 @@ Wir machen das Experiment so, dass nur Strom in $x$-Richtung fliesst, also $j_y 
 \begin{equation}
    \mathcal{E}_y = - \omega_c \tau \mathcal{E}_x =  - \omega_c \tau \frac{j_x}{\sigma_0} = R_H \, B \, j_x \quad .
 \end{equation}
-Das Magnetfeld bewirkt also ein elektrisches Hall-Feld in $y$-Richtung, obwohl der Strom in $x$-Richtung fliesst. Die Hall-Konstante $R_H$ ist defniert als
+Das Magnetfeld bewirkt also ein elektrisches Hall-Feld in $y$-Richtung, obwohl der Strom in $x$-Richtung fliesst. Die Hall-Konstante $R_H$ ist definiert als
 \begin{equation}
    R_H = \frac{ \mathcal{E}_y }{j_x B} = - \frac{1}{n \, e} \quad .
 \end{equation}
