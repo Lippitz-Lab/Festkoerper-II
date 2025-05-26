@@ -1,6 +1,6 @@
 %\renewcommand{\lastmod}{\today}
 \renewcommand{\chapterauthors}{Markus Lippitz}
-\renewcommand{\lastmod}{21. März 2025}
+\renewcommand{\lastmod}{26. Mai 2025}
 
 \chapter{Halbleiter}
 
@@ -42,7 +42,7 @@
 \section{Überblick}
 
 
-Wir haben bereits im Kapitel zur Bandstruktur gesehen, dass der Übergang zwischen Isolator und Halbleiter fließend ist. Beide haben ein voll besetztes Valenzband und ein unbesetztes Leitungsband mit der Bandlücke $E_g$. Thermische Anregung führt zu einer Besetzung des Leitungsbandes proportional zu $\exp(E_g / 2 k_b T)$, wie wir weiter unten sehen werden. Beispielsweise werden bei Raumtemperatur je nach Bandlücke $10^{-5}$ (bei $E_g$ = 0.5 eV) oder $10^{-26}$ (bei $E_g$ = 3 eV) aller Ladungsträger angeregt sein. Dies führt zu einer von Null verschiedenen Leitfähigkeit. Als Halbleiter bezeichnet man ein Material, dessen spezifische Leitfähigkeit bei Raumtemperatur zwischen $10^{-2}$ und $10^9$ $\Omega$m liegt. Halbleiter können  nach verschiedenen Eigenschaften klassifiziert werden:
+Wir haben bereits im Kapitel zur Bandstruktur gesehen, dass der Übergang zwischen Isolator und Halbleiter fließend ist. Beide haben ein voll besetztes Valenzband und ein unbesetztes Leitungsband mit der Bandlücke $E_g$. Thermische Anregung führt zu einer Besetzung des Leitungsbandes proportional zu $\exp(- E_g / 2 k_b T)$, wie wir weiter unten sehen werden. Beispielsweise werden bei Raumtemperatur je nach Bandlücke $10^{-5}$ (bei $E_g$ = 0.5 eV) oder $10^{-26}$ (bei $E_g$ = 3 eV) aller Ladungsträger angeregt sein. Dies führt zu einer von Null verschiedenen Leitfähigkeit. Als Halbleiter bezeichnet man ein Material, dessen spezifische Widerstand bei Raumtemperatur zwischen $10^{-2}$ und $10^9$ $\Omega$m liegt. Halbleiter können  nach verschiedenen Eigenschaften klassifiziert werden:
 
 
 \paragraph*{intrinsisch oder dotiert} Wenn man ein Material gezielt mit einer Verunreinigung versieht, also dotiert, dann kann dies zu mehr freien Ladungsträgern führen, weil diese dann vom Fremdatom stammen. Bei intrinsischen Halbleitern stammen die Elektronen im Leitungsband immer aus dem Valenzband.
@@ -199,6 +199,10 @@ sehen. Durch thermische Anregung entstehen Elektronen (im Leitungsband) und Löc
 Man beachte, dass zwar  $n p = $~const., aber bislang noch nicht $n=p$ gefordert wurde. Das Massenwirkungsgesetz  $n p = $~const gilt also auch für dotierte Halbleiter.
 
 
+\begin{questions}
+    \item Warum ist die Beziehung $n p = $~const. unabhängig von der Lage des Fermi-Niveaus $E_F$?
+\end{questions}
+
 
 \section{Intrinsische Ladungsträgerdichte}
 
@@ -223,6 +227,10 @@ und dann nach $E_F$ auflösen
 \end{equation}
 Bei $T=0$ liegt das Fermi-Niveau also in der Mitte der Bandlücke. Falls Leitungs- und Valenzband gleich stark gekrümmt sind, also Elektronen- und Loch-Masse identisch, dann bleibt es dort auch bei steigender Temperatur. Unterscheiden sich die Massen, dann bewegt sich das Fermi-Niveau leicht in Richtung der leichteren Ladungsträger. Da $k_B T \ll E_g$ ist dies aber ein kleiner Effekt.
 
+\begin{questions}
+    \item Warum ist die Temperaturabhängigkeit des Fermi-Niveaus $E_F(T)$ bei Halbleitern mit stark unterschiedlichen effektiven Massen $m^\star_n$ und $m^\star_p$ größer als bei Halbleitern mit ähnlichen Massen?
+\end{questions}
+
 
 \section{Dotierung}
 
@@ -244,7 +252,12 @@ Welche Bedeutung hat die Bindungsenergie des Donator-Elektrons für die Bandstru
 
 Bei Raumtemperatur sind die Störstellen mit großer Wahrscheinlichkeit ionisiert. Bei tiefen Temperaturen kann man durch Infrarotabsorption die Lage der Donator- und Akzeptor-Niveaus bestimmen.
 
-%XXXX Ende Revision March 2025
+\begin{questions}
+    \item Warum ist die Bindungsenergie der Donatoren und Akzeptoren in Halbleitern so viel kleiner als die Bandlücke?
+    \item Warum ist sie unabhängig von der Art des Fremdatoms? Und warum ist sie unabhängig von der Temperatur?
+\end{questions}
+
+
 \section{Temperaturabhängigkeit der Ladungsträgerdichte}
 
 Durch die Dotierung lässt sich die Ladungsträgerdichte einstellen, die dann aber natürlich stark temperaturabhängig ist, weil die Bindungsenergie der Störstellen relativ klein ist. Dies werden wir nun etwas genauer betrachten. Wir machen weiterhin die Näherung der Nichtentartung, also dass das Fermi-Niveau\sidenote{=chemisches Potential $\mu$} weit genug von der Bandkante entfernt ist, so dass wir die Fermi-Dirac-Verteilung mit einer Boltzmann-Verteilung nähern können. Die Ladungsträgerdichten im Leitungsband ($n$) und Valenzband ($p$) sind also wie oben
@@ -252,7 +265,7 @@ Durch die Dotierung lässt sich die Ladungsträgerdichte einstellen, die dann ab
     n  = \mathcal{N} \, e^{- (E_c - E_F) / k_b T} \quad \text{und} \quad   
     p =  \mathcal{P} \, e^{+ (E_v - E_F) / k_b T} \quad , \label{eq:5_np_eff}
 \end{equation}
-unabhängig davon, ob die LLadungsträger aus dem gegenüberliegen Band oder aus Störstellen stammen. Die intrinsischen Dichten hatten wir erst später eingeführt.
+unabhängig davon, ob die Ladungsträger aus dem gegenüberliegen Band oder aus Störstellen stammen. Die intrinsischen Dichten hatten wir erst später eingeführt.
 
 Jedes Donator- und Akzeptor-Niveau kann nur mit einem Ladungsträger besetzt werden. Ein unterschiedlicher Spin reicht nicht aus, weil die Coulomb-Abstoßung der Ladungsträger größer ist also die Bindungsenergie.\sidenote{Man darf nicht die Lage der Zustände im \ch{H}-Atom vergleichen, sondern die zwischen \ch{H} und \ch{H-} oder \ch{He} und \ch{He+}.} Sei $n_D$ also die Dichte der Donatoren, die entweder besetzt (neutral) sein können ($n_D^0$) oder ionisiert  ($n_D^+$) und damit natürlich
 \begin{equation}
@@ -270,7 +283,7 @@ Alle Ladungen im Halbleiter müssen sich jederzeit neutralisieren, also
     n + n_A^- = p + n_D^+ \quad .
 \end{equation}
 
-Diese vier Gleichungen beschrieben zusammen die Temperaturabhängigkeit. Wir nehmen nun  einen n-Halbleiter an, also dass viel mehr Donatoren als Akzeptoren vorhanden sind, also $n_D \gg n_A$. In diesem Fall findet sich sicherlich für jeden Akzeptor ein Elektron aus einem Donator, so dass alle Akzeptoren negativ geladen sind ($n_A \approx n_A^-$).
+Diese vier Gleichungen beschreiben zusammen die Temperaturabhängigkeit. Wir nehmen nun  einen n-Halbleiter an, also dass viel mehr Donatoren als Akzeptoren vorhanden sind, also $n_D \gg n_A$. In diesem Fall findet sich sicherlich für jeden Akzeptor ein Elektron aus einem Donator, so dass alle Akzeptoren negativ geladen sind ($n_A \approx n_A^-$).
 Und wir nehmen an, dass die Dotierung so stark ist, dass sie die Leitfähigkeit dominiert (\emph{Störstellenleitung}). Dies ist dann der Fall, wenn $n_D^+ \gg p$, also viel mehr Donatoren ionisiert sind als Löcher vorhanden, oder die Mehrzahl der Elektronen im Leitungsband von Donatoren stammt, also die intrinsische Dichte vernachlässigt werden kann ($n_i \ll n_D^+$). Damit wird die Dichte $n$ der Elektronen im Leitungsband
 \begin{eqnarray}
     n  &= & p + n_D^+ -  n_A^- \approx n_D^+ -  n_A = (n_D - n_D^0) - n_A \\
@@ -306,7 +319,7 @@ Wenn es nur kalt genug ist, liegt das Fermi-Niveau auf den Donator-Zuständen. D
 \begin{equation}
     E_F \approx E_c - \frac{E_d}{2} - \frac{k_b T}{2} \ln \left( \frac{\mathcal{N}}{n_D} \right)  \quad .
 \end{equation}
-Das Fermi-Niveau ist als in etwa in der Mitte zwischen Leitungsband-Unterkante und Donator-Niveau. Es sind noch nicht alle Donatoren ionisiert. Die Donatoren übernehmen die Rolle des Valenzbandes bei intrinsischen Halbelitern und $E_d$ die Rolle der Bandlücke.
+Das Fermi-Niveau ist als in etwa in der Mitte zwischen Leitungsband-Unterkante und Donator-Niveau. Es sind noch nicht alle Donatoren ionisiert. Die Donatoren übernehmen die Rolle des Valenzbandes bei intrinsischen Halbeleitern und $E_d$ die Rolle der Bandlücke.
 
 \paragraph*{Störstellenerschöpfung} Jetzt erreichen wir Raumtemperatur und $k_b T \approx E_d$. Damit wird Gl. \ref{eq:5_n_of_T} 
 \begin{equation}
@@ -318,7 +331,14 @@ weil $n \ll  \mathcal{N}$ und
 \end{equation}
 Alle Störstellen sind ionisiert, aber die direkte Anregung von Elektronen aus dem Valenz- ins Leitungsband spielt noch keine Rolle.
 
-\paragraph*{Eigenleitung} Die Temperatur ist schließlich so hoch, dass $k_b T \gg E_d$. Ladungsträger werden vom Valenz- ins Leitungsband angeregt und die Annahme $p \ll n_D$ gilt nicht mehr. Die Dotierung spielt keine Rolle mehr und der Halbleiter benimmt sich wie ein intrinsischer Halbleiter mit den Gleichungen  \ref{eq:5_konz_zugaenglich} und  \ref{eq:5_Efermi_intr} für $n$ und $E_F$.
+\paragraph*{Eigenleitung} Die Temperatur ist schließlich so hoch, dass $k_b T \gg E_d$. Ladungsträger werden vom Valenz- ins Leitungsband angeregt und die Annahme $p \ll n_D$ gilt nicht mehr. Die Dotierung spielt keine Rolle mehr und der Halbleiter verhält sich wie ein intrinsischer Halbleiter mit den Gleichungen  \ref{eq:5_konz_zugaenglich} und  \ref{eq:5_Efermi_intr} für $n$ und $E_F$.
+
+
+\begin{questions}
+    \item Warum ist die Beziehung $n p = $~const. auch für dotierte Halbleiter gültig? 
+\end{questions}
+
+    
 
 
 \section{p-n-Übergang}
@@ -331,13 +351,11 @@ mit der Stufenfunktion $\Theta$. Der dabei entstehende p-n-Übergang besitzt ein
 
 
 \begin{marginfigure}[-110mm]
-  %  \includegraphics*[width=49mm]{\currfiledir sketches/pn-sketch.png}
     \inputtikz{\currfiledir pn_sketch}
     \caption{Räumliche Verteilung der festen und beweglichen Ladungen an einem p-n-Übergang und das sich daraus ergebende Potential.}
 \end{marginfigure}
 
 \begin{marginfigure}[-10mm]
-    %\includegraphics*[width=49mm]{\currfiledir sketches/pn-level.png}
   \inputtikz{\currfiledir pn_level}
     \caption{Bandstruktur und Lage des Fermi-Niveaus vor und nach dem Verbinden  von zwei unterschiedlich dotierten Halbleitern.}
 \end{marginfigure}
@@ -372,6 +390,8 @@ wenn man annimmt, dass alle Störstellen ionisiert sind. Zusammen mit der Poisso
 haben wir ein nichtlineares gekoppeltes  System von Differentialgleichungen für $\rho(x)$ und $\phi(x)$, das sich nur numerisch lösen lässt.
 
 
+
+
 \section*{Schottky-Modell der Raumladungszone}
 
 
@@ -398,6 +418,10 @@ und $d_p$ analog. typischerweise ist $e V_D \approx E_g \approx 1 $~eV, und $n_{
     \inputtikz{\currfiledir Schottky_modell}
     \caption{Schottky-Modell der Raumladungszone}
 \end{figure}
+
+\begin{questions}
+    \item Warum ist die Breite der Raumladungszone $d$ unabhängig von der Temperatur?
+\end{questions}
 
 \section*{Externe Spannung und Strom-Spannungs-Kennlinie}
 
@@ -433,6 +457,10 @@ beziehungsweise für beide Ladungsträger zusammen
     j(U) =  j_s \left(  e^{e U / k_b T} - 1 \right)
 \end{equation}
 mit dem Sättigungsstrom $j_s = j_n^\text{gen}  + j_p^\text{gen} $.
+
+\begin{questions}
+    \item Warum ist der Diffusionsstrom exponentiell von der Spannung $U$ abhängig?
+\end{questions}
 
 \newpage
 \section{Zusammenfassung}
