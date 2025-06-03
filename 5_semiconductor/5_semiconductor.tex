@@ -1,6 +1,6 @@
 %\renewcommand{\lastmod}{\today}
 \renewcommand{\chapterauthors}{Markus Lippitz}
-\renewcommand{\lastmod}{26. Mai 2025}
+\renewcommand{\lastmod}{3. Juni 2025}
 
 \chapter{Halbleiter}
 
@@ -343,6 +343,11 @@ Alle Störstellen sind ionisiert, aber die direkte Anregung von Elektronen aus d
 
 \section{p-n-Übergang}
 
+\begin{marginfigure}
+    \inputtikz{\currfiledir pn_sketch}
+    \caption{Räumliche Verteilung der festen und beweglichen Ladungen an einem p-n-Übergang und das sich daraus ergebende Potential.}
+\end{marginfigure}
+
 Die Dotierung eines Halbleiter-Kristalls kann räumlich variieren. Dazu kann man beispielsweise durch UV-Lithographie eine Maske erzeugen, die das Eindringen von Fremdatomen an manchen Stellen verhindert. Wir betrachten hier einen Kristall, bei dem sich auf einer Längenskala von wenigen Nanometern die Dotierung von p nach n ändert.  Seien die Konzentration der Störstellen beispielsweise
 \begin{equation}
     n_A(x) = n_A \Theta(x) \quad \text{und}  \quad  n_D(x) = n_D \Theta(-x) 
@@ -350,10 +355,7 @@ Die Dotierung eines Halbleiter-Kristalls kann räumlich variieren. Dazu kann man
 mit der Stufenfunktion $\Theta$. Der dabei entstehende p-n-Übergang besitzt einen charakteristischen Verlauf der Bandkanten und dient technologisch beispielsweise als Diode.
 
 
-\begin{marginfigure}[-110mm]
-    \inputtikz{\currfiledir pn_sketch}
-    \caption{Räumliche Verteilung der festen und beweglichen Ladungen an einem p-n-Übergang und das sich daraus ergebende Potential.}
-\end{marginfigure}
+
 
 \begin{marginfigure}[-10mm]
   \inputtikz{\currfiledir pn_level}
@@ -462,7 +464,7 @@ mit dem Sättigungsstrom $j_s = j_n^\text{gen}  + j_p^\text{gen} $.
     \item Warum ist der Diffusionsstrom exponentiell von der Spannung $U$ abhängig?
 \end{questions}
 
-\newpage
+
 \section{Zusammenfassung}
 
 \textit{Schreiben Sie hier ihre persönliche Zusammenfassung des Kapitels auf. Konzentrieren Sie sich auf die wichtigsten Aspekte und die am Anfang genannten Ziele des Kapitels.}
