@@ -304,7 +304,8 @@ wobei wir im zweiten Schritt den Satz von Stokes ausgenutzt haben und im dritten
 
 Die Zustandsdichte freier Elektronen in einem Normal-Leiter ist $D_{NL} \propto \sqrt{E}$. Weil aber der hier interessierende Energiebereich nur wenige meV um die Fermi-Energie beträgt, können wir $D_{NL}$ als konstant annehmen. Welche Form hat die Zustandsdichte in einem Supraleiter? Dabei müssen wir aufpassen, welche Teilchen wir betrachten. Cooper-Paare bestehen aus zwei korrelierten Elektronen. Diese können wir nicht direkt mit einzelnen Elektronen vergleichen.\sidenote{Die Wellenfunktion ist entweder eine Funktion von einer oder von zwei Ortskoordinaten} Wir sprechen von Einteilchen- und Zweiteilchen-Zustandsdichten.
 
-Die Zweiteilchen-Zustandsdichte hat zunächst einen deltaförmigen Zustand an der BCS-Grundzustandsenergie, in dem sich alle Cooper-Paare befinden. Wenn man ein Cooper-Paar anregt, dann wird es zerstört. Es bleibt ein Elektronen des Cooper-Paars zurück, jetzt zusammen mit einem Loch. Dieses Elektron-Loch-Zweiteilchen ist ein Quasiteilchen, das  man manchmal Bogolon nennt\footcite{Kopitzki_FK}. Ein weiteres Bogolon entsteht aus dem angeregten Elektron. Die Mindest-Energie zur Anregung eines Cooper-Paares, bzw. zur Erzeugung eines Bogolon aus einem Cooper-Paar, ist gerade die Bindungsenergie $\Delta$. Näher an der Fermi-Energie ist kein Zustand für das angeregte Elektron frei.
+Die Zweiteilchen-Zustandsdichte hat zunächst einen deltaförmigen Zustand an der BCS-Grundzustandsenergie, in dem sich alle Cooper-Paare befinden. Wenn man ein Cooper-Paar anregt, dann wird es zerstört. Um weiterhin im Zweiteilchen-Bild bleiben zu können, betrachten man nun unkorrelierte Paare aus zwei Elektronen oder aus einem Elektron und einem Loch. 
+ Dieses Elektron-Loch-Zweiteilchen ist ein Quasiteilchen, das  man manchmal Bogolon nennt\footcite{Kopitzki_FK}. Ein einzelnes Elektron (oder Loch) kann nicht im BCS-Grundzustand verbleiben. Die minimale Energie, um ein Cooper-Paar aufzubrechen ist also  $2\Delta$. Näher an der Fermi-Energie ist kein Zustand für die unkorrelierten Elektronen frei.
 
 Durch die Supraleitung darf sich die Summe der Zustände nicht ändern. Damit ergibt sich für die Bogolonen 
 \begin{equation}
@@ -370,7 +371,7 @@ Genauso kann auch ein Strom von rechts nach links fließen, so dass der Netto-St
 \begin{marginfigure}
     \inputtikz{\currfiledir tunnel_junction}
     \caption{Tunnelstrom durch einen \ch{Al}/\ch{Al_2O_3}/\ch{Pb} - Tunnelkontakt bei 4.2~K bzw 1.6~K. Im zweiten Fall ist \ch{Pb} supraleitend. $dI/dV$ ist proportional zur Zustandsdichte, ausgeschmiert mit $k_b T$
-(\cite{Giaever1960}).}
+(\cite{Giaever1960}). Der Sprung in der Zustandsdichte ist bei $E=\Delta$.}
 \end{marginfigure}
   
 
@@ -423,7 +424,7 @@ Die Differenz der letzten beiden Gleichungen ergibt
 
 \begin{marginfigure}
     \inputtikz{\currfiledir josephson}
-    \caption{Strom durch einen \ch{Pb}/\ch{PbO_x}/\ch{Pb} Tunnelkontakt (Daten aus \cite{Langenberg1966})
+    \caption{Strom durch einen \ch{Pb}/\ch{PbO_x}/\ch{Pb} Tunnelkontakt (Daten aus \cite{Langenberg1966}). Der Sprung in der Zustandsdichte ist bei $eU=2\Delta$.
     \label{fig:6_SC_tunnel}}
 \end{marginfigure}
 
